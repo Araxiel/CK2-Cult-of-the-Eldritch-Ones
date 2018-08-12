@@ -1,0 +1,28 @@
+# GetRngHaircolour       - a random haircolour for description
+defined_text = {
+  name = GetRngHaircolour
+  text = {
+		localisation_key = String_haircolour_brunette
+	}
+  text = {
+		localisation_key = String_haircolour_brunette
+	}
+  text = {
+		localisation_key = String_haircolour_brunette
+	}
+  text = {
+		localisation_key = String_haircolour_brunette
+	}
+  text = {
+		localisation_key = String_haircolour_blonde
+	}
+  text = {
+		localisation_key = String_haircolour_blonde
+	}
+  text = {
+		localisation_key = String_haircolour_blonde
+	}
+  text = {
+		localisation_key = String_haircolour_red
+	}
+}

@@ -1,0 +1,38 @@
+
+#CODE;ENGLISH LANG;FRENCH;GERMAN;SPANISH
+;;;;
+## Rules;;;;
+;;;;
+RULE_GROUP_COTEO;§BCult of the Eldritch Ones§!;;;
+coteo_ai_initiative_name;§BCult of the Eldritch Ones:§! AI Initiative;;;
+coteo_ai_initiative_full_desc;The AI cultist behave normal and have the same chances of success as the players.;;;
+coteo_ai_initiative_restricted_desc;The AI cultists will always fail to trigger important and world-changing events, player intervention is needed.;;;
+coteo_ai_initiative_more_desc;The AI cultist have increased chances of success compared to the player.;;;
+coteo_startup_cult_name;§BCult of the Eldritch Ones:§! Populated Cult;;;
+coteo_startup_cult_on_desc;The cult will already exist in the world and be populated by the AI.;;;
+coteo_startup_cult_off_desc;The player will be the first member of the cult.;;;
+;;;;
+## Religion;;;;
+;;;;
+d_eldritch_high_temple;Eldritch High Temple;;;
+eldritch_gods_group;Eldritch Group;;;
+eldritch_gods;Eldritch Gods;;;
+eldritch_gods_DESC;A follower of the Eldritch Gods, serving their alien masters in the task to awaken them into this world and usher in a age of grand darkness.;;;
+;;;;
+## Cult;;;;
+;;;;
+cult_of_eldritch;Cult of the Eldritch;;;
+cult_of_eldritch_desc;The Cult of the Eldritch is the body of cultists and agents in this dimension, that work towards the awakening of their Eldritch Ones. Working in the shadows, the cults goal is twofold: Awaken the Old Ones and gain enough secular power to overthrow the believers of the false gods and create a great earthly realm from which the Old One's power can emanate from.;;;
+must_be_in_good_standing_with_cult_tooltip;Must be in good standing with the cult.;;;
+currency_name_cult;Forbidden Knowledge;;;
+cult_of_eldritch_rank_1_male;Initiate;;;
+cult_of_eldritch_rank_1_female;Initiate;;;
+cult_of_eldritch_rank_2_male;Acolyte;;;
+cult_of_eldritch_rank_2_female;Acolyte;;;
+cult_of_eldritch_rank_3_male;Disciple;;;
+cult_of_eldritch_rank_3_female;Disciple;;;
+cult_of_eldritch_rank_3_male;Master;;;
+cult_of_eldritch_rank_3_female;Master;;;
+;;;;
+## Realm
+k_land_of_the_eldritch;Land of the Edlritch;;;

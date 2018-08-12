@@ -1,0 +1,48 @@
+k_land_of_the_eldritch = {
+  color={ 139   0 139 }
+  color2={ 255 255 255 }
+
+  allow = {
+    always = no
+  }
+
+  # Always exists
+  landless = no
+  # makes sure generated holder is this religion
+  religion = eldritch_gods
+
+  d_eldritch_high_temple = {
+    color={ 139   0 139 }
+    color2={ 255 255 255 }
+
+    allow = {
+      always = no
+    }
+
+    # Always exists
+    landless = no
+    # unknown
+    capital = 1
+    # makes sure the generated religious head is this religion
+    religion = eldritch_gods
+
+    controls_religion = eldritch_gods
+  }
+
+}
+
+c_vestisland = {
+  holy_site = eldritch_gods
+}
+c_lancaster = {
+  holy_site = eldritch_gods
+}
+c_fyn = {
+  holy_site = eldritch_gods
+}
+c_limisol = {
+  holy_site = eldritch_gods
+}
+c_samoyeds = {
+  holy_site = eldritch_gods
+}

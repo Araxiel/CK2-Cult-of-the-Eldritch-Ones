@@ -1,0 +1,322 @@
+cult_of_eldritch = {
+	primary_attribute = intrigue
+	is_religious = yes
+	is_secret = yes
+	criminal = yes
+	devil_worshipper = yes
+	opinion_to_other_members = +5
+	opinion_to_pretenders = -50			#Pretenders is the opinion you have of people perceived/discovered to be in your society.
+	opinion_to_perceived_members = -50	#Perceived is the opinion you have of people perceived/discovered to be of a society you're not part of
+	opinion_per_rank_above = +10
+	sound = devil_worshippers_interface
+	society_ranks_gfx = devil_ranks
+
+	non_interference = {
+		FROM = {
+			same_realm = ROOT
+		}
+	}
+
+	indestructible = yes
+
+	can_join_society = {
+		hidden_trigger = {
+			NAND = {
+				ai = yes
+				is_society_rank_full = {
+					society = cult_of_eldritch
+					rank = 1
+				}
+			}
+		}
+		hidden_trigger = {
+			NOT = { has_character_flag = society_join_block }
+		}
+		has_eldritch_cult_society_prerequisites = yes
+		OR = {
+			secret_religion_group = eldritch_gods_group
+			true_religion_group = eldritch_gods_group
+		}
+	}
+
+	show_society = {
+		OR = {
+			has_eldritch_cult_society_prerequisites = yes
+			OR = {
+				true_religion_group = eldritch_gods_group
+				has_discovered_eldritch_cult = yes
+			}
+			society_member_of = cult_of_eldritch
+			coteo_debugging_on = yes
+		}
+	}
+
+	potential = {
+		#If something is added here, it could break apprenticeship. Create an event if they can get kicked out. title_hermetics_apprentice
+	}
+
+	active = {
+		NOT = { has_global_flag = eldritch_kingdom_founded }
+	}
+
+	society_rank = {
+		level = 1
+		limit = 100
+		startup_limit = 12
+		decisions = {
+			decision_abduct
+			prisoner_dark_sacrifice #Available Decision: Sacrifice Prisoner
+			#An insanity is on a yearly pulse (with a chance to do nothing)
+			secret_religions_induct_child
+			# Cult:
+			invite_family_to_cult
+		}
+
+		#custom_tooltip = unlockable_DW_powers_at_rank_2;
+	}
+
+	society_rank = {
+		level = 2
+		limit = 25
+		startup_limit = 5
+		modifier = {
+			is_visible = {
+				OR = {
+					society_member_of = cult_of_eldritch
+					FROM = { is_society_discovered = yes }
+				}
+			}
+			intrigue = 1
+		}
+		decisions = {
+			the_devil_worshipers_tainted_touch #Available Power: Curse people with disease
+			#devil_worshipers_demonic_possession #Available Power: Possess someone to make fanatically loyal --- default
+			#Available Power: Abduction plot
+			secret_religions_induct_character
+			# Cult:
+			invite_to_cult
+			cult_drive_insane
+		}
+
+		#custom_tooltip = unlockable_DW_powers_at_rank_3;
+	}
+
+	society_rank = {
+		level = 3
+		limit = 5
+		startup_limit = 2
+		modifier = {
+			is_visible = {
+				OR = {
+					society_member_of = cult_of_eldritch
+					FROM = { is_society_discovered = yes }
+				}
+			}
+			intrigue = 2
+		}
+		decisions = {
+			devil_worshipers_dark_healing #Available Power: Demonic Healing. Sacrifice a prisoner to heal a random illness or maiming.
+			##devil_worshipers_invite_disciple_of_devil #Available Decision: Invite a witch to court	-- default
+			#Available Power: Love Potion
+			secret_religions_prepare_grounds
+			#Cult:
+			summon_cult
+		}
+
+		#custom_tooltip = unlockable_DW_powers_at_rank_4;
+	}
+
+	society_rank = {
+		level = 4
+		limit = 1
+		startup_limit = 1
+		modifier = {
+			is_visible = {
+				OR = {
+					society_member_of = cult_of_eldritch
+					FROM = { is_society_discovered = yes }
+				}
+			}
+			intrigue = 3
+		}
+		decisions = {
+			cultist_uprising
+		}
+		obedience_tooltip = obedience_tooltip #this can be unique per rank/society
+		obedient = {
+			ROOT = {
+				always = yes
+			}
+		}
+	}
+
+	plots = {
+	}
+
+	monthly_currency_gain = {
+		name = currency_name_cult
+
+		per_attribute = {
+			name = intrigue
+			value = 0.2
+		}
+		per_attribute = {
+			name = diplomacy
+			value = 0.1
+		}
+		has_trait = {
+			trait = zealous
+			value = 3
+		}
+		has_trait = {
+			trait = diligent
+			value = 1
+		}
+		has_trait = {
+			trait = ambitious
+			value = 4
+		}
+		has_trait = {
+			trait = genius
+			value = 4
+		}
+		has_trait = {
+			trait = quick
+			value = 3
+		}
+		has_trait = {
+			trait = shrewd
+			value = 3
+		}
+		has_trait = {
+			trait = schemer
+			value = 3
+		}
+		has_trait = {
+			trait = deceitful
+			value = 1
+		}
+		has_trait = {
+			trait = arbitrary
+			value = 1
+		}
+		has_trait = {
+			trait = excommunicated
+			value = 1
+		}
+		has_trait = {
+			trait = cynical
+			value = 1
+		}
+		has_trait = {
+			trait = mystic
+			value = 2
+		}
+		has_trait = {
+			trait = scholar
+			value = 2
+		}
+		has_trait = {
+			trait = lunatic
+			value = 2
+		}
+		has_trait = {
+			trait = depressed
+			value = 2
+		}
+		society_rank = {
+			rank = 4
+			value = 10
+		}
+	}
+
+	member_score_per_attribute = 3
+	member_score_per_rank = 100
+
+	member_score = {
+		value = 10
+		modifier = {
+			trait = scholar
+			factor = 1.3
+		}
+		modifier = {
+			trait = diligent
+			factor = 1.2
+		}
+		modifier = {
+			trait = mystic
+			factor = 1.2
+		}
+		modifier = {
+			trait = charitable
+			factor = 1.1
+		}
+		modifier = {
+			trait = ambitious
+			factor = 1.5
+		}
+		modifier = {
+			trait = genius
+			factor = 1.3
+		}
+		modifier = {
+			trait = quick
+			factor = 1.3
+		}
+		modifier = {
+			trait = shrewd
+			factor = 1.3
+		}
+		modifier = {
+			trait = lunatic
+			factor = 1.3
+		}
+		modifier = {
+			trait = depressed
+			factor = 1.3
+		}
+	}
+
+	startup_populate = {
+	  trigger = {
+			ai = yes
+	    controls_religion = no
+			age = 16
+			is_in_society = no
+			is_dumb_trigger = no
+			OR = {
+				AND = {
+					OR = {
+						NOT = { is_priest = yes }
+						is_any_bad_priest = yes
+					}
+					is_landed = yes
+					OR = {
+						trait = cynical
+						ai_zeal < 21
+					}
+				}
+				true_religion_group = eldritch_gods_group
+			}
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+				religion_group = jewish_group
+				religion_group = zoroastrian_group
+				religion = zun_pagan
+				religion = zun_pagan_reformed
+				religion = hellenic_pagan
+				religion = taoist
+				religion = norse_pagan_reformed
+				religion = norse_pagan
+				religion = baltic_pagan_reformed
+				religion = baltic_pagan
+				religion = finnish_pagan_reformed
+				religion = finnish_pagan
+				religion = slavic_pagan_reformed
+				religion = slavic_pagan
+			}
+			NOT = {	holy_order = yes }
+		}
+	}
+}

@@ -1,0 +1,75 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_evt_blue_eyed_bitch"
+		texturefile = "gfx/event_pictures/event_blue_eyed_bitch.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_blue_eyed_bitch_large"
+		texturefile = "gfx\event_pictures\event_blue_eyed_bitch_large.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+
+
+	##### Cult #####
+
+	spriteType = {
+		name = "GFX_society_main_background_cult_of_eldritch"
+		texturefile = "gfx\interface\societies\society_bg_eldritch.dds"
+	}
+
+	spriteType = {
+		name = "GFX_society_expansion_background_cult_of_eldritch"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_eldritch.dds"
+	}
+
+	spriteType = {
+		name = "GFX_icon_small_cult_of_eldritch"
+		texturefile = "gfx\\interface\\societies\\symbol_small_eldritch.dds"
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_society_influence_cult_of_eldritch"
+		texturefile = "gfx\\interface\\societies\\society_influence_eldritch.dds"
+	}
+
+	spriteType = {
+		name = "GFX_society_portrait_ring_cult_of_eldritch"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_eldritch.dds"
+	}
+
+	spriteType = {
+		name = "GFX_society_portrait_ring_small_cult_of_eldritch"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_eldritch.dds"
+	}
+
+	spriteType = {
+		name = "GFX_society_currency_cult_of_eldritch"
+		texturefile = "gfx\\interface\\societies\\society_currency_eldritch.dds"
+	}
+
+	spriteType = {
+		name = "GFX_event_custom_bg_purple"
+		texturefile = "gfx\\interface\\event_bigger_bg_purple.dds"
+		allwaystransparent = yes
+	}
+
+}
+
+## Custom Larger Window
+spriteTypes =
+{
+	spriteType = {
+		name = "GFX_event_custom_area"
+		texturefile = "gfx\\interface\\event_bigger_area.tga"
+	}
+	spriteType = {
+		name = "GFX_event_custom_bg_default"
+		texturefile = "gfx\\interface\\event_bigger_bg.tga"
+		allwaystransparent = yes
+	}
+}

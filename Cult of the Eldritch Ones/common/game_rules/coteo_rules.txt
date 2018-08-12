@@ -1,0 +1,48 @@
+coteo_ai_initiative = {
+	name = "coteo_ai_initiative_name"
+	group = "RULE_GROUP_COTEO"
+	option = {
+		name = full
+		text = "RULE_OPTION_UNRESTRICTED"
+		desc = "coteo_ai_initiative_full_desc"
+	}
+	option = {
+		name = restricted
+		text = "RULE_OPTION_RESTRICTED"
+		desc = "coteo_ai_initiative_restricted_desc"
+	}
+	option = {
+		name = more
+		text = "RULE_OPTION_MORE"
+		desc = "coteo_ai_initiative_more_desc"
+	}
+}
+coteo_startup_cult = {
+	name = "coteo_startup_cult_name"
+	group = "RULE_GROUP_COTEO"
+	option = {
+		name = off
+		text = "RULE_OPTION_OFF"
+		desc = "coteo_startup_cult_off_desc"
+	}
+	option = {
+		name = on
+		text = "RULE_OPTION_ON"
+		desc = "coteo_startup_cult_on_desc"
+	}
+}
+
+coteo_debugging = {
+	name = "§BCotEO§!: Debugging"
+	group = "RULE_GROUP_COTEO"
+	option = {
+		name = none
+		text = "RULE_OPTION_NONE"
+		desc = "No Debugging"
+	}
+	option = {
+		name = active
+		text = "RULE_OPTION_DEFAULT"
+		desc = "Turn on debugging for CotEO"
+	}
+}

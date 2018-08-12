@@ -1,0 +1,42 @@
+## Socitiey Triggers
+
+not_new_member = {
+  days_in_society > 365
+}
+
+has_eldritch_cult_society_prerequisites = {
+  age = 16
+  custom_tooltip = {
+    text = must_be_in_good_standing_with_cult_tooltip
+    hidden_tooltip = {
+      NOT = { has_character_flag = eldritch_cult_enemy }
+    }
+  }
+}
+
+has_discovered_eldritch_cult = {
+  OR = {
+    has_character_flag = discovered_eldritch_cult
+    has_dynasty_flag = discovered_eldritch_cult
+  }
+}
+
+## other
+
+is_any_bad_priest = {
+  OR = {
+    trait = bad_priest_zoroastrian
+    trait = bad_priest_aztec
+    trait = bad_priest_norse
+    trait = bad_priest_tengri
+    trait = bad_priest_muslim
+    trait = bad_priest_christian
+  }
+}
+
+coteo_debugging_on = {
+  has_game_rule = {
+    name = coteo_debugging
+    value = active
+  }
+}

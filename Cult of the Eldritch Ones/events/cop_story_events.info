@@ -1,0 +1,409 @@
+namespace = cop_story
+
+## cop_story.2    #   purple rose emmissary created
+character_event  = {
+
+  id = cop_story.2
+
+  title = "purple thorns leader created"
+  desc = "purple thorns leader created"
+  picture = GFX_evt_blue_eyed_bitch
+
+  hide_window = yes
+	is_triggered_only = yes
+	ai = no
+	only_playable = yes
+
+	trigger = {
+    has_purplethorns_content = yes
+		is_multiplayer_host_character = yes
+		is_save_game = no
+	}
+
+  immediate = {
+
+    ## purple thorns leader
+    create_character = {
+      random_traits = no
+      dynasty = NONE
+      female = yes
+      age = 35
+      religion = catholic
+      culture = occitan
+      employer = none
+      flag = purple_thorns_leader
+      flag = dw_boobs_checked
+      flag = dw_junk_checked
+      attributes = {
+        martial = 7
+        diplomacy = 11
+        stewardship = 12
+        intrigue = 12
+        learning = 9
+      }
+      trait = fortune_builder
+      trait = futa
+      trait = shrewd
+      trait = diligent
+      trait = just
+      trait = big_dick
+      trait = big_tits
+    }
+    new_character = {
+      save_event_target_as = purple_thorns_leader
+      d_cop_covenant_purple_thorns = {
+        grant_title = PREV
+      }
+      join_society = purple_thorns
+			set_society_grandmaster = yes
+    }
+    event_target:purple_thorns_leader = {
+      ## purple thorns emissary
+      create_character = {
+        random_traits = no
+        dynasty = NONE
+        female = yes
+        age = 29
+        religion = THIS
+        culture = THIS
+
+        employer = THIS
+        flag = purple_thorns_emissary
+        flag = dw_boobs_checked
+        flag = dw_junk_checked
+        attributes = {
+          martial = 6
+          diplomacy = 9
+          stewardship = 9
+          intrigue = 10
+          learning = 9
+        }
+        trait = elusive_shadow
+        trait = futa
+        trait = shrewd
+        trait = cynical
+        trait = huge_dick
+        trait = big_tits
+      }
+      new_character = {
+        join_society = purple_thorns
+      }
+      ## purple thorns emissary
+      create_character = {
+        random_traits = no
+        dynasty = NONE
+        female = yes
+        age = 24
+        religion = THIS
+        culture = THIS
+        employer = THIS
+        flag = purple_thorns_emissary
+        flag = dw_boobs_checked
+        flag = dw_junk_checked
+        attributes = {
+          martial = 4
+          diplomacy = 8
+          stewardship = 10
+          intrigue = 8
+          learning = 8
+        }
+        trait = thrifty_clerk
+        trait = futa
+        trait = shrewd
+        trait = cynical
+        trait = big_dick
+        trait = regular_tits
+      }
+      new_character = {
+        join_society = purple_thorns
+      }
+    }
+
+  }
+
+  option = {
+    name = cop_story.2.a
+
+  }
+
+}
+
+## cop_story.10   #   a purple thorns representative appears at court
+character_event  = {
+
+  id = cop_story.10
+
+  title = cop_story.10.title
+  desc = cop_story.10.desc
+  picture = GFX_evt_blue_eyed_bitch
+
+  only_playable = yes
+  ai = no
+
+  trigger = {
+    has_purplethorns_content = yes
+    ROOT = {
+      NOT = {
+        any_courtier_or_vassal = {
+          has_character_flag = purple_thorns_emissary
+        }
+      }
+      NOT = {
+
+      }
+    }
+  }
+
+  mean_time_to_happen = {
+    years = 5
+  }
+
+  immediate = {
+
+    ## purple thorns emissary
+    create_character = {
+      random_traits = no
+      dynasty = NONE
+      female = yes
+      age = 29
+      religion = THIS
+      culture = THIS
+      employer = THIS
+      flag = purple_thorns_emissary
+      flag = dw_boobs_checked
+      flag = dw_junk_checked
+      attributes = {
+        martial = 4
+        diplomacy = 7
+        stewardship = 7
+        intrigue = 8
+        learning = 8
+      }
+      trait = elusive_shadow
+      trait = shrewd
+      trait = cynical
+      trait = big_tits
+    }
+    new_character = {
+      save_event_target_as = purple_thorns_emissary_woman_local
+      join_society = purple_thorns
+    }
+
+  }
+
+  # will stay
+  option = {
+    name = cop_story.10.a
+
+    custom_tooltip = { text = cop_story.10.a.tt }
+
+  }
+
+  # will go back home
+  option = {
+    name = cop_story.10.b
+
+    hidden_tooltip = {
+      event_target:purple_thorns_emissary_woman_local = {
+        death = {
+          death_reason = death_missing
+        }
+      }
+      clear_event_target = purple_thorns_emissary_woman_local
+    }
+    custom_tooltip = { text = cop_story.10.b.tt }
+  }
+}
+
+## cop_story.11   #   proposition
+narrative_event  = {
+  id = cop_story.11
+
+  title = cop_story.11.title
+  desc = cop_story.11.desc
+  picture = GFX_evt_blue_eyed_bitch_large
+  window = "BiggerEventWindow"
+	event_bg = GFX_event_custom_bg_purple
+
+  only_playable = yes
+  ai = no
+
+  mean_time_to_happen = {
+	  months = 12
+    modifier = {
+      factor = 0.5
+      trait = fair
+    }
+  }
+
+  trigger = {
+    ROOT = {
+      NOT = { has_character_flag =  purple_thorn_proposition_asked_char }
+      NOT = { has_dynasty_flag =    supporting_purple_thorns }
+      any_courtier_or_vassal = {
+        has_character_flag = purple_thorns_emissary
+      }
+      is_fit_enough = yes
+    }
+  }
+
+  immediate = {
+
+    ROOT = {
+      set_character_flag = purple_thorn_proposition_asked_char
+      any_courtier_or_vassal = {
+        limit = { has_character_flag = purple_thorns_emissary }
+        save_event_target_as = purple_thorns_emissary_woman_local
+        add_trait = huge_dick
+        add_trait = futa
+      }
+    }
+
+  }
+
+  ## accept personal proposition
+  option = {
+    name = cop_story.11.a
+
+    event_target:purple_thorns_emissary_woman_local = {
+      ROOT = {
+        narrative_event = { id = cop_story.12 days = 2 }
+      }
+    }
+
+  }
+
+  ## deny personal proposition but hear her out
+  option = {
+    name = cop_story.11.b
+
+    event_target:purple_thorns_emissary_woman_local = {
+      ROOT = {
+        character_event = { id = cop_story.13 days = 2 }
+        set_character_flag = didnt_bang
+      }
+    }
+
+  }
+
+  ## propostious
+  option = {
+    name = cop_story.11.c
+
+    ROOT = {
+      any_courtier_or_vassal = {
+        limit = { has_character_flag = purple_thorns_emissary }
+        imprison = ROOT
+      }
+    }
+    set_character_flag = angered_purple_thorns
+    d_cop_covenant_purple_thorns = {
+      owner = {
+        opinion = { modifier = opinion_angry who = ROOT years = 5 }
+        opinion = { modifier = opinion_narrow_minded who = ROOT years = 5 }
+      }
+    }
+  }
+}
+
+## cop_story.12   #   doing it
+narrative_event  = {
+  id = cop_story.12
+
+  window = "BiggerEventWindow"
+	event_bg = GFX_event_custom_bg_purple
+
+  title = cop_story.12.title
+  desc = {
+    trigger = {
+      ROOT = {
+        is_female = yes
+      }
+    }
+    text = cop_story.12.desc.a
+  }
+
+  desc = {
+    trigger = {
+      ROOT = {
+        is_female = NO
+      }
+    }
+    text = cop_story.12.desc.b
+  }
+  picture = GFX_evt_blue_eyed_bitch_large_cock
+
+  is_triggered_only = yes
+
+  immediate = {
+
+  }
+
+  # that was amazing
+  option = {
+    name = cop_story.12.a
+
+    event_target:purple_thorns_emissary_woman_local = {
+      ROOT = {
+        add_lover = PREV
+        character_event = { id = cop_story.13 days = 2 }
+        got_to_relax = yes
+      }
+    }
+
+  }
+
+}
+
+## cop_story.13   #   business proposition
+character_event  = {
+  id = cop_story.13
+
+  window = "BiggerEventWindow"
+	Background = GFX_event_custom_bg_purple
+
+  title = cop_story.13.title
+  desc = {
+    trigger = {
+      ROOT = {
+        has_character_flag = didnt_bang
+      }
+    }
+    text = cop_story.13.desc.a
+  }
+  desc = cop_story.13.desc
+  picture = GFX_evt_blue_eyed_bitch
+
+  is_triggered_only = yes
+
+  # support them
+  option = {
+    name = cop_story.13.a
+
+    ROOT = {
+      set_dynasty_flag = supporting_purple_thorns
+      set_dynasty_flag = cop_purplethorns_convent_allowed
+    }
+    custom_tooltip = { text = cop_story.13.a.tt }
+  }
+
+  # don't support them
+  option = {
+    name = cop_story.13.b
+
+    custom_tooltip = { text = cop_story.13.b.tt }
+    hidden_tooltip = {
+      event_target:purple_thorns_emissary_woman_local = {
+        death = {
+          death_reason = death_missing
+        }
+      }
+      clear_event_target = purple_thorns_emissary_woman_local
+    }
+  }
+
+  after = {
+    clr_character_flag = didnt_bang
+  }
+
+}

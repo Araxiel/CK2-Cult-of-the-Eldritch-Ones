@@ -1,0 +1,39 @@
+
+-------------------------------------------------------------------------------------------------------------------------------------
+debugging:
+
+-------------------------------------------------------------------------------------------------------------------------------------
+These are some some important and general flags, modifiers or variables that are used to trigger various events:
+
+eldritch_kingdom_founded
+  - global_flag: easy way to check if the cultist have created a kingdom
+
+-------------------------------------------------------------------------------------------------------------------------------------
+These are some of the useful scripted effects and triggers that are used throughout the mod:
+
+has_eldritch_cult_society_prerequisites
+  - trigger: checks if of age, and doesn't have char-flag "eldritch_cult_enemy" flag.
+has_discovered_eldritch_cult
+  - trigger: checks if either character or dynasty has "discovered_eldritch_cult" flag.
+is_any_bad_priest
+  - trigger: checks if any type of wicked priest
+
+generate_rng_10.1
+generate_rng_10.2
+  - effect: creates a random number between 1-9 and saves it as value of @ROOT.rng_value_10.1 (.2)
+generate_rng_100
+  - effect: creates a random number between 1-100 and saves it as value of @ROOT.rng_value_100
+  tip: can be used to insert a number into localisation by using [@ROOT.rng_value_100.GetValue]
+
+[ROOT.GetDemocraticMisconduct]
+  - scripted_localisation: fills in a random (democratic-ish) misconduct that a government official could have committed
+
+-------------------------------------------------------------------------------------------------------------------------------------
+Common common files
+
+Religion:
+  eldritch_gods_group
+  eldritch_gods
+
+Society:
+  cult_of_eldritch

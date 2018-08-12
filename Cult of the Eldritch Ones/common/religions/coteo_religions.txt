@@ -1,0 +1,57 @@
+eldritch_gods_group = {
+  has_coa_on_barony_only = yes
+	graphical_culture = westerngfx
+	crusade_cb = crusade
+	playable = yes
+	hostile_within_group = no
+
+	ai_convert_same_group = 2
+	ai_convert_other_group = 2
+
+	color = { 0.1 0.7 0.1 }
+
+	eldritch_gods = {
+		graphical_culture = westerngfx
+
+		icon = 5
+		heresy_icon = 14
+
+		color = { 0.75 1.0 0.2 }
+
+    crusade_name = GREAT_HOLY_WAR #wip
+		scripture_name = THE_NECRONOMICON
+		priest_title = ACOLYTE
+    piety_name = FAVOR
+
+		high_god_name = GOD_OLD_ONES
+
+		god_names = {
+			GOD_GREAT_OLD_ONES GOD_ELDRITCH_GODS GOD_ELDER_THINGS
+		}
+		evil_god_names = {
+			GOD_FALSE_GODS
+		}
+
+    can_excommunicate = no
+    can_grant_invasion_cb = invasion
+    can_call_crusade = yes
+ 	  can_hold_temples = yes
+ 	  priests_can_marry = yes
+    priests_can_inherit = yes
+    feminist = yes
+		female_temple_holders = yes
+    autocephaly = yes
+    has_heir_designation = yes
+    defensive_attrition = yes
+    allow_in_ruler_designer = no
+
+    dynamic_cult_template = cult_of_eldritch
+
+    attacking_same_religion_piety_loss = yes
+
+    religious_clothing_head = 3
+		religious_clothing_priest = 3
+
+	}
+
+}

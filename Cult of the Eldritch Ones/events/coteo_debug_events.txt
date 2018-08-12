@@ -1,0 +1,27 @@
+namespace = coteo_debug
+
+#From on_character_ask_to_join_society
+character_event = {
+  id = coteo_debug.10
+  is_triggered_only = yes
+
+  desc = coteo_debug.10.desc
+
+  option = {
+    name = coteo_debug.10.a
+
+	  set_secret_religion = eldritch_gods
+  }
+  option = {
+    name = coteo_debug.10.b
+
+	  unsafe_religion = eldritch_gods
+  }
+
+  option = {
+    name = coteo_debug.10.c
+
+	  join_society = cult_of_eldritch
+  }
+
+}
