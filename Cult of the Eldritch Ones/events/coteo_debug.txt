@@ -1,0 +1,89 @@
+namespace = coteo_debug
+
+# coteo_debug.20 # general eldritch cvonversion
+narrative_event = {
+  id = coteo_debug.10
+
+  title = coteo_debug.10.title
+  desc = coteo_debug.10.desc
+  picture = GFX_evt_nightland_watcher
+
+  trigger = { always = no }
+
+  mean_time_to_happen = {
+    years = 100
+  }
+
+  option = {
+    name = coteo_debug.10.a
+	  set_secret_religion = eldritch_gods
+  }
+  option = {
+    name = coteo_debug.10.b
+    any_character = {
+      limit = {
+        independent = no
+        liege = { character = PREVPREV }
+      }
+      religion = eldritch_gods
+    }
+    any_realm_province = {
+      religion = eldritch_gods
+    }
+    religion = eldritch_gods
+  }
+  option = {
+    name = coteo_debug.10.c
+
+    capital_scope = {
+      add_holding_slot = 1
+      build_holding  ={
+        type = temple
+      }
+    }
+  }
+
+  option = {
+    name = coteo_debug.10.d
+
+	  join_society = cult_of_eldritch
+    sound_effect = "cthulhu_chant_01"
+  }
+}
+
+# coteo_debug.20 #fishing town investigation
+character_event = {
+  id = coteo_debug.20
+
+  title = coteo_debug.10.title
+  desc = coteo_debug.10.desc
+  picture = GFX_evt_harbour_town
+
+  trigger = { always = no }
+
+  mean_time_to_happen = {
+    years = 100
+  }
+
+  option = {
+    name = "OK"
+
+    clr_character_flag = eldritch_fishmen_sighted_started
+	  random_demesne_province = {
+      limit = {
+        OR = {
+          port = yes
+          borders_major_river = yes
+        }
+      }
+      remove_province_modifier = cult_frightened_fishermen
+      remove_province_modifier = cult_frightened_fishermen_not_investigated
+      clr_province_flag = cult_frightened_fishermen_investigating_province
+      add_province_modifier = {
+        name = province_debug_modifier
+        days = 10
+      }
+      province_event = { id = coteo_investigation.1000 }
+    }
+  }
+}
