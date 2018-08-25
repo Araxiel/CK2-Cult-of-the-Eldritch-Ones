@@ -1,0 +1,7 @@
+on_investigation = {
+  
+  pilgrimage = yes
+
+  customizer = no
+  random = no
+}

@@ -1,1 +1,5 @@
 
+send_me_on_scary_investigation = {
+  opinion = -10
+  years = 2
+}
