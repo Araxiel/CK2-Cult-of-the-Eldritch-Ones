@@ -1,38 +1,180 @@
+#CODE;ENGLISH;FRENCH;GERMAN;SPANISH
+#;;;;;;;
+## Rules;;;;;;;
+#;;;;;;;
+RULE_GROUP_COTEO;§GCult of the Eldritch Ones§!;;;;;;
+coteo_ai_initiative_name;§ZCult of the Eldritch Ones:§! AI Initiative;;;;;;
+coteo_ai_initiative_full_desc;The AI cultist behave normal and have the same chances of success as the players.;;;;;;
+coteo_ai_initiative_restricted_desc;The AI cultists will always fail to trigger important and world-changing events, player intervention is needed.;;;;;;
+coteo_ai_initiative_more_desc;The AI cultist have increased chances of success compared to the player.;;;;;;
+coteo_startup_cult_name;§ZCult of the Eldritch Ones:§! Populated Cult;;;;;;
+coteo_startup_cult_on_desc;The cult will already exist in the world and be populated by the AI.;;;;;;
+coteo_startup_cult_off_desc;The player will be the first member of the cult.;;;;;;
+#;;;;;;;
+## Religion;;;;;;;
+#;;;;;;;
+d_eldritch_high_temple;Eldritch High Temple;;;;;;
+d_eldritch_high_temple_adj;Eldritch High Temple;;;;;;
+eldritch_high_temple;Eldritch High Priest;;;;;;
+eldritch_gods_group;Eldritch Group;;;;;;
+eldritch_gods;Eldritch Gods;;;;;;
+eldritch_gods_DESC;A follower of the Eldritch Gods, serving their alien masters in the task to awaken them into this world and usher in a age of grand darkness.;;;;;;
+THE_NECRONOMICON;The Necronomicon;Le Necronomicon; Das Necronomicon;;;;
+ACOLYTE;Acolyte;;;;;;
+FAVOR;Favor;;;;;;
+STAT_PIETY_FAVOR;Favor;;;;;;
+GOD_OLD_ONES;The Old Ones;;;;;;
+GOD_GREAT_OLD_ONES;Great Old Ones;;;;;;
+GOD_ELDRITCH_GODS;Eldritch Gods;;;;;;
+GOD_ELDER_THINGS;Elder Things;;;;;;
+GOD_FALSE_GODS;false gods;;;;;;
+cult_of_eldritch_dnaymic_template;Cult of the Eldritch;;;;;;
+#;;;;;;;
+## Cult;;;;;;;
+#;;;;;;;
+cult_of_eldritch;Cult of the Eldritch;;;;;;
+cult_of_eldritch_desc;The Cult of the Eldritch is the body of cultists and agents in this dimension, that work towards the awakening of their Eldritch Ones. Working in the shadows, the cults goal is twofold: Awaken the Old Ones and gain enough secular power to overthrow the believers of the false gods and create a great earthly realm from which the Old One's power can emanate from.;;;;;;
+must_be_in_good_standing_with_cult_tooltip;Must be in good standing with the cult.;;;;;;
+currency_name_cult_of_eldritch;Forbidden Insight;;;;;;
+cult_of_eldritch_leader_desc;The Master of the Cult of the Eldritch is not only guiding the efforts of the cult to awaken the Old Ones, he's also demanding complete obedience from the other members.;;;;;;
+cult_of_eldritch_rank_1_male;Initiate;;;;;;
+cult_of_eldritch_rank_1_female;Initiate;;;;;;
+cult_of_eldritch_rank_2_male;Acolyte;;;;;;
+cult_of_eldritch_rank_2_female;Acolyte;;;;;;
+cult_of_eldritch_rank_3_male;Disciple;;;;;;
+cult_of_eldritch_rank_3_female;Disciple;;;;;;
+cult_of_eldritch_rank_4_male;Master;;;;;;
+cult_of_eldritch_rank_4_female;Mistress;;;;;;
+#;;;;;;;
+## Realm;;;;;;;
+#;;;;;;;
+k_land_of_the_eldritch;Land of the Eldritch;;;;;;
+k_land_of_the_eldritch_adj;Eldritch;;;;;;
+#;;;;;;;
+## Traits and Misc;;;;;;;
+#;;;;;;;
+on_investigation;On Investigation;;;;;;
+on_investigation_desc;This character is currently away, investigating strange rumors.;;;;;;
+send_me_on_scary_investigation;Send Me on Scary Investigation;;;;;;
+#;;;;;;;
+## Events;;;;;;;
+#;;;;;;;
+eldritch_sanity;Sanity;;;;;;
+coteo_investigation_simple.10.title;A Land of Night;;;;;;
+coteo_investigation_simple.10.desc;The sun has died. The world is plunged in darkness. Nothing is left, soon all will be lost. On the dark horizon a large pyramid illuminates the darkness, with the remains of human civilization living within like maggots on a rotting corpse. Outside the pyramid, horror awaits. Great shambling things waiting for the last light to vanish, waiting to rip and tear the last of humanity that remains.\nA twisted world of death and decay, you know this place. It was your home. It will be your home. You can see the abomination in the dark, preying on life, waiting for you.\n\nAs you look across the great planes of eternal darkness, you can feel that you are being watched by a great entity. Something out there is observing you, has observed you, will observe you. It is here, right outside of your view. \n\nAs you awake, the dread and horror of what you've felt remains...;;;;;;
+coteo_investigation_simple.10.a;Surely this was just a dream...right?;;;;;;
+coteo_investigation_simple.10.a.tt;You can't quite shake the uneasy feeling off;;;;;;
+coteo_investigation_simple.10.b;This wasn't just a dream, it was a vision, it was a calling!;;;;;;
+coteo_investigation_simple.10.b.tt;You will try to get to the bottom of this!;;;;;;
+coteo_investigation_simple.10.c;This is the devil's work, I shall repent!!;;;;;;
+coteo_investigation_simple.10.c.tt;Whatever this dream was, you shall fight it!;;;;;;
 
-#CODE;ENGLISH LANG;FRENCH;GERMAN;SPANISH
-;;;;
-## Rules;;;;
-;;;;
-RULE_GROUP_COTEO;Â§BCult of the Eldritch OnesÂ§!;;;
-coteo_ai_initiative_name;Â§BCult of the Eldritch Ones:Â§! AI Initiative;;;
-coteo_ai_initiative_full_desc;The AI cultist behave normal and have the same chances of success as the players.;;;
-coteo_ai_initiative_restricted_desc;The AI cultists will always fail to trigger important and world-changing events, player intervention is needed.;;;
-coteo_ai_initiative_more_desc;The AI cultist have increased chances of success compared to the player.;;;
-coteo_startup_cult_name;Â§BCult of the Eldritch Ones:Â§! Populated Cult;;;
-coteo_startup_cult_on_desc;The cult will already exist in the world and be populated by the AI.;;;
-coteo_startup_cult_off_desc;The player will be the first member of the cult.;;;
-;;;;
-## Religion;;;;
-;;;;
-d_eldritch_high_temple;Eldritch High Temple;;;
-eldritch_gods_group;Eldritch Group;;;
-eldritch_gods;Eldritch Gods;;;
-eldritch_gods_DESC;A follower of the Eldritch Gods, serving their alien masters in the task to awaken them into this world and usher in a age of grand darkness.;;;
-;;;;
-## Cult;;;;
-;;;;
-cult_of_eldritch;Cult of the Eldritch;;;
-cult_of_eldritch_desc;The Cult of the Eldritch is the body of cultists and agents in this dimension, that work towards the awakening of their Eldritch Ones. Working in the shadows, the cults goal is twofold: Awaken the Old Ones and gain enough secular power to overthrow the believers of the false gods and create a great earthly realm from which the Old One's power can emanate from.;;;
-must_be_in_good_standing_with_cult_tooltip;Must be in good standing with the cult.;;;
-currency_name_cult;Forbidden Knowledge;;;
-cult_of_eldritch_rank_1_male;Initiate;;;
-cult_of_eldritch_rank_1_female;Initiate;;;
-cult_of_eldritch_rank_2_male;Acolyte;;;
-cult_of_eldritch_rank_2_female;Acolyte;;;
-cult_of_eldritch_rank_3_male;Disciple;;;
-cult_of_eldritch_rank_3_female;Disciple;;;
-cult_of_eldritch_rank_3_male;Master;;;
-cult_of_eldritch_rank_3_female;Master;;;
-;;;;
-## Realm
-k_land_of_the_eldritch;Land of the Edlritch;;;
+coteo_investigation_simple.20.title;Forbidden Knowledge;;;;;;
+coteo_investigation_simple.20.desc;In your local library you find an old book WIP;;;;;;
+coteo_investigation_simple.20.a;It'd be a shame if the knowledge within would be lost;;;;;;
+coteo_investigation_simple.20.b;This seems not quite right, I rather leave the book where I found it;;;;;;
+coteo_investigation_simple.20.c;This is heretical witchcraft, I shall do [Root.Religion.GetHighGodName]'s work and burn it!;;;;;;
+coteo_investigation_simple.20.c.tt;Destroy the book!;;;;;;
+liber_investigationis;Liber Investigationis;;;;;;
+liber_investigationis_desc;An old grimoire filled with forbidden knowledge;;;;;;
+ars_magna_et_ultima;Ars Magna et Ultima;;;;;;
+ars_magna_et_ultima_desc;An old grimoire filled with forbidden knowledge;;;;;;
+of_unspeakable_cults;Von Unaussprechlichen Kulten;;;;;;
+of_unspeakable_cults_desc;An old grimoire filled with forbidden knowledge;;;;;;
+is_sticking_his_nose_where_it_doesnt_belong;[Root.GetFirstName] is sticking his nose where it doesn't belong.;;;;;;
+coteo_mod_weird_book_found;Weird Tome.;;;;;;
+
+coteo_investigation.1001.title;Strange Sightings;;;;;;
+coteo_investigation.1001.desc;A representative of a small fishing village outside of §Y[From.GetName]§G comes to you with tales by the local fishermen of strange sea creatures. They talk of aberrant human-like abominations walking along the shores in the twilight hours. The representative tells us the locals are too frightened to leave their homes and urges us to do something about this situation.;;;;;;
+coteo_investigation.1001.a;I will investigate this myself.;;;;;;
+coteo_investigation.1001.a.tt;§Y[Root.GetBestName]§! will investigate the §Ystrange sightings personally§!.;;;;;;
+coteo_investigation.1001.b;I will send [investigating_treasurer.GetMyTreasurerName] [investigating_treasurer.GetFirstName] to investigate.;;;;;;
+coteo_investigation.1001.b.tt;§Y[investigating_treasurer.GetFirstName]§! will be send to investigate the §Ystrange sightings§!.;;;;;;
+coteo_investigation.1001.c;I will send [investigating_treasurer.GetLordSpiritualName] [investigating_chaplain.GetFirstName] to investigate.;;;;;;
+coteo_investigation.1001.c.tt;§Y[investigating_chaplain.GetFirstName]§! will be send to investigate the §Ystrange sightings§!.;;;;;;
+coteo_investigation.1001.d;Pah, I won't waste my time with some old fishermen's superstitions.;;;;;;
+coteo_investigation.1001.d.tt;It's probably nothing.;;;;;;
+cult_frightened_fishermen;Frightened Fishermen;;;;;;
+cult_frightened_fishermen_desc;Something has spooked the local fishermen and harbour towns;;;;;;
+cult_frightened_fishermen_not_investigated;Frightened Fishermen HIDDEN;;;;;;
+cult_frightened_fishermen_not_investigated_desc;HIDDEN;;;;;;
+cult_frightened_fishermen_vengeance;Forsaken Fishing Village Burned;;;;;;
+cult_frightened_fishermen_vengeance_desc;The entire village accused of dark arts has been burned.;;;;;;
+
+GetRandomSombreWeather_rain;the skies are pouting down heavy rain;;;;;;
+GetRandomSombreWeather_mist;a eerie mist is shrouding the environment;;;;;;
+GetRandomSombreWeather_fog;heavy fog is enveloping everything;;;;;;
+
+coteo_investigation.1012.title;Arriving in [From.GetName];;;;;;
+coteo_investigation.1012.desc;As you arrive in the small village outside of [From.GetName], [GetRandomSombreWeather] and you feel like the town is completely deserted. As you walk across the town square, you can see the silhouettes of townsfolk watching you from within their homes. Looking around you can see some light coming from what must be the local inn.\n\nAs you enter the establishment, the already hushed talking falls completely silent and the few assembled souls are staring at the interloper.\n\n"My excellence [Root.GetTitledFirstName], what brings you to [From.GetName]? We don't get many visitors since," the innkeeper trails off and starts looking at the mug he's currently cleaning with a less than clean rag.;;;;;;
+coteo_investigation.1012.a;What is going on here?;;;;;;
+coteo_investigation.1012.b;On a second thought, I better just leave.;;;;;;
+coteo_investigation.1012.b.tt;You will return home.;;;;;;
+coteo_investigation.1012.c;On a second thought, I better just leave.;;;;;;
+
+coteo_investigation.1100.title;WIP Footprints;;;;;;
+coteo_investigation.1100.desc;You spot some footprints. WIP;;;;;;
+coteo_investigation.1100.a;Follow them;;;;;;
+
+coteo_investigation.1201.title;Ominous Altar;;;;;;
+coteo_investigation.1201.desc;You spot an altar in the distance. WIP;;;;;;
+coteo_investigation.1201.a;I feel strangely compelled to take the idol with me.;;;;;;
+coteo_investigation.1201.b;In the name of [Root.GetRandomGodName], break the cursed idol.;;;;;;
+
+coteo_investigation.1202.title;Take Idol;;;;;;
+coteo_investigation.1202.desc;You take it and get bad dreams or something. WIP;;;;;;
+coteo_investigation.1202.a;HULK SMASH;;;;;;
+
+coteo_investigation.1203.title;Smash Idol;;;;;;
+coteo_investigation.1203.desc;You smash the idol and get bad dreams. WIP;;;;;;
+coteo_investigation.1203.a;HULK SMASH;;;;;;
+
+coteo_investigation.1224.title;Ominous Altar;;;;;;
+coteo_investigation.1224.desc;"A strange altar showed up" says the innkeeper. WIP;;;;;;
+coteo_investigation.1224.a;Let's investigate;;;;;;
+coteo_investigation.1224.tt;Head in the direction of the ominous altar;;;;;;
+
+coteo_investigation.1225.desc;You spot an altar in the distance. WIP;;;;;;
+coteo_investigation.1225.a;Let's investigate;;;;;;
+coteo_investigation.1225.tt;Head in the direction of the ominous altar;;;;;;
+
+coteo_investigation.1510.title;Cultists;;;;;;
+coteo_investigation.1510.desc;You are jumped by a dozen cultists WIP.;;;;;;
+coteo_investigation.1510.a;I will outrun them!;;;;;;
+coteo_investigation.1510.a.tt;Try to outrun them.;;;;;;
+coteo_investigation.1510.b;Those wicked worms shall taste my blade!;;;;;;
+coteo_investigation.1510.b.tt;Try to §Yfight§! them using your §YPersonal Combat Skill§!.;;;;;;
+coteo_investigation.1510.c;I haven't come to fight, I've come to talk...;;;;;;
+coteo_investigation.1510.c.tt;Join the cultists.;;;;;;
+
+coteo_investigation.1511.title;Defeated the Cultists;;;;;;
+coteo_investigation.1511.desc;You won WIP.;;;;;;
+coteo_investigation.1511.a;I should leave before more of them arrive.;;;;;;
+
+coteo_investigation.1520.title;Abominations;;;;;;
+coteo_investigation.1520.desc;You are jumped by a couple of Deep Ones WIP.;;;;;;
+coteo_investigation.1520.b;Those unholy abominations shall taste my blade!;;;;;;
+
+coteo_investigation.1521.title;Killed the Abominations;;;;;;
+coteo_investigation.1521.desc;You won WIP.;;;;;;
+
+coteo_investigation.1860.desc;You returned from your investigation much worse for wear. You only nearly made it back in one piece. Something dark and evil has occurred in that village. One thing is for sure, you won't return to that cursed place.;;;;;;
+coteo_investigation.1860.a;Let that cursed village burn in hell. I have to report to [Liege.GetName] what happened.;;;;;;
+coteo_investigation.1860.b;Let that cursed village burn in hell.;;;;;;
+coteo_investigation.1860.c;That devilish place shall know no mercy, burn it all!;;;;;;
+coteo_investigation.1861.desc;[From.GetBestName] returned from [From.GetHersHis] recent investigation into the strange fishing village much worse for wear. [From.GetSubjectPronounCap] reports that [From.GetSubjectPronoun] only nearly made it back in one piece. Something dark and evil has occurred in that village and [From.GetFirstName] implores you to just raze the entire village to the ground.;;;;;;
+coteo_investigation.1861.a;Let that cursed village burn in hell.;;;;;;
+coteo_investigation.1861.b;Let that cursed village burn.;;;;;;
+
+coteo_investigation.1850.title;Returned Home;;;;;;
+coteo_investigation.1850.desc;You returned from your investigation in [FromFrom.GetName]. It was a very weird and unusual experience.;;;;;;
+coteo_investigation.1850.a.a;What a strange event.;;;;;;
+coteo_investigation.1850.a.b;I will lie to [Liege.GetName] about my findings.;;;;;;
+coteo_investigation.1850.b;§GThe Eldritch Ones shall awaken!§!;;;;;;
+
+coteo_investigation.1851.title;Investigator Returns;;;;;;
+coteo_investigation.1851.desc;[From.GetBestName] returned from [From.GetHersHis] recent investigation into the strange fishing village. While eerie and unwelcoming, [From.GetSubjectPronoun] claims that [From.GetSubjectPronoun] didn't really find anything worth of note to report on. [From.GetSubjectPronounCap] postulates that the strange tales are just that: Old wive's tales.;;;;;;
+
+coteo_investigation.1852.title;Investigator Returns;;;;;;
+coteo_investigation.1852.desc;As you approach [From.GetBestName] to hear what [From.GetHersHis] investigation has revealed, [From.GetBestName] suddenly pulls out a dagger and starts lashing at you, screaming §Y"The Eldritch Ones shall awaken!"§!.;;;;;;
+coteo_investigation.1852.a;Guards!.;;;;;;
