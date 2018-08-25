@@ -1,14 +1,14 @@
 cult_of_eldritch = {
 	primary_attribute = intrigue
 	is_religious = yes
-	is_secret = yes
+	#is_secret = yes
 	criminal = yes
 	devil_worshipper = yes
 	opinion_to_other_members = +5
 	opinion_to_pretenders = -50			#Pretenders is the opinion you have of people perceived/discovered to be in your society.
 	opinion_to_perceived_members = -50	#Perceived is the opinion you have of people perceived/discovered to be of a society you're not part of
 	opinion_per_rank_above = +10
-	sound = devil_worshippers_interface
+	sound = cthulhu_chant
 	society_ranks_gfx = devil_ranks
 
 	non_interference = {
@@ -16,8 +16,6 @@ cult_of_eldritch = {
 			same_realm = ROOT
 		}
 	}
-
-	indestructible = yes
 
 	can_join_society = {
 		hidden_trigger = {
@@ -57,19 +55,29 @@ cult_of_eldritch = {
 
 	active = {
 		NOT = { has_global_flag = eldritch_kingdom_founded }
+		OR = {
+			has_game_rule = { name = coteo_startup_cult value = on	}
+			any_player  = {
+				any_dynasty_member_even_if_dead = {
+					is_in_society = cult_of_eldritch
+				}
+			}
+		}
 	}
 
 	society_rank = {
 		level = 1
 		limit = 100
-		startup_limit = 12
+		#startup_limit = 12
+		startup_limit = 0
 		decisions = {
 			decision_abduct
 			prisoner_dark_sacrifice #Available Decision: Sacrifice Prisoner
-			#An insanity is on a yearly pulse (with a chance to do nothing)
+			#An sanity is on a yearly pulse (with a chance to do nothing)
 			secret_religions_induct_child
 			# Cult:
 			invite_family_to_cult
+			research_eldritch_arts
 		}
 
 		#custom_tooltip = unlockable_DW_powers_at_rank_2;
@@ -78,7 +86,8 @@ cult_of_eldritch = {
 	society_rank = {
 		level = 2
 		limit = 25
-		startup_limit = 5
+		#startup_limit = 5
+		startup_limit = 0
 		modifier = {
 			is_visible = {
 				OR = {
@@ -95,7 +104,7 @@ cult_of_eldritch = {
 			secret_religions_induct_character
 			# Cult:
 			invite_to_cult
-			cult_drive_insane
+			#cult_drive_insane
 		}
 
 		#custom_tooltip = unlockable_DW_powers_at_rank_3;
@@ -104,7 +113,8 @@ cult_of_eldritch = {
 	society_rank = {
 		level = 3
 		limit = 5
-		startup_limit = 2
+		#startup_limit = 2
+		startup_limit = 0
 		modifier = {
 			is_visible = {
 				OR = {
@@ -115,7 +125,7 @@ cult_of_eldritch = {
 			intrigue = 2
 		}
 		decisions = {
-			devil_worshipers_dark_healing #Available Power: Demonic Healing. Sacrifice a prisoner to heal a random illness or maiming.
+			#devil_worshipers_dark_healing #Available Power: Demonic Healing. Sacrifice a prisoner to heal a random illness or maiming.
 			##devil_worshipers_invite_disciple_of_devil #Available Decision: Invite a witch to court	-- default
 			#Available Power: Love Potion
 			secret_religions_prepare_grounds
@@ -129,7 +139,8 @@ cult_of_eldritch = {
 	society_rank = {
 		level = 4
 		limit = 1
-		startup_limit = 1
+		#startup_limit = 1
+		startup_limit = 0
 		modifier = {
 			is_visible = {
 				OR = {
@@ -154,7 +165,7 @@ cult_of_eldritch = {
 	}
 
 	monthly_currency_gain = {
-		name = currency_name_cult
+		name = currency_name_cult_of_eldritch
 
 		per_attribute = {
 			name = intrigue
@@ -278,9 +289,9 @@ cult_of_eldritch = {
 	}
 
 	startup_populate = {
-	  trigger = {
+		trigger = {
 			ai = yes
-	    controls_religion = no
+			controls_religion = no
 			age = 16
 			is_in_society = no
 			is_dumb_trigger = no
@@ -293,7 +304,7 @@ cult_of_eldritch = {
 					is_landed = yes
 					OR = {
 						trait = cynical
-						ai_zeal < 21
+						ai_zeal < 31
 					}
 				}
 				true_religion_group = eldritch_gods_group
@@ -319,4 +330,5 @@ cult_of_eldritch = {
 			NOT = {	holy_order = yes }
 		}
 	}
+
 }

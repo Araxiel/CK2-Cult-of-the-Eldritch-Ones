@@ -16,12 +16,13 @@ eldritch_gods_group = {
 		icon = 5
 		heresy_icon = 14
 
-		color = { 0.75 1.0 0.2 }
+		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
+		color = { 0.50 0.15 0.80 }  # Ilythid Purple
 
     crusade_name = GREAT_HOLY_WAR #wip
 		scripture_name = THE_NECRONOMICON
 		priest_title = ACOLYTE
-    piety_name = FAVOR
+    #piety_name = FAVOR
 
 		high_god_name = GOD_OLD_ONES
 
@@ -35,17 +36,16 @@ eldritch_gods_group = {
     can_excommunicate = no
     can_grant_invasion_cb = invasion
     can_call_crusade = yes
- 	  can_hold_temples = yes
  	  priests_can_marry = yes
     priests_can_inherit = yes
     feminist = yes
 		female_temple_holders = yes
-    autocephaly = yes
-    has_heir_designation = yes
-    defensive_attrition = yes
-    allow_in_ruler_designer = no
+    #has_heir_designation = yes
+    #defensive_attrition = yes
+    #autocephaly = yes  # can't get rid of the orthodox ones
+    #can_hold_temples = yes
 
-    dynamic_cult_template = cult_of_eldritch
+    allow_in_ruler_designer = no
 
     attacking_same_religion_piety_loss = yes
 
