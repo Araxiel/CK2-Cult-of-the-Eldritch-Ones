@@ -29,11 +29,19 @@ generate_rng_100
   - scripted_localisation: fills in a random (democratic-ish) misconduct that a government official could have committed
 
 -------------------------------------------------------------------------------------------------------------------------------------
-Common common files
+Common entities
 
 Religion:
   eldritch_gods_group
   eldritch_gods
+
+Society:
+  cult_of_eldritch
+
+-------------------------------------------------------------------------------------------------------------------------------------
+Overwrites
+
+interface/sound.sfx
 
 Society:
   cult_of_eldritch
