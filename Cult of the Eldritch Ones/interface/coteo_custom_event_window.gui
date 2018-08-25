@@ -3,7 +3,7 @@ guiTypes = {
 	## Thanks a lot to "ngppgn" for setting up this window's foundation
 	windowType =
 	{
-		name = "BiggerEventWindow"
+		name = "CoteoBiggerEventWindow"
 		backGround="Background"
 		position = { x=-530 y=-385 }
 		size = { x=770 y=620 }
@@ -23,7 +23,7 @@ guiTypes = {
 		iconType =
 		{
 			name ="event_bg"
-			spriteType = "GFX_event_custom_bg_default"
+			spriteType = "GFX_event_custom_bg_eldritch"
 			position = { x= 0 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}
@@ -71,7 +71,8 @@ guiTypes = {
 		{
 			name ="EventWindowMainChar_portrait"
 			quadTextureSprite = "GFX_char_75"
-			position = { x = 485 y = 34 }
+			#position = { x = 485 y = 34 }
+			position = { x = 490 y = 34 }
 			pdx_tooltip = "CHARACTER_TOOLTIP"
 			pdx_tooltip_delayed = "CHARACTER_TOOLTIP_DELAYED"
 		}
@@ -79,26 +80,30 @@ guiTypes = {
 		{
 			name = "EventWindowMainChar_portrait_frame"
 			quadTextureSprite = "GFX_charframe_75"
-			position = { x= 477 y = 25 }
+			#position = { x= 477 y = 25 }
+			position = { x= 482 y = 25 }
 			Orientation = "UPPER_LEFT"
 		}
 		guiButtonType = {
 			name ="EventWindowMainChar_shield"
 			quadTextureSprite = "GFX_shield_medium2"
-			position = { x= 460 y = 72 }
+			#position = { x= 460 y = 72 }
+			position = { x= 465 y = 72 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType =
 		{
 			name ="EventWindowMainChar_crown"
 			spriteType = "GFX_shield_crown_strip_medium2"
-			position = { x= 470 y = 56 }
+			#position = { x= 470 y = 56 }
+			position = { x= 475 y = 56 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name ="EventWindowMainChar_portrait_relation"
 			spriteType = "GFX_overlay_char_relation_75"
-			position = { x= 537 y = 30 }
+			#position = { x= 537 y = 30 }
+			position = { x= 542 y = 30 }
 			Orientation = "UPPER_LEFT"
 		}
 		###
@@ -106,7 +111,8 @@ guiTypes = {
 		{
 			name ="EventWindowFromChar_portrait"
 			quadTextureSprite = "GFX_char_75"
-			position = { x = 485 y = 124 }
+			#position = { x = 485 y = 124 }
+			position = { x = 490 y = 124 }
 			pdx_tooltip = "CHARACTER_TOOLTIP"
 			pdx_tooltip_delayed = "CHARACTER_TOOLTIP_DELAYED"
 		}
@@ -114,26 +120,30 @@ guiTypes = {
 		{
 			name = "EventWindowFromChar_portrait_frame"
 			quadTextureSprite = "GFX_charframe_75"
-			position = { x= 477 y = 115 }
+			#position = { x= 477 y = 115 }
+			position = { x= 482 y = 115 }
 			Orientation = "UPPER_LEFT"
 		}
 		guiButtonType = {
 			name ="EventWindowFromChar_shield"
 			quadTextureSprite = "GFX_shield_medium2"
-			position = { x= 460 y = 162 }
+			#position = { x= 460 y = 162 }
+			position = { x= 465 y = 162 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType =
 		{
 			name ="EventWindowFromChar_crown"
 			spriteType = "GFX_shield_crown_strip_medium2"
-			position = { x= 470 y = 146 }
+			#position = { x= 470 y = 146 }
+			position = { x= 475 y = 146 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name ="EventWindowFromChar_portrait_relation"
 			spriteType = "GFX_overlay_char_relation_75"
-			position = { x= 537 y = 120 }
+			#position = { x= 537 y = 120 }
+			position = { x= 542 y = 120 }
 			Orientation = "UPPER_LEFT"
 		}
 		#####
@@ -141,7 +151,7 @@ guiTypes = {
 		instantTextBoxType =
 		{
 			name = "decorative_letter"
-			position = { x = 45 y = 29 }
+			position = { x = 35 y = 32 }
 			textureFile = ""
 			font = "decorative_color"
 			borderSize = {x = 0 y = 0}
@@ -154,7 +164,8 @@ guiTypes = {
 		instantTextBoxType =
 		{
 			name = "Title"
-			position = { x = 119 y = 36 }
+			#position = { x = 119 y = 36 }
+			position = { x = 109 y = 74 }
 			textureFile = ""
 			font = "vic_36_black"
 			borderSize = {x = 0 y = 0}
@@ -168,12 +179,13 @@ guiTypes = {
 		instantTextBoxType =
 		{
 			name = "Description_firstpart"
-			position = { x = 41 y = 101 }
+			#position = { x = 39 y = 101 }
+			position = { x = 35 y = 110 }
 			textureFile = ""
 			font = "vic_22_black"
 			borderSize = {x = 0 y = 0}
 			text = "UI_MISSING_TEXT"
-			maxWidth = 450
+			maxWidth = 440
 			maxHeight = 530
 			format = left
 		}
@@ -486,7 +498,7 @@ guiTypes = {
 		instantTextBoxType =
 		{
 			name = "decorative_letter"
-			position = { x = 45 y = 29 }
+			position = { x = 30 y = 32 }
 			textureFile = ""
 			font = "decorative_color"
 			borderSize = {x = 0 y = 0}
