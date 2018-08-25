@@ -1,0 +1,397 @@
+namespace = coteo_investigation_simple
+
+## coteo_investigation_simple.10   # Dream: A Land of Night
+narrative_event  = {
+  id = coteo_investigation_simple.10
+
+  title = coteo_investigation_simple.10.title
+  desc = coteo_investigation_simple.10.desc
+  picture = GFX_evt_nightland_watcher
+  window = "CoteoBiggerEventWindow"
+  #window = "BiggerEventWindow"
+  #Background = GFX_event_custom_bg_purple
+
+  only_rulers = yes
+
+  trigger = {
+    not_yet_woke = yes
+    NOT = { has_character_flag = eldritch_land_of_night }
+    #cult_allowed_cultures = yes
+  }
+
+  mean_time_to_happen = {
+    years = 40
+    modifier = {
+      factor = 0.5
+      has_character_flag = eldritch_cult_curious
+    }
+    modifier = {
+      factor = 0.5
+      check_variable = { which = "eldritch_sanity" value <= -10 }
+    }
+  }
+
+  immediate = {
+    change_variable = { which = "eldritch_sanity" value = -2 }
+    set_character_flag = eldritch_land_of_night
+  }
+
+  # surely, this was just a dream...right?
+  option = {
+    name = coteo_investigation_simple.10.a
+
+    custom_tooltip = { text = coteo_investigation_simple.10.a.tt }
+    subtract_variable = { which = "eldritch_sanity" value = 3 }
+    random = {
+      chance = 15
+      add_trait = stressed
+    }
+
+    ai_chance = {
+    	factor = 75
+    }
+  }
+
+  # this wasn't just a dream, it was a vision, it was a call!
+  option = {
+    name = coteo_investigation_simple.10.b
+
+    subtract_variable = { which = "eldritch_sanity" value = 7 }
+    custom_tooltip = { text = coteo_investigation_simple.10.b.tt }
+    random = {
+      chance = 45
+      add_trait = cynical
+    }
+    random = {
+      chance = 5
+      add_trait = lunatic
+    }
+    set_character_flag = eldritch_cult_curious
+
+    ai_chance = {
+    	factor = 30
+    	modifier = {
+    		factor = 2
+    		trait = cynical
+    	}
+      modifier = {
+    		factor = 2
+    		check_variable = { which = "eldritch_sanity" value <= -15 }
+    	}
+      modifier = {
+    		factor = 10
+    		has_character_flag = eldritch_cult_curious
+    	}
+    }
+  }
+
+  # this is the devil's work, I shall repent!
+  option = {
+    name = coteo_investigation_simple.10.c
+
+    subtract_variable = { which = "eldritch_sanity" value = 2 }
+    custom_tooltip = { text = coteo_investigation_simple.10.c.tt }
+    random = {
+      chance = 25
+      add_trait = zealous
+    }
+    set_character_flag = eldritch_cult_rejected
+
+    ai_chance = {
+    	factor = 5
+    	modifier = {
+    		factor = 10
+    		trait = zealous
+    	}
+    }
+  }
+}
+
+## coteo_investigation_simple.20   # Find important old book
+narrative_event  = {
+  id = coteo_investigation_simple.20
+
+  title = coteo_investigation_simple.20.title
+  desc = coteo_investigation_simple.20.desc
+  window = "CoteoBiggerEventWindow"
+  picture = GFX_evt_parchment_01
+  desc = {
+    trigger = { check_variable = { which = rng_picture value = 1 } }
+    text = coteo_investigation_simple.20.desc
+    picture = GFX_evt_parchment_01
+  }
+  desc = {
+    trigger = { check_variable = { which = rng_picture value = 2 } }
+    text = coteo_investigation_simple.20.desc
+    picture = GFX_evt_parchment_02
+  }
+  desc = {
+    trigger = { check_variable = { which = rng_picture value = 3 } }
+    text = coteo_investigation_simple.20.desc
+    picture = GFX_evt_parchment_03
+  }
+
+  only_rulers = yes
+
+  trigger = {
+    not_yet_woke = yes
+    #NOT = { has_character_flag = eldritch_found_book }
+    NOT = { has_artifact = necronomicon }
+    OR = {
+      NOT = { has_artifact = liber_investigationis } # Liber Investigationis
+      NOT = { has_artifact = ars_magna_et_ultima } # Ars Magna et Ultima
+      NOT = { has_artifact = of_unspeakable_cults } # Von Unaussprechlichen Kulten
+    }
+    NOT = { has_character_modifier = coteo_mod_weird_book_found }
+    cult_allowed_cultures = yes
+  }
+
+  mean_time_to_happen = {
+    years = 50
+    modifier = {
+      factor = 0.2
+      has_character_flag = eldritch_cult_curious
+    }
+    modifier = {
+      factor = 0.7
+      check_variable = { which = "eldritch_sanity" value <= -10 }
+    }
+    modifier = {
+      factor = 0.6
+      check_variable = { which = "eldritch_sanity" value <= -20 }
+    }
+    modifier = {
+      factor = 0.5
+      learning = 15
+    }
+    modifier = {
+      factor = 20
+      learning > 5
+    }
+    modifier = {
+      factor = 40
+      trait = blinded
+    }
+  }
+
+  immediate = {
+    random_list = {
+      1 = { set_variable = { which = rng_picture value = 1 } }
+      1 = { set_variable = { which = rng_picture value = 2 } }
+      1 = { set_variable = { which = rng_picture value = 3 } }
+    }
+    random_list = {
+      1 = { set_variable = { which = rng_value value = 1 } }
+      1 = { set_variable = { which = rng_value value = 2 } }
+      1 = { set_variable = { which = rng_value value = 3 } }
+    }
+    change_variable = { which = "eldritch_sanity" value = -3 }
+  }
+
+  # take the book with you
+  option = {
+    name = coteo_investigation_simple.20.a
+
+    subtract_variable = { which = "eldritch_sanity" value = 20 }
+
+    if = {
+      limit = {
+        NOT = { has_character_flag = eldritch_found_book }
+        ai = no
+        OR = {
+          AND = {
+            check_variable = { which = rng_value value == 1 }
+            has_artifact = of_unspeakable_cults
+          }
+          AND = {
+            check_variable = { which = rng_value value == 3 }
+            NOT = { has_artifact = liber_investigationis }
+          }
+        }
+      }
+      add_artifact = liber_investigationis
+    }
+    else_if = {
+      limit = {
+        NOT = { has_character_flag = eldritch_found_book }
+        ai = no
+        OR = {
+          AND = {
+            check_variable = { which = rng_value value == 3 }
+            has_artifact = liber_investigationis
+          }
+          AND = {
+            check_variable = { which = rng_value value == 2 }
+            NOT = { has_artifact = ars_magna_et_ultima }
+          }
+        }
+      }
+      add_artifact = ars_magna_et_ultima
+    }
+    else_if = {
+      limit = {
+        NOT = { has_character_flag = eldritch_found_book }
+        ai = no
+        OR = {
+          AND = {
+            check_variable = { which = rng_value value == 2 }
+            has_artifact = ars_magna_et_ultima
+          }
+          AND = {
+            check_variable = { which = rng_value value == 1 }
+            NOT = { has_artifact = of_unspeakable_cults }
+          }
+        }
+      }
+      add_artifact = of_unspeakable_cults
+    }
+    else = {
+      add_character_modifier = { name = coteo_mod_weird_book_found years = 5 }
+    }
+
+    random = {
+      chance = 5
+      add_trait = lunatic
+    }
+
+    set_character_flag = eldritch_cult_curious
+
+    ai_chance = {
+    	factor = 20
+      modifier = {
+        factor = 100
+        trait = lunatic
+      }
+      modifier = {
+    		factor = 2
+    		is_in_society = hermetics
+    	}
+    	modifier = {
+    		factor = 2
+    		learning = 15
+    	}
+    	modifier = {
+    		factor = 2
+    		check_variable = { which = "eldritch_sanity" value <= -15 }
+    	}
+    	modifier = {
+    		factor = 5
+    		check_variable = { which = "eldritch_sanity" value <= -30 }
+    	}
+    	modifier = {
+    		factor = 20
+    		has_character_flag = eldritch_cult_curious
+    	}
+    }
+  }
+
+  # leave the book alone
+  option = {
+    name = coteo_investigation_simple.20.b
+
+    subtract_variable = { which = "eldritch_sanity" value = 9 }
+    random = {
+      chance = 15
+      add_trait = stressed
+    }
+
+    ai_chance = {
+    	factor = 25
+    }
+  }
+
+  # burn the book
+  option = {
+    name = coteo_investigation_simple.20.c
+
+    subtract_variable = { which = "eldritch_sanity" value = 4 }
+    custom_tooltip = { text = coteo_investigation_simple.20.c.tt }
+    random = {
+      chance = 25
+      add_trait = zealous
+    }
+    random = {
+      chance = 60
+      add_trait = paranoid
+    }
+    set_character_flag = eldritch_cult_rejected
+
+    ai_chance = {
+    	factor = 10
+    	modifier = {
+    		factor = 20
+    		trait = zealous
+    	}
+    }
+  }
+
+  after = {
+    set_character_flag = eldritch_found_book
+  }
+}
+
+
+## yearly insanity regulation
+character_event  = {
+  id = coteo_investigation_simple.2000
+
+  hide_window = yes
+  is_triggered_only = yes
+
+  immediate = {
+
+    if = {
+      limit = { check_variable = { which = "eldritch_sanity" value <= 25 } }
+      random_list = {
+        1 = { change_variable = { which = "eldritch_sanity" value = 0 } }
+        2 = { change_variable = { which = "eldritch_sanity" value = 1 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = 2 } }
+      }
+    }
+    if = {
+      limit = { check_variable = { which = "eldritch_sanity" value <= -25 } }
+      random_list = {
+        10 = { change_variable = { which = "eldritch_sanity" value =  0 } }
+        5  = { change_variable = { which = "eldritch_sanity" value =  1 } }
+        4  = { change_variable = { which = "eldritch_sanity" value = -2 } }
+      }
+    }
+    if = {
+      limit = {
+        OR = {
+          has_focus = focus_hunting
+          has_focus = focus_carousing
+          has_focus = focus_family
+        }
+      }
+      random_list = {
+        1 = { change_variable = { which = "eldritch_sanity" value = 2 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = 4 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = 7 } }
+      }
+    }
+    if = {
+      limit = { trait = depressed }
+      random_list = {
+        1 = { change_variable = { which = "eldritch_sanity" value = -2 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = -4 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = -7 } }
+      }
+    }
+    if = {
+      limit = {
+        OR = {
+          trait = possessed
+          trait = lunatic
+          trait = mystic
+        }
+      }
+      random_list = {
+        1 = { change_variable = { which = "eldritch_sanity" value = -4 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = -8 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = -12 } }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,1319 @@
+namespace = coteo_investigation
+
+## coteo_investigation.1000   # Strange beings sighted; init
+province_event = {
+  id = coteo_investigation.1000
+
+  hide_window = yes
+
+  trigger = {
+    OR = {
+      port = yes
+      borders_major_river = yes
+    }
+    NOT = { has_province_modifier = cult_frightened_fishermen }
+    owner = {
+      not_yet_woke = yes
+      cult_allowed_cultures = yes
+      NOT = { has_character_flag = eldritch_fishmen_sighted_started }
+      liege = {
+        not_yet_woke = yes
+        cult_allowed_cultures = yes
+        NOT = { has_character_flag = eldritch_fishmen_sighted_started }
+      }
+      NOT = { tier = baron }
+      NOT = {
+        AND = {
+          tier = count
+          num_of_count_titles >= 3
+        }
+      }
+    }
+    NOT = { has_global_flag = eldritch_kingdom_founded }
+  }
+
+  mean_time_to_happen = {
+    years = 40
+    modifier = {
+      factor = 0.7
+      owner = { has_character_flag = eldritch_cult_curious }
+    }
+    modifier = {
+      factor = 0.9
+      owner = { check_variable = { which = "eldritch_sanity" value <= -5 } }
+    }
+  }
+
+  immediate = {
+    add_province_modifier = {
+      name = cult_frightened_fishermen
+      years = 5
+    }
+    add_province_modifier = {
+      name = cult_frightened_fishermen_not_investigated
+      years = 1
+    }
+    set_province_flag = cult_frightened_fishermen_investigating_province
+    owner = {
+      set_character_flag = eldritch_fishmen_sighted_started
+      save_event_target_as = investigating_starter
+      job_treasurer = {
+        save_event_target_as = investigating_treasurer
+      }
+      job_spiritual  = {
+        save_event_target_as = investigating_chaplain
+      }
+      character_event = { id = coteo_investigation.1001 }
+    }
+  }
+}
+
+## coteo_investigation.1001   # Strange beings sighted; reports
+character_event  = {
+  id = coteo_investigation.1001
+
+  title = coteo_investigation.1001.title
+  desc = coteo_investigation.1001.desc
+  picture = GFX_evt_harbour_town
+
+  is_triggered_only = yes
+
+  # go yourself
+  option = {
+    name = coteo_investigation.1001.a
+
+    trigger = {
+      OR ={
+        has_character_flag = eldritch_cult_curious
+        check_variable = { which = "eldritch_sanity" value <= -15 }
+        OR = {
+          check_variable = { which = "strange_sightings_started" value >= 2 }
+          AND = {
+            check_variable = { which = "strange_sightings_started" value >= 1 }
+            OR = {
+              trait = brave
+              trait = shrewd
+              learning = 15
+            }
+          }
+        }
+        trait = lunatic
+      }
+  	}
+
+    custom_tooltip = { text = coteo_investigation.1001.a.tt }
+    set_character_flag = activated_investigation
+    set_character_flag = do_not_disturb
+    character_event = { id = coteo_investigation.1002 }
+
+    ai_chance = {
+    	factor = 10
+    	modifier = {
+    		factor = 1.5
+    		trait = cynical
+    	}
+    	modifier = {
+    		factor = 3
+    		trait = brave
+    	}
+    	modifier = {
+    		factor = 3
+    		trait = lunatic
+    	}
+    	modifier = {
+    		factor = 1.5
+    		is_in_society = hermetics
+    	}
+    	modifier = {
+    		factor = 1.5
+    		learning = 15
+    	}
+    	modifier = {
+    		factor = 0.05
+    		combat_rating <= -3
+    	}
+    }
+  }
+  # Send steward to invesigate
+  option = {
+    name = coteo_investigation.1001.b
+
+    trigger = {
+      OR ={
+        has_character_flag = eldritch_cult_curious
+        check_variable = { which = "eldritch_sanity" value <= -9 }
+        check_variable = { which = "strange_sightings_started" value >= 1 }
+      }
+      any_character = {
+        liege = { character = PREVPREV }
+        has_job_title = job_treasurer
+        ai = yes # WIP potentially later your liege might send YOU
+      }
+  	}
+
+    custom_tooltip = { text = coteo_investigation.1001.b.tt }
+    event_target:investigating_treasurer = {
+      set_character_flag = activated_investigation
+      set_character_flag = do_not_disturb
+      character_event = { id = coteo_investigation.1002 }
+      if = {
+        limit = {
+          OR = {
+            trait = craven
+            trait = paranoid
+          }
+        }
+        opinion = { modifier = send_me_on_scary_investigation who = ROOT }
+      }
+    }
+
+    ai_chance = {
+    	factor = 20
+    	modifier = {
+    		factor = 100
+    		trait = craven
+    	}
+    	modifier = {
+    		factor = 1.5
+    		trait = trusting
+    	}
+    	modifier = {
+    		factor = 2
+    		job_treasurer = {
+          OR = {
+            is_in_society = hermetics
+            learning = 13
+          }
+        }
+    	}
+    }
+  }
+  # Send chaplain to invesigate
+  option = {
+    name = coteo_investigation.1001.c
+
+    trigger = {
+      OR ={
+        has_character_flag = eldritch_cult_curious
+        check_variable = { which = "eldritch_sanity" value <= -9 }
+        check_variable = { which = "strange_sightings_started" value >= 1 }
+      }
+      any_character = {
+        liege = { character = PREVPREV }
+        has_job_title = job_spiritual
+        ai = yes # WIP potentially later your liege might send YOU
+      }
+  	}
+
+    custom_tooltip = { text = coteo_investigation.1001.c.tt }
+    event_target:investigating_chaplain = {
+      set_character_flag = activated_investigation
+      set_character_flag = do_not_disturb
+      character_event = { id = coteo_investigation.1002 }
+      if = {
+        limit = {
+          OR = {
+            trait = craven
+            trait = paranoid
+          }
+        }
+        opinion = { modifier = send_me_on_scary_investigation who = ROOT }
+      }
+    }
+
+    ai_chance = {
+    	factor = 20
+    	modifier = {
+    		factor = 1.5
+    		trait = trusting
+    	}
+    	modifier = {
+    		factor = 0.25
+    		trait = paranoid
+    	}
+    	modifier = {
+    		factor = 1.5
+    		trait = craven
+    	}
+    	modifier = {
+    		factor = 2.5
+    		trait = zealous
+    	}
+    	modifier = {
+    		factor = 2
+    		job_spiritual = {
+          OR = {
+            is_in_society = hermetics
+            learning = 13
+          }
+        }
+    	}
+    }
+  }
+  # Pah, just the same old fishermen's superstitions. Stop bothering me.
+  option = {
+    name = coteo_investigation.1001.d
+
+    custom_tooltip = { text = coteo_investigation.1001.d.tt }
+    if = {
+      limit = { trait = paranoid }
+      remove_trait = paranoid
+    }
+    any_realm_province = {
+      limit = { has_province_flag = cult_frightened_fishermen_investigating_province }
+      clr_province_flag = cult_frightened_fishermen_investigating_province
+      hidden_tooltip = {
+        remove_province_modifier = cult_frightened_fishermen_not_investigated
+      }
+    }
+    clr_character_flag = eldritch_fishmen_sighted_started
+
+    ai_chance = {
+      factor = 15
+      modifier = {
+        factor = 1.5
+        trait = craven
+      }
+      modifier = {
+        factor = 1.5
+        trait = patient
+      }
+    }
+  }
+
+  after = {
+    FROM = {
+      tooltip = {
+        add_province_modifier = {
+          name = cult_frightened_fishermen
+          years = 5
+        }
+      }
+      hidden_tooltip = {
+        remove_province_modifier = cult_frightened_fishermen_not_investigated
+      }
+    }
+    hidden_tooltip = {
+      change_variable = { which = "strange_sightings_started" value = 1 }
+    }
+  }
+}
+
+# coteo_investigation.1002 Confirm decision
+character_event = {
+	id = coteo_investigation.1002
+
+	is_triggered_only = yes
+  hide_window = yes
+
+	immediate = {
+    save_event_target_as = investigator
+		add_trait = on_investigation
+    random_list = {
+			25 = { FromFrom = { province_event = { id = coteo_investigation.1011 } } } # arriving in scared town
+      10 = { character_event = { id = coteo_investigation.1225 } } # strange altar in distance
+      #8 =  { character_event = { id = coteo_investigation.1235 } } # strange ruin in distance
+			#8 =  { narrative_event = { id = coteo_investigation.1300 days = 10 random = 7 } } # deep ones in distance
+    }
+	}
+}
+
+## coteo_investigation.1011   # arriving in scared town ; Ping
+province_event  = {
+	id = coteo_investigation.1011
+
+	is_triggered_only = yes
+  hide_window = yes
+
+  immediate = {
+    From = {
+      narrative_event = { id = coteo_investigation.1012 days = 30 random = 30 }
+    }
+  }
+}
+
+## coteo_investigation.1012   # arriving in scared town
+narrative_event  = {
+	id = coteo_investigation.1012
+
+  title = coteo_investigation.1012.title
+  desc = coteo_investigation.1012.desc
+  picture = GFX_evt_spooky_village_01
+  window = "CoteoBiggerEventWindow"
+
+  hide_from = yes
+  show_root = yes
+
+	is_triggered_only = yes
+
+  # what is going on
+  option = {
+    name = coteo_investigation.1012.a
+
+ 	  wealth = -1
+    hidden_tooltip = {
+      random_list = {
+        10 = { character_event = { id = coteo_investigation.1013 days = 1 random = 1 } } # people started going missing
+        #1 = { character_event = { id = coteo_investigation.xxxx days = 1 random = 1 } } # inkeeper is in on it
+      }
+    }
+
+    ai_chance = {
+    	factor = 20
+    }
+  }
+  # I better just leave
+  option = {
+    name = coteo_investigation.1012.b
+
+    prestige = -15
+    piety = -5
+    if = { limit = { NOT = { trait = craven } }
+      add_trait = craven }
+    #tooltip = { remove_trait = on_investigation }
+    custom_tooltip = { text = coteo_investigation.1012.b.tt }
+    hidden_tooltip = {
+      random_list = {
+        50 = { #nothing happens
+          character_event = { id = coteo_investigation.1850 days = 15 random = 15 }
+          From = { remove_province_modifier = cult_frightened_fishermen_not_investigated }
+        }
+        12 = { narrative_event = { id = coteo_investigation.1510 days = 2 random = 3 } } #ambush by cultists
+        6 = { narrative_event = { id = coteo_investigation.1520 days = 2 random = 3 } } #ambush by deep ones
+      }
+    }
+
+    ai_chance = {
+    	factor = 5
+      modifier = {
+        factor = 3
+        trait = craven
+      }
+    }
+  }
+}
+
+## coteo_investigation.1013   # Innkeeper says: "people started going missing"
+character_event  = {
+  id = coteo_investigation.1013
+
+  title = coteo_investigation.1013.title
+  desc = coteo_investigation.1013.desc
+  picture = GFX_evt_creepy_village
+
+  is_triggered_only = yes
+
+  immediate = {
+    random_list = {
+      1 = { set_variable = { which = rng_value value = 1 } } #  fish footsteps (leads to either altar or ruin or deep ones)
+      1 = { set_variable = { which = rng_value value = 2 } } #  strange people have been seen in this area (leads to altar)
+    }
+  }
+
+  option = {
+    name = coteo_investigation.1013.a
+
+    if = {
+      limit = { check_variable = { which = rng_value value == 1 } }
+      character_event = { id = coteo_investigation.1020 days = 5 random = 3 } #  fish footsteps (leads to either altar or ruin or deep ones)
+    }
+    if = {
+      limit = { check_variable = { which = rng_value value == 2 } }
+      narrative_event = { id = coteo_investigation.1200 days = 5 random = 3 } #  strange people have been seen (leads to altar)
+      set_character_flag = invstg_got_altar_directions
+    }
+  }
+}
+
+## coteo_investigation.1020   # fish footsteps
+character_event  = {
+  id = coteo_investigation.1020
+
+  title = coteo_investigation.1020.title
+  desc = coteo_investigation.1020.desc
+  picture = GFX_evt_creepy_village
+
+  is_triggered_only = yes
+
+  immediate = {
+    random_list = {
+      5 = { set_variable = { which = rng_value value = 2 } } #  footsteps lead to altar
+      #1 = { set_variable = { which = rng_value value = 3 } } #  footsteps lead to ruin
+      1 = { set_variable = { which = rng_value value = 1 } } #  footsteps lead to actual deep ones
+    }
+  }
+
+  option = {
+    name = coteo_investigation.1020.a
+
+    if = {
+      limit = { check_variable = { which = rng_value value == 1 } }
+      character_event = { id = coteo_investigation.1110 days = 5 random = 3 } #  strange footsteps (leads to either altar or ruin or deep ones)
+    }
+    if = {
+      limit = { check_variable = { which = rng_value value == 2 } }
+      narrative_event = { id = coteo_investigation.1520 days = 5 random = 3 } #  strange people have been seen (leads to altar)
+    }
+  }
+}
+
+## coteo_investigation.1200   # arrived at altar - hidden
+character_event  = {
+  id = coteo_investigation.1200
+
+  hide_window = yes
+  is_triggered_only = yes
+
+  immediate = {
+    random_list = {
+      1 = { narrative_event = { id = coteo_investigation.1201 days = 2 } }  #  strange idol on altar
+      1 = { narrative_event = { id = coteo_investigation.1202 days = 2 } }  #  found book
+      1 = { narrative_event = { id = coteo_investigation.1203 days = 2 } }  #  sacrificial altar
+    }
+  }
+}
+## coteo_investigation.1201   # altar - found strange idol
+narrative_event  = {
+  id = coteo_investigation.1201
+
+  title = coteo_investigation.1201.title
+  desc = coteo_investigation.1201.desc
+  picture = GFX_evt_altar_idol
+
+  is_triggered_only = yes
+
+  # take the idol
+  option = {
+    name = coteo_investigation.1201.a
+
+    narrative_event = { id = coteo_investigation.1202 days = 2 }
+    piety = -25
+    subtract_variable = { which = "eldritch_sanity" value = 12 }
+  }
+
+  # break the idol
+  option = {
+    name = coteo_investigation.1201.b
+
+    narrative_event = { id = coteo_investigation.1203 days = 2 }
+  }
+
+  # I better just leave
+  option = {
+    name = coteo_investigation.1012.b
+
+    prestige = -15
+    piety = -5
+    if = { limit = { NOT = { trait = craven } }
+      add_trait = craven }
+    custom_tooltip = { text = coteo_investigation.1012.b.tt }
+    hidden_tooltip = {
+      random_list = {
+        50 = { #nothing happens
+          character_event = { id = coteo_investigation.1850 days = 15 random = 15 }
+          From = { remove_province_modifier = cult_frightened_fishermen_not_investigated }
+        }
+        12 = { narrative_event = { id = coteo_investigation.1510 days = 2 random = 3 } } #ambush by cultists
+        6 = { narrative_event = { id = coteo_investigation.1520 days = 2 random = 3 } } #ambush by deep ones
+      }
+    }
+
+    ai_chance = {
+    	factor = 5
+      modifier = {
+        factor = 3
+        trait = craven
+      }
+    }
+  }
+  after = {
+    clr_character_flag = invstg_got_altar_directions
+  }
+}
+## coteo_investigation.1202   # altar - take idol
+narrative_event  = {
+  id = coteo_investigation.1202
+
+  title = coteo_investigation.1202.title
+  desc = coteo_investigation.1202.desc
+  picture = GFX_evt_altar_idol
+
+  is_triggered_only = yes
+
+  # take the idol
+  option = {
+    name = coteo_investigation.1201.a
+
+    #narrative_event = { id = coteo_investigation.1202 days = 2 }
+    piety = -25
+    subtract_variable = { which = "eldritch_sanity" value = 12 }
+
+  }
+}
+## coteo_investigation.1203   # altar - break the idol
+narrative_event  = {
+  id = coteo_investigation.1203
+
+  title = coteo_investigation.1203.title
+  desc = coteo_investigation.1203.desc
+  picture = GFX_evt_altar_idol
+
+  is_triggered_only = yes
+
+  # take the idol
+  option = {
+    name = coteo_investigation.1203.a
+
+    #narrative_event = { id = coteo_investigation.1202 days = 2 }
+    piety = -25
+    subtract_variable = { which = "eldritch_sanity" value = 12 }
+
+  }
+}
+
+## coteo_investigation.1225   # you see an altar in the distance
+character_event  = {
+  id = coteo_investigation.1225
+
+  title = coteo_investigation.1224.title
+  desc = coteo_investigation.1225.desc
+  picture = GFX_evt_creepy_village
+
+  is_triggered_only = yes
+
+  option = {
+    name = coteo_investigation.1225.a
+
+    random_list = {
+      18 = { character_event = { id = coteo_investigation.1200 days = 5 random = 3 } } #  you find altar
+      8 =  { character_event = { id = coteo_investigation.1020 days = 2 random = 3 } } #  deep ones tracks
+    }
+  }
+}
+
+## ruin goes here
+
+## coteo_investigation.1510   # ambush by cultists
+narrative_event  = {
+  id = coteo_investigation.1510
+
+  title = coteo_investigation.1510.title
+  desc = coteo_investigation.1510.desc
+  picture = GFX_evt_ghosts_graveyard
+
+  window = "CoteoBiggerEventWindow"
+
+  is_triggered_only = yes
+
+  ## try to run away
+  option = {
+    name = coteo_investigation.1510.a
+
+    trigger = {
+      check_variable = { which = "eldritch_sanity" value >= -50 }
+    }
+
+    custom_tooltip = { text = coteo_investigation.1510.a.tt }
+    hidden_tooltip = {
+      random_list ={
+        10 = { #getting away
+          modifier = {
+            factor = 0.6
+            combat_rating <= 0
+          }
+          modifier = {
+            factor = 0.6
+            trait = deceitful
+          }
+          random = {
+            chance = 35
+            add_trait = stressed
+          }
+          random = {
+            chance = 20
+            add_trait = wounded
+          }
+          character_event = { id = coteo_investigation.1860 days = 2 random = 3 }
+        }
+        3 = { #getting abducted
+          modifier = {
+            factor = 7
+            combat_rating <= -7
+          }
+          ## WIP event that let's the liege investigate?
+          random_list = {
+            10 = { death = { death_reason = death_vanished } }
+            4 =  { death = { death_reason = death_murder_unknown } }
+            #4 =  { death = { death_reason = death_accident_drowning } }
+            #1 =  { death = { death_reason = death_murder_unknown_drowning } # no localization
+          }
+        }
+      }
+    }
+
+    ai_chance = {
+      factor = 30
+      modifier = {
+        factor = 1.6
+        trait = deceitful
+      }
+      modifier = {
+        factor = 100
+        trait = craven
+      }
+      modifier = {
+        factor = 2
+        trait = feeble
+      }
+      modifier = {
+        factor = 0.1
+        trait = wroth
+      }
+      modifier = {
+        factor = 0.5
+        trait = zealous
+      }
+      modifier = {
+        factor = 0.3
+        trait = brave
+      }
+      modifier = {
+    		factor = 0.1
+    		combat_rating >= 4
+    	}
+    }
+  }
+
+  ## stay and fight them
+  option = {
+    name = coteo_investigation.1510.b
+
+    custom_tooltip = { text = coteo_investigation.1510.b.tt }
+    hidden_tooltip = {
+      random_list = {
+        10 = { #win and get away
+          modifier = {
+            factor = 0.5
+            combat_rating <= 0
+          }
+          modifier = {
+            factor = 1.8
+            combat_rating >= 2
+          }
+          modifier = {
+            factor = 2.2
+            combat_rating >= 5
+          }
+          modifier = {
+            factor = 1.4
+            OR = {
+              trait = quick
+              trait = genius
+              trait = shrewd
+            }
+          }
+          random = {
+            chance = 60
+            modifier = {
+              factor = 0.2
+              combat_rating >= 6
+            }
+            add_trait = wounded
+          }
+          character_event = { id = coteo_investigation.1511 days = 2 random = 3 }
+        }
+        5 = { #getting abducted
+          modifier = {
+            factor = 7
+            combat_rating <= -7
+          }
+          ## WIP event that let's the liege investigate?
+          random_list = {
+            10 = { death = { death_reason = death_vanished } }
+            4 =  { death = { death_reason = death_murder_unknown } }
+            #4 =  { death = { death_reason = death_accident_drowning } }
+            #1 =  { death = { death_reason = death_murder_unknown_drowning } # no localization
+          }
+        }
+      }
+    }
+
+    ai_chance = {
+      factor = 20
+      modifier = {
+        factor = 0
+        trait = craven
+      }
+      modifier = {
+        factor = 0.1
+        trait = feeble
+      }
+      modifier = {
+        factor = 40
+        trait = wroth
+      }
+      modifier = {
+        factor = 10
+        trait = brave
+      }
+    }
+  }
+  ## join them
+  option = {
+    name = coteo_investigation.1510.c
+
+    trigger = {
+      OR = {
+        check_variable = { which = "eldritch_sanity" value <= -40 }
+        trait = lunatic
+        ai = yes
+        # othere requirements, like idols and books and such
+      }
+    }
+    custom_tooltip = { text = coteo_investigation.1510.c.tt }
+    if = {
+      limit = {
+        ai = yes
+      }
+      random = {
+        chance = 20
+        add_trait = lunatic
+      }
+      random = {
+        chance = 80
+        set_secret_religion = eldritch_gods
+      }
+      character_event = { id = coteo_investigation.1850 days = 20 random = 10 }
+    }
+    else = {
+      #character_event = { id = coteo_investigation.5000 days = 1 random = 1 }
+      set_secret_religion = eldritch_gods
+    }
+    subtract_variable = { which = "eldritch_sanity" value = 8 }
+
+    ai_chance = {
+      factor = 30
+      modifier = {
+        factor = 1.5
+        trait = deceitful
+      }
+      modifier = {
+        factor = 4
+        check_variable = { which = "eldritch_sanity" value <= -50 }
+      }
+      modifier = {
+        factor = 1.5
+        trait = craven
+      }
+      modifier = {
+        factor = 0.1
+        trait = zealous
+      }
+      modifier = {
+    		factor = 1.5
+    		trait = cynical
+    	}
+    }
+  }
+  after = {
+    hidden_tooltip = {
+      subtract_variable = { which = "eldritch_sanity" value = 5 }
+    }
+  }
+}
+
+## coteo_investigation.1511   # ambush by cultists: won battle
+character_event  = {
+  id = coteo_investigation.1511
+
+  title = coteo_investigation.1511.title
+  desc = coteo_investigation.1511.desc
+  picture = GFX_evt_creepy_village
+
+  is_triggered_only = yes
+
+  option = {
+    name = coteo_investigation.1511.a
+
+    prestige = 10
+    piety = 10
+    change_martial = 1
+    character_event = { id = coteo_investigation.1860 days = 2 random = 3 }
+  }
+}
+
+## coteo_investigation.1520   # ambush by deep ones
+narrative_event  = {
+  id = coteo_investigation.1520
+
+  title = coteo_investigation.1520.title
+  desc = coteo_investigation.1520.desc
+  picture = GFX_evt_deep_one_02_large
+
+  desc = {
+    trigger = { check_variable = { which = rng_picture value = 1 } }
+    text = coteo_investigation.1520.desc
+    picture = GFX_evt_deep_one_02_large
+  }
+  desc = {
+    trigger = { check_variable = { which = rng_picture value = 2 } }
+    text = coteo_investigation.1520.desc
+    picture = GFX_evt_deep_one_03_large
+  }
+
+  window = "CoteoBiggerEventWindow"
+
+  is_triggered_only = yes
+
+  immediate = {
+    random_list = {
+      1 = { set_variable = { which = rng_picture value = 1 } }
+      1 = { set_variable = { which = rng_picture value = 2 } }
+    }
+  }
+
+  ## try to run away
+  option = {
+    name = coteo_investigation.1510.a
+
+    custom_tooltip = { text = coteo_investigation.1510.a.tt }
+    hidden_tooltip = {
+      random_list ={
+        10 = { #getting away
+          modifier = {
+            factor = 0.6
+            combat_rating <= 0
+          }
+          modifier = {
+            factor = 0.6
+            trait = deceitful
+          }
+          random = {
+            chance = 45
+            add_trait = stressed
+          }
+          random = {
+            chance = 20
+            add_trait = wounded
+          }
+          character_event = { id = coteo_investigation.1860 days = 2 random = 3 }
+        }
+        2 = { #getting abducted
+          modifier = {
+            factor = 10
+            combat_rating <= -6
+          }
+          ## WIP event that let's the liege investigate?
+          random_list = {
+            10 = { death = { death_reason = death_vanished } }
+            6 =  { death = { death_reason = death_murder_unknown } }
+            15 =  { death = { death_reason = death_accident_drowning } }
+          }
+        }
+      }
+    }
+
+    ai_chance = {
+      factor = 30
+      modifier = {
+        factor = 1.6
+        trait = deceitful
+      }
+      modifier = {
+        factor = 100
+        trait = craven
+      }
+      modifier = {
+        factor = 2
+        trait = feeble
+      }
+      modifier = {
+        factor = 0.1
+        trait = wroth
+      }
+      modifier = {
+        factor = 0.5
+        trait = zealous
+      }
+      modifier = {
+        factor = 0.3
+        trait = brave
+      }
+      modifier = {
+    		factor = 0.1
+    		combat_rating >= 4
+    	}
+    }
+  }
+
+  ## stay and fight them
+  option = {
+    name = coteo_investigation.1520.b
+
+    custom_tooltip = { text = coteo_investigation.1510.b.tt }
+    hidden_tooltip = {
+      random_list = {
+        8 = { #win and get away
+          modifier = {
+            factor = 0.5
+            combat_rating <= 0
+          }
+          modifier = {
+            factor = 1.8
+            combat_rating >= 2
+          }
+          modifier = {
+            factor = 2.2
+            combat_rating >= 5
+          }
+          modifier = {
+            factor = 1.4
+            OR = {
+              trait = quick
+              trait = genius
+              trait = shrewd
+            }
+          }
+          random = {
+            chance = 60
+            modifier = {
+              factor = 0.2
+              combat_rating >= 6
+            }
+            add_trait = wounded
+          }
+          character_event = { id = coteo_investigation.1521 days = 2 random = 3 }
+        }
+        5 = { #getting abducted
+          modifier = {
+            factor = 7
+            combat_rating <= -6
+          }
+          ## WIP event that let's the liege investigate?
+          random_list = {
+            10 = { death = { death_reason = death_vanished } }
+            6 =  { death = { death_reason = death_murder_unknown } }
+            15 =  { death = { death_reason = death_accident_drowning } }
+          }
+        }
+      }
+    }
+
+    ai_chance = {
+      factor = 20
+      modifier = {
+        factor = 0
+        trait = craven
+      }
+      modifier = {
+        factor = 0.1
+        trait = feeble
+      }
+      modifier = {
+        factor = 40
+        trait = wroth
+      }
+      modifier = {
+        factor = 10
+        trait = brave
+      }
+    }
+  }
+  after = {
+    subtract_variable = { which = "eldritch_sanity" value = 9 }
+  }
+}
+
+## coteo_investigation.1521   # ambush by deep ones: won battle
+character_event  = {
+  id = coteo_investigation.1521
+
+  title = coteo_investigation.1521.title
+  desc = coteo_investigation.1521.desc
+  picture = GFX_evt_creepy_village
+
+  is_triggered_only = yes
+
+  option = {
+    name = coteo_investigation.1511.a
+
+    prestige = 10
+    piety = 10
+    change_martial = 1
+    character_event = { id = coteo_investigation.1860 days = 2 random = 3 }
+  }
+}
+
+## coteo_investigation.1860   # returned from investigation nearly killed
+character_event  = {
+  id = coteo_investigation.1860
+
+  title = coteo_investigation.1850.title
+  desc = coteo_investigation.1860.desc
+  picture = GFX_evt_harbour_town
+
+  is_triggered_only = yes
+  ## FromFromFrom is province, for now
+
+  ## that was close
+  option = {
+    name = coteo_investigation.1860.a
+
+    trigger = {
+      event_target:investigating_starter = {
+        NOT = { character = ROOT }
+      }
+    }
+
+    remove_trait = on_investigation
+    event_target:investigating_starter = {
+      clr_character_flag = eldritch_fishmen_sighted_started
+      character_event = { id = coteo_investigation.1861 days = 1 }
+    }
+    ai_chance = {
+      factor = 100
+    }
+  }
+  ## that was close
+  option = {
+    name = coteo_investigation.1860.b
+    trigger = {
+      event_target:investigating_starter = {
+        character = ROOT
+      }
+    }
+    remove_trait = on_investigation
+    clr_character_flag = eldritch_fishmen_sighted_started
+    any_realm_province = {
+      limit = { has_province_flag = cult_frightened_fishermen_investigating_province }
+      clr_province_flag = cult_frightened_fishermen_investigating_province
+    }
+    ai_chance = {
+      factor = 50
+    }
+  }
+  ## that was close, I shall know no mercy
+  option = {
+    name = coteo_investigation.1860.c
+    trigger = {
+      event_target:investigating_starter = {
+        character = ROOT
+      }
+    }
+    remove_trait = on_investigation
+    clr_character_flag = eldritch_fishmen_sighted_started
+    any_realm_province = {
+      limit = { has_province_flag = cult_frightened_fishermen_investigating_province }
+      add_province_modifier = {
+        name = cult_frightened_fishermen_vengeance
+        years = 3
+      }
+      remove_province_modifier = cult_frightened_fishermen
+      clr_province_flag = cult_frightened_fishermen_investigating_province
+    }
+    ai_chance = {
+      factor = 20
+      modifier = {
+        factor = 200
+        trait = wroth
+      }
+      modifier = {
+        factor = 200
+        trait = zealous
+      }
+    }
+  }
+}
+## coteo_investigation.1861   # reporting from investigation nearly killed
+character_event  = {
+  id = coteo_investigation.1861
+
+  title = coteo_investigation.1851.title
+  desc = coteo_investigation.1861.desc
+  picture = GFX_evt_harbour_town
+
+  is_triggered_only = yes
+
+  # ok
+  option = {
+    name = coteo_investigation.1861.a
+    any_realm_province = {
+      limit = { has_province_flag = cult_frightened_fishermen_investigating_province }
+      clr_province_flag = cult_frightened_fishermen_investigating_province
+    }
+  }
+  # no mercy
+  option = {
+    name = coteo_investigation.1861.b
+
+    any_realm_province = {
+      limit = { has_province_flag = cult_frightened_fishermen_investigating_province }
+      add_province_modifier = {
+        name = cult_frightened_fishermen_vengeance
+        years = 3
+      }
+      remove_province_modifier = cult_frightened_fishermen
+      clr_province_flag = cult_frightened_fishermen_investigating_province
+    }
+  }
+}
+
+## coteo_investigation.1850   # returned from investigation without anything happening (or atleast so is the claim)
+character_event  = {
+  id = coteo_investigation.1850
+
+  title = coteo_investigation.1850.title
+  desc = coteo_investigation.1850.desc
+  picture = GFX_evt_harbour_town
+
+  is_triggered_only = yes
+  ## FromFrom is province, for now
+
+  ## reports back
+  option = {
+    name = {
+      text = coteo_investigation.1850.a.a # nothing seen
+      trigger = {
+        NOT = { has_character_flag = strange_occurance_happened }
+        NOT = { trait = lunatic }
+      }
+    }
+    name = {
+      text = coteo_investigation.1850.a.b # lie
+      trigger = {
+        has_character_flag = strange_occurance_happened
+      }
+    }
+
+    trigger = {
+      event_target:investigating_starter = {
+        NOT = { character = ROOT }
+      }
+    }
+
+    remove_trait = on_investigation
+    event_target:investigating_starter = {
+      clr_character_flag = eldritch_fishmen_sighted_started
+      character_event = { id = coteo_investigation.1851 days = 1 }
+    }
+
+    ai_chance = {
+      factor = 20
+      modifier = {
+        factor = 50
+        trait = deceitful
+      }
+      modifier = {
+        factor = 30
+        intrigue = 10
+      }
+      modifier = {
+        factor = 30
+        intrigue = 15
+      }
+    }
+  }
+  ## insane
+  option = {
+    name = coteo_investigation.1850.b
+    trigger = {
+      OR = {
+        trait = lunatic
+        secret_religion_group = eldritch_gods_group
+      }
+      event_target:investigating_starter = {
+        NOT = { character = ROOT }
+      }
+    }
+    remove_trait = on_investigation
+    event_target:investigating_starter = {
+      clr_character_flag = eldritch_fishmen_sighted_started
+      character_event = { id = coteo_investigation.1852 days = 1 }
+    }
+    ai_chance = {
+      factor = 40
+      modifier = {
+        factor = 20
+        trait = lunatic
+      }
+    }
+  }
+  ## is yourself
+  option = {
+    name = coteo_investigation.1850.a.a
+    trigger = {
+      event_target:investigating_starter = {
+        character = ROOT
+      }
+    }
+    remove_trait = on_investigation
+    clr_character_flag = eldritch_fishmen_sighted_started
+    ai_chance = {
+      factor = 100
+    }
+  }
+
+  after = {
+    any_realm_province = {
+      limit = { has_province_flag = cult_frightened_fishermen_investigating_province }
+      clr_province_flag = cult_frightened_fishermen_investigating_province
+    }
+  }
+}
+## coteo_investigation.1851   # reporting from investigation without anything happening (or atleast so is the claim)
+character_event  = {
+  id = coteo_investigation.1851
+
+  title = coteo_investigation.1851.title
+  desc = coteo_investigation.1851.desc
+  picture = GFX_evt_harbour_town
+
+  is_triggered_only = yes
+
+  # ok
+  option = {
+    name = coteo_investigation.1850.a.a
+  }
+}
+## coteo_investigation.1852   # reporting from investigation being insane
+character_event  = {
+  id = coteo_investigation.1852
+
+  title = coteo_investigation.1852.title
+  desc = coteo_investigation.1852.desc
+  picture = GFX_evt_harbour_town
+
+  is_triggered_only = yes
+
+  # GUARDS!
+  option = {
+    name = coteo_investigation.1852.a
+    random_list = {
+      20 = {  ## lunatic dies
+        event_target:investigator = {
+          death = { death_reason = death_duel killer = ROOT }
+        }
+      }
+      15 = {   ## lunatic dies but injures
+        event_target:investigator = {
+          death = { death_reason = death_duel killer = ROOT }
+        }
+        add_trait = wounded
+      }
+      2 = {   ##
+        event_target:investigator = {
+          death = { death_reason = death_duel killer = ROOT }
+        }
+        death = { death_reason = death_murder killer = event_target:investigator }
+      }
+    }
+    hidden_tooltip = {
+      event_target:investigator = {
+        random = {
+          chance = 50
+          religion = eldritch_gods
+        }
+      }
+    }
+  }
+}
