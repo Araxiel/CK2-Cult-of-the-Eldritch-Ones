@@ -115,11 +115,11 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
 	spriteType = {
-	name = "GFX_evt_deep_one_03_large"
-	texturefile = "gfx\event_pictures\large\event_deep_one_03_large.dds"
-	noOfFrames = 1
-	norefcount = yes
-	effectFile = "gfx/FX/buttonstate.lua"
+		name = "GFX_evt_deep_one_03_large"
+		texturefile = "gfx\event_pictures\large\event_deep_one_03_large.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
 	}
 	spriteType = {
 		name = "GFX_evt_deep_ones_shore_01_large"
@@ -150,9 +150,9 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
 	spriteType = {
-	name = "GFX_evt_dark_altar"
-	texturefile = "gfx\event_pictures\event_altar_dark.dds"
-	allwaystransparent = yes
+		name = "GFX_evt_dark_altar"
+		texturefile = "gfx\event_pictures\event_altar_dark.dds"
+		allwaystransparent = yes
 	}
 	spriteType = {
 		name = "GFX_evt_dark_altar_large"
@@ -169,42 +169,50 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
 	spriteType = {
-	name = "GFX_evt_spooky_town"
-	texturefile = "gfx\event_pictures\event_spooky_town.dds"
-	allwaystransparent = yes
+		name = "GFX_evt_spooky_town"
+		texturefile = "gfx\event_pictures\event_spooky_town.dds"
+		allwaystransparent = yes
 	}
 	spriteType = {
-	name = "GFX_evt_flagelants"
-	texturefile = "gfx\event_pictures\event_flagelants.dds"
-	allwaystransparent = yes
+		name = "GFX_evt_flagelants"
+		texturefile = "gfx\event_pictures\event_flagelants.dds"
+		allwaystransparent = yes
 	}
 	spriteType = {
-	name = "GFX_evt_idol_altar"
-	texturefile = "gfx\event_pictures\event_altar_idol.dds"
-	allwaystransparent = yes
+		name = "GFX_evt_idol_altar"
+		texturefile = "gfx\event_pictures\event_altar_idol.dds"
+		allwaystransparent = yes
 	}
 	spriteType = {
-	name = "GFX_evt_spooky_village"
-	texturefile = "gfx\event_pictures\event_spooky_village.dds"
-	allwaystransparent = yes
+		name = "GFX_evt_spooky_village"
+		texturefile = "gfx\event_pictures\event_spooky_village.dds"
+		allwaystransparent = yes
 	}
 	spriteType = {
-	name = "GFX_evt_altar_skulls"
-	texturefile = "gfx\event_pictures\event_altar_skulls.dds"
-	allwaystransparent = yes
+		name = "GFX_evt_altar_skulls"
+		texturefile = "gfx\event_pictures\event_altar_skulls.dds"
+		allwaystransparent = yes
 	}
 
 
-	## Traits and other
+	##### Traits #####
+
 	spriteType = {
 		name = "GFX_trait_on_investigation"
-		texturefile = "gfx/traits/on_pilgrimage.tga"
+		texturefile = "gfx/other/on_investigation.dds"
 		noOfFrames = 1
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
 
-	##### Cult #####
+	##### Decisions #####
+
+	spriteType = {
+		name = "GFX_create_eldritch_cult"
+		texturefile = "gfx\\other\\decision_icon_eldritch.dds"
+	}
+
+	##### Society View #####
 
 	spriteType = {
 		name = "GFX_society_main_background_cult_of_eldritch"
