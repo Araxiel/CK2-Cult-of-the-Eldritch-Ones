@@ -33,7 +33,7 @@ province_event = {
   }
 
   mean_time_to_happen = {
-    years = 40
+    years = 50
     modifier = {
       factor = 0.7
       owner = { has_character_flag = eldritch_cult_curious }
@@ -41,6 +41,10 @@ province_event = {
     modifier = {
       factor = 0.9
       owner = { check_variable = { which = "eldritch_sanity" value <= -5 } }
+    }
+    modifier = {
+      factor = 0.9
+      demesne_eldritch_holy_site = yes
     }
   }
 
@@ -99,6 +103,9 @@ character_event  = {
         }
         trait = lunatic
       }
+      is_adult = yes
+      NOT = { trait = incapable }
+      NOT = { is_inaccessible_trigger = yes }
   	}
 
     custom_tooltip = { text = coteo_investigation.1001.a.tt }
@@ -148,6 +155,9 @@ character_event  = {
         liege = { character = PREVPREV }
         has_job_title = job_treasurer
         ai = yes # WIP potentially later your liege might send YOU
+        NOT = { trait = incapable }
+        NOT = { is_inaccessible_trigger = yes }
+        NOT = { has_any_opinion_modifier = send_me_on_scary_investigation }
       }
   	}
 
@@ -202,6 +212,9 @@ character_event  = {
         liege = { character = PREVPREV }
         has_job_title = job_spiritual
         ai = yes # WIP potentially later your liege might send YOU
+        NOT = { trait = incapable }
+        NOT = { is_inaccessible_trigger = yes }
+        NOT = { has_any_opinion_modifier = send_me_on_scary_investigation }
       }
   	}
 
@@ -299,7 +312,7 @@ character_event  = {
   }
 }
 
-# coteo_investigation.1002 Confirm decision
+# coteo_investigation.1002 Confirm decision ; hidden
 character_event = {
 	id = coteo_investigation.1002
 
@@ -359,7 +372,7 @@ narrative_event  = {
     }
 
     ai_chance = {
-    	factor = 20
+    	factor = 35
     }
   }
   # I better just leave
@@ -410,6 +423,7 @@ character_event  = {
     }
   }
 
+  # I shall follow this lead
   option = {
     name = coteo_investigation.1013.a
 
@@ -419,7 +433,7 @@ character_event  = {
     }
     if = {
       limit = { check_variable = { which = rng_value value == 2 } }
-      narrative_event = { id = coteo_investigation.1200 days = 5 random = 3 } #  strange people have been seen (leads to altar)
+      character_event = { id = coteo_investigation.1200 days = 5 random = 3 } #  strange people have been seen (leads to altar)
       set_character_flag = invstg_got_altar_directions
     }
   }
@@ -437,9 +451,9 @@ character_event  = {
 
   immediate = {
     random_list = {
+      1 = { set_variable = { which = rng_value value = 1 } } #  footsteps lead to actual deep ones
       5 = { set_variable = { which = rng_value value = 2 } } #  footsteps lead to altar
       #1 = { set_variable = { which = rng_value value = 3 } } #  footsteps lead to ruin
-      1 = { set_variable = { which = rng_value value = 1 } } #  footsteps lead to actual deep ones
     }
   }
 
@@ -448,11 +462,11 @@ character_event  = {
 
     if = {
       limit = { check_variable = { which = rng_value value == 1 } }
-      character_event = { id = coteo_investigation.1110 days = 5 random = 3 } #  strange footsteps (leads to either altar or ruin or deep ones)
+      narrative_event = { id = coteo_investigation.1520  days = 5 random = 3 } # ambush by deep ones
     }
     if = {
       limit = { check_variable = { which = rng_value value == 2 } }
-      narrative_event = { id = coteo_investigation.1520 days = 5 random = 3 } #  strange people have been seen (leads to altar)
+      character_event = { id = coteo_investigation.1200 days = 5 random = 3 } #  leads to altar
     }
   }
 }
@@ -467,8 +481,8 @@ character_event  = {
   immediate = {
     random_list = {
       1 = { narrative_event = { id = coteo_investigation.1201 days = 2 } }  #  strange idol on altar
-      1 = { narrative_event = { id = coteo_investigation.1202 days = 2 } }  #  found book
-      1 = { narrative_event = { id = coteo_investigation.1203 days = 2 } }  #  sacrificial altar
+      #1 = { narrative_event = { id = coteo_investigation.1202 days = 2 } }  #  found book
+      #1 = { narrative_event = { id = coteo_investigation.1203 days = 2 } }  #  sacrificial altar
     }
   }
 }
@@ -478,7 +492,7 @@ narrative_event  = {
 
   title = coteo_investigation.1201.title
   desc = coteo_investigation.1201.desc
-  picture = GFX_evt_altar_idol
+  picture = GFX_evt_idol_altar
 
   is_triggered_only = yes
 
@@ -486,15 +500,17 @@ narrative_event  = {
   option = {
     name = coteo_investigation.1201.a
 
-    narrative_event = { id = coteo_investigation.1202 days = 2 }
     piety = -25
-    subtract_variable = { which = "eldritch_sanity" value = 12 }
+    change_variable = { which = "eldritch_insight" value = 1 }
+    subtract_variable = { which = "eldritch_sanity" value = 5 }
+    narrative_event = { id = coteo_investigation.1202 days = 2 }
   }
 
   # break the idol
   option = {
     name = coteo_investigation.1201.b
 
+    piety = 25
     narrative_event = { id = coteo_investigation.1203 days = 2 }
   }
 
@@ -504,13 +520,12 @@ narrative_event  = {
 
     prestige = -15
     piety = -5
-    if = { limit = { NOT = { trait = craven } }
-      add_trait = craven }
+    if = { limit = { NOT = { trait = craven } } add_trait = craven }
     custom_tooltip = { text = coteo_investigation.1012.b.tt }
     hidden_tooltip = {
       random_list = {
         50 = { #nothing happens
-          character_event = { id = coteo_investigation.1850 days = 15 random = 15 }
+          character_event = { id = coteo_investigation.1850 days = 15 random = 15 } # leaves
           From = { remove_province_modifier = cult_frightened_fishermen_not_investigated }
         }
         12 = { narrative_event = { id = coteo_investigation.1510 days = 2 random = 3 } } #ambush by cultists
@@ -536,18 +551,28 @@ narrative_event  = {
 
   title = coteo_investigation.1202.title
   desc = coteo_investigation.1202.desc
-  picture = GFX_evt_altar_idol
+  picture = GFX_evt_idol_altar
 
   is_triggered_only = yes
 
-  # take the idol
+  # joink
   option = {
     name = coteo_investigation.1201.a
 
-    #narrative_event = { id = coteo_investigation.1202 days = 2 }
-    piety = -25
-    subtract_variable = { which = "eldritch_sanity" value = 12 }
+    subtract_variable = { which = "eldritch_sanity" value = 9 }
+    ## get the strange idol; artifact? modifier? dream?
 
+    ## leaving
+    hidden_tooltip = {
+      random_list = {
+        50 = { #nothing happens
+          character_event = { id = coteo_investigation.1850 days = 15 random = 15 } # leaves
+          From = { remove_province_modifier = cult_frightened_fishermen_not_investigated }
+        }
+        12 = { narrative_event = { id = coteo_investigation.1510 days = 2 random = 3 } } #ambush by cultists
+        6 = { narrative_event = { id = coteo_investigation.1520 days = 2 random = 3 } } #ambush by deep ones
+      }
+    }
   }
 }
 ## coteo_investigation.1203   # altar - break the idol
@@ -556,7 +581,7 @@ narrative_event  = {
 
   title = coteo_investigation.1203.title
   desc = coteo_investigation.1203.desc
-  picture = GFX_evt_altar_idol
+  picture = GFX_evt_idol_altar
 
   is_triggered_only = yes
 
@@ -564,9 +589,19 @@ narrative_event  = {
   option = {
     name = coteo_investigation.1203.a
 
-    #narrative_event = { id = coteo_investigation.1202 days = 2 }
-    piety = -25
-    subtract_variable = { which = "eldritch_sanity" value = 12 }
+    change_variable = { which = "eldritch_sanity" value = 14 }
+
+    ## leaving
+    hidden_tooltip = {
+      random_list = {
+        35 = { #nothing happens
+          character_event = { id = coteo_investigation.1850 days = 15 random = 15 } # leaves
+          From = { remove_province_modifier = cult_frightened_fishermen_not_investigated }
+        }
+        19 = { narrative_event = { id = coteo_investigation.1510 days = 2 random = 3 } } #ambush by cultists
+        6 = { narrative_event = { id = coteo_investigation.1520 days = 2 random = 3 } } #ambush by deep ones
+      }
+    }
 
   }
 }
@@ -584,9 +619,11 @@ character_event  = {
   option = {
     name = coteo_investigation.1225.a
 
-    random_list = {
-      18 = { character_event = { id = coteo_investigation.1200 days = 5 random = 3 } } #  you find altar
-      8 =  { character_event = { id = coteo_investigation.1020 days = 2 random = 3 } } #  deep ones tracks
+    hidden_tooltip = {
+      random_list = {
+        18 = { character_event = { id = coteo_investigation.1200 days = 5 random = 3 } } #  you find altar
+        8 =  { character_event = { id = coteo_investigation.1020 days = 2 random = 3 } } #  deep ones tracks
+      }
     }
   }
 }
@@ -729,7 +766,7 @@ narrative_event  = {
           }
           ## WIP event that let's the liege investigate?
           random_list = {
-            10 = { death = { death_reason = death_vanished } }
+            #10 = { death = { death_reason = death_vanished } }
             4 =  { death = { death_reason = death_murder_unknown } }
             #4 =  { death = { death_reason = death_accident_drowning } }
             #1 =  { death = { death_reason = death_murder_unknown_drowning } # no localization
@@ -767,6 +804,7 @@ narrative_event  = {
         check_variable = { which = "eldritch_sanity" value <= -40 }
         trait = lunatic
         ai = yes
+        check_variable = { which = "eldritch_insight" value >= 5 }
         # othere requirements, like idols and books and such
       }
     }
@@ -788,6 +826,7 @@ narrative_event  = {
     else = {
       #character_event = { id = coteo_investigation.5000 days = 1 random = 1 }
       set_secret_religion = eldritch_gods
+      character_event = { id = coteo_investigation.1850 days = 1 random = 1 } ## WIP
     }
     subtract_variable = { which = "eldritch_sanity" value = 8 }
 
@@ -906,8 +945,8 @@ narrative_event  = {
           ## WIP event that let's the liege investigate?
           random_list = {
             10 = { death = { death_reason = death_vanished } }
-            6 =  { death = { death_reason = death_murder_unknown } }
-            15 =  { death = { death_reason = death_accident_drowning } }
+            #6 =  { death = { death_reason = death_murder_unknown } }
+            #15 =  { death = { death_reason = death_accident_drowning } }
           }
         }
       }
