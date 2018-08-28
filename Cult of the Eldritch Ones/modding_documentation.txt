@@ -5,9 +5,6 @@ debugging:
 -------------------------------------------------------------------------------------------------------------------------------------
 These are some some important and general flags, modifiers or variables that are used to trigger various events:
 
-eldritch_kingdom_founded
-  - global_flag: easy way to check if the cultist have created a kingdom
-
 -------------------------------------------------------------------------------------------------------------------------------------
 These are some of the useful scripted effects and triggers that are used throughout the mod:
 
@@ -34,6 +31,7 @@ Common entities
 Religion:
   eldritch_gods_group
   eldritch_gods
+  aisura_god
 
 Society:
   cult_of_eldritch
@@ -42,6 +40,5 @@ Society:
 Overwrites
 
 interface/sound.sfx
-
-Society:
-  cult_of_eldritch
+interface/generalstuff.gfx
+decisions/mnm_secret_religious_societies_decisions.txt
