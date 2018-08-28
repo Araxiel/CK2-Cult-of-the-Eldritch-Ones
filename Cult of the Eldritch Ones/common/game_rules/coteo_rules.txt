@@ -26,6 +26,11 @@ coteo_startup_cult = {
 		desc = "coteo_startup_cult_off_desc"
 	}
 	option = {
+		name = dynamic
+		text = "RULE_EPIDEMICS_DYNAMIC"
+		desc = "coteo_startup_cult_dynamic_desc"
+	}
+	option = {
 		name = on
 		text = "RULE_OPTION_ON"
 		desc = "coteo_startup_cult_on_desc"

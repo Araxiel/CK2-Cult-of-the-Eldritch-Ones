@@ -70,21 +70,24 @@ demesne_eldritch_holy_site = {
   }
 }
 
+eldritch_ai_initiative_restricted = {
+  has_game_rule = {
+    name = coteo_ai_initiative
+    value = restricted
+  }
+}
 
+eldritch_ai_initiative_increased = {
+  has_game_rule = {
+    name = coteo_ai_initiative
+    value = more
+  }
+}
+
+## for now, only Europeans will be part of this
 cult_allowed_cultures = {
-  OR = {
-    true_religion_group = christian
-    true_religion_group = muslim
-    true_religion_group = jewish_group
-    true_religion_group = zoroastrian_group
-    true_religion = norse_pagan
-    true_religion = norse_pagan_reformed
-    true_religion = slavic_pagan
-    true_religion = slavic_pagan_reformed
-    true_religion = baltic_pagan
-    true_religion = baltic_pagan_reformed
-    true_religion = finnish_pagan
-    true_religion = finnish_pagan_reformed
+  capital_holding = {
+    region = world_europe
   }
 }
 

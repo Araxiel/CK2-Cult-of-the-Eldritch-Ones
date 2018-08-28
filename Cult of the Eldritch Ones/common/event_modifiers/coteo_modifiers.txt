@@ -32,7 +32,7 @@ coteo_mod_weird_book_found = {
   icon = 20
   learning = 2
   diplomacy_penalty = 1
-  ai_rationality = -10
+  #ai_rationality = -10
 }
 
 ##debug
