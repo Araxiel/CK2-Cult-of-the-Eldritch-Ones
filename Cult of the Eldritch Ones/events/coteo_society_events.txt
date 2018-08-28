@@ -1,0 +1,14 @@
+namespace = coteo_society
+
+# Feedback event for found_religious_cult decision
+character_event = {
+	id = coteo_society.100
+	desc = EVTDESC_MNM_3950
+	picture = GFX_evt_secret_ceremony
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_MNM_3950
+	}
+}

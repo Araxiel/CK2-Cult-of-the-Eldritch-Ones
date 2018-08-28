@@ -41,7 +41,10 @@ cult_of_eldritch = {
 		OR = {
 			has_eldritch_cult_society_prerequisites = yes
 			OR = {
-				true_religion_group = eldritch_gods_group
+				OR = {
+					secret_religion_group = eldritch_gods_group
+					true_religion_group = eldritch_gods_group
+				}
 				has_discovered_eldritch_cult = yes
 			}
 			society_member_of = cult_of_eldritch
@@ -54,7 +57,7 @@ cult_of_eldritch = {
 	}
 
 	active = {
-		NOT = { has_global_flag = eldritch_kingdom_founded }
+		NOT = { is_title_active = k_land_of_the_eldritch }
 		OR = {
 			has_game_rule = { name = coteo_startup_cult value = on	}
 			any_player  = {
@@ -76,8 +79,8 @@ cult_of_eldritch = {
 			#An sanity is on a yearly pulse (with a chance to do nothing)
 			secret_religions_induct_child
 			# Cult:
-			invite_family_to_cult
-			research_eldritch_arts
+			# invite_family_to_cult
+			# research_eldritch_arts
 		}
 
 		#custom_tooltip = unlockable_DW_powers_at_rank_2;
@@ -103,7 +106,7 @@ cult_of_eldritch = {
 			#Available Power: Abduction plot
 			secret_religions_induct_character
 			# Cult:
-			invite_to_cult
+			# invite_to_cult
 			#cult_drive_insane
 		}
 
@@ -130,7 +133,7 @@ cult_of_eldritch = {
 			#Available Power: Love Potion
 			secret_religions_prepare_grounds
 			#Cult:
-			summon_cult
+			# summon_cult
 		}
 
 		#custom_tooltip = unlockable_DW_powers_at_rank_4;
@@ -151,7 +154,7 @@ cult_of_eldritch = {
 			intrigue = 3
 		}
 		decisions = {
-			cultist_uprising
+			# cultist_uprising
 		}
 		obedience_tooltip = obedience_tooltip #this can be unique per rank/society
 		obedient = {

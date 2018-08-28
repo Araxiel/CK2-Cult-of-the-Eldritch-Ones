@@ -1,0 +1,78 @@
+decisions = {
+
+  create_eldritch_cult = {
+
+    only_playable = yes
+
+    #probability calc: 1 - ( ( 1 - {ai_factor} ) ^ {months} ) = x
+    ai_will_do = {
+      factor = 0.01
+      modifier = {
+        factor = 1.2
+        check_variable = { which = "eldritch_sanity" value <= -25 }
+      }
+      modifier = {
+        factor = 1.3
+        check_variable = { which = "eldritch_sanity" value <= -50 }
+      }
+      modifier = {
+        factor = 1.6
+        trait = cynical
+      }
+      modifier = {
+        factor = 1.4
+        has_evil_trait_trigger = yes
+      }
+      modifier = {
+        factor = 1.4
+        character_disease_trigger = yes
+      }
+      modifier = {
+        factor = 0
+        eldritch_ai_initiative_restricted = yes
+      }
+      modifier = {
+        factor = 3
+        eldritch_ai_initiative_increased = yes
+      }
+    }
+
+    is_high_prio = yes
+
+    potential = {
+      is_adult = yes
+      OR = {
+        secret_religion_group = eldritch_gods_group
+        religion_group = eldritch_gods_group
+      }
+      cult_of_eldritch = {
+        NOT = {
+          any_society_member = { always = yes }
+        }
+      }
+    }
+
+    allow = {
+			prestige = 250
+      OR = {
+        secret_religion_group = eldritch_gods_group
+        religion_group = eldritch_gods_group
+      }
+      prisoner = no
+      NOT = { trait = incapable }
+      NOT = { is_inaccessible_trigger = yes }
+      NOT = { is_in_society = yes }
+      NOT = { is_title_active = k_land_of_the_eldritch }
+    }
+
+    effect = {
+      character_event = { id = coteo_society.100 }
+			prestige = -250
+			join_society = cult_of_eldritch
+			set_society_grandmaster = yes # Set character as Grand Master
+			add_society_currency_massive_effect = yes # Give the Grand Master a start-up capital to induct members
+    }
+
+  }
+
+}
