@@ -1,0 +1,282 @@
+namespace = coteo_janitor
+
+# coteo_janitor.10 # general
+character_event = {
+  id = coteo_janitor.10
+
+  hide_window = yes
+  is_triggered_only = yes
+
+  immediate = {
+    activate_title = { title = k_land_of_the_eldritch status = no }
+  }
+}
+
+
+## coteo_janitor.4000 # yearly insanity regulation
+character_event  = {
+  id = coteo_janitor.4000
+
+  hide_window = yes
+  is_triggered_only = yes
+
+  immediate = {
+
+    if = {
+      limit = { check_variable = { which = "eldritch_sanity" value <= 25 } }
+      random_list = {
+        1 = { change_variable = { which = "eldritch_sanity" value = 0 } }
+        2 = { change_variable = { which = "eldritch_sanity" value = 1 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = 2 } }
+      }
+    }
+    if = {
+      limit = { check_variable = { which = "eldritch_sanity" value <= -25 } }
+      random_list = {
+        10 = { change_variable = { which = "eldritch_sanity" value =  0 } }
+        5  = { change_variable = { which = "eldritch_sanity" value =  1 } }
+        4  = { change_variable = { which = "eldritch_sanity" value = -2 } }
+      }
+    }
+    if = {
+      limit = {
+        OR = {
+          has_focus = focus_hunting
+          has_focus = focus_carousing
+          has_focus = focus_family
+        }
+      }
+      random_list = {
+        1 = { change_variable = { which = "eldritch_sanity" value = 2 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = 4 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = 7 } }
+      }
+    }
+    if = {
+      limit = { trait = depressed }
+      random_list = {
+        1 = { change_variable = { which = "eldritch_sanity" value = -2 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = -4 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = -7 } }
+      }
+    }
+    if = {
+      limit = {
+        OR = {
+          trait = possessed
+          trait = lunatic
+          trait = mystic
+        }
+      }
+      random_list = {
+        1 = { change_variable = { which = "eldritch_sanity" value = -4 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = -8 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = -12 } }
+      }
+    }
+    if = {
+      limit = {
+        has_character_flag = eldritch_cult_curious
+        not_yet_woke = no
+      }
+      clr_character_flag = eldritch_cult_curious
+    }
+    if = {
+      limit = {
+        NOT = { has_character_modifier = coteo_mod_weird_book_found }
+      }
+      clr_character_flag = has_read_eldritch_book
+    }
+
+  }
+}
+
+
+namespace = coteo_debug
+
+# coteo_debug.10 # general
+character_event = {
+  id = coteo_debug.10
+
+  title = coteo_debug.10.title
+  desc = coteo_debug.10.desc
+  picture = GFX_evt_idol_altar
+
+  trigger = { always = no }
+
+  mean_time_to_happen = {
+    years = 100
+  }
+
+  option = {
+    name = coteo_debug.10.a
+	  set_secret_religion = eldritch_gods
+  }
+  option = {
+    name = coteo_debug.10.b
+    change_variable = { which = "eldritch_insight" value = 5 }
+    change_variable = { which = "eldritch_sanity" value = -40 }
+  }
+  option = {
+    name = coteo_debug.10.c
+
+    capital_scope = {
+      add_holding_slot = 1
+      build_holding  ={
+        type = temple
+      }
+    }
+  }
+}
+
+# coteo_debug.10 # conversion
+narrative_event = {
+  id = coteo_debug.11
+
+  title = coteo_debug.10.title
+  desc = coteo_debug.10.desc
+  picture = GFX_evt_flagelants
+
+  trigger = { always = no }
+
+  mean_time_to_happen = {
+    years = 100
+  }
+
+  option = {
+    name = coteo_debug.11.a
+    any_character = {
+      limit = {
+        independent = no
+        liege = { character = PREVPREV }
+      }
+      religion = eldritch_gods
+    }
+    any_realm_province = {
+      religion = eldritch_gods
+    }
+    religion = eldritch_gods
+  }
+
+  option = {
+    name = coteo_debug.11.b
+    any_character = {
+      limit = {
+        independent = no
+        liege = { character = PREVPREV }
+      }
+      religion = aisura_god
+    }
+    any_realm_province = {
+      religion = aisura_god
+    }
+    religion = aisura_god
+  }
+
+  option = {
+    name = coteo_debug.11.c
+    any_character = {
+      limit = {
+        independent = no
+        liege = { character = PREVPREV }
+      }
+      religion = naahab_god
+    }
+    any_realm_province = {
+      religion = naahab_god
+    }
+    religion = naahab_god
+  }
+
+  option = {
+    name = coteo_debug.11.d
+    any_character = {
+      limit = {
+        independent = no
+        liege = { character = PREVPREV }
+      }
+      religion = qushakon_god
+    }
+    any_realm_province = {
+      religion = qushakon_god
+    }
+    religion = qushakon_god
+  }
+}
+
+# coteo_debug.20 #fishing town investigation
+character_event = {
+  id = coteo_debug.20
+
+  title = coteo_debug.10.title
+  desc = coteo_debug.10.desc
+  picture = GFX_evt_harbour_town
+
+  trigger = { always = no }
+
+  mean_time_to_happen = {
+    years = 100
+  }
+
+  option = {
+    name = "OK"
+
+    clr_character_flag = eldritch_fishmen_sighted_started
+	  random_demesne_province = {
+      limit = {
+        OR = {
+          port = yes
+          borders_major_river = yes
+        }
+      }
+      remove_province_modifier = cult_frightened_fishermen
+      remove_province_modifier = cult_frightened_fishermen_not_investigated
+      clr_province_flag = cult_frightened_fishermen_investigating_province
+      add_province_modifier = {
+        name = province_debug_modifier
+        days = 10
+      }
+      province_event = { id = coteo_investigation.1000 }
+    }
+  }
+}
+
+# coteo_debug.510 # general
+character_event = {
+  id = coteo_debug.510
+
+  title = coteo_debug.10.title
+  desc = coteo_debug.10.desc
+  picture = GFX_evt_idol_altar
+
+  trigger = { always = no }
+
+  mean_time_to_happen = {
+    years = 100
+  }
+
+  option = {
+    name = coteo_debug.10.a
+    random_courtier = {
+      death = { death_reason = death_murder_unknown killer = ROOT }
+    }
+  }
+  option = {
+    name = coteo_debug.10.b
+    random_courtier = {
+      death = { death_reason = death_missing }
+    }
+  }
+  option = {
+    name = coteo_debug.10.c
+    random_courtier = {
+      death = { death_reason = death_accident_drowning }
+    }
+  }
+  option = {
+    name = coteo_debug.10.d
+    random_courtier = {
+      death = { death_reason = death_murder_unknown_drowning killer = ROOT }
+    }
+  }
+}
