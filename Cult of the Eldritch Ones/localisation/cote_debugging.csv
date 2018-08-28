@@ -4,9 +4,13 @@ coteo_debugging;§ZCult of the Eldritch Ones:§! Debugging;;;;;;
 coteo_debug.10.title;§ZCult of the Eldritch Ones:§! Debugging;;;;;;
 coteo_debug.10.desc;§ZCult of the Eldritch Ones:§! Debugging;;;;;;
 coteo_debug.10.a;§ZSecretly Convert§!;;;;;;
-coteo_debug.10.b;§ZConvert Realm§!;;;;;;
+coteo_debug.10.b;§ZGain Insight§!;;;;;;
 coteo_debug.10.c;§GBuild Temple§!;;;;;;
-coteo_debug.10.d;§GJoin Society§!;;;;;;
+
+coteo_debug.11.a;§ZConvert Realm to Eldritch§!;;;;;;
+coteo_debug.11.b;§ZConvert Realm to Aisura§!;;;;;;
+coteo_debug.11.c;§ZConvert Realm to Naahab§!;;;;;;
+coteo_debug.11.d;§ZConvert Realm to Qushakon§!;;;;;;
 
 province_debug_modifier;§RDebug Modifier§!;;;;;;
 province_debug_modifier_desc;§RDebug Modifier§!;;;;;;

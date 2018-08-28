@@ -1,15 +1,17 @@
 k_land_of_the_eldritch = {
-  color={ 139   0 139 }
-  color2={ 255 255 255 }
+  color={ 128 38 204 }
+  color2={ 40 40 40 }
+
+  short_name = yes
 
   allow = {
-    always = no
+    religion_group = eldritch_gods_group
+    has_global_flag = cult_revolt_happened
   }
 
-  # landless = no
+  landless = no
   # makes sure generated holder is this religion
   religion = eldritch_gods
-
 }
 
 d_eldritch_high_temple = {
@@ -17,39 +19,149 @@ d_eldritch_high_temple = {
   color2={ 255 255 255 }
 
   title = "eldritch_high_temple"
+  short_name = yes
+
+  allow = {
+    has_global_flag = cult_revolt_happened
+    num_of_holy_sites = 3
+  }
+
+  primary = yes
+  dynasty_title_names = no
+  #landless = yes
+  capital = 7 # Orkney
+  creation_requires_capital = no
+  # makes sure the generated religious head is this religion
+  religion = eldritch_gods
+  controls_religion = eldritch_gods
+}
+
+d_aisura_high_temple = {
+  color={ 139   0 139 }
+  color2={ 255 255 255 }
+
+  title = "aisura_high_temple"
+  short_name = yes
+
+  allow = {
+    has_global_flag = cult_revolt_happened
+    num_of_holy_sites = 3
+  }
+
+  primary = yes
+  dynasty_title_names = no
+  capital = 7 # Orkney
+  creation_requires_capital = no
+  # makes sure the generated religious head is this religion
+  religion = aisura_god
+  controls_religion = aisura_god
+}
+
+k_naahab_high_temple = {
+  color={ 139   0 139 }
+  color2={ 255 255 255 }
+
+  title = "naahab_high_temple"
+  short_name = yes
+
+  allow = {
+    has_global_flag = cult_revolt_happened
+    num_of_holy_sites = 3
+  }
+
+  primary = yes
+  #landless = yes
+
+  capital = 7 # Orkney
+  creation_requires_capital = no
+  location_ruler_title = yes  # "Pope in Rome"
+  # makes sure the generated religious head is this religion
+  religion = naahab_god
+  controls_religion = naahab_god
+}
+
+## (un)holy order
+
+d_templars_of_naahab = {
+  color={ 230 230 230 }
+  color2={ 153 51 102 }  # rgb(153, 51, 102)
+
+  graphical_culture = holygfx
+
+  capital = 7 # Orkney
 
   allow = {
     always = no
   }
 
-  primary = yes
-  dynasty_title_names = no
-  # landless = no
-  capital = 7 # Orkney
-  creation_requires_capital = no
-  # makes sure the generated religious head is this religion
-  religion = eldritch_gods
+  title = "GRANDMASTER"
+  foa = "GRANDMASTER_FOA"
 
-  controls_religion = eldritch_gods
+  # Always exists
+  landless = yes
+
+  holy_order = yes
+  mercenary_type = teutonic_order_composition
+
+  # Parent Religion
+  religion = naahab_god
+
+  # Cannot be held as a secondary title
+  primary = yes
+
+  # Extra income due to banking, etc
+  monthly_income = 25 # (Must be an integer between 1 and 512)
 }
+
+d_warriors_of_qushakon = {
+	color={ 230 230 230 }
+	color2={ 79 37 203 } # rgb(79, 37, 203)
+
+	capital = 7 # Orkney
+
+  allow = {
+    always = no
+  }
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+  graphical_culture = norseholygfx
+	mercenary_type = jomsvikings_composition
+
+	# Parent Religion
+	religion = qushakon_god
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to banking, etc
+	monthly_income = 4 # (Must be an integer between 1 and 512)
+}
+
+# vanilla counties
 
 c_vestisland = {
   holy_site = eldritch_gods
-  b_skalholt = { pentarchy = eldritch_gods }
+  b_skalholt = { pentarchy = qushakon_god }
 }
 c_lancaster = {
   holy_site = eldritch_gods
-  b_furness = { pentarchy = eldritch_gods }
+  b_furness = { pentarchy = qushakon_god }
 }
 c_fyn = {
   holy_site = eldritch_gods
-  b_odense = { pentarchy = eldritch_gods }
+  b_odense = { pentarchy = qushakon_god }
 }
 c_rogaland = {
   holy_site = eldritch_gods
-  # b_roldal = { pentarchy = yes }
+  b_roldal = { pentarchy = qushakon_god }
 }
 c_orkney = {
   holy_site = eldritch_gods
-  b_kirkwall = { pentarchy = eldritch_gods }
+  b_kirkwall = { pentarchy = qushakon_god }
 }
