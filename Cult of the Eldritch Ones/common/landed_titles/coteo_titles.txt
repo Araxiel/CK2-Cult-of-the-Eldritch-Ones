@@ -1,4 +1,4 @@
-k_land_of_the_eldritch = {
+k_eldritch_kingdom = {
   color={ 128 38 204 }
   color2={ 40 40 40 }
 
@@ -11,8 +11,25 @@ k_land_of_the_eldritch = {
 
   landless = no
   # makes sure generated holder is this religion
-  religion = eldritch_gods
 }
+
+e_eldritch_empire = {
+  color={ 128 38 190 }
+  color2={ 40 40 40 }
+
+  short_name = yes
+
+  allow = {
+    religion_group = eldritch_group
+    has_global_flag = cult_revolt_happened
+    has_global_flag = can_create_eldritch_empire
+  }
+
+  landless = no
+  # makes sure generated holder is this religion
+}
+
+## religious
 
 d_eldritch_high_temple = {
   color={ 139   0 139 }
@@ -50,7 +67,7 @@ d_aisura_high_temple = {
 
   primary = yes
   dynasty_title_names = no
-  capital = 7 # Orkney
+  capital = 230 # Nice
   creation_requires_capital = no
   # makes sure the generated religious head is this religion
   religion = aisura_god
@@ -72,7 +89,7 @@ k_naahab_high_temple = {
   primary = yes
   #landless = yes
 
-  capital = 7 # Orkney
+  capital = 58 # Lancaster
   creation_requires_capital = no
   location_ruler_title = yes  # "Pope in Rome"
   # makes sure the generated religious head is this religion
@@ -82,16 +99,48 @@ k_naahab_high_temple = {
 
 ## (un)holy order
 
+d_eldritch_order = {
+  color={ 230 230 230 }
+  color2={ 79 37 203 } # rgb(79, 37, 203)
+
+  capital = 7 # Orkney
+
+  allow = {
+    has_global_flag = cult_revolt_happened
+    religion = eldritch_gods
+  }
+
+  title = "GRANDMASTER"
+  foa = "GRANDMASTER_FOA"
+
+  # Always exists
+  landless = yes
+
+  holy_order = yes
+  graphical_culture = holygfx
+  mercenary_type = jomsvikings_composition
+
+  # Parent Religion
+  religion = eldritch_gods
+
+  # Cannot be held as a secondary title
+  primary = yes
+
+  # Extra income due to banking, etc
+  monthly_income = 6 # (Must be an integer between 1 and 512)
+}
+
 d_templars_of_naahab = {
   color={ 230 230 230 }
   color2={ 153 51 102 }  # rgb(153, 51, 102)
 
   graphical_culture = holygfx
 
-  capital = 7 # Orkney
+  capital = 58 # Lancaster
 
   allow = {
-    always = no
+    has_global_flag = cult_revolt_happened
+    religion = naahab_god
   }
 
   title = "GRANDMASTER"
@@ -110,17 +159,18 @@ d_templars_of_naahab = {
   primary = yes
 
   # Extra income due to banking, etc
-  monthly_income = 25 # (Must be an integer between 1 and 512)
+  monthly_income = 10 # (Must be an integer between 1 and 512)
 }
 
 d_warriors_of_qushakon = {
 	color={ 230 230 230 }
 	color2={ 79 37 203 } # rgb(79, 37, 203)
 
-	capital = 7 # Orkney
+	capital = 265 # Fyn
 
   allow = {
-    always = no
+    has_global_flag = cult_revolt_happened
+    religion = qushakon_god
   }
 
 	title = "GRANDMASTER"

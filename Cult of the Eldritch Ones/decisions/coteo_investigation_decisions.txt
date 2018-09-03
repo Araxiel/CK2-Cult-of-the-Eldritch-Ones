@@ -50,6 +50,7 @@ decisions = {
           any_society_member = { always = yes }
         }
       }
+      NOT = { is_title_active = k_eldritch_kingdom }
     }
 
     allow = {
@@ -62,7 +63,10 @@ decisions = {
       NOT = { trait = incapable }
       NOT = { is_inaccessible_trigger = yes }
       NOT = { is_in_society = yes }
-      NOT = { is_title_active = k_land_of_the_eldritch }
+      hidden_tooltip = {
+        NOT = { eldritch_ai_initiative_restricted = yes }
+      }
+    }
     }
 
     effect = {

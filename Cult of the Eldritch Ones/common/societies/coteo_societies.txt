@@ -50,6 +50,7 @@ cult_of_eldritch = {
 			society_member_of = cult_of_eldritch
 			coteo_debugging_on = yes
 		}
+		NOT = { is_title_active = k_eldritch_kingdom }
 	}
 
 	potential = {
@@ -57,7 +58,7 @@ cult_of_eldritch = {
 	}
 
 	active = {
-		NOT = { is_title_active = k_land_of_the_eldritch }
+		NOT = { is_title_active = k_eldritch_kingdom }
 		OR = {
 			has_game_rule = { name = coteo_startup_cult value = on	}
 			any_player  = {

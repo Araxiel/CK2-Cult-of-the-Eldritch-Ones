@@ -8,10 +8,147 @@ character_event = {
   is_triggered_only = yes
 
   immediate = {
-    activate_title = { title = k_land_of_the_eldritch status = no }
+    activate_title = { title = e_eldritch_empire status = no }
+    activate_title = { title = k_eldritch_kingdom status = no }
+    activate_title = { title = d_eldritch_high_temple status = no }
+    activate_title = { title = d_aisura_high_temple status = no }
+    activate_title = { title = k_naahab_high_temple status = no }
+    activate_title = { title = d_eldritch_order status = no }
+    activate_title = { title = d_templars_of_naahab status = no }
+    activate_title = { title = d_warriors_of_qushakon status = no }
+
   }
 }
 
+## coteo_janitor.2000 # bi-yearly secret pollination
+character_event  = {
+  id = coteo_janitor.2000
+
+  hide_window = yes
+  is_triggered_only = yes
+  ai = no
+
+  immediate = {
+
+    ###   WIP WHILE
+    while = {
+      count = 5
+      random_independent_ruler = {
+        limit = {
+          NOT = { true_religion_group = eldritch_group }
+        }
+        create_character = {
+          random_traits = yes
+          dynasty = none
+          culture = THIS
+          religion = THIS
+          trait = cynical
+        }
+        new_character = {
+          set_secret_religion = eldritch_gods
+          log = "Created lowborn secret eldritch believer person named [This.GetBestName] in [Prev.PrimaryTitle.GetBestName]"
+          random = {
+            chance = 10
+            add_trait = lunatic
+          }
+        }
+      }
+    }
+    random_player = {
+      random_neighbor_independent_ruler = {
+        limit = {
+          NOT = { true_religion_group = eldritch_group }
+        }
+        create_character = {
+          random_traits = yes
+          dynasty = none
+          culture = THIS
+          religion = THIS
+          trait = cynical
+        }
+        new_character = {
+          set_secret_religion = eldritch_gods
+          log = "Created lowborn secret eldritch believer person named [This.GetBestName] in [Prev.PrimaryTitle.GetBestName]"
+          random = {
+            chance = 10
+            add_trait = lunatic
+          }
+        }
+      }
+    }
+    random_player = {
+      random_neighbor_independent_ruler = {
+        limit = {
+          NOT = { true_religion_group = eldritch_group }
+        }
+        create_character = {
+          random_traits = yes
+          dynasty = none
+          culture = THIS
+          religion = THIS
+          trait = cynical
+        }
+        new_character = {
+          set_secret_religion = eldritch_gods
+          log = "Created lowborn secret eldritch believer person named [This.GetBestName] in [Prev.PrimaryTitle.GetBestName]"
+          random = {
+            chance = 10
+            add_trait = lunatic
+          }
+        }
+      }
+    }
+    while = {
+    	count = 2
+      random_player = {
+        random_realm_character = {
+          limit = {
+            NOT = { true_religion_group = eldritch_group }
+          }
+          create_character = {
+            random_traits = yes
+            dynasty = none
+            culture = THIS
+            religion = THIS
+            trait = cynical
+          }
+          new_character = {
+            set_secret_religion = eldritch_gods
+            log = "Created lowborn secret eldritch believer person named [This.GetBestName] in [Prev.PrimaryTitle.GetBestName]"
+            random = {
+              chance = 10
+              add_trait = lunatic
+            }
+          }
+        }
+      }
+    }
+    random = {
+      chance = 10
+      random_player = {
+        limit = {
+          NOT = { true_religion_group = eldritch_group }
+        }
+        create_character = {
+          random_traits = yes
+          dynasty = none
+          culture = THIS
+          religion = THIS
+          trait = cynical
+        }
+        new_character = {
+          set_secret_religion = eldritch_gods
+          log = "Created lowborn secret eldritch believer person named [This.GetBestName] in [Prev.PrimaryTitle.GetBestName]"
+          random = {
+            chance = 10
+            add_trait = lunatic
+          }
+        }
+      }
+    }
+
+  }
+}
 
 ## coteo_janitor.4000 # yearly insanity regulation
 character_event  = {
@@ -90,7 +227,6 @@ character_event  = {
 
   }
 }
-
 
 namespace = coteo_debug
 

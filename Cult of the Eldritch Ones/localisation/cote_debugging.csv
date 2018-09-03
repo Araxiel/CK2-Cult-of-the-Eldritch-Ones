@@ -7,10 +7,13 @@ coteo_debug.10.a;§ZSecretly Convert§!;;;;;;
 coteo_debug.10.b;§ZGain Insight§!;;;;;;
 coteo_debug.10.c;§GBuild Temple§!;;;;;;
 
-coteo_debug.11.a;§ZConvert Realm to Eldritch§!;;;;;;
-coteo_debug.11.b;§ZConvert Realm to Aisura§!;;;;;;
-coteo_debug.11.c;§ZConvert Realm to Naahab§!;;;;;;
-coteo_debug.11.d;§ZConvert Realm to Qushakon§!;;;;;;
+coteo_debug.2001.a;§ZConvert Realm to Eldritch§!;;;;;;
+coteo_debug.2001.b;§ZConvert Realm to Aisura§!;;;;;;
+coteo_debug.2001.c;§ZConvert Realm to Naahab§!;;;;;;
+coteo_debug.2001.d;§ZConvert Realm to Qushakon§!;;;;;;
 
 province_debug_modifier;§RDebug Modifier§!;;;;;;
 province_debug_modifier_desc;§RDebug Modifier§!;;;;;;
+
+debug_stumble_upon;§RDebug Stumble Upon Event§!;;;;;;
+debug_stumble_upon_desc;§RDebug Stumble Upon Event§!;;;;;;

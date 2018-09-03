@@ -23,7 +23,9 @@ eldritch_gods_DESC;The Eldritch Gods are beings from a different world, seeking 
 THE_NECRONOMICON;The Necronomicon;Le Necronomicon; Das Necronomicon;;;;
 ACOLYTE;Acolyte;;;;;;
 KEEPER;Keeper;;;;;;
-FAVOR;Favor;;;;;;
+VASSAL_ACOLYTE;Vassal Acolyte;;;;;;
+VASSAL_KEEPER;Vassal Keeper;;;;;;
+KNOWLEDGE;Knowledge;;;;;;
 STAT_PIETY_FAVOR;Favor;;;;;;
 GOD_OLD_ONES;The Old Ones;;;;;;
 GOD_GREAT_OLD_ONES;Great Old Ones;;;;;;
@@ -40,22 +42,26 @@ GOD_NAAHAB;Naahab;;;;;;
 qushakon_god;Qushakon;;;;;;
 qushakon_god_DESC;Qushakon is the Eldritch Thing and undisputed ruler of the deep. He appears as a swirling, black vortex in the shape of a great serpent, slithering through the unknown darkness. While his domain is the deep dark sea, he can travel through any unknown darkness, no matter the element. For him and his followers, all that are unworthy are prey to be tormented and devoured.;;;;;;
 GOD_QUASHAKON;Qushakon;;;;;;
+GOD_ORMTAN;Ormtan;;;;;;
+ormtan_god;Ormtan;;;;;;
+ormtan_god_DESC;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat. WIP.;;;;;;
 d_aisura_high_temple;Aisura's Priest of Priests;;;;;;
 d_aisura_high_temple_adj;Aisura's Domain;;;;;;
 aisura_high_temple;Aisura's Priest of Priests;;;;;;
 k_naahab_high_temple;Naahab's Grand Keeper;;;;;;
 k_naahab_high_temple_adj;Naahab's Domain;;;;;;
 naahab_high_temple;Grand Keeper of Knowledge;;;;;;
-d_templars_of_naahab;Dark Combine;;;;;;
-d_templars_of_naahab_adj;Dark Combine;;;;;;
-d_warriors_of_qushakon;Warriors of Qushakon;;;;;;
-d_warriors_of_qushakon_adj;Qushakon;;;;;;
 
-temple_empire_eldritch_group;Ier�sylocracy;Ier�sylocracy;Ier�sylokratie;;Ier�sylocracia;;;;;;;;;x ## ier�sylos = unholy
-temple_kingdom_eldritch_group;Ier�sylocracy;Ier�sylocracy;Ier�sylokratie;;Ier�sylocracia;;;;;;;;;x
+temple_empire_eldritch_group;Imperial Ier�sylocracy;Ier�sylocracy;Ier�sylokratie;;Ier�sylocracia;;;;;;;;;x ## ier�sylos = unholy
+temple_empire_of_eldritch_group;Imperial Ier�sylocracy;Ier�sylocracy;Ier�sylokratie;;Ier�sylocracia;;;;;;;;;x ## ier�sylos = unholy
+temple_kingdom_eldritch_group;Great Ier�sylocracy;Ier�sylocracy;Ier�sylokratie;;Ier�sylocracia;;;;;;;;;x
+temple_kingdom_of_eldritch_group;Great Ier�sylocracy;Ier�sylocracy;Ier�sylokratie;;Ier�sylocracia;;;;;;;;;x
 temple_duchy_eldritch_group;Ier�sylocracy;Ier�sylocracy;Ier�sylokratie;;Ier�sylocracia;;;;;;;;;x
+temple_duchy_of_eldritch_group;Ier�sylocracy;Ier�sylocracy;Ier�sylokratie;;Ier�sylocracia;;;;;;;;;x
 temple_county_eldritch_group;Great Temple;Ier�sylocracy;Ier�sylokratie;;Ier�sylocracia;;;;;;;;;x
+temple_county_of_eldritch_group;Great Temple of;Ier�sylocracy;Ier�sylokratie;;Ier�sylocracia;;;;;;;;;x
 temple_barony_eldritch_group;Temple;Temple;Tempel;;Templo;;;;;;;;;x
+temple_barony_of_eldritch_group;Temple;Temple;Tempel;;Templo;;;;;;;;;x
 
 emperor_king_eldritch_group;Unholy Emperor;Empereur-�v�que;Priesterkaiser;;Emperador-obispo;;;;;;;;;x
 temple_emperor_female_eldritch_group;Unholy Empress;Imp�ratrice;Kaiserin;;Emperatriz;;;;;;;;;x
@@ -93,24 +99,30 @@ cult_of_eldritch_rank_4_male;Master;;;;;;
 cult_of_eldritch_rank_4_female;Mistress;;;;;;
 
 ## Realm;;;;;;;
-#;;;;;;;
-k_land_of_the_eldritch;Land of the Eldritch;;;;;;
-k_land_of_the_eldritch_adj;Eldritch;;;;;;
-#;;;;;;;
+
+k_eldritch_kingdom;Eldritch;;;;;;
+k_eldritch_kingdom_adj;Eldritch;;;;;;
+e_eldritch_empire;Eldritch Empire;;;;;;
+e_eldritch_empire_adj;Eldritch;;;;;;
+d_templars_of_naahab;Dark Combine;;;;;;
+d_templars_of_naahab_adj;Dark Combine;;;;;;
+d_warriors_of_qushakon;Warriors of Qushakon;;;;;;
+d_warriors_of_qushakon_adj;Qushakon Lodge;;;;;;
+d_eldritch_order;Eldritch Order;;;;;;
+d_eldritch_order_adj;Eldritch Order;;;;;;
+
+job_spiritual_eldritch_gods;Court Acolyte;;;;;;
+
 ## Traits and Misc;;;;;;;
 
 on_investigation;On Investigation;;;;;;
 on_investigation_desc;This character is currently away, investigating strange rumors.;;;;;;
 send_me_on_scary_investigation;Send Me on Scary Investigation;;;;;;
-#;;;;;;;
+eldritch_insight;�GEldritch Insight�!;;;;;;
+eldritch_proof;�ZEldritch Proof�!;;;;;;
+eldritch_sanity;Sanity;;;;;;
+
 ## Decisions;;;;;;;
 
 create_eldritch_cult;Found Eldritch Cult;;;;;;
 create_eldritch_cult_desc;Set out by yourself to spread the truth about these awesome Eldritch beings.;;;;;;
-
-
-# Events
-coteo_investigation.1001.b;I will send [investigating_treasurer.GetMyTreasurerName] [investigating_treasurer.GetFirstName] to investigate.;;;;;;
-coteo_investigation.1001.b.tt;�Y[investigating_treasurer.GetFirstName]�! will be send to investigate the �Ystrange sightings�!.;;;;;;
-coteo_investigation.1001.c;I will send [investigating_treasurer.GetLordSpiritualName] [investigating_chaplain.GetFirstName] to investigate.;;;;;;
-coteo_investigation.1001.c.tt;�Y[investigating_chaplain.GetFirstName]�! will be send to investigate the �Ystrange sightings�!.;;;;;;
