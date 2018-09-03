@@ -67,6 +67,73 @@ decisions = {
         NOT = { eldritch_ai_initiative_restricted = yes }
       }
     }
+
+    effect = {
+      character_event = { id = coteo_society.100 }
+			prestige = -250
+			join_society = cult_of_eldritch
+			set_society_grandmaster = yes # Set character as Grand Master
+			add_society_currency_major_effect = yes # Give the Grand Master a start-up capital to induct members
+
+      log = "Eldritch Cult: ----> [Root.GetBestName] -> Created Eldritch Cult"
+    }
+  }
+
+  adopt_eldritch = {
+
+    only_playable = yes
+
+
+    #probability calc: 1 - ( ( 1 - {ai_factor} ) ^ {months} ) = x
+    ai_will_do = {
+      factor = 0.01
+      modifier = {
+        factor = 1.2
+        check_variable = { which = "eldritch_sanity" value <= -25 }
+      }
+      modifier = {
+        factor = 1.3
+        check_variable = { which = "eldritch_sanity" value <= -50 }
+      }
+      modifier = {
+        factor = 1.6
+        trait = cynical
+      }
+      modifier = {
+        factor = 1.4
+        has_evil_trait_trigger = yes
+      }
+      modifier = {
+        factor = 1.4
+        character_disease_trigger = yes
+      }
+      modifier = {
+        factor = 3
+        eldritch_ai_initiative_increased = yes
+      }
+    }
+    ai_check_interval = 6
+
+    is_high_prio = yes
+
+    potential = {
+      is_adult = yes
+      NOR = {
+        secret_religion_group = eldritch_group
+        religion_group = eldritch_group
+      }
+      NOT = { society_member_of = cult_of_eldritch }
+      check_variable = { which = "eldritch_proof" value = 15 }
+      check_variable = { which = "eldritch_insight" value = 4 }
+    }
+
+    allow = {
+			prestige = 100
+			piety = 50
+      NOT = { trait = incapable }
+      NOT = { is_inaccessible_trigger = yes }
+      check_variable = { which = "eldritch_proof" value = 20 }
+      check_variable = { which = "eldritch_insight" value = 8 }
     }
 
     effect = {
@@ -74,7 +141,45 @@ decisions = {
 			prestige = -250
 			join_society = cult_of_eldritch
 			set_society_grandmaster = yes # Set character as Grand Master
-			add_society_currency_massive_effect = yes # Give the Grand Master a start-up capital to induct members
+			add_society_currency_major_effect = yes # Give the Grand Master a start-up capital to induct members
+
+      log = "Eldritch Cult: ----> [Root.GetBestName] -> Created Eldritch Cult"
+    }
+  }
+
+}
+
+
+targetted_decisions = {
+
+  # FROM is the decision taker
+  # ROOT is the targeted character
+
+  debug_stumble_upon = {
+
+    filter = all_including_me
+    ai_target_filter = none
+
+    # to show up on targeted char
+    potential = {
+      age = 16
+    }
+    # on decision taker condition
+    from_potential = {
+  	  ai = no
+    }
+
+    # to allow actor to take
+    allow = {
+      age = 16
+    }
+
+    effect = {
+      narrative_event = { id = coteo_investigation.2001 }
+    }
+
+    ai_will_do = {
+      factor = 0
     }
 
   }

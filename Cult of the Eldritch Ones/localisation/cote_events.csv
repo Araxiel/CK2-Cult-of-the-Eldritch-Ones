@@ -2,8 +2,6 @@
 #;;;;;;;
 ## Events;;;;;;;
 #;;;;;;;
-eldritch_insight;§GEldritch Insight§!;;;;;;
-eldritch_sanity;Sanity;;;;;;
 coteo_investigation_simple.10.title;A Land of Night;;;;;;
 coteo_investigation_simple.10.desc;The sun has died. The world is plunged in darkness. Nothing is left, soon all will be lost. On the dark horizon a large pyramid illuminates the darkness, with the remains of human civilization living within like maggots on a rotting corpse. Outside the pyramid, horror awaits. Great shambling things waiting for the last light to vanish, waiting to rip and tear the last of humanity that remains.\nA twisted world of death and decay, you know this place. It was your home. It will be your home. You can see the abomination in the dark, preying on life, waiting for you.\n\nAs you look across the great planes of eternal darkness, you can feel that you are being watched by a great entity. Something out there is observing you, has observed you, will observe you. It is here, right outside of your view. \n\nAs you awake, the dread and horror of what you've felt remains...;;;;;;
 coteo_investigation_simple.10.a;Surely this was just a dream...right?;;;;;;
@@ -13,14 +11,14 @@ coteo_investigation_simple.10.b.tt;You will try to get to the bottom of this!;;;
 coteo_investigation_simple.10.c;This is the devil's work, I shall repent!!;;;;;;
 coteo_investigation_simple.10.c.tt;Whatever this dream was, you shall fight it!;;;;;;
 
-coteo_investigation_simple.20.desc;In your local library you find an old book WIP;;;;;;
+coteo_investigation_simple.20.desc;In your local library you find an old book WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 
 coteo_investigation_simple.100.desc;What you just read, in the weird old book that you had recently found, leaves you completely speechless. It sounds too maddening to be true and too horrific to not be maddening, and yet you can not stop thinking about it. The strange passages talking of strange lands and beings that can not even be from this world are deeply disturbing.;;;;;;
 coteo_investigation_simple.100.a;These stories must be the raving of a madman, they can't be true.;;;;;;
 coteo_investigation_simple.100.b;The truth is finally clear. The world is mad and this is the axiom.;;;;;;
 
 coteo_investigation_simple.40.title;Forbidden Knowledge;;;;;;
-coteo_investigation_simple.40.desc;In your local library you find an old book WIP;;;;;;
+coteo_investigation_simple.40.desc;In your local library you find an old book WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation_simple.40.a;It'd be a shame if the knowledge within would be lost.;;;;;;
 coteo_investigation_simple.40.b;This seems not quite right, I rather leave the book where I found it.;;;;;;
 coteo_investigation_simple.40.c;This is heretical witchcraft, I shall do [Root.Religion.GetHighGodName]'s work and burn it!;;;;;;
@@ -35,9 +33,9 @@ is_sticking_his_nose_where_it_doesnt_belong;[Root.GetFirstName] is sticking his 
 coteo_mod_weird_book_found;Weird Tome.;;;;;;
 
 coteo_investigation.1001.title;Strange Sightings;;;;;;
-coteo_investigation.1001.desc;A representative of a small fishing village outside of §Y[From.GetName]§G comes to you with tales by the local fishermen of strange sea creatures. They talk of aberrant human-like abominations walking along the shores in the twilight hours. The representative tells us the locals are too frightened to leave their homes and urges us to do something about this situation.;;;;;;
+coteo_investigation.1001.desc;A representative of a small fishing village outside of ï¿½Y[From.GetName]ï¿½G comes to you with tales by the local fishermen of strange sea creatures. They talk of aberrant human-like abominations walking along the shores in the twilight hours. The representative tells us the locals are too frightened to leave their homes and urges us to do something about this situation.;;;;;;
 coteo_investigation.1001.a;I will investigate this myself.;;;;;;
-coteo_investigation.1001.a.tt;§Y[Root.GetBestName]§! will investigate the §Ystrange sightings personally§!.;;;;;;
+coteo_investigation.1001.a.tt;ï¿½Y[Root.GetBestName]ï¿½! will investigate the ï¿½Ystrange sightings personallyï¿½!.;;;;;;
 #moved-to-main
 coteo_investigation.1001.d;Pah, I won't waste my time with some old fishermen's superstitions.;;;;;;
 coteo_investigation.1001.d.tt;It's probably nothing.;;;;;;
@@ -47,6 +45,11 @@ cult_frightened_fishermen_not_investigated;Frightened Fishermen HIDDEN;;;;;;
 cult_frightened_fishermen_not_investigated_desc;HIDDEN;;;;;;
 cult_frightened_fishermen_vengeance;Forsaken Fishing Village Burned;;;;;;
 cult_frightened_fishermen_vengeance_desc;The entire village accused of dark arts has been burned.;;;;;;
+
+coteo_investigation.1001.b;I will send [investigating_treasurer.GetMyTreasurerName] [investigating_treasurer.GetFirstName] to investigate.;;;;;;
+coteo_investigation.1001.b.tt;ï¿½Y[investigating_treasurer.GetFirstName]ï¿½! will be send to investigate the ï¿½Ystrange sightingsï¿½!.;;;;;;
+coteo_investigation.1001.c;I will send [investigating_chaplain.GetLordSpiritualName] [investigating_chaplain.GetFirstName] to investigate.;;;;;;
+coteo_investigation.1001.c.tt;ï¿½Y[investigating_chaplain.GetFirstName]ï¿½! will be send to investigate the ï¿½Ystrange sightingsï¿½!.;;;;;;
 
 GetRandomSombreWeather_rain;the skies are pouting down heavy rain;;;;;;
 GetRandomSombreWeather_mist;a eerie mist is shrouding the environment;;;;;;
@@ -59,73 +62,95 @@ coteo_investigation.1012.b;On a second thought, I better just leave.;;;;;;
 coteo_investigation.1012.b.tt;You will return home.;;;;;;
 coteo_investigation.1012.c;On a second thought, I better just leave.;;;;;;
 
-coteo_investigation.1013.title;Strange Occurrences.;;;;;;
-coteo_investigation.1013.desc;Innkeeper gives you lead WIP.;;;;;;
+coteo_investigation.1013.title;Strange Occurrences;;;;;;
+coteo_investigation.1013.desc;Innkeeper gives you lead WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1013.desc.a;Innkeeper saw footsteps WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1013.desc.b;Strange hooded people have been seen nearby.;;;;;;
 coteo_investigation.1013.a;I shall follow this lead.;;;;;;
 
-coteo_investigation.1020.title;WIP Footprints;;;;;;
-coteo_investigation.1020.desc;You spot some footprints. WIP;;;;;;
+coteo_investigation.1020.title;Strange Footprints;;;;;;
+coteo_investigation.1020.desc;You spot some strange footprints WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation.1020.a;Follow them;;;;;;
 
-coteo_investigation.1201.title;Ominous Altar;;;;;;
-coteo_investigation.1201.desc;You spot an altar in the distance. WIP;;;;;;
-coteo_investigation.1201.a;I feel strangely compelled to take the idol with me.;;;;;;
-coteo_investigation.1201.b;In the name of [Root.Religion.GetRandomGodName], break the cursed idol.;;;;;;
+coteo_investigation.1211.title;Ominous Altar;;;;;;
+coteo_investigation.1211.desc;You spot an altar in the distance WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1211.a;I feel strangely compelled to take the idol with me.;;;;;;
+coteo_investigation.1211.b;In the name of [Root.Religion.GetRandomGodName], break the cursed idol.;;;;;;
+coteo_investigation.1211.c;I shouldn't even be here.;;;;;;
 
-coteo_investigation.1202.title;Take Idol;;;;;;
-coteo_investigation.1202.desc;You take it and get bad dreams or something. WIP;;;;;;
-coteo_investigation.1202.a;HULK SMASH;;;;;;
+coteo_investigation.1212.title;Ominous Idol;;;;;;
+coteo_investigation.1212.desc;You take it and get bad dreams or something WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1212.a;HULK SMASH;;;;;;
 
-coteo_investigation.1203.title;Smash Idol;;;;;;
-coteo_investigation.1203.desc;You smash the idol and get bad dreams. WIP;;;;;;
-coteo_investigation.1203.a;HULK SMASH;;;;;;
+coteo_investigation.1213.title;False Idol;;;;;;
+coteo_investigation.1213.desc;You smash the idol and get bad dreams WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1213.a;HULK SMASH;;;;;;
 
-coteo_investigation.1224.title;Ominous Altar;;;;;;
-coteo_investigation.1224.desc;"A strange altar showed up" says the innkeeper. WIP;;;;;;
-coteo_investigation.1224.a;Let's investigate;;;;;;
-coteo_investigation.1224.tt;Head in the direction of the ominous altar;;;;;;
+coteo_investigation.1221.title;Unholy Scripture;;;;;;
+coteo_investigation.1221.desc;You find some strange book on an altar WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1221.a;Take the weird scripture with you.;;;;;;
+coteo_investigation.1221.b;By [Root.Religion.GetRandomGodName], this fould text needs to be destroyed!;;;;;;
 
-coteo_investigation.1225.desc;You spot an altar in the distance. WIP;;;;;;
-coteo_investigation.1225.a;Let's investigate;;;;;;
-coteo_investigation.1225.tt;Head in the direction of the ominous altar;;;;;;
+coteo_investigation.1270.desc.a;You spot an altar in the distance. WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1270.desc.b;During a random hunting trip, you spot an altar in the distance. WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1270.a;Let's investigate;;;;;;
+coteo_investigation.1270.tt;Head in the direction of the ominous altar;;;;;;
 
 coteo_investigation.1510.title;Cultists;;;;;;
-coteo_investigation.1510.desc;You are jumped by a dozen cultists WIP.;;;;;;
+coteo_investigation.1510.desc;You are jumped by a dozen cultists WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation.1510.a;I will outrun them!;;;;;;
 coteo_investigation.1510.a.tt;Try to outrun them.;;;;;;
 coteo_investigation.1510.b;Those wicked worms shall taste my blade!;;;;;;
-coteo_investigation.1510.b.tt;Try to §Yfight§! them using your §YPersonal Combat Skill§!.;;;;;;
-coteo_investigation.1510.c;I haven't come to fight, I've come to talk...;;;;;;
+coteo_investigation.1510.b.tt;Try to ï¿½Yfightï¿½! them using your ï¿½YPersonal Combat Skillï¿½!.;;;;;;
+coteo_investigation.1510.c;I haven't come to fight, I've come to talk.;;;;;;
 coteo_investigation.1510.c.tt;Join the cultists.;;;;;;
 
 coteo_investigation.1511.title;Defeated the Cultists;;;;;;
-coteo_investigation.1511.desc;You won WIP.;;;;;;
+coteo_investigation.1511.desc;You won WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation.1511.a;I should leave before more of them arrive.;;;;;;
 
 coteo_investigation.1520.title;Abominations;;;;;;
-coteo_investigation.1520.desc;You are jumped by a couple of Deep Ones WIP.;;;;;;
+coteo_investigation.1520.desc;You are jumped by a couple of Deep Ones WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation.1520.b;Those unholy abominations shall taste my blade!;;;;;;
 
 coteo_investigation.1521.title;Killed the Abominations;;;;;;
-coteo_investigation.1521.desc;You won WIP.;;;;;;
-
-coteo_investigation.1860.desc;You returned from your investigation much worse for wear. You only nearly made it back in one piece. Something dark and evil has occurred in that village. One thing is for sure, you won't return to that cursed place.;;;;;;
-coteo_investigation.1860.a;Let that cursed village burn in hell. I have to report to [Liege.GetName] what happened.;;;;;;
-coteo_investigation.1860.b;Let that cursed village burn in hell.;;;;;;
-coteo_investigation.1860.c;That devilish place shall know no mercy, burn it all!;;;;;;
-coteo_investigation.1861.desc;[From.GetBestName] returned from [From.GetHersHis] recent investigation into the strange fishing village much worse for wear. [From.GetSubjectPronounCap] reports that [From.GetSubjectPronoun] only nearly made it back in one piece. Something dark and evil has occurred in that village and [From.GetFirstName] implores you to just raze the entire village to the ground.;;;;;;
-coteo_investigation.1861.a;Let that cursed village burn in hell.;;;;;;
-coteo_investigation.1861.b;Let that cursed village burn.;;;;;;
+coteo_investigation.1521.desc;You won WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 
 coteo_investigation.1850.title;Returned Home;;;;;;
 coteo_investigation.1850.desc;You returned from your investigation. It was a very weird and unusual experience.;;;;;;
 coteo_investigation.1850.a.a;What a strange event.;;;;;;
 coteo_investigation.1850.a.b;I will lie to [Liege.GetName] about my findings.;;;;;;
-coteo_investigation.1850.b;§GThe Eldritch Ones shall awaken!§!;;;;;;
+coteo_investigation.1850.b;I shall tell [Liege.GetName] about my findings..;;;;;;
+coteo_investigation.1850.c;ï¿½GThe Eldritch Ones shall awaken!ï¿½!;;;;;;
 
 coteo_investigation.1851.title;Investigator Returns;;;;;;
 coteo_investigation.1851.desc;[From.GetBestName] returned from [From.GetHersHis] recent investigation into the strange fishing village. While eerie and unwelcoming, [From.GetSubjectPronoun] claims that [From.GetSubjectPronoun] didn't really find anything worth of note to report on. [From.GetSubjectPronounCap] postulates that the strange tales are just that: Old wive's tales.;;;;;;
 
-coteo_investigation.1852.title;Investigator Returns;;;;;;
-coteo_investigation.1852.desc;As you approach [From.GetBestName] to hear what [From.GetHersHis] investigation has revealed, [From.GetBestName] suddenly pulls out a dagger and starts lashing at you, screaming §Y"The Eldritch Ones shall awaken!"§!.;;;;;;
-coteo_investigation.1852.a;Guards!.;;;;;;
+coteo_investigation.1855.title;Investigator Returns;;;;;;
+coteo_investigation.1855.desc;As you approach [From.GetBestName] to hear what [From.GetHersHis] investigation has revealed, [From.GetBestName] suddenly pulls out a dagger and starts lashing at you, screaming ï¿½Y"The Eldritch Ones shall awaken!"ï¿½!.;;;;;;
+coteo_investigation.1855.a;Guards!;;;;;;
+
+coteo_investigation.1852.title;Weird Insights;;;;;;
+coteo_investigation.1852.desc.idol_taken;[From.GetBestName] found some strange idol and took it WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1852.desc.idol_broken;[From.GetBestName] found some strange idol and smashed it WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1852.desc.book_taken;[From.GetBestName] found some strange book and took it WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1852.desc.book_burned;[From.GetBestName] found some strange book and burned it WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1852.desc.altar;[From.GetBestName] saw some strange altar WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1852.a;What a curious and weird find..;;;;;;
+coteo_investigation.1852.b;Get rid of this foul heresy!.;;;;;;
+
+coteo_investigation.1860.desc;You returned from your investigation much worse for wear. You only nearly made it back in one piece. Something dark and evil has occurred in that village. One thing is for sure, you won't return to that cursed place.;;;;;;
+coteo_investigation.1860.a;Let that cursed place burn in hell. I have to report to [Liege.GetName] what happened.;;;;;;
+coteo_investigation.1860.b;Let that cursed place burn in hell.;;;;;;
+coteo_investigation.1860.c;That devilish place shall know no mercy, burn it all!;;;;;;
+coteo_investigation.1861.desc;[From.GetBestName] returned from [From.GetHersHis] recent investigation into the strange fishing village much worse for wear. [From.GetSubjectPronounCap] reports that [From.GetSubjectPronoun] only nearly made it back in one piece. Something dark and evil has occurred in that village and [From.GetFirstName] implores you to just raze the entire village to the ground.;;;;;;
+coteo_investigation.1861.a;Let that cursed place burn in hell.;;;;;;
+coteo_investigation.1861.b;Let that cursed place burn.;;;;;;
+
+coteo_investigation.1870.title;Disappearance;;;;;;
+coteo_investigation.1870.desc;It has now been a while, and [From.GetBestName] never returned from [From.GetHersHis] investigation. Something very bad must have happened to [From.GetHerHim] in that strange fishing village.\n\nWhile on one hand some things were never meant to be revealed, I can't just let this stand.;;;;;;
+coteo_investigation.1870.b;I will send [investigating_marshall.GetMarshalName] [investigating_chaplain.GetFirstName] to investigate.;;;;;;
+coteo_investigation.1870.b.tt;ï¿½Y[investigating_chaplain.GetFirstName]ï¿½! will be send to investigate the ï¿½Ystrange sightingsï¿½!.;;;;;;
+coteo_investigation.1870.c;Let sleeping dogs lie.;;;;;;
+
+default_desc;Default Desc - Debug;;;;;;

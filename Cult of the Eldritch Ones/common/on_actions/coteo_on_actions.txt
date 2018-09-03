@@ -15,3 +15,9 @@ on_yearly_pulse = {
 		coteo_janitor.4000 # sanity regulations
 	}
 }
+
+on_bi_yearly_pulse = {
+	events = {
+		coteo_janitor.2000 # pollinate lowborn cultists
+	}
+}

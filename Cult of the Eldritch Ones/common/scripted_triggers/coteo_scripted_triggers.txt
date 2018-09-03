@@ -23,10 +23,20 @@ has_discovered_eldritch_cult = {
 
 not_yet_woke = {
   OR = {
-    NOT = { has_character_flag = discovered_eldritch_cult }
-    NOT = { true_religion_group = eldritch_gods_group }
+    #NOT = { has_character_flag = discovered_eldritch_cult }
+    NOT = { true_religion_group = eldritch_group }
     NOT = { is_in_society = cult_of_eldritch }
     #NOT = { has_global_flag = eldritch_kingdom_founded }
+  }
+}
+
+has_any_investigation_fishing_village_occurance = {
+  OR = {
+    has_character_flag = investigation_fishing_village_idol_taken
+    has_character_flag = investigation_fishing_village_idol_broken
+    has_character_flag = investigation_fishing_village_book_taken
+    has_character_flag = investigation_fishing_village_book_burned
+    has_character_flag = investigation_fishing_village_altar
   }
 }
 

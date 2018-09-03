@@ -252,6 +252,7 @@ character_event = {
     name = coteo_debug.10.b
     change_variable = { which = "eldritch_insight" value = 5 }
     change_variable = { which = "eldritch_sanity" value = -40 }
+    prestige = 250
   }
   option = {
     name = coteo_debug.10.c
@@ -262,81 +263,6 @@ character_event = {
         type = temple
       }
     }
-  }
-}
-
-# coteo_debug.10 # conversion
-narrative_event = {
-  id = coteo_debug.11
-
-  title = coteo_debug.10.title
-  desc = coteo_debug.10.desc
-  picture = GFX_evt_flagelants
-
-  trigger = { always = no }
-
-  mean_time_to_happen = {
-    years = 100
-  }
-
-  option = {
-    name = coteo_debug.11.a
-    any_character = {
-      limit = {
-        independent = no
-        liege = { character = PREVPREV }
-      }
-      religion = eldritch_gods
-    }
-    any_realm_province = {
-      religion = eldritch_gods
-    }
-    religion = eldritch_gods
-  }
-
-  option = {
-    name = coteo_debug.11.b
-    any_character = {
-      limit = {
-        independent = no
-        liege = { character = PREVPREV }
-      }
-      religion = aisura_god
-    }
-    any_realm_province = {
-      religion = aisura_god
-    }
-    religion = aisura_god
-  }
-
-  option = {
-    name = coteo_debug.11.c
-    any_character = {
-      limit = {
-        independent = no
-        liege = { character = PREVPREV }
-      }
-      religion = naahab_god
-    }
-    any_realm_province = {
-      religion = naahab_god
-    }
-    religion = naahab_god
-  }
-
-  option = {
-    name = coteo_debug.11.d
-    any_character = {
-      limit = {
-        independent = no
-        liege = { character = PREVPREV }
-      }
-      religion = qushakon_god
-    }
-    any_realm_province = {
-      religion = qushakon_god
-    }
-    religion = qushakon_god
   }
 }
 
@@ -357,7 +283,7 @@ character_event = {
   option = {
     name = "OK"
 
-    clr_character_flag = eldritch_fishmen_sighted_started
+    clear_flags_with_prefix  = investigation_fishing_village_
 	  random_demesne_province = {
       limit = {
         OR = {
@@ -377,7 +303,7 @@ character_event = {
   }
 }
 
-# coteo_debug.510 # general
+# coteo_debug.510 # death
 character_event = {
   id = coteo_debug.510
 
@@ -392,27 +318,277 @@ character_event = {
   }
 
   option = {
-    name = coteo_debug.10.a
+    name = "OK"
     random_courtier = {
       death = { death_reason = death_murder_unknown killer = ROOT }
     }
   }
   option = {
-    name = coteo_debug.10.b
+    name = "OK"
     random_courtier = {
       death = { death_reason = death_missing }
     }
   }
   option = {
-    name = coteo_debug.10.c
+    name = "OK"
     random_courtier = {
       death = { death_reason = death_accident_drowning }
     }
   }
   option = {
-    name = coteo_debug.10.d
+    name = "OK"
     random_courtier = {
       death = { death_reason = death_murder_unknown_drowning killer = ROOT }
     }
   }
+}
+
+# coteo_debug.2001 # conversion
+narrative_event = {
+  id = coteo_debug.2001
+
+  title = coteo_debug.10.title
+  desc = coteo_debug.10.desc
+  picture = GFX_evt_flagelants
+
+  trigger = { always = no }
+
+  mean_time_to_happen = {
+    years = 100
+  }
+
+  option = {
+    name = coteo_debug.2001.a
+    any_character = {
+      limit = {
+        independent = no
+        liege = { character = PREVPREV }
+      }
+      religion = eldritch_gods
+    }
+    any_realm_province = {
+      religion = eldritch_gods
+    }
+    religion = eldritch_gods
+  }
+
+  option = {
+    name = coteo_debug.2001.b
+    any_character = {
+      limit = {
+        independent = no
+        liege = { character = PREVPREV }
+      }
+      religion = aisura_god
+    }
+    any_realm_province = {
+      religion = aisura_god
+    }
+    religion = aisura_god
+  }
+
+  option = {
+    name = coteo_debug.2001.c
+    any_character = {
+      limit = {
+        independent = no
+        liege = { character = PREVPREV }
+      }
+      religion = naahab_god
+    }
+    any_realm_province = {
+      religion = naahab_god
+    }
+    religion = naahab_god
+  }
+
+  option = {
+    name = coteo_debug.2001.d
+    any_character = {
+      limit = {
+        independent = no
+        liege = { character = PREVPREV }
+      }
+      religion = qushakon_god
+    }
+    any_realm_province = {
+      religion = qushakon_god
+    }
+    religion = qushakon_god
+  }
+}
+
+# coteo_debug.2002 # create kingdom
+character_event = {
+  id = coteo_debug.2002
+
+  title = coteo_debug.10.title
+  desc = coteo_debug.10.desc
+  picture = GFX_evt_idol_altar
+
+  trigger = { always = no }
+
+  mean_time_to_happen = {
+    years = 100
+  }
+
+  immediate = {
+    if = {
+      limit = {
+        OR = {
+          is_priest = yes
+          AND = {
+            is_landed = no
+            learning = 15
+          }
+        }
+        is_female = yes
+      }
+      any_realm_character = {
+        limit = {
+          OR = {
+            is_priest = yes
+            AND = {
+              is_landed = no
+              learning = 15
+            }
+          }
+          is_female = yes
+        }
+        save_event_target_as = aisura_priestess
+      }
+    }
+    else = {
+      create_character = {
+        random_traits = yes
+        female = yes
+        dynasty = none
+        religion = aisura_god
+        culture = ROOT
+      }
+      new_character = {
+        save_event_target_as = aisura_priestess
+      }
+    }
+  }
+
+  option = {
+    name = "OK"
+
+    activate_title = { title = k_eldritch_kingdom status = yes }
+    k_eldritch_kingdom = {
+      gain_title = PREV
+      succession_w_cooldown = feudal_elective
+      gender_succ = cognatic
+    }
+    recalc_succession = yes
+
+  }
+
+  option = {
+    name = "OK"
+
+    activate_title = { title = d_eldritch_high_temple status = yes }
+    random_realm_character = {
+      limit = {
+        is_priest = yes
+      }
+      d_eldritch_high_temple = {
+        gain_title = PREV
+        set_defacto_liege = k_eldritch_kingdom
+        set_title_landless = { title = THIS status = yes }
+      }
+    }
+
+  }
+  option = {
+    name = "OK"
+
+    activate_title = { title = d_aisura_high_temple status = yes }
+    event_target:aisura_priestess = {
+      religion = aisura_god
+      d_aisura_high_temple = {
+        gain_title = PREV
+        set_defacto_liege = k_eldritch_kingdom
+        set_title_landless = { title = THIS status = yes }
+        succession = open_elective
+        gender_succ = true_cognatic
+      }
+    }
+    recalc_succession = yes
+  }
+
+  option = {
+    name = "OK"
+
+    activate_title = { title = d_eldritch_order status = yes }
+    d_eldritch_order = {
+      ROOT = {
+        capital_holding = {
+          county = {
+            d_eldritch_order = {
+              set_preferred_capital = PREV
+            }
+          }
+        }
+      }
+    }
+    activate_title = { title = d_warriors_of_qushakon status = yes }
+  }
+}
+
+# coteo_debug.3001 # cult stuff 1
+narrative_event = {
+  id = coteo_debug.3001
+
+  title = coteo_debug.10.title
+  desc = coteo_debug.10.desc
+  picture = GFX_evt_flagelants
+
+  trigger = { always = no }
+
+  mean_time_to_happen = {
+    years = 100
+  }
+
+  option = {
+    name = "OK"
+    create_character = {
+      random_traits = yes
+      dynasty = none
+      religion = ROOT
+      culture = ROOT
+    }
+    new_character = {
+      set_secret_religion = eldritch_gods
+      join_society = cult_of_eldritch
+      add_society_currency_minor_effect = yes
+    }
+    create_character = {
+      random_traits = yes
+      dynasty = none
+      religion = ROOT
+      culture = ROOT
+    }
+    new_character = {
+      set_secret_religion = eldritch_gods
+      join_society = cult_of_eldritch
+      add_society_currency_medium_effect = yes
+      society_rank_up = 1
+    }
+    create_character = {
+      random_traits = yes
+      dynasty = none
+      religion = ROOT
+      culture = ROOT
+      female = yes
+    }
+    new_character = {
+      set_secret_religion = eldritch_gods
+      join_society = cult_of_eldritch
+      add_society_currency_medium_effect = yes
+      society_rank_up = 2
+    }
+  }
+
 }
