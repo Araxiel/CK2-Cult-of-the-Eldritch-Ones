@@ -35,36 +35,14 @@ demesne_eldritch_holy_site = {
     AND = {
       lower_tier_than = king
       any_realm_title = {
-        OR = {
-          is_holy_site = eldritch_gods
-          any_de_jure_vassal_title = {
-            is_holy_site = eldritch_gods
-          }
-        }
+        is_holy_site = eldritch_gods
       }
     }
     AND = {
       higher_tier_than = duke
-      OR = {
-        ## directly held demesne counties
-        any_demesne_title = {
-          OR = {
-            is_holy_site = eldritch_gods
-            any_de_jure_vassal_title = {
-              is_holy_site = eldritch_gods
-            }
-          }
-        }
-        ## direct vassal counts counties
-        any_direct_de_jure_vassal_title  = {
-          lower_tier_than = duke
-          OR = {
-            is_holy_site = eldritch_gods
-            any_de_jure_vassal_title = {
-              is_holy_site = eldritch_gods
-            }
-          }
-        }
+      ## directly held demesne counties
+      any_demesne_title = {
+        is_holy_site = eldritch_gods
       }
     }
   }

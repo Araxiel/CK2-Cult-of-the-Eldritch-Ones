@@ -42,8 +42,8 @@ decisions = {
     potential = {
       is_adult = yes
       OR = {
-        secret_religion_group = eldritch_gods_group
-        religion_group = eldritch_gods_group
+        secret_religion_group = eldritch_group
+        religion_group = eldritch_group
       }
       cult_of_eldritch = {
         NOT = {
@@ -55,8 +55,8 @@ decisions = {
     allow = {
 			prestige = 250
       OR = {
-        secret_religion_group = eldritch_gods_group
-        religion_group = eldritch_gods_group
+        secret_religion_group = eldritch_group
+        religion_group = eldritch_group
       }
       prisoner = no
       NOT = { trait = incapable }

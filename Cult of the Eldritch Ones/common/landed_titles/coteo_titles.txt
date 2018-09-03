@@ -5,7 +5,7 @@ k_land_of_the_eldritch = {
   short_name = yes
 
   allow = {
-    religion_group = eldritch_gods_group
+    religion_group = eldritch_group
     has_global_flag = cult_revolt_happened
   }
 

@@ -18,7 +18,7 @@ liber_investigationis = {
   			text = is_sticking_his_nose_where_it_doesnt_belong
         OR = {
           has_character_flag = eldritch_cult_curious
-          true_religion_group = eldritch_gods_group
+          true_religion_group = eldritch_group
         }
       }
       learning = 18
@@ -47,7 +47,7 @@ ars_magna_et_ultima = {
         text = is_sticking_his_nose_where_it_doesnt_belong
         OR = {
           has_character_flag = eldritch_cult_curious
-          true_religion_group = eldritch_gods_group
+          true_religion_group = eldritch_group
         }
       }
       learning = 18
@@ -76,7 +76,7 @@ of_unspeakable_cults = {
   			text = is_sticking_his_nose_where_it_doesnt_belong
         OR = {
           has_character_flag = eldritch_cult_curious
-          true_religion_group = eldritch_gods_group
+          true_religion_group = eldritch_group
         }
       }
       learning = 18

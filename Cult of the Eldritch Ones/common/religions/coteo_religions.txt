@@ -1,4 +1,4 @@
-eldritch_gods_group = {
+eldritch_group = {
 	graphical_culture = westerngfx
 	playable = yes
 
@@ -24,7 +24,7 @@ eldritch_gods_group = {
     crusade_name = GREAT_HOLY_WAR #wip
 		scripture_name = THE_NECRONOMICON
 		priest_title = ACOLYTE
-    #piety_name = FAVOR
+    piety_name = KNOWLEDGE
 
 		high_god_name = GOD_ELDRITCH_GODS
 
@@ -60,13 +60,15 @@ eldritch_gods_group = {
 		heresy_icon = 58
 
 		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
-		color = { 0.48 0.38 0.56 } #  rgb(122, 97, 143)
-
+		#color = { 0.48 0.38 0.56 } #  (122, 97, 143)
+		color = { 0.59 0.04 0.78 } #  rgb(150, 10, 200)
+		
     parent = eldritch_gods
 
     crusade_name = GREAT_HOLY_WAR #wip
 		high_god_name = GOD_AISURA
 		priest_title = ACOLYTE
+    piety_name = KNOWLEDGE
 
 		god_names = {
 			GOD_GREAT_OLD_ONES GOD_ELDRITCH_GODS GOD_OLD_ONES GOD_ELDER_THINGS
@@ -76,7 +78,6 @@ eldritch_gods_group = {
 		}
 
     can_grant_invasion_cb = invasion
-    can_call_crusade = yes
 
     ## WIP create a on_action that fires right before death, and thus makes female succesion through event?
     feminist = yes
@@ -99,13 +100,14 @@ eldritch_gods_group = {
 		heresy_icon = 58
 
 		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
-		color = { 0.60 0.20 0.40 }  # rgb(153, 51, 102)
+		color = { 0.31 0.15 0.80 }  # rgb(79, 37, 203)
 
     parent = eldritch_gods
 
     crusade_name = GREAT_HOLY_WAR #wip
 		high_god_name = GOD_NAAHAB
 		priest_title = KEEPER
+		piety_name = KNOWLEDGE
 
 		god_names = {
 			GOD_GREAT_OLD_ONES GOD_ELDER_THINGS GOD_ELDRITCH_GODS GOD_OLD_ONES
@@ -115,7 +117,6 @@ eldritch_gods_group = {
 		}
 
     can_grant_invasion_cb = invasion
-    can_call_crusade = yes
 
     short_reign_opinion_year_mult = 4
     can_retire_to_monastery = yes
@@ -138,13 +139,14 @@ eldritch_gods_group = {
 		heresy_icon = 58
 
 		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
-		color = { 0.31 0.15 0.80 }  # rgb(79, 37, 203)
+		color = { 0.60 0.20 0.40 }  # rgb(153, 51, 102)
 
     parent = eldritch_gods
 
     crusade_name = GREAT_HOLY_WAR #wip
   	high_god_name = GOD_QUASHAKON
   	priest_title = ACOLYTE
+    piety_name = KNOWLEDGE
 
 		god_names = {
 			GOD_GREAT_OLD_ONES GOD_ELDRITCH_GODS GOD_ELDER_THINGS GOD_OLD_ONES

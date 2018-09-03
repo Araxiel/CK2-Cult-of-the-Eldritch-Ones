@@ -1,7 +1,7 @@
 cult_of_eldritch = {
 	primary_attribute = intrigue
 	is_religious = yes
-	#is_secret = yes
+	is_secret = yes
 	criminal = yes
 	devil_worshipper = yes
 	opinion_to_other_members = +5
@@ -32,8 +32,8 @@ cult_of_eldritch = {
 		}
 		has_eldritch_cult_society_prerequisites = yes
 		OR = {
-			secret_religion_group = eldritch_gods_group
-			true_religion_group = eldritch_gods_group
+			secret_religion_group = eldritch_group
+			true_religion_group = eldritch_group
 		}
 	}
 
@@ -42,8 +42,8 @@ cult_of_eldritch = {
 			has_eldritch_cult_society_prerequisites = yes
 			OR = {
 				OR = {
-					secret_religion_group = eldritch_gods_group
-					true_religion_group = eldritch_gods_group
+					secret_religion_group = eldritch_group
+					true_religion_group = eldritch_group
 				}
 				has_discovered_eldritch_cult = yes
 			}
@@ -310,7 +310,7 @@ cult_of_eldritch = {
 						ai_zeal < 31
 					}
 				}
-				true_religion_group = eldritch_gods_group
+				true_religion_group = eldritch_group
 			}
 			OR = {
 				religion_group = christian
