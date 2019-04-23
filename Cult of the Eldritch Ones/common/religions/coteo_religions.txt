@@ -15,8 +15,8 @@ eldritch_group = {
 	eldritch_gods = {
 		graphical_culture = westerngfx
 
-		icon = 57
-		heresy_icon = 58
+		icon = 60
+		heresy_icon = 61
 
 		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
 		color = { 0.50 0.15 0.80 }  # Ilythid Purple # rgb(128, 38, 204)
@@ -56,13 +56,12 @@ eldritch_group = {
 	aisura_god = {
 		graphical_culture = westerngfx
 
-		icon = 57
-		heresy_icon = 58
+		icon = 60
 
 		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
 		#color = { 0.48 0.38 0.56 } #  (122, 97, 143)
 		color = { 0.59 0.04 0.78 } #  rgb(150, 10, 200)
-		
+
     parent = eldritch_gods
 
     crusade_name = GREAT_HOLY_WAR #TODO
@@ -96,8 +95,7 @@ eldritch_group = {
 	naahab_god = {
 		graphical_culture = westerngfx
 
-		icon = 57
-		heresy_icon = 58
+		icon = 60
 
 		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
 		color = { 0.31 0.15 0.80 }  # rgb(79, 37, 203)
@@ -120,7 +118,6 @@ eldritch_group = {
 
     short_reign_opinion_year_mult = 4
     can_retire_to_monastery = yes
-    can_hold_temples = yes
 		priests_can_inherit = no
 		priests_can_marry = no
     #"papacy" TODO
@@ -135,8 +132,7 @@ eldritch_group = {
 	qushakon_god = {
 		graphical_culture = westerngfx
 
-		icon = 57
-		heresy_icon = 58
+		icon = 60
 
 		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
 		color = { 0.60 0.20 0.40 }  # rgb(153, 51, 102)
@@ -160,7 +156,6 @@ eldritch_group = {
     seafarer = yes
     allow_rivermovement = yes
     raised_vassal_opinion_loss = no
- 	  can_hold_temples = yes
 		priests_can_inherit = yes
 
     religious_clothing_head = 3
