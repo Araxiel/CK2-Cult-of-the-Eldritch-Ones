@@ -320,7 +320,7 @@ character_event  = {
   option = {
     name = coteo_investigation.1001.d
 
-    ## WIP send player priority option
+    ## TODO send player priority option
 
     custom_tooltip = { text = coteo_investigation.1001.d.tt }
     any_realm_province = {
@@ -999,7 +999,7 @@ narrative_event  = {
             factor = 7
             combat_rating <= -7
           }
-          ## WIP event that let's the liege investigate?
+          ## TODO event that let's the liege investigate?
           create_lowborn_cultist = yes
 
           if = {
@@ -1100,7 +1100,7 @@ narrative_event  = {
             factor = 7
             combat_rating <= -7
           }
-          ## WIP event that let's the liege investigate?
+          ## TODO event that let's the liege investigate?
 
           create_lowborn_cultist = yes
 
@@ -1179,7 +1179,7 @@ narrative_event  = {
     else = {
       #character_event = { id = coteo_investigation.5000 days = 1 random = 1 }
       set_secret_religion = eldritch_gods
-      character_event = { id = coteo_investigation.1850 days = 1 random = 1 } ## DEBUGGING WIP
+      character_event = { id = coteo_investigation.1850 days = 1 random = 1 } ## DEBUGGING TODO
     }
 
     ai_chance = {
@@ -1302,7 +1302,7 @@ narrative_event  = {
             factor = 10
             combat_rating <= -6
           }
-          ## WIP event that let's the liege investigate?
+          ## TODO event that let's the liege investigate?
 
           create_lowborn_cultist = yes
 
@@ -1399,7 +1399,7 @@ narrative_event  = {
             factor = 7
             combat_rating <= -6
           }
-          ## WIP event that let's the liege investigate?
+          ## TODO event that let's the liege investigate?
 
           create_lowborn_cultist = yes
 

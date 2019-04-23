@@ -30,7 +30,7 @@ character_event  = {
 
   immediate = {
 
-    ###   WIP WHILE
+    ###   TODO WHILE
     while = {
       count = 5
       random_independent_ruler = {

@@ -11,14 +11,14 @@ coteo_investigation_simple.10.b.tt;You will try to get to the bottom of this!;;;
 coteo_investigation_simple.10.c;This is the devil's work, I shall repent!!;;;;;;
 coteo_investigation_simple.10.c.tt;Whatever this dream was, you shall fight it!;;;;;;
 
-coteo_investigation_simple.20.desc;In your local library you find an old book WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation_simple.20.desc;In your local library you find an old book TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 
 coteo_investigation_simple.100.desc;What you just read, in the weird old book that you had recently found, leaves you completely speechless. It sounds too maddening to be true and too horrific to not be maddening, and yet you can not stop thinking about it. The strange passages talking of strange lands and beings that can not even be from this world are deeply disturbing.;;;;;;
 coteo_investigation_simple.100.a;These stories must be the raving of a madman, they can't be true.;;;;;;
 coteo_investigation_simple.100.b;The truth is finally clear. The world is mad and this is the axiom.;;;;;;
 
 coteo_investigation_simple.40.title;Forbidden Knowledge;;;;;;
-coteo_investigation_simple.40.desc;In your local library you find an old book WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation_simple.40.desc;In your local library you find an old book TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation_simple.40.a;It'd be a shame if the knowledge within would be lost.;;;;;;
 coteo_investigation_simple.40.b;This seems not quite right, I rather leave the book where I found it.;;;;;;
 coteo_investigation_simple.40.c;This is heretical witchcraft, I shall do [Root.Religion.GetHighGodName]'s work and burn it!;;;;;;
@@ -63,41 +63,41 @@ coteo_investigation.1012.b.tt;You will return home.;;;;;;
 coteo_investigation.1012.c;On a second thought, I better just leave.;;;;;;
 
 coteo_investigation.1013.title;Strange Occurrences;;;;;;
-coteo_investigation.1013.desc;Innkeeper gives you lead WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
-coteo_investigation.1013.desc.a;Innkeeper saw footsteps WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1013.desc;Innkeeper gives you lead TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1013.desc.a;Innkeeper saw footsteps TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation.1013.desc.b;Strange hooded people have been seen nearby.;;;;;;
 coteo_investigation.1013.a;I shall follow this lead.;;;;;;
 
 coteo_investigation.1020.title;Strange Footprints;;;;;;
-coteo_investigation.1020.desc;You spot some strange footprints WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1020.desc;You spot some strange footprints TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation.1020.a;Follow them;;;;;;
 
 coteo_investigation.1211.title;Ominous Altar;;;;;;
-coteo_investigation.1211.desc;You spot an altar in the distance WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1211.desc;You spot an altar in the distance TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation.1211.a;I feel strangely compelled to take the idol with me.;;;;;;
 coteo_investigation.1211.b;In the name of [Root.Religion.GetRandomGodName], break the cursed idol.;;;;;;
 coteo_investigation.1211.c;I shouldn't even be here.;;;;;;
 
 coteo_investigation.1212.title;Ominous Idol;;;;;;
-coteo_investigation.1212.desc;You take it and get bad dreams or something WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1212.desc;You take it and get bad dreams or something TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation.1212.a;HULK SMASH;;;;;;
 
 coteo_investigation.1213.title;False Idol;;;;;;
-coteo_investigation.1213.desc;You smash the idol and get bad dreams WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1213.desc;You smash the idol and get bad dreams TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation.1213.a;HULK SMASH;;;;;;
 
 coteo_investigation.1221.title;Unholy Scripture;;;;;;
-coteo_investigation.1221.desc;You find some strange book on an altar WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1221.desc;You find some strange book on an altar TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation.1221.a;Take the weird scripture with you.;;;;;;
 coteo_investigation.1221.b;By [Root.Religion.GetRandomGodName], this fould text needs to be destroyed!;;;;;;
 
-coteo_investigation.1270.desc.a;You spot an altar in the distance. WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
-coteo_investigation.1270.desc.b;During a random hunting trip, you spot an altar in the distance. WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1270.desc.a;You spot an altar in the distance. TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1270.desc.b;During a random hunting trip, you spot an altar in the distance. TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation.1270.a;Let's investigate;;;;;;
 coteo_investigation.1270.tt;Head in the direction of the ominous altar;;;;;;
 
 coteo_investigation.1510.title;Cultists;;;;;;
-coteo_investigation.1510.desc;You are jumped by a dozen cultists WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1510.desc;You are jumped by a dozen cultists TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation.1510.a;I will outrun them!;;;;;;
 coteo_investigation.1510.a.tt;Try to outrun them.;;;;;;
 coteo_investigation.1510.b;Those wicked worms shall taste my blade!;;;;;;
@@ -106,15 +106,15 @@ coteo_investigation.1510.c;I haven't come to fight, I've come to talk.;;;;;;
 coteo_investigation.1510.c.tt;Join the cultists.;;;;;;
 
 coteo_investigation.1511.title;Defeated the Cultists;;;;;;
-coteo_investigation.1511.desc;You won WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1511.desc;You won TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation.1511.a;I should leave before more of them arrive.;;;;;;
 
 coteo_investigation.1520.title;Abominations;;;;;;
-coteo_investigation.1520.desc;You are jumped by a couple of Deep Ones WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1520.desc;You are jumped by a couple of Deep Ones TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation.1520.b;Those unholy abominations shall taste my blade!;;;;;;
 
 coteo_investigation.1521.title;Killed the Abominations;;;;;;
-coteo_investigation.1521.desc;You won WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1521.desc;You won TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 
 coteo_investigation.1850.title;Returned Home;;;;;;
 coteo_investigation.1850.desc;You returned from your investigation. It was a very weird and unusual experience.;;;;;;
@@ -131,11 +131,11 @@ coteo_investigation.1855.desc;As you approach [From.GetBestName] to hear what [F
 coteo_investigation.1855.a;Guards!;;;;;;
 
 coteo_investigation.1852.title;Weird Insights;;;;;;
-coteo_investigation.1852.desc.idol_taken;[From.GetBestName] found some strange idol and took it WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
-coteo_investigation.1852.desc.idol_broken;[From.GetBestName] found some strange idol and smashed it WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
-coteo_investigation.1852.desc.book_taken;[From.GetBestName] found some strange book and took it WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
-coteo_investigation.1852.desc.book_burned;[From.GetBestName] found some strange book and burned it WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
-coteo_investigation.1852.desc.altar;[From.GetBestName] saw some strange altar WIP. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1852.desc.idol_taken;[From.GetBestName] found some strange idol and took it TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1852.desc.idol_broken;[From.GetBestName] found some strange idol and smashed it TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1852.desc.book_taken;[From.GetBestName] found some strange book and took it TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1852.desc.book_burned;[From.GetBestName] found some strange book and burned it TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_investigation.1852.desc.altar;[From.GetBestName] saw some strange altar TODO. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
 coteo_investigation.1852.a;What a curious and weird find..;;;;;;
 coteo_investigation.1852.b;Get rid of this foul heresy!.;;;;;;
 
