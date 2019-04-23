@@ -2,15 +2,19 @@ k_eldritch_kingdom = {
   color={ 128 38 204 }
   color2={ 40 40 40 }
 
-  short_name = yes
+  #short_name = yes
 
   allow = {
     religion_group = eldritch_group
     has_global_flag = cult_revolt_happened
   }
 
+  religion = eldritch_gods
+  eldritch_gods = 500
+  dignity = 3
+
   landless = no
-  # makes sure generated holder is this religion
+
 }
 
 e_eldritch_empire = {
@@ -26,7 +30,10 @@ e_eldritch_empire = {
   }
 
   landless = no
-  # makes sure generated holder is this religion
+  religion = eldritch_gods
+  eldritch_gods = 500
+  dignity = 6
+
 }
 
 ## religious
@@ -44,13 +51,13 @@ d_eldritch_high_temple = {
   }
 
   primary = yes
-  dynasty_title_names = no
-  #landless = yes
-  capital = 7 # Orkney
+  landless = yes
   creation_requires_capital = no
-  # makes sure the generated religious head is this religion
+
   religion = eldritch_gods
   controls_religion = eldritch_gods
+
+  location_ruler_title = yes
 }
 
 d_aisura_high_temple = {
@@ -66,10 +73,8 @@ d_aisura_high_temple = {
   }
 
   primary = yes
-  dynasty_title_names = no
-  capital = 230 # Nice
-  creation_requires_capital = no
-  # makes sure the generated religious head is this religion
+  landless = yes
+
   religion = aisura_god
   controls_religion = aisura_god
 }
@@ -87,12 +92,10 @@ k_naahab_high_temple = {
   }
 
   primary = yes
-  #landless = yes
+  landless = yes
 
-  capital = 58 # Lancaster
-  creation_requires_capital = no
   location_ruler_title = yes  # "Pope in Rome"
-  # makes sure the generated religious head is this religion
+
   religion = naahab_god
   controls_religion = naahab_god
 }
