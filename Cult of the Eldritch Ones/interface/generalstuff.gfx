@@ -1003,21 +1003,21 @@ spriteTypes = {
 		name = "GFX_icon_topbar_observe"
 		texturefile = "gfx\\interface\\icon_topbar_observe.tga"
 	}
-	## Cult of the Eldritch Modified	## TODO
+	## Cult of the Eldritch Modified
 	spriteType = {
 		name = "GFX_religion_icon_strip"
 		texturefile = "gfx\\interface\\religion_icon_strip.tga"
-		noOfFrames = 61
+		noOfFrames = 51
 	}
 	spriteType = {
 		name = "GFX_religion_icon_strip_small"
 		texturefile = "gfx\\interface\\religion_icon_strip_small.tga"
-		noOfFrames = 61
+		noOfFrames = 51
 	}
 	spriteType = {
 		name = "GFX_religion_icon_strip_big"
 		texturefile = "gfx\\interface\\religion_icon_strip_big.tga"
-		noOfFrames = 61
+		noOfFrames = 51
 	}
 	spriteType = {
 		name = "GFX_secret_religion_icon_bg"
