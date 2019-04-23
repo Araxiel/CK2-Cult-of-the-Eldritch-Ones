@@ -268,12 +268,22 @@ spriteTypes = {
 		texturefile = "gfx\event_pictures\evt_cthulhu_1.dds"
 		allwaystransparent = yes
 	}
+}
+
+spriteTypes = {
 
 	##### Traits #####
 
 	spriteType = {
 		name = "GFX_trait_on_investigation"
-		texturefile = "gfx/other/on_investigation.dds"
+		texturefile = "gfx/traits/on_investigation.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_interest_in_weird"
+		texturefile = "gfx/traits/sympathy_eldritch.dds"
 		noOfFrames = 1
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
@@ -283,7 +293,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_create_eldritch_cult"
-		texturefile = "gfx\\other\\decision_icon_eldritch.dds"
+		texturefile = "gfx\\decision_icon_eldritch.dds"
 	}
 
 	##### Society View #####
