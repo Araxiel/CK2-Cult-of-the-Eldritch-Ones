@@ -192,26 +192,3 @@ d_warriors_of_qushakon = {
 	# Extra income due to banking, etc
 	monthly_income = 4 # (Must be an integer between 1 and 512)
 }
-
-# vanilla counties
-
-c_vestisland = {
-  holy_site = eldritch_gods
-  b_skalholt = { pentarchy = qushakon_god }
-}
-c_lancaster = {
-  holy_site = eldritch_gods
-  b_furness = { pentarchy = qushakon_god }
-}
-c_fyn = {
-  holy_site = eldritch_gods
-  b_odense = { pentarchy = qushakon_god }
-}
-c_rogaland = {
-  holy_site = eldritch_gods
-  b_roldal = { pentarchy = qushakon_god }
-}
-c_orkney = {
-  holy_site = eldritch_gods
-  b_kirkwall = { pentarchy = qushakon_god }
-}

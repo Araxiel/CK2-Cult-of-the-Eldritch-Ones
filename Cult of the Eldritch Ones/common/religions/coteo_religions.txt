@@ -62,7 +62,7 @@ eldritch_group = {
 		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
 		#color = { 0.48 0.38 0.56 } #  (122, 97, 143)
 		color = { 0.59 0.04 0.78 } #  rgb(150, 10, 200)
-		
+
     parent = eldritch_gods
 
     crusade_name = GREAT_HOLY_WAR #wip
@@ -120,7 +120,6 @@ eldritch_group = {
 
     short_reign_opinion_year_mult = 4
     can_retire_to_monastery = yes
-    can_hold_temples = yes
 		priests_can_inherit = no
 		priests_can_marry = no
     #"papacy" WIP
@@ -160,7 +159,6 @@ eldritch_group = {
     seafarer = yes
     allow_rivermovement = yes
     raised_vassal_opinion_loss = no
- 	  can_hold_temples = yes
 		priests_can_inherit = yes
 
     religious_clothing_head = 3
