@@ -1,6 +1,5 @@
 namespace = coteo_cultist_in_court
 
-
 # coteo_cultist_in_court.10 # cultist PING
 character_event = {
   id = coteo_cultist_in_court.10
@@ -10,8 +9,18 @@ character_event = {
   trigger = {
     secret_religion_group = eldritch_group
     ai = yes
+    OR = {
+      NOT = { is_in_society = cult_of_eldritch }
+      society_influence = { society = cult_of_eldritch value <= 0.3 }
+      cult_of_eldritch = {
+        num_of_society_members < 10
+      }
+      eldritch_ai_initiative_increased = yes
+    }
     liege = {
       NOT = { true_religion_group = eldritch_group }
+      NOT = { is_in_society = cult_of_eldritch }
+      NOT = { has_character_modifier = was_recently_contacted_by_cultists }
     }
   }
 
@@ -19,13 +28,23 @@ character_event = {
     years = 35
     modifier = {
       factor = 0.8
-      liege = { has_character_flag = eldritch_cult_curious }
+      liege = { trait = interest_in_weird }
     }
     modifier = {
       factor = 0.7
       liege = {
         demesne_eldritch_holy_site = yes
       }
+    }
+    modifier = {
+      factor = 0.7
+      liege = {
+        trait = lunatic
+      }
+    }
+    modifier = {
+      factor = 0.7
+      cult_ai_more_frequent = yes
     }
   }
 
@@ -51,283 +70,386 @@ character_event  = {
   immediate = {
     log = "Eldritch Cultist in Court: ---->  ---------------- Eldritch Cultist in Court | Cultist Talks to You ---------------- "
     log = "Eldritch Cultist in Court: ----> [cultist_interaction_cultist.GetBestName] is a cultist and talks with [cultist_interaction_listener.GetBestName]"
-    FROM = {
-      set_province_flag = investigation_fishing_village_reported_to_@event_target:investigating_starter
-    }
   }
 
-  # go yourself
+  # Entertain
   option = {
-    log = "Eldritch Investigation: ----> [investigating_starter.GetBestName] -> Strange Sightings -> Went Self"
-    name = coteo_investigation.1001.a
-
-    trigger = {
-      OR ={
-        has_character_flag = eldritch_cult_curious
-        check_variable = { which = "eldritch_sanity" value <= -25 }
-        OR = {
-          check_variable = { which = "strange_sightings_started" value >= 4 }
-          AND = {
-            check_variable = { which = "strange_sightings_started" value >= 2 }
-            OR = {
-              trait = brave
-              trait = shrewd
-              learning = 15
-            }
-          }
-        }
-        trait = lunatic
-        AND = {
-          check_variable = { which = "strange_sightings_started" value >= 1 }
-          ai = yes
-        }
-      }
-      is_adult = yes
-      NOT = { trait = incapable }
-      NOT = { is_inaccessible_trigger = yes }
-  	}
-
-    custom_tooltip = { text = coteo_investigation.1001.a.tt }
-    set_character_flag = investigation_fishing_village_activated_investigation
-    set_character_flag = do_not_disturb
-    character_event = { id = coteo_investigation.1002 }
+    random_list = {
+      1 = { character_event = { id = coteo_cultist_in_court.21 days = 5 random = 2 } } # Cultist Rambles "Insanely"
+      1 = { character_event = { id = coteo_cultist_in_court.31 days = 5 random = 2 } } # Cultist tells you location
+      1 = { character_event = { id = coteo_cultist_in_court.41 days = 5 random = 2 } } # Cultist Gives you a book
+    }
+		piety = -10
+    log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] is listening to [cultist_interaction_cultist.GetBestName]"
 
     ai_chance = {
-    	factor = 10
-    	modifier = {
-    		factor = 0.1
-    		tier = king
-    	}
-    	modifier = {
-    		factor = 0.05
-    		tier = emperor
-    	}
-    	modifier = {
+      factor = 100
+      modifier = {
+        factor = 2
+        trait = trusting
+      }
+      modifier = {
+				factor = 2
+				trait = lunatic
+			}
+      modifier = {
     		factor = 2
-    		tier = baron
-    	}
-    	modifier = {
-    		factor = 1.5
     		trait = cynical
     	}
-    	modifier = {
-    		factor = 3
-    		trait = brave
-    	}
-    	modifier = {
-    		factor = 3
-    		trait = lunatic
-    	}
-    	modifier = {
-    		factor = 1.5
+      modifier = {
+    		factor = 2
     		is_in_society = hermetics
     	}
     	modifier = {
-    		factor = 1.5
+    		factor = 2
     		learning = 15
     	}
     	modifier = {
-    		factor = 0.05
-    		combat_rating <= -3
-    	}
-    }
-  }
-  # Send steward to invesigate
-  option = {
-    log = "Eldritch Investigation: ----> [investigating_starter.GetBestName] -> Strange Sightings -> Sent [investigating_treasurer.GetBestName]"
-    name = coteo_investigation.1001.b
-
-    trigger = {
-      OR ={
-        has_character_flag = eldritch_cult_curious
-        check_variable = { which = "eldritch_sanity" value <= -9 }
-        check_variable = { which = "strange_sightings_started" value >= 1 }
-        ai = yes
-      }
-      any_character = {
-        liege = { character = PREVPREV }
-        has_job_title = job_treasurer
-        NOT = { trait = incapable }
-        NOT = { is_inaccessible_trigger = yes }
-        NOT = { has_any_opinion_modifier = send_me_on_scary_investigation }
-      }
-  	}
-
-    custom_tooltip = { text = coteo_investigation.1001.b.tt }
-    event_target:investigating_treasurer = {
-      set_character_flag = investigation_fishing_village_activated_investigation
-      set_character_flag = do_not_disturb
-      character_event = { id = coteo_investigation.1002 }
-      if = {
-        limit = {
-          OR = {
-            trait = craven
-            trait = paranoid
-          }
-        }
-        opinion = { modifier = send_me_on_scary_investigation who = ROOT }
-      }
-    }
-
-    ai_chance = {
-    	factor = 20
-    	modifier = {
-    		factor = 100
-    		trait = craven
+    		factor = 2
+    		check_variable = { which = "eldritch_sanity" value <= -15 }
     	}
     	modifier = {
-    		factor = 1.5
-    		trait = trusting
+    		factor = 5
+    		check_variable = { which = "eldritch_sanity" value <= -30 }
+    	}
+    	modifier = {
+    		factor = 20
+    		trait = interest_in_weird
     	}
     	modifier = {
     		factor = 2
-    		job_treasurer = {
-          OR = {
-            is_in_society = hermetics
-            learning = 13
-          }
-        }
-    	}
-    	modifier = {
-    		factor = 4
-    		job_treasurer = {
-          ai = no
-        }
+    		cult_ai_more_frequent = yes
     	}
     }
   }
-  # Send chaplain to invesigate
-  option = {
-    name = coteo_investigation.1001.c
-    log = "Eldritch Investigation: ----> [investigating_starter.GetBestName] -> Strange Sightings -> Sent [investigating_chaplain.GetBestName]"
 
-    trigger = {
-      OR ={
-        has_character_flag = eldritch_cult_curious
-        check_variable = { which = "eldritch_sanity" value <= -9 }
-        check_variable = { which = "strange_sightings_started" value >= 1 }
-        ai = yes
-      }
-      any_character = {
-        liege = { character = PREVPREV }
-        has_job_title = job_spiritual
-        NOT = { trait = incapable }
-        NOT = { is_inaccessible_trigger = yes }
-        NOT = { has_any_opinion_modifier = send_me_on_scary_investigation }
-      }
-  	}
+  # Execute them!
+	option = {
 
-    custom_tooltip = { text = coteo_investigation.1001.c.tt }
-    event_target:investigating_chaplain = {
-      set_character_flag = investigation_fishing_village_activated_investigation
-      set_character_flag = do_not_disturb
-      character_event = { id = coteo_investigation.1002 }
-      if = {
-        limit = {
-          OR = {
-            trait = craven
-            trait = paranoid
-          }
-        }
-        opinion = { modifier = send_me_on_scary_investigation who = ROOT }
-      }
-    }
+		name = MNM.70200.a
 
-    ai_chance = {
-    	factor = 20
-    	modifier = {
-    		factor = 1.5
-    		trait = trusting
-    	}
-    	modifier = {
-    		factor = 0.25
-    		trait = paranoid
-    	}
-    	modifier = {
-    		factor = 1.5
-    		trait = craven
-    	}
-    	modifier = {
-    		factor = 2.5
-    		trait = zealous
-    	}
-    	modifier = {
-    		factor = 2
-    		job_spiritual = {
-          OR = {
-            is_in_society = hermetics
-            learning = 13
-          }
-        }
-    	}
-    	modifier = {
-    		factor = 3
-    		job_spiritual = {
-          ai = no
-        }
-    	}
-    }
+    log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] executed [cultist_interaction_cultist.GetBestName]"
+    log = "Eldritch Cultist in Court: ----> /\/\/\/\/\/\/\/\/\"
+
+		piety = 10
+    eld_did_zealous_act_against = yes
+
+		tooltip = {
+			event_target:cultist_interaction_cultist = {
+				death = {
+					death_reason = death_execution_burning
+					killer = ROOT
+				}
+			}
+		}
+
+		event_target:cultist_interaction_cultist = { save_event_target_as = kinslayer_target }
+		add_kinslayer_trait_effect = yes
+
+		hidden_tooltip = {
+			event_target:cultist_interaction_cultist = {
+				if = {
+					limit = {
+            # change to eldritch specific?
+						is_devil_worshiper_trigger = yes
+						OR = {
+							has_character_modifier = under_suspicion
+							has_character_modifier = highly_suspect
+						}
+					}
+					add_character_modifier = {
+						name = known_satanist
+						duration = -1
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							is_devil_worshiper_trigger = no
+							AND = {
+								is_devil_worshiper_trigger = yes
+								NOR = {
+									has_character_modifier = under_suspicion
+									has_character_modifier = highly_suspect
+								}
+							}
+						}
+					}
+					add_character_modifier = {
+						name = accused_apostate
+						duration = -1
+					}
+				}
+				if = {
+					limit = {
+						religion = ROOT
+						controls_religion = no
+						OR = {
+							religion = catholic
+							religion = fraticelli
+							religion = orthodox
+							religion = miaphysite
+							religion = monophysite
+							religion = monothelite
+							religion = paulician
+							religion = nestorian
+							religion = yazidi
+						}
+					}
+					add_trait = excommunicated
+				}
+			}
+			opinion = {
+				modifier = opinion_accused_apostate
+				who = event_target:cultist_interaction_cultist
+				years = 100
+			}
+			event_target:cultist_interaction_cultist = {
+				character_event = { id = MNM.70300 }
+			}
+			if = {
+				limit = {
+					has_nickname = no
+				}
+				random_list = {
+					500 = {
+						# No Nickname
+					}
+					5 = {
+						give_nickname = nick_the_cleansing_flame
+					}
+					5 = {
+						give_nickname = nick_the_witch_hunter
+					}
+					5 = {
+						give_nickname = nick_the_inquisitor
+					}
+					5 = {
+						give_nickname = nick_the_purifier
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+
+			modifier = {
+				factor = 2
+				trait = lunatic
+			}
+			modifier = {
+				factor = 2
+				trait = possessed
+			}
+			modifier = {
+				factor = 2
+				trait = paranoid
+			}
+			modifier = {
+				factor = 100
+				trait = zealous
+			}
+		}
   }
-  # Pah, just the same old fishermen's superstitions. Stop bothering me.
+
+  # Brand them
   option = {
-    name = coteo_investigation.1001.d
+    name = MNM.70200.c
 
-    ## WIP send player priority option
+    log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] branded [cultist_interaction_cultist.GetBestName]"
+    log = "Eldritch Cultist in Court: ----> /\/\/\/\/\/\/\/\/\"
 
-    custom_tooltip = { text = coteo_investigation.1001.d.tt }
-    any_realm_province = {
-      limit = { has_province_flag = investigation_fishing_village_reported_to_@event_target:investigating_starter }
-      clr_province_flag = investigation_fishing_village_reported_to_@event_target:investigating_starter
-      hidden_tooltip = {
-        remove_province_modifier = cult_frightened_fishermen_not_investigated
+		hidden_tooltip = {
+			event_target:cultist_interaction_cultist = {
+				character_event = { id = MNM.70320 }
+			}
+		}
+		opinion = {
+			modifier = opinion_accused_apostate
+			who = event_target:cultist_interaction_cultist
+			years = 100
+		}
+		event_target:cultist_interaction_cultist = {
+			if = {
+				limit = {
+					is_devil_worshiper_trigger = yes
+					OR = {
+						has_character_modifier = under_suspicion
+						has_character_modifier = highly_suspect
+					}
+				}
+				add_character_modifier = {
+					name = known_satanist
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						is_devil_worshiper_trigger = no
+						AND = {
+							is_devil_worshiper_trigger = yes
+							NOR = {
+								has_character_modifier = under_suspicion
+								has_character_modifier = highly_suspect
+							}
+						}
+					}
+				}
+				add_character_modifier = {
+					name = accused_apostate
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					religion = ROOT
+					controls_religion = no
+					OR = {
+						religion = catholic
+						religion = fraticelli
+						religion = orthodox
+						religion = miaphysite
+						religion = monophysite
+						religion = monothelite
+						religion = paulician
+						religion = nestorian
+						religion = yazidi
+					}
+				}
+				add_trait = excommunicated
+			}
+		}
+    eld_did_zealous_act_against = yes
+
+    ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 0.5
+				NOT = {
+					trait = trusting
+				}
+			}
+		}
+  }
+
+  # Let them go
+	option = {
+    name = MNM.70200.d
+
+    log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] branded [cultist_interaction_cultist.GetBestName]"
+    log = "Eldritch Cultist in Court: ----> /\/\/\/\/\/\/\/\/\"
+
+    piety = -10
+    hidden_tooltip = {
+      event_target:cultist_interaction_cultist = {
+        character_event = { id = MNM.70330 }
       }
     }
-    clr_character_flag = investigation_fishing_village_eldritch_fishmen_sighted_started
-    random_province = {
-      limit = {
-        has_province_flag = investigation_fishing_village_reported_to_@event_target:investigating_starter
-      }
-      clr_province_flag = investigation_fishing_village_reported_to_@event_target:investigating_starter
+
+    opinion = {
+      modifier = opinion_accused_apostate
+      who = event_target:cultist_interaction_cultist
+      years = 10
     }
 
     ai_chance = {
-      factor = 15
+      factor = 10
+
       modifier = {
-        factor = 1.5
-        trait = craven
-      }
-      modifier = {
-        factor = 1.5
-        trait = patient
-      }
-      modifier = {
-        factor = 0.5
-        check_variable = { which = "eldritch_proof" value <= 4 }
-      }
-      modifier = {
-        factor = 0.5
-        check_variable = { which = "eldritch_proof" value <= 8 }
+        factor = 0
+        NOT = {
+          trait = trusting
+        }
       }
     }
-
-    log = "Eldritch Investigation: ----> [investigating_starter.GetBestName] -> Strange Sightings -> Pah Humbug"
-    log = "Eldritch Investigation: ---->  /\/\/\/\/\/\/\/\ Cult Of The Eldritch | Fishing Village END /\/\/\/\/\/\/\/\ "
   }
 
   after = {
-    FROM = {
-      tooltip = {
-        add_province_modifier = {
-          name = cult_frightened_fishermen
-          years = 5
-        }
-      }
-      hidden_tooltip = {
-        remove_province_modifier = cult_frightened_fishermen_not_investigated
-      }
-    }
-    hidden_tooltip = {
-      change_variable = { which = "strange_sightings_started" value = 1 }
+    add_character_modifier = {
+      name = was_recently_contacted_by_cultists
+      years = 2
+      hidden = yes
     }
   }
 }
+
+## coteo_cultist_in_court.21   # cultist rambles
+character_event  = {
+  id = coteo_cultist_in_court.21
+
+  title = coteo_cultist_in_court.21.title
+  desc = coteo_cultist_in_court.21.desc
+  picture = GFX_evt_society_joining
+
+  is_triggered_only = yes
+
+  immediate = {
+  }
+
+  # Listen
+  option = {
+    log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] has listened to [cultist_interaction_cultist.GetBestName]"
+    name = coteo_cultist_in_court.21.a
+
+    subtract_variable = { which = "eldritch_sanity" value = 6 }
+    add_small_eldritch_insight = yes
+
+    #add_trait = interest_in_weird  # potentially switch to sympathy_for_eldritch if they exist
+
+    ai_chance = {
+    	factor = 30
+    }
+  }
+
+  # Embrace
+  option = {
+    log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] is embracing [cultist_interaction_cultist.GetBestName] ramblings"
+    name = coteo_cultist_in_court.21.b
+
+    trigger = {
+      OR = {
+        check_variable = { which = "eldritch_sanity" value <= -100 }
+        check_variable = { which = "eldritch_insight" value >= 6 }
+        AND = {
+          ai = yes
+          check_variable = { which = "eldritch_insight" value >= 2 }
+        }
+      }
+    }
+
+    subtract_variable = { which = "eldritch_sanity" value = 11 }
+    subtract_variable = { which = "eldritch_insight" value = 6 }
+
+    set_secret_religion = eldritch_gods
+    log = "Eldritch: ----> [Root.GetBestName] >>> Converted Secret Religion >>> Eldritch Gods"
+
+    random = {
+      chance = 8
+      add_trait = lunatic
+    }
+
+    ai_chance = {
+    	factor = 30
+      modifier = {
+        factor = 100
+        trait = lunatic
+      }
+    	modifier = {
+    		factor = 2
+    		learning = 15
+    	}
+    }
+  }
+  after = {
+    if = {
+      limit = { NOT = { trait = interest_in_weird } }
+      add_trait = interest_in_weird
+    }
+  }
+}
+
+#coteo_cultist_in_court.31
+#coteo_cultist_in_court.41

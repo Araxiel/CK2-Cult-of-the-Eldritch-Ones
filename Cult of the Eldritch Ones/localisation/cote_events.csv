@@ -154,3 +154,13 @@ coteo_investigation.1870.b.tt;�Y[investigating_chaplain.GetFirstName]�! will
 coteo_investigation.1870.c;Let sleeping dogs lie.;;;;;;
 
 default_desc;Default Desc - Debug;;;;;;
+
+## Other Cultist Events;;;;;;
+
+coteo_cultist_in_court.11.title;Strange Ramblings;;;;;;
+coteo_cultist_in_court.11.desc;[From.GetBestName] talks with you about insane shit\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_cultist_in_court.11.a;Hear him out;;;;;;
+coteo_cultist_in_court.21.title;Strange Ramblings;;;;;;
+coteo_cultist_in_court.21.desc;You listened to the strange shit [FromFrom.GetBestName] said.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat.;;;;;;
+coteo_cultist_in_court.21.a;What strange tales he talked about.;;;;;;
+coteo_cultist_in_court.21.b;I was unsure, but what he says is the truth!;;;;;;
