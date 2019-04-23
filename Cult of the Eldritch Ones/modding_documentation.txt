@@ -47,4 +47,5 @@ Overwrites
 
 interface/sound.sfx
 interface/generalstuff.gfx
+interface/frontend.gui (unimportant)
 decisions/mnm_secret_religious_societies_decisions.txt

@@ -1,7 +1,7 @@
-#CODE;ENGLISH;FRENCH;GERMAN;SPANISH
-#;;;;;;;
-## Events;;;;;;;
-#;;;;;;;
+#CODE;ENGLISH;FRENCH;GERMAN;SPANISH;;;
+
+## Investigation Events;;;;;;;
+
 coteo_investigation_simple.10.title;A Land of Night;;;;;;
 coteo_investigation_simple.10.desc;The sun has died. The world is plunged in darkness. Nothing is left, soon all will be lost. On the dark horizon a large pyramid illuminates the darkness, with the remains of human civilization living within like maggots on a rotting corpse. Outside the pyramid, horror awaits. Great shambling things waiting for the last light to vanish, waiting to rip and tear the last of humanity that remains.\nA twisted world of death and decay, you know this place. It was your home. It will be your home. You can see the abomination in the dark, preying on life, waiting for you.\n\nAs you look across the great planes of eternal darkness, you can feel that you are being watched by a great entity. Something out there is observing you, has observed you, will observe you. It is here, right outside of your view. \n\nAs you awake, the dread and horror of what you've felt remains...;;;;;;
 coteo_investigation_simple.10.a;Surely this was just a dream...right?;;;;;;
