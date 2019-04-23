@@ -24,7 +24,7 @@ eldritch_group = {
     crusade_name = GREAT_HOLY_WAR #TODO
 		scripture_name = THE_NECRONOMICON
 		priest_title = ACOLYTE
-    piety_name = KNOWLEDGE
+    piety_name = FAVOR
 
 		high_god_name = GOD_ELDRITCH_GODS
 
@@ -67,7 +67,7 @@ eldritch_group = {
     crusade_name = GREAT_HOLY_WAR #TODO
 		high_god_name = GOD_AISURA
 		priest_title = ACOLYTE
-    piety_name = KNOWLEDGE
+    piety_name = FAVOR
 
 		god_names = {
 			GOD_GREAT_OLD_ONES GOD_ELDRITCH_GODS GOD_OLD_ONES GOD_ELDER_THINGS
@@ -105,7 +105,7 @@ eldritch_group = {
     crusade_name = GREAT_HOLY_WAR #TODO
 		high_god_name = GOD_NAAHAB
 		priest_title = KEEPER
-		piety_name = KNOWLEDGE
+		piety_name = FAVOR
 
 		god_names = {
 			GOD_GREAT_OLD_ONES GOD_ELDER_THINGS GOD_ELDRITCH_GODS GOD_OLD_ONES
@@ -142,7 +142,7 @@ eldritch_group = {
     crusade_name = GREAT_HOLY_WAR #TODO
   	high_god_name = GOD_QUASHAKON
   	priest_title = ACOLYTE
-    piety_name = KNOWLEDGE
+    piety_name = FAVOR
 
 		god_names = {
 			GOD_GREAT_OLD_ONES GOD_ELDRITCH_GODS GOD_ELDER_THINGS GOD_OLD_ONES
