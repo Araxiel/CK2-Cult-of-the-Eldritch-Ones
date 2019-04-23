@@ -2,12 +2,12 @@
 
 ## Rules;;;;;;;
 
-RULE_GROUP_COTEO;ï¿½GCult of the Eldritch Onesï¿½!;;;;;;
-coteo_ai_initiative_name;ï¿½ZCult of the Eldritch Ones:ï¿½! AI Initiative;;;;;;
+RULE_GROUP_COTEO;§GCult of the Eldritch Ones§!;;;;;;
+coteo_ai_initiative_name;§ZCult of the Eldritch Ones:§! AI Initiative;;;;;;
 coteo_ai_initiative_full_desc;The AI cultist behave normal and have the same chances of success as the players.;;;;;;
 coteo_ai_initiative_restricted_desc;The AI cultists will always fail to trigger important and world-changing events, player intervention is needed.;;;;;;
 coteo_ai_initiative_more_desc;The AI cultist have increased chances of success compared to the player.;;;;;;
-coteo_startup_cult_name;ï¿½ZCult of the Eldritch Ones:ï¿½! Startup Cult Population;;;;;;
+coteo_startup_cult_name;§ZCult of the Eldritch Ones:§! Startup Cult Population;;;;;;
 coteo_startup_cult_on_desc;The cult will already exist in the world and be populated by the AI.;;;;;;
 coteo_startup_cult_off_desc;The player will have to found the cult.;;;;;;
 coteo_startup_cult_dynamic_desc;The cult will not exist at game start, but the AI might found and start populating the cult. (Influenced by AI Initiative);;;;;;
@@ -52,35 +52,35 @@ k_naahab_high_temple;Naahab's Grand Keeper;;;;;;
 k_naahab_high_temple_adj;Naahab's Domain;;;;;;
 naahab_high_temple;Grand Keeper of Knowledge;;;;;;
 
-temple_empire_eldritch_group;Imperial Ierï¿½sylocracy;Ierï¿½sylocracy;Ierï¿½sylokratie;;Ierï¿½sylocracia;;;;;;;;;x ## ierï¿½sylos = unholy
-temple_empire_of_eldritch_group;Imperial Ierï¿½sylocracy;Ierï¿½sylocracy;Ierï¿½sylokratie;;Ierï¿½sylocracia;;;;;;;;;x ## ierï¿½sylos = unholy
-temple_kingdom_eldritch_group;Great Ierï¿½sylocracy;Ierï¿½sylocracy;Ierï¿½sylokratie;;Ierï¿½sylocracia;;;;;;;;;x
-temple_kingdom_of_eldritch_group;Great Ierï¿½sylocracy;Ierï¿½sylocracy;Ierï¿½sylokratie;;Ierï¿½sylocracia;;;;;;;;;x
-temple_duchy_eldritch_group;Ierï¿½sylocracy;Ierï¿½sylocracy;Ierï¿½sylokratie;;Ierï¿½sylocracia;;;;;;;;;x
-temple_duchy_of_eldritch_group;Ierï¿½sylocracy;Ierï¿½sylocracy;Ierï¿½sylokratie;;Ierï¿½sylocracia;;;;;;;;;x
-temple_county_eldritch_group;Great Temple;Ierï¿½sylocracy;Ierï¿½sylokratie;;Ierï¿½sylocracia;;;;;;;;;x
-temple_county_of_eldritch_group;Great Temple of;Ierï¿½sylocracy;Ierï¿½sylokratie;;Ierï¿½sylocracia;;;;;;;;;x
+temple_empire_eldritch_group;Imperial Ierósylocracy;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x ## ierósylos = unholy
+temple_empire_of_eldritch_group;Imperial Ierósylocracy;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x ## ierósylos = unholy
+temple_kingdom_eldritch_group;Great Ierósylocracy;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x
+temple_kingdom_of_eldritch_group;Great Ierósylocracy;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x
+temple_duchy_eldritch_group;Ierósylocracy;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x
+temple_duchy_of_eldritch_group;Ierósylocracy;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x
+temple_county_eldritch_group;Great Temple;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x
+temple_county_of_eldritch_group;Great Temple of;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x
 temple_barony_eldritch_group;Temple;Temple;Tempel;;Templo;;;;;;;;;x
 temple_barony_of_eldritch_group;Temple;Temple;Tempel;;Templo;;;;;;;;;x
 
-emperor_king_eldritch_group;Unholy Emperor;Empereur-ï¿½vï¿½que;Priesterkaiser;;Emperador-obispo;;;;;;;;;x
-temple_emperor_female_eldritch_group;Unholy Empress;Impï¿½ratrice;Kaiserin;;Emperatriz;;;;;;;;;x
-temple_king_eldritch_group;Grand Acolyte;Roi-ï¿½vï¿½que;Priesterkï¿½nig;;Rey-obispo;;;;;;;;;x
-temple_king_female_eldritch_group;Grand Acolyte;Reine-prï¿½tresse;Priesterkï¿½nigin;;Reina Sacerdotisa;;;;;;;;;x
-temple_duke_eldritch_group;High Archacolyte;Prince-Archevï¿½que;Erzbischof;;Prï¿½ncipe arzobispo;;;;;;;;;x
-temple_duke_female_eldritch_group;High Archacolyte;Archiprï¿½tresse;Erzpriesterin;;Reina sacerdotisa;;;;;;;;;x
-temple_count_eldritch_group;High Acolyte;Prince-ï¿½vï¿½que;Bischof;;Prï¿½ncipe obispo;;;;;;;;;x
-temple_count_female_eldritch_group;High Acolyte;Prince-ï¿½vï¿½que;Bischof;;Prï¿½ncipe obispo;;;;;;;;;x
-temple_baron_eldritch_group;Acolyte;ï¿½vï¿½que;Abt;;Obispo;;;;;;;;;x
-temple_baron_female_eldritch_group;Acolyte;ï¿½vï¿½que;Abt;;Obispo;;;;;;;;;x
-temple_king_naahab_god;Grand Keeper;Roi-ï¿½vï¿½que;Priesterkï¿½nig;;Rey-obispo;;;;;;;;;x
-temple_king_female_naahab_god;Grand Keeper;Reine-prï¿½tresse;Priesterkï¿½nigin;;Reina Sacerdotisa;;;;;;;;;x
-temple_duke_naahab_god;High Archkeeper;Prince-Archevï¿½que;Erzbischof;;Prï¿½ncipe arzobispo;;;;;;;;;x
-temple_duke_female_naahab_god;High Archkeeper;Archiprï¿½tresse;Erzpriesterin;;Reina sacerdotisa;;;;;;;;;x
-temple_count_naahab_god;High Keeper;Prince-ï¿½vï¿½que;Bischof;;Prï¿½ncipe obispo;;;;;;;;;x
-temple_count_female_naahab_god;High Keeper;Prince-ï¿½vï¿½que;Bischof;;Prï¿½ncipe obispo;;;;;;;;;x
-temple_baron_naahab_god;Keeper;ï¿½vï¿½que;Abt;;Obispo;;;;;;;;;x
-temple_baron_female_naahab_god;Keeper;ï¿½vï¿½que;Abt;;Obispo;;;;;;;;;x
+emperor_king_eldritch_group;Unholy Emperor;;Priesterkaiser;;Emperador-obispo;;;;;;;;;x
+temple_emperor_female_eldritch_group;Unholy Empress;;Kaiserin;;Emperatriz;;;;;;;;;x
+temple_king_eldritch_group;Grand Acolyte;;;;Rey-obispo;;;;;;;;;x
+temple_king_female_eldritch_group;Grand Acolyte;;;;Reina Sacerdotisa;;;;;;;;;x
+temple_duke_eldritch_group;High Archacolyte;;Erzbischof;;;;;;;;;;;x
+temple_duke_female_eldritch_group;High Archacolyte;;Erzpriesterin;;Reina sacerdotisa;;;;;;;;;x
+temple_count_eldritch_group;High Acolyte;;Bischof;;;;;;;;;;;x
+temple_count_female_eldritch_group;High Acolyte;;Bischof;;;;;;;;;;;x
+temple_baron_eldritch_group;Acolyte;;Abt;;Obispo;;;;;;;;;x
+temple_baron_female_eldritch_group;Acolyte;;Abt;;Obispo;;;;;;;;;x
+temple_king_naahab_god;Grand Keeper;;;;Rey-obispo;;;;;;;;;x
+temple_king_female_naahab_god;Grand Keeper;;;;Reina Sacerdotisa;;;;;;;;;x
+temple_duke_naahab_god;High Archkeeper;;Erzbischof;;;;;;;;;;;x
+temple_duke_female_naahab_god;High Archkeeper;;Erzpriesterin;;Reina sacerdotisa;;;;;;;;;x
+temple_count_naahab_god;High Keeper;;Bischof;;;;;;;;;;;x
+temple_count_female_naahab_god;High Keeper;-;Bischof;;;;;;;;;;;x
+temple_baron_naahab_god;Keeper;;Abt;;Obispo;;;;;;;;;x
+temple_baron_female_naahab_god;Keeper;;Abt;;Obispo;;;;;;;;;x
 
 ## Cult;;;;;;;
 
@@ -118,8 +118,8 @@ job_spiritual_eldritch_gods;Court Acolyte;;;;;;
 on_investigation;On Investigation;;;;;;
 on_investigation_desc;This character is currently away, investigating strange rumors.;;;;;;
 send_me_on_scary_investigation;Send Me on Scary Investigation;;;;;;
-eldritch_insight;ï¿½GEldritch Insightï¿½!;;;;;;
-eldritch_proof;ï¿½ZEldritch Proofï¿½!;;;;;;
+eldritch_insight;§GEldritch Insight§!;;;;;;
+eldritch_proof;§ZEldritch Proof§!;;;;;;
 eldritch_sanity;Sanity;;;;;;
 interest_in_weird;Interest in the Weird;;;;;;
 interest_in_weird_desc;A great interest (and some might call it dangerous obsession) in the Occult and the Weird.;;;;;;
@@ -128,3 +128,6 @@ interest_in_weird_desc;A great interest (and some might call it dangerous obsess
 
 create_eldritch_cult;Found Eldritch Cult;;;;;;
 create_eldritch_cult_desc;Set out by yourself to spread the truth about these awesome Eldritch beings.;;;;;;
+adopt_eldritch;Adopt Eldritch;;;;;;
+adopt_eldritch_desc;You have collected enough proof and insight to be sure of one thing, the Eldritch Gods are real, and they are out there and their power is immense. [Root.TrueReligion.GetName] and [Root.TrueReligion.GetHighGodName] are a lie. The only hope and salvation lies in serving the Eldritch Gods.;;;;;;
+eldritch_group_opinion;Eldritch Gods Opinion;;;;;;

@@ -481,10 +481,25 @@ character_event = {
     name = "OK"
 
     activate_title = { title = k_eldritch_kingdom status = yes }
+
+		primary_title = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_eldritch_kingdom
+			}
+		}
     k_eldritch_kingdom = {
-      gain_title = PREV
+      grant_title = PREV
+      make_primary_title = yes
       succession_w_cooldown = feudal_elective
       gender_succ = cognatic
+      PREV = {
+        primary_title = {
+          PREVPREV = {
+            copy_title_laws = PREV
+            copy_title_history = PREV
+          }
+        }
+      }
     }
     recalc_succession = yes
 
