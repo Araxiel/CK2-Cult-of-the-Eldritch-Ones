@@ -277,7 +277,7 @@ character_event  = {
       chance = 60
       add_trait = paranoid
     }
-    set_character_flag = eldritch_cult_rejected
+    eld_did_zealous_act_against = yes
 
     ai_chance = {
     	factor = 10
@@ -360,7 +360,7 @@ character_event  = {
     name = coteo_investigation_simple.100.a
 
     subtract_variable = { which = "eldritch_sanity" value = 6 }
-    change_variable = { which = "eldritch_insight" value = 1 }
+    add_tiny_eldritch_insight = yes
 
     #add_trait = interest_in_weird  # potentially switch to sympathy_for_eldritch if they exist
 

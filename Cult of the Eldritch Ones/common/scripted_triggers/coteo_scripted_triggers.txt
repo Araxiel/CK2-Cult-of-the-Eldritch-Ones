@@ -72,6 +72,14 @@ eldritch_ai_initiative_increased = {
   }
 }
 
+cult_ai_more_frequent = {
+  ai = yes
+  has_game_rule = {
+    name = coteo_ai_initiative
+    value = more
+  }
+}
+
 ## for now, only Europeans will be part of this
 cult_allowed_cultures = {
   capital_holding = {

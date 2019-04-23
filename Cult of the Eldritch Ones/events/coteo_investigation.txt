@@ -40,7 +40,11 @@ province_event = {
     }
     modifier = {
       factor = 0.85
-      ai = no
+      county = {
+        owner = {
+          ai = no
+        }
+      }
     }
   }
 
@@ -1166,8 +1170,8 @@ narrative_event  = {
         chance = 30
         add_trait = lunatic
       }
-      change_variable = { which = "eldritch_proof" value = 16 }
-      change_variable = { which = "eldritch_insight" value = 5 }
+      add_large_eldritch_proof = yes
+      add_medium_eldritch_insight = yes
       set_secret_religion = eldritch_gods
       character_event = { id = coteo_investigation.1850 days = 20 random = 10 }
       log = "Eldritch: ----> [Root.GetBestName] >>> Converted Secret Religion >>> Eldritch Gods"
@@ -1175,7 +1179,7 @@ narrative_event  = {
     else = {
       #character_event = { id = coteo_investigation.5000 days = 1 random = 1 }
       set_secret_religion = eldritch_gods
-      character_event = { id = coteo_investigation.1850 days = 1 random = 1 } ## WIP
+      character_event = { id = coteo_investigation.1850 days = 1 random = 1 } ## DEBUGGING WIP
     }
 
     ai_chance = {
@@ -2235,9 +2239,7 @@ character_event = {
     }
     modifier = {
       factor = 0.8
-      any_realm_title  = {
-        demesne_eldritch_holy_site = yes
-      }
+      demesne_eldritch_holy_site = yes
     }
     modifier = {
       factor = 0.8

@@ -22,6 +22,13 @@ create_lowborn_cultist = {
   }
 }
 
+eld_did_zealous_act_against = {
+  set_character_flag = eldritch_cult_rejected
+  if = {
+    limit = { trait = interest_in_weird }
+    remove_trait = interest_in_weird
+  }
+}
 
 ## Eldritch Proofs
 add_tiny_eldritch_proof = {

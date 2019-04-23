@@ -132,8 +132,7 @@ decisions = {
     }
 
     allow = {
-			prestige = 100
-			piety = 50
+			prestige = 350
       NOT = { trait = incapable }
       NOT = { is_inaccessible_trigger = yes }
       check_variable = { which = "eldritch_proof" value = 20 }
@@ -141,13 +140,11 @@ decisions = {
     }
 
     effect = {
-      character_event = { id = coteo_society.100 }
-			prestige = -250
-			join_society = cult_of_eldritch
-			set_society_grandmaster = yes # Set character as Grand Master
-			add_society_currency_major_effect = yes # Give the Grand Master a start-up capital to induct members
 
-      log = "Eldritch Cult: ----> [Root.GetBestName] -> Created Eldritch Cult"
+      prestige = -350
+      set_secret_religion = eldritch_gods 
+
+      log = "Eldritch: ----> [Root.GetBestName] >>> Converted Secret Religion >>> Eldritch Gods"
     }
   }
 
@@ -179,7 +176,7 @@ targetted_decisions = {
     }
 
     effect = {
-      narrative_event = { id = coteo_investigation.2001 }
+      character_event = { id = coteo_investigation.2001 }
     }
 
     ai_will_do = {
