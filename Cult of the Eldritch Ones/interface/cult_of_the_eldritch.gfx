@@ -536,3 +536,17 @@ spriteTypes =
 		allwaystransparent = yes
 	}
 }
+
+## Frontend
+spriteTypes =
+{
+	spriteType = {
+		name = "GFX_frontend_title_eldritch"
+		texturefile = "gfx\\flags\\e_eldritch_empire.tga"
+		loadType = "FRONTEND"
+	}
+	spriteType = {
+		name = "GFX_isenreik_dev_logo"
+		texturefile = "gfx\\interface\\Isenreik_logo_128.dds"
+	}
+}
