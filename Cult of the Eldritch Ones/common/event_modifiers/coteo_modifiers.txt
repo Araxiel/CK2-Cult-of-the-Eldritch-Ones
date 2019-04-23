@@ -6,13 +6,6 @@ cult_frightened_fishermen = {
   icon = 82
 }
 
-cult_frightened_fishermen_not_investigated = {
-  is_visible = {
-		coteo_debugging_on = yes
-	}
-  icon = 81
-}
-
 cult_frightened_fishermen_vengeance = {
   local_tax_modifier = -0.25
   local_revolt_risk = 0.06
@@ -35,6 +28,19 @@ coteo_mod_weird_book_found = {
   #ai_rationality = -10
 }
 
+
+cult_frightened_fishermen_not_investigated = {
+  is_visible = {
+    coteo_debugging_on = yes
+  }
+  icon = 81
+}
+was_recently_contacted_by_cultists = {
+  is_visible = {
+    coteo_debugging_on = yes
+  }
+  icon = 81
+}
 ##debug
 
 province_debug_modifier = {

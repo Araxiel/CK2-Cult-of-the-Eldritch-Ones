@@ -96,6 +96,10 @@ decisions = {
         check_variable = { which = "eldritch_sanity" value <= -50 }
       }
       modifier = {
+        factor = 1.3
+        trait = interest_in_weird
+      }
+      modifier = {
         factor = 1.6
         trait = cynical
       }

@@ -23,7 +23,7 @@ narrative_event  = {
     years = 80
     modifier = {
       factor = 0.5
-      has_character_flag = eldritch_cult_curious
+      trait = interest_in_weird
     }
     modifier = {
       factor = 0.5
@@ -57,6 +57,13 @@ narrative_event  = {
       chance = 15
       add_trait = stressed
     }
+    if = {
+      limit = { NOT = { trait = interest_in_weird } }
+      random = {
+        chance = 20
+        add_trait = interest_in_weird
+      }
+    }
 
     log = "Eldritch Investigation: ----> [Root.GetBestName] -> Dream: A Land of Night -> Unsettled"
 
@@ -79,8 +86,11 @@ narrative_event  = {
       chance = 5
       add_trait = lunatic
     }
-    set_character_flag = eldritch_cult_curious
-    change_variable = { which = "eldritch_insight" value = 1 }
+    if = {
+      limit = { NOT = { trait = interest_in_weird } }
+      add_trait = interest_in_weird
+    }
+    add_tiny_eldritch_insight = yes
 
     log = "Eldritch Investigation: ----> [Root.GetBestName] -> Dream: A Land of Night -> Embrace"
 
@@ -96,7 +106,7 @@ narrative_event  = {
     	}
       modifier = {
     		factor = 10
-    		has_character_flag = eldritch_cult_curious
+    		trait = interest_in_weird
     	}
     }
   }
@@ -146,7 +156,7 @@ character_event  = {
     years = 105
     modifier = {
       factor = 0.2
-      has_character_flag = eldritch_cult_curious
+      trait = interest_in_weird
     }
     modifier = {
       factor = 0.7
@@ -201,7 +211,7 @@ character_event  = {
 
     subtract_variable = { which = "eldritch_sanity" value = 4 }
     add_character_modifier = { name = coteo_mod_weird_book_found years = 10 }
-    set_character_flag = eldritch_cult_curious
+    add_trait = interest_in_weird
 
     ai_chance = {
     	factor = 35
@@ -226,8 +236,8 @@ character_event  = {
     		check_variable = { which = "eldritch_sanity" value <= -30 }
     	}
     	modifier = {
-    		factor = 20
-    		has_character_flag = eldritch_cult_curious
+    		factor = 10
+    		trait = interest_in_weird
     	}
       modifier = {
         factor = 0.8
@@ -383,9 +393,12 @@ character_event  = {
 
     subtract_variable = { which = "eldritch_sanity" value = 11 }
     subtract_variable = { which = "eldritch_insight" value = 6 }
-    set_character_flag = eldritch_cult_curious
 
     set_secret_religion = eldritch_gods
+    if = {
+      limit = { trait = interest_in_weird }
+      remove_trait = interest_in_weird
+    }
     log = "Eldritch: ----> [Root.GetBestName] >>> Converted Secret Religion >>> Eldritch Gods"
 
     random = {
@@ -407,7 +420,6 @@ character_event  = {
   }
 
   after = {
-    set_character_flag = eldritch_cult_curious
     set_character_flag = has_read_eldritch_book
   }
 }
@@ -456,7 +468,7 @@ narrative_event  = {
     years = 170
     modifier = {
       factor = 0.2
-      has_character_flag = eldritch_cult_curious
+      trait = interest_in_weird
     }
     modifier = {
       factor = 0.7
@@ -576,8 +588,10 @@ narrative_event  = {
       chance = 5
       add_trait = lunatic
     }
-
-    set_character_flag = eldritch_cult_curious
+    if = {
+      limit = { NOT = { trait = interest_in_weird } }
+      add_trait = interest_in_weird
+    }
 
     ai_chance = {
     	factor = 20
@@ -603,7 +617,7 @@ narrative_event  = {
     	}
     	modifier = {
     		factor = 20
-    		has_character_flag = eldritch_cult_curious
+    		trait = interest_in_weird
     	}
     }
   }

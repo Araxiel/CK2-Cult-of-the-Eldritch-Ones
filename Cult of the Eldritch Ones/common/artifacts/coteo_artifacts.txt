@@ -17,7 +17,7 @@ liber_investigationis = {
       custom_tooltip = {
   			text = is_sticking_his_nose_where_it_doesnt_belong
         OR = {
-          has_character_flag = eldritch_cult_curious
+          trait = interest_in_weird
           true_religion_group = eldritch_group
         }
       }
@@ -46,7 +46,7 @@ ars_magna_et_ultima = {
       custom_tooltip = {
         text = is_sticking_his_nose_where_it_doesnt_belong
         OR = {
-          has_character_flag = eldritch_cult_curious
+          trait = interest_in_weird
           true_religion_group = eldritch_group
         }
       }
@@ -75,7 +75,7 @@ of_unspeakable_cults = {
       custom_tooltip = {
   			text = is_sticking_his_nose_where_it_doesnt_belong
         OR = {
-          has_character_flag = eldritch_cult_curious
+          trait = interest_in_weird
           true_religion_group = eldritch_group
         }
       }

@@ -213,7 +213,7 @@ character_event  = {
     }
     if = {
       limit = {
-        has_character_flag = eldritch_cult_curious
+        trait = interest_in_weird
         not_yet_woke = no
       }
       clr_character_flag = eldritch_cult_curious
@@ -250,7 +250,8 @@ character_event = {
   }
   option = {
     name = coteo_debug.10.b
-    change_variable = { which = "eldritch_insight" value = 5 }
+    add_medium_eldritch_insight = yes
+    add_large_eldritch_proof = yes
     change_variable = { which = "eldritch_sanity" value = -40 }
     prestige = 250
   }
@@ -263,6 +264,10 @@ character_event = {
         type = temple
       }
     }
+  }
+  option = {
+    name = "OK"
+
   }
 }
 

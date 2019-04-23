@@ -28,7 +28,7 @@ province_event = {
     years = 70
     modifier = {
       factor = 0.8
-      owner = { has_character_flag = eldritch_cult_curious }
+      owner = { trait = interest_in_weird }
     }
     modifier = {
       factor = 0.7
@@ -107,7 +107,7 @@ character_event  = {
 
     trigger = {
       OR ={
-        has_character_flag = eldritch_cult_curious
+        trait = interest_in_weird
         check_variable = { which = "eldritch_sanity" value <= -25 }
         OR = {
           check_variable = { which = "strange_sightings_started" value >= 4 }
@@ -183,7 +183,7 @@ character_event  = {
 
     trigger = {
       OR ={
-        has_character_flag = eldritch_cult_curious
+        trait = interest_in_weird
         check_variable = { which = "eldritch_sanity" value <= -9 }
         check_variable = { which = "strange_sightings_started" value >= 1 }
         ai = yes
@@ -247,7 +247,7 @@ character_event  = {
 
     trigger = {
       OR ={
-        has_character_flag = eldritch_cult_curious
+        trait = interest_in_weird
         check_variable = { which = "eldritch_sanity" value <= -9 }
         check_variable = { which = "strange_sightings_started" value >= 1 }
         ai = yes
@@ -2011,7 +2011,7 @@ character_event  = {
 
     trigger = {
       OR ={
-        has_character_flag = eldritch_cult_curious
+        trait = interest_in_weird
         check_variable = { which = "eldritch_sanity" value <= -25 }
         OR = {
           check_variable = { which = "strange_sightings_started" value >= 4 }
@@ -2231,7 +2231,7 @@ character_event = {
     years = 60
     modifier = {
       factor = 0.8
-      has_character_flag = eldritch_cult_curious
+      trait = interest_in_weird
     }
     modifier = {
       factor = 0.8
