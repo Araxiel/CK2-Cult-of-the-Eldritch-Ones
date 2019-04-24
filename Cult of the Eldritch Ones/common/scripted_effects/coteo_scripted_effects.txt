@@ -14,8 +14,10 @@ create_lowborn_cultist = {
       chance = 50
       liege = {
         any_realm_character = {
-          limit = { is_landed = yes }
-          move_character = PREVPREV
+          limit = { is_ruler = yes }
+          event_target:created_lowborn_cultist = {
+            move_character = PREV
+          }
         }
       }
     }
