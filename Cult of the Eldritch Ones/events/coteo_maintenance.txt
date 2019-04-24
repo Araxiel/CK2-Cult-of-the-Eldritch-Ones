@@ -1,6 +1,6 @@
 namespace = coteo_janitor
 
-# coteo_janitor.10 # general
+# coteo_janitor.10 # general set-up
 character_event = {
   id = coteo_janitor.10
 
@@ -19,18 +19,23 @@ character_event = {
 
     ## TODO ; adjust dynamically - throws up error, but known
     c_vestisland = {
+      # Audax Validator "." Ignore_ALL
       set_holy_site_with_heresies = eldritch_group
     }
     c_lancaster = {
+      # Audax Validator "." Ignore_ALL
       set_holy_site_with_heresies = eldritch_group
     }
     c_fyn = {
+      # Audax Validator "." Ignore_ALL
       set_holy_site_with_heresies = eldritch_group
     }
     c_rogaland = {
+      # Audax Validator "." Ignore_ALL
       set_holy_site_with_heresies = eldritch_group
     }
     c_orkney = {
+      # Audax Validator "." Ignore_ALL
       set_holy_site_with_heresies = eldritch_group
     }
 

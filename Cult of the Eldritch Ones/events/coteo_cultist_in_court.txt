@@ -11,7 +11,7 @@ character_event = {
     ai = yes
     OR = {
       NOT = { is_in_society = cult_of_eldritch }
-      society_influence = { society = cult_of_eldritch value <= 0.3 }
+      society_influence = { society = cult_of_eldritch value = 0.3 }
       cult_of_eldritch = {
         num_of_society_members < 10
       }
@@ -68,19 +68,19 @@ character_event  = {
   is_triggered_only = yes
 
   immediate = {
-    log = "Eldritch Cultist in Court: ---->  ---------------- Eldritch Cultist in Court | Cultist Talks to You ---------------- "
-    log = "Eldritch Cultist in Court: ----> [cultist_interaction_cultist.GetBestName] is a cultist and talks with [cultist_interaction_listener.GetBestName]"
+    #log = "Eldritch Cultist in Court: ---->  ---------------- Eldritch Cultist in Court | Cultist Talks to You ---------------- "
+    #log = "Eldritch Cultist in Court: ----> [cultist_interaction_cultist.GetBestName] is a cultist and talks with [cultist_interaction_listener.GetBestName]"
   }
 
   # Entertain
   option = {
     random_list = {
       1 = { character_event = { id = coteo_cultist_in_court.21 days = 5 random = 2 } } # Cultist Rambles "Insanely"
-      1 = { character_event = { id = coteo_cultist_in_court.31 days = 5 random = 2 } } # Cultist tells you location
-      1 = { character_event = { id = coteo_cultist_in_court.41 days = 5 random = 2 } } # Cultist Gives you a book
+      #1 = { character_event = { id = coteo_cultist_in_court.31 days = 5 random = 2 } } # Cultist tells you location
+      #1 = { character_event = { id = coteo_cultist_in_court.41 days = 5 random = 2 } } # Cultist Gives you a book
     }
 		piety = -10
-    log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] is listening to [cultist_interaction_cultist.GetBestName]"
+    #log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] is listening to [cultist_interaction_cultist.GetBestName]"
 
     ai_chance = {
       factor = 100
@@ -128,8 +128,8 @@ character_event  = {
 
 		name = MNM.70200.a
 
-    log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] executed [cultist_interaction_cultist.GetBestName]"
-    log = "Eldritch Cultist in Court: ----> /\/\/\/\/\/\/\/\/\"
+    #log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] executed [cultist_interaction_cultist.GetBestName]"
+    #log = "Eldritch Cultist in Court: ----> /\/\/\/\/\/\/\/\/\"
 
 		piety = 10
     eld_did_zealous_act_against = yes
@@ -257,8 +257,8 @@ character_event  = {
   option = {
     name = MNM.70200.c
 
-    log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] branded [cultist_interaction_cultist.GetBestName]"
-    log = "Eldritch Cultist in Court: ----> /\/\/\/\/\/\/\/\/\"
+    #log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] branded [cultist_interaction_cultist.GetBestName]"
+    #log = "Eldritch Cultist in Court: ----> /\/\/\/\/\/\/\/\/\"
 
 		hidden_tooltip = {
 			event_target:cultist_interaction_cultist = {
@@ -339,8 +339,8 @@ character_event  = {
 	option = {
     name = MNM.70200.d
 
-    log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] branded [cultist_interaction_cultist.GetBestName]"
-    log = "Eldritch Cultist in Court: ----> /\/\/\/\/\/\/\/\/\"
+    #log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] branded [cultist_interaction_cultist.GetBestName]"
+    #log = "Eldritch Cultist in Court: ----> /\/\/\/\/\/\/\/\/\"
 
     piety = -10
     hidden_tooltip = {
@@ -391,7 +391,7 @@ character_event  = {
 
   # Listen
   option = {
-    log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] has listened to [cultist_interaction_cultist.GetBestName]"
+    #log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] has listened to [cultist_interaction_cultist.GetBestName]"
     name = coteo_cultist_in_court.21.a
 
     subtract_variable = { which = "eldritch_sanity" value = 6 }
@@ -406,7 +406,7 @@ character_event  = {
 
   # Embrace
   option = {
-    log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] is embracing [cultist_interaction_cultist.GetBestName] ramblings"
+    #log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] is embracing [cultist_interaction_cultist.GetBestName] ramblings"
     name = coteo_cultist_in_court.21.b
 
     trigger = {
@@ -424,7 +424,7 @@ character_event  = {
     subtract_variable = { which = "eldritch_insight" value = 6 }
 
     set_secret_religion = eldritch_gods
-    log = "Eldritch: ----> [Root.GetBestName] >>> Converted Secret Religion >>> Eldritch Gods"
+    #log = "Eldritch: ----> [Root.GetBestName] >>> Converted Secret Religion >>> Eldritch Gods"
 
     random = {
       chance = 8
