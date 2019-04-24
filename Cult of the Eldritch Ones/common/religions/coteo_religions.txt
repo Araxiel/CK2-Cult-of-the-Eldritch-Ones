@@ -165,5 +165,3 @@ eldritch_group = {
 	}
 
 }
-
-## 56 original religions
