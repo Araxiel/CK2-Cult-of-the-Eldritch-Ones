@@ -4,11 +4,11 @@ on_chronicle_start = {
 	}
 }
 
-on_character_ask_to_join_society = {
-	events = {
-		#coteo_society.10 #Join cult
-	}
-}
+#on_character_ask_to_join_society = {
+#	events = {
+#		#coteo_society.10 #Join cult
+#	}
+#}
 
 on_yearly_pulse = {
 	events = {

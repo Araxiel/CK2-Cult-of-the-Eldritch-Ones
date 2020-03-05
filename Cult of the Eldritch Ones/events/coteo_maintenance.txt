@@ -19,23 +19,18 @@ character_event = {
 
     ## TODO ; adjust dynamically - throws up error, but known
     c_vestisland = {
-      # Audax Validator "." Ignore_ALL
       set_holy_site_with_heresies = eldritch_group
     }
     c_lancaster = {
-      # Audax Validator "." Ignore_ALL
       set_holy_site_with_heresies = eldritch_group
     }
     c_fyn = {
-      # Audax Validator "." Ignore_ALL
       set_holy_site_with_heresies = eldritch_group
     }
     c_rogaland = {
-      # Audax Validator "." Ignore_ALL
       set_holy_site_with_heresies = eldritch_group
     }
     c_orkney = {
-      # Audax Validator "." Ignore_ALL
       set_holy_site_with_heresies = eldritch_group
     }
 
@@ -234,19 +229,20 @@ character_event  = {
       }
     }
     # other maintenance
-    if = {
-      limit = {
-        trait = interest_in_weird
-        not_yet_woke = no
-      }
-      clr_character_flag = eldritch_cult_curious
-    }
-    if = {
-      limit = {
-        NOT = { has_character_modifier = coteo_mod_weird_book_found }
-      }
-      clr_character_flag = has_read_eldritch_book
-    }
+    ## TODO
+    ## if = {
+    ##   limit = {
+    ##     trait = interest_in_weird
+    ##     not_yet_woke = no
+    ##   }
+    ##   ## temp clr_character_flag = eldritch_cult_curious
+    ## }
+    ## if = {
+    ##   limit = {
+    ##     NOT = { has_character_modifier = coteo_mod_weird_book_found }
+    ##   }
+    ##   ## temp clr_character_flag = has_read_eldritch_book
+    ## }
 
   }
 }
@@ -321,7 +317,7 @@ character_event = {
       }
       remove_province_modifier = cult_frightened_fishermen
       remove_province_modifier = cult_frightened_fishermen_not_investigated
-      clr_province_flag = cult_frightened_fishermen_investigating_province
+      ## temp clr_province_flag = cult_frightened_fishermen_investigating_province
       add_province_modifier = {
         name = province_debug_modifier
         days = 10
@@ -539,7 +535,7 @@ character_event = {
       d_eldritch_high_temple = {
         gain_title = PREV
         set_defacto_liege = k_eldritch_kingdom
-        set_title_landless = { title = THIS status = yes }
+        ## temp set_title_landless = { title = THIS status = yes }
       }
     }
 
@@ -553,7 +549,7 @@ character_event = {
       d_aisura_high_temple = {
         gain_title = PREV
         set_defacto_liege = k_eldritch_kingdom
-        set_title_landless = { title = THIS status = yes }
+        ## temp set_title_landless = { title = THIS status = yes }
         succession = open_elective
         gender_succ = true_cognatic
       }

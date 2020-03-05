@@ -9,24 +9,24 @@ has_eldritch_cult_society_prerequisites = {
   custom_tooltip = {
     text = must_be_in_good_standing_with_cult_tooltip
     hidden_tooltip = {
-      NOT = { has_character_flag = eldritch_cult_enemy }
+      ##TODO NOT = { has_character_flag = eldritch_cult_enemy }
     }
   }
 }
 
 has_discovered_eldritch_cult = {
   OR = {
-    has_character_flag = discovered_eldritch_cult
-    has_dynasty_flag = discovered_eldritch_cult
+    ##TODO has_character_flag = discovered_eldritch_cult
+    ##TODO has_dynasty_flag = discovered_eldritch_cult
   }
 }
 
 not_yet_woke = {
   OR = {
-    #NOT = { has_character_flag = discovered_eldritch_cult }
+    ##TODO NOT = { has_character_flag = discovered_eldritch_cult }
     NOT = { true_religion_group = eldritch_group }
     NOT = { is_in_society = cult_of_eldritch }
-    #NOT = { has_global_flag = eldritch_kingdom_founded }
+    ##TODO NOT = { has_global_flag = eldritch_kingdom_founded }
   }
 }
 

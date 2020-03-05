@@ -11,7 +11,7 @@ character_event = {
     ai = yes
     OR = {
       NOT = { is_in_society = cult_of_eldritch }
-      society_influence = { society = cult_of_eldritch value = 0.3 }
+      society_influence = { society = cult_of_eldritch value = 30 }
       cult_of_eldritch = {
         num_of_society_members < 10
       }

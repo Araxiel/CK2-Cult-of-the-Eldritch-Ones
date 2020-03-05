@@ -1,4 +1,3 @@
-# GetRngHaircolour       - a random haircolour for description
 defined_text = {
   name = GetRandomSombreWeather
   text = {
@@ -11,4 +10,3 @@ defined_text = {
 		localisation_key = GetRandomSombreWeather_fog
 	}
 }
-##
