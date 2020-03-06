@@ -6,7 +6,7 @@ k_eldritch_kingdom = {
 
   allow = {
     religion_group = eldritch_group
-    ## TODO has_global_flag = cult_revolt_happened
+    eldritch_realm_exists = yes
   }
 
   religion = eldritch_gods
@@ -25,7 +25,7 @@ e_eldritch_empire = {
 
   allow = {
     religion_group = eldritch_group
-    ## TODO has_global_flag = cult_revolt_happened
+    eldritch_realm_exists = yes
     ## TODO has_global_flag = can_create_eldritch_empire
   }
 
@@ -46,7 +46,7 @@ d_eldritch_high_temple = {
   short_name = yes
 
   allow = {
-    ## TODO has_global_flag = cult_revolt_happened
+    eldritch_realm_exists = yes
     num_of_holy_sites = 3
   }
 
@@ -68,7 +68,7 @@ d_aisura_high_temple = {
   short_name = yes
 
   allow = {
-    ## TODO has_global_flag = cult_revolt_happened
+    eldritch_realm_exists = yes
     num_of_holy_sites = 3
   }
 
@@ -87,7 +87,7 @@ k_naahab_high_temple = {
   short_name = yes
 
   allow = {
-    ## TODO has_global_flag = cult_revolt_happened
+    eldritch_realm_exists = yes
     num_of_holy_sites = 3
   }
 

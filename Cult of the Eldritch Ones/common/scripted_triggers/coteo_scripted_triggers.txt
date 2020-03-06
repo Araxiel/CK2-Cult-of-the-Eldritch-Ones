@@ -81,10 +81,14 @@ cult_ai_more_frequent = {
 }
 
 ## for now, only Europeans will be part of this
-cult_allowed_cultures = {
+cult_allowed_region = {
   capital_holding = {
     region = world_europe
   }
+}
+
+eldritch_realm_exists = {
+  always = no
 }
 
 ## other

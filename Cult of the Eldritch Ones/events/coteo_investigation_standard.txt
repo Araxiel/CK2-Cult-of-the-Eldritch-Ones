@@ -8,15 +8,13 @@ narrative_event  = {
   desc = coteo_investigation_simple.10.desc
   picture = GFX_evt_nightland_watcher
   window = "CoteoBiggerEventWindow"
-  #window = "BiggerEventWindow"
-  #Background = GFX_event_custom_bg_purple
 
   only_rulers = yes
 
   trigger = {
     not_yet_woke = yes
     NOT = { has_character_flag = eldritch_land_of_night }
-    #cult_allowed_cultures = yes
+    # cult_allowed_region = yes
   }
 
   mean_time_to_happen = {
@@ -27,7 +25,8 @@ narrative_event  = {
     }
     modifier = {
       factor = 0.5
-      check_variable = { which = "eldritch_sanity" value <= -10 }
+      #has_instances_of_character_modifier = { modifier = eldritch_insanity amount = 2 }
+      has_character_modifier = eldritch_insanity
     }
     modifier = {
       factor = 0.4
@@ -43,7 +42,7 @@ narrative_event  = {
   }
 
   immediate = {
-    change_variable = { which = "eldritch_sanity" value = -2 }
+    add_character_modifier = { name = eldritch_insanity stacking = yes duration = -1 } 
     set_character_flag = eldritch_land_of_night
   }
 
@@ -52,18 +51,11 @@ narrative_event  = {
     name = coteo_investigation_simple.10.a
 
     custom_tooltip = { text = coteo_investigation_simple.10.a.tt }
-    subtract_variable = { which = "eldritch_sanity" value = 3 }
+    add_character_modifier = { name = eldritch_insanity stacking = yes duration = -1 } 
     random = {
       chance = 15
       add_trait = stressed
-    }
-    if = {
-      limit = { NOT = { trait = interest_in_weird } }
-      random = {
-        chance = 20
-        add_trait = interest_in_weird
-      }
-    }
+    } 
 
     log = "Eldritch Investigation: ----> [Root.GetBestName] -> Dream: A Land of Night -> Unsettled"
 
@@ -76,7 +68,7 @@ narrative_event  = {
   option = {
     name = coteo_investigation_simple.10.b
 
-    subtract_variable = { which = "eldritch_sanity" value = 7 }
+    add_character_modifier = { name = eldritch_insanity stacking = yes duration = -1 }
     custom_tooltip = { text = coteo_investigation_simple.10.b.tt }
     random = {
       chance = 45
@@ -90,7 +82,7 @@ narrative_event  = {
       limit = { NOT = { trait = interest_in_weird } }
       add_trait = interest_in_weird
     }
-    add_tiny_eldritch_insight = yes
+    add_character_modifier = { name = eldritch_insight stacking = yes duration = -1 }
 
     log = "Eldritch Investigation: ----> [Root.GetBestName] -> Dream: A Land of Night -> Embrace"
 
@@ -102,7 +94,7 @@ narrative_event  = {
     	}
       modifier = {
     		factor = 2
-    		check_variable = { which = "eldritch_sanity" value <= -15 }
+        has_character_modifier = eldritch_insanity
     	}
       modifier = {
     		factor = 10
@@ -115,7 +107,7 @@ narrative_event  = {
   option = {
     name = coteo_investigation_simple.10.c
 
-    subtract_variable = { which = "eldritch_sanity" value = 2 }
+    remove_character_modifiers = { modifier = eldritch_insanity amount = 2 }
     custom_tooltip = { text = coteo_investigation_simple.10.c.tt }
     random = {
       chance = 25
@@ -135,6 +127,7 @@ narrative_event  = {
   }
 }
 
+## v0.2.1
 ## coteo_investigation_simple.20   # Find some old book
 character_event  = {
   id = coteo_investigation_simple.20
@@ -149,7 +142,7 @@ character_event  = {
     not_yet_woke = yes
     NOT = { has_character_flag = has_eldritch_book }
     NOT = { has_character_modifier = coteo_mod_weird_book_found }
-    cult_allowed_cultures = yes
+    cult_allowed_region = yes
   }
 
   mean_time_to_happen = {
@@ -160,11 +153,11 @@ character_event  = {
     }
     modifier = {
       factor = 0.7
-      check_variable = { which = "eldritch_sanity" value <= -10 }
+      check_variable = { which = "eldritch_sanity_var" value <= -10 }
     }
     modifier = {
       factor = 0.6
-      check_variable = { which = "eldritch_sanity" value <= -20 }
+      check_variable = { which = "eldritch_sanity_var" value <= -20 }
     }
     modifier = {
       factor = 0.5
@@ -201,7 +194,7 @@ character_event  = {
       1 = { set_variable = { which = rng_picture value = 2 } }
       1 = { set_variable = { which = rng_picture value = 3 } }
     }
-    change_variable = { which = "eldritch_sanity" value = -3 }
+    change_variable = { which = "eldritch_sanity_var" value = -3 }
 
   }
 
@@ -209,7 +202,7 @@ character_event  = {
   option = {
     name = coteo_investigation_simple.40.a
 
-    subtract_variable = { which = "eldritch_sanity" value = 4 }
+    subtract_variable = { which = "eldritch_sanity_var" value = 4 }
     add_character_modifier = { name = coteo_mod_weird_book_found years = 10 }
     add_trait = interest_in_weird
 
@@ -229,11 +222,11 @@ character_event  = {
     	}
     	modifier = {
     		factor = 2
-    		check_variable = { which = "eldritch_sanity" value <= -15 }
+    		check_variable = { which = "eldritch_sanity_var" value <= -15 }
     	}
     	modifier = {
     		factor = 5
-    		check_variable = { which = "eldritch_sanity" value <= -30 }
+    		check_variable = { which = "eldritch_sanity_var" value <= -30 }
     	}
     	modifier = {
     		factor = 10
@@ -251,7 +244,7 @@ character_event  = {
   option = {
     name = coteo_investigation_simple.40.b
 
-    subtract_variable = { which = "eldritch_sanity" value = 2 }
+    subtract_variable = { which = "eldritch_sanity_var" value = 2 }
     random = {
       chance = 15
       add_trait = stressed
@@ -267,7 +260,7 @@ character_event  = {
   option = {
     name = coteo_investigation_simple.40.c
 
-    #subtract_variable = { which = "eldritch_sanity" value = 1 }
+    #subtract_variable = { which = "eldritch_sanity_var" value = 1 }
     custom_tooltip = { text = coteo_investigation_simple.40.c.tt }
     random = {
       chance = 25
@@ -311,7 +304,7 @@ character_event  = {
   trigger = {
     not_yet_woke = yes
     has_character_modifier = coteo_mod_weird_book_found
-    cult_allowed_cultures = yes
+    cult_allowed_region = yes
     NOT = { has_character_flag = has_read_eldritch_book }
   }
 
@@ -319,11 +312,11 @@ character_event  = {
     years = 30
     modifier = {
       factor = 0.7
-      check_variable = { which = "eldritch_sanity" value <= -10 }
+      check_variable = { which = "eldritch_sanity_var" value <= -10 }
     }
     modifier = {
       factor = 0.6
-      check_variable = { which = "eldritch_sanity" value <= -20 }
+      check_variable = { which = "eldritch_sanity_var" value <= -20 }
     }
     modifier = {
       factor = 0.5
@@ -351,7 +344,7 @@ character_event  = {
   }
 
   immediate = {
-    change_variable = { which = "eldritch_sanity" value = -2 }
+    change_variable = { which = "eldritch_sanity_var" value = -2 }
   }
 
   # unsettling
@@ -359,8 +352,8 @@ character_event  = {
     log = "Eldritch Investigation: ----> [Root.GetBestName] -> Reading Forbidden Book -> Unsettling"
     name = coteo_investigation_simple.100.a
 
-    subtract_variable = { which = "eldritch_sanity" value = 6 }
-    add_tiny_eldritch_insight = yes
+    subtract_variable = { which = "eldritch_sanity_var" value = 6 }
+    add_tiny_eldritch_insight_var = yes
 
     #add_trait = interest_in_weird  # potentially switch to sympathy_for_eldritch if they exist
 
@@ -382,17 +375,17 @@ character_event  = {
 
     trigger = {
       OR = {
-        check_variable = { which = "eldritch_sanity" value <= -100 }
-        check_variable = { which = "eldritch_insight" value >= 6 }
+        check_variable = { which = "eldritch_sanity_var" value <= -100 }
+        check_variable = { which = "eldritch_insight_var" value >= 6 }
         AND = {
           ai = yes
-          check_variable = { which = "eldritch_insight" value >= 2 }
+          check_variable = { which = "eldritch_insight_var" value >= 2 }
         }
       }
     }
 
-    subtract_variable = { which = "eldritch_sanity" value = 11 }
-    subtract_variable = { which = "eldritch_insight" value = 6 }
+    subtract_variable = { which = "eldritch_sanity_var" value = 11 }
+    subtract_variable = { which = "eldritch_insight_var" value = 6 }
 
     set_secret_religion = eldritch_gods
     if = {
@@ -460,7 +453,7 @@ narrative_event  = {
       NOT = { has_artifact = of_unspeakable_cults } # Von Unaussprechlichen Kulten
     }
     NOT = { has_character_modifier = coteo_mod_weird_book_found }
-    cult_allowed_cultures = yes
+    cult_allowed_region = yes
     ai = no
   }
 
@@ -472,11 +465,11 @@ narrative_event  = {
     }
     modifier = {
       factor = 0.7
-      check_variable = { which = "eldritch_sanity" value <= -10 }
+      check_variable = { which = "eldritch_sanity_var" value <= -10 }
     }
     modifier = {
       factor = 0.6
-      check_variable = { which = "eldritch_sanity" value <= -20 }
+      check_variable = { which = "eldritch_sanity_var" value <= -20 }
     }
     modifier = {
       factor = 0.5
@@ -518,7 +511,7 @@ narrative_event  = {
       1 = { set_variable = { which = rng_value value = 2 } }
       1 = { set_variable = { which = rng_value value = 3 } }
     }
-    change_variable = { which = "eldritch_sanity" value = -3 }
+    change_variable = { which = "eldritch_sanity_var" value = -3 }
 
     log = "Eldritch Investigation: ----> [Root.GetBestName] -> Found Important Book"
   }
@@ -527,7 +520,7 @@ narrative_event  = {
   option = {
     name = coteo_investigation_simple.40.a
 
-    subtract_variable = { which = "eldritch_sanity" value = 20 }
+    subtract_variable = { which = "eldritch_sanity_var" value = 20 }
 
     if = {
       limit = {
@@ -609,11 +602,11 @@ narrative_event  = {
     	}
     	modifier = {
     		factor = 2
-    		check_variable = { which = "eldritch_sanity" value <= -15 }
+    		check_variable = { which = "eldritch_sanity_var" value <= -15 }
     	}
     	modifier = {
     		factor = 5
-    		check_variable = { which = "eldritch_sanity" value <= -30 }
+    		check_variable = { which = "eldritch_sanity_var" value <= -30 }
     	}
     	modifier = {
     		factor = 20
@@ -626,7 +619,7 @@ narrative_event  = {
   option = {
     name = coteo_investigation_simple.40.b
 
-    subtract_variable = { which = "eldritch_sanity" value = 9 }
+    subtract_variable = { which = "eldritch_sanity_var" value = 9 }
     random = {
       chance = 15
       add_trait = stressed
@@ -641,7 +634,7 @@ narrative_event  = {
   option = {
     name = coteo_investigation_simple.40.c
 
-    subtract_variable = { which = "eldritch_sanity" value = 4 }
+    subtract_variable = { which = "eldritch_sanity_var" value = 4 }
     custom_tooltip = { text = coteo_investigation_simple.40.c.tt }
     random = {
       chance = 25

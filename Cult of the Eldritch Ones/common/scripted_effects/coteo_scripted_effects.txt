@@ -33,87 +33,87 @@ eld_did_zealous_act_against = {
 }
 
 ## Eldritch Proofs
-add_tiny_eldritch_proof = {
-  change_variable = { which = "eldritch_proof" value = 1 }
+add_tiny_eldritch_proof_var = {
+  change_variable = { which = "eldritch_proof_var" value = 1 }
   hidden_tooltip = {
-    change_variable = { which = "eldritch_proof_gained" value = 1 }
+    change_variable = { which = "eldritch_proof_var_gained" value = 1 }
   }
 } # 1
 
-add_small_eldritch_proof = {
-  change_variable = { which = "eldritch_proof" value = 4 }
+add_small_eldritch_proof_var = {
+  change_variable = { which = "eldritch_proof_var" value = 4 }
   hidden_tooltip = {
-    change_variable = { which = "eldritch_proof_gained" value = 4 }
+    change_variable = { which = "eldritch_proof_var_gained" value = 4 }
   }
 } # 4
 
-add_medium_eldritch_proof = {
-  change_variable = { which = "eldritch_proof" value = 10 }
+add_medium_eldritch_proof_var = {
+  change_variable = { which = "eldritch_proof_var" value = 10 }
   hidden_tooltip = {
-    change_variable = { which = "eldritch_proof_gained" value = 8 }
+    change_variable = { which = "eldritch_proof_var_gained" value = 8 }
   }
 } # 8
 
-add_decent_eldritch_proof = {
-  change_variable = { which = "eldritch_proof" value = 15 }
+add_decent_eldritch_proof_var = {
+  change_variable = { which = "eldritch_proof_var" value = 15 }
   hidden_tooltip = {
-    change_variable = { which = "eldritch_proof_gained" value = 12 }
+    change_variable = { which = "eldritch_proof_var_gained" value = 12 }
   }
 } # 12
 
-add_large_eldritch_proof = {
-  change_variable = { which = "eldritch_proof" value = 18 }
+add_large_eldritch_proof_var = {
+  change_variable = { which = "eldritch_proof_var" value = 18 }
   hidden_tooltip = {
-    change_variable = { which = "eldritch_proof_gained" value = 16 }
+    change_variable = { which = "eldritch_proof_var_gained" value = 16 }
   }
 } # 16
 
-add_massive_eldritch_proof = {
-  change_variable = { which = "eldritch_proof" value = 100 }
+add_massive_eldritch_proof_var = {
+  change_variable = { which = "eldritch_proof_var" value = 100 }
   hidden_tooltip = {
-    change_variable = { which = "eldritch_proof_gained" value = 100 }
+    change_variable = { which = "eldritch_proof_var_gained" value = 100 }
   }
 } # 100
 
 ### Eldritch Insights
-add_tiny_eldritch_insight = {
-  change_variable = { which = "eldritch_insight" value = 1 }
+add_tiny_eldritch_insight_var = {
+  change_variable = { which = "eldritch_insight_var" value = 1 }
   hidden_tooltip = {
-    change_variable = { which = "eldritch_insight_gained" value = 1 }
+    change_variable = { which = "eldritch_insight_var_gained" value = 1 }
   }
 } # 1
 
-add_small_eldritch_insight = {
-  change_variable = { which = "eldritch_insight" value = 2 }
+add_small_eldritch_insight_var = {
+  change_variable = { which = "eldritch_insight_var" value = 2 }
   hidden_tooltip = {
-    change_variable = { which = "eldritch_insight_gained" value = 2 }
+    change_variable = { which = "eldritch_insight_var_gained" value = 2 }
   }
 } # 2
 
-add_medium_eldritch_insight = {
-  change_variable = { which = "eldritch_insight" value = 5 }
+add_medium_eldritch_insight_var = {
+  change_variable = { which = "eldritch_insight_var" value = 5 }
   hidden_tooltip = {
-    change_variable = { which = "eldritch_insight_gained" value = 5 }
+    change_variable = { which = "eldritch_insight_var_gained" value = 5 }
   }
 } # 5
 
-add_large_eldritch_insight = {
-  change_variable = { which = "eldritch_insight" value = 10 }
+add_large_eldritch_insight_var = {
+  change_variable = { which = "eldritch_insight_var" value = 10 }
   hidden_tooltip = {
-    change_variable = { which = "eldritch_insight_gained" value = 1 }
+    change_variable = { which = "eldritch_insight_var_gained" value = 10 }
   }
 } # 10
 
-add_massive_eldritch_insight = {
-  change_variable = { which = "eldritch_insight" value = 20 }
+add_massive_eldritch_insight_var = {
+  change_variable = { which = "eldritch_insight_var" value = 20 }
   hidden_tooltip = {
-    change_variable = { which = "eldritch_insight_gained" value = 20 }
+    change_variable = { which = "eldritch_insight_var_gained" value = 20 }
   }
 } # 20
 
-clear_eldritch_proof_insight_gains = {
+clear_eldritch_proof_var_insight_gains = {
   hidden_tooltip = {
-    set_variable = { which = "eldritch_insight_gained" value = 0 }
-    set_variable = { which = "eldritch_proof_gained" value = 0 }
+    set_variable = { which = "eldritch_insight_var_gained" value = 0 }
+    set_variable = { which = "eldritch_proof_var_gained" value = 0 }
   }
 }

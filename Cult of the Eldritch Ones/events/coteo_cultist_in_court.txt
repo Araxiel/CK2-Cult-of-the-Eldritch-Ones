@@ -1,5 +1,6 @@
 namespace = coteo_cultist_in_court
 
+## v0.2.1
 # coteo_cultist_in_court.10 # cultist PING
 character_event = {
   id = coteo_cultist_in_court.10
@@ -106,11 +107,11 @@ character_event  = {
     	}
     	modifier = {
     		factor = 2
-    		check_variable = { which = "eldritch_sanity" value <= -15 }
+    		check_variable = { which = "eldritch_sanity_var" value <= -15 }
     	}
     	modifier = {
     		factor = 5
-    		check_variable = { which = "eldritch_sanity" value <= -30 }
+    		check_variable = { which = "eldritch_sanity_var" value <= -30 }
     	}
     	modifier = {
     		factor = 20
@@ -394,8 +395,8 @@ character_event  = {
     #log = "Eldritch Cultist in Court: ----> [cultist_interaction_listener.GetBestName] has listened to [cultist_interaction_cultist.GetBestName]"
     name = coteo_cultist_in_court.21.a
 
-    subtract_variable = { which = "eldritch_sanity" value = 6 }
-    add_small_eldritch_insight = yes
+    subtract_variable = { which = "eldritch_sanity_var" value = 6 }
+    add_small_eldritch_insight_var = yes
 
     #add_trait = interest_in_weird  # potentially switch to sympathy_for_eldritch if they exist
 
@@ -411,17 +412,17 @@ character_event  = {
 
     trigger = {
       OR = {
-        check_variable = { which = "eldritch_sanity" value <= -100 }
-        check_variable = { which = "eldritch_insight" value >= 6 }
+        check_variable = { which = "eldritch_sanity_var" value <= -100 }
+        check_variable = { which = "eldritch_insight_var" value >= 6 }
         AND = {
           ai = yes
-          check_variable = { which = "eldritch_insight" value >= 2 }
+          check_variable = { which = "eldritch_insight_var" value >= 2 }
         }
       }
     }
 
-    subtract_variable = { which = "eldritch_sanity" value = 11 }
-    subtract_variable = { which = "eldritch_insight" value = 6 }
+    subtract_variable = { which = "eldritch_sanity_var" value = 11 }
+    subtract_variable = { which = "eldritch_insight_var" value = 6 }
 
     set_secret_religion = eldritch_gods
     #log = "Eldritch: ----> [Root.GetBestName] >>> Converted Secret Religion >>> Eldritch Gods"

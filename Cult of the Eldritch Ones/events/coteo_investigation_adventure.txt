@@ -1,5 +1,7 @@
 namespace = coteo_investigation
 
+## v0.2.1
+
 ## coteo_investigation.1000   # Strange beings sighted ; HIDDEN
 province_event = {
   id = coteo_investigation.1000
@@ -14,11 +16,11 @@ province_event = {
     NOT = { has_province_modifier = cult_frightened_fishermen }
     owner = {
       not_yet_woke = yes
-      cult_allowed_cultures = yes
+      cult_allowed_region = yes
       NOT = { has_character_flag = investigation_fishing_village_eldritch_fishmen_sighted_started }
       liege = {
         not_yet_woke = yes
-        cult_allowed_cultures = yes
+        cult_allowed_region = yes
         NOT = { has_character_flag = investigation_fishing_village_eldritch_fishmen_sighted_started }
       }
     }
@@ -112,7 +114,7 @@ character_event  = {
     trigger = {
       OR ={
         trait = interest_in_weird
-        check_variable = { which = "eldritch_sanity" value <= -25 }
+        check_variable = { which = "eldritch_sanity_var" value <= -25 }
         OR = {
           check_variable = { which = "strange_sightings_started" value >= 4 }
           AND = {
@@ -188,7 +190,7 @@ character_event  = {
     trigger = {
       OR ={
         trait = interest_in_weird
-        check_variable = { which = "eldritch_sanity" value <= -9 }
+        check_variable = { which = "eldritch_sanity_var" value <= -9 }
         check_variable = { which = "strange_sightings_started" value >= 1 }
         ai = yes
       }
@@ -252,7 +254,7 @@ character_event  = {
     trigger = {
       OR ={
         trait = interest_in_weird
-        check_variable = { which = "eldritch_sanity" value <= -9 }
+        check_variable = { which = "eldritch_sanity_var" value <= -9 }
         check_variable = { which = "strange_sightings_started" value >= 1 }
         ai = yes
       }
@@ -350,11 +352,11 @@ character_event  = {
       }
       modifier = {
         factor = 0.5
-        check_variable = { which = "eldritch_proof" value <= 4 }
+        check_variable = { which = "eldritch_proof_var" value <= 4 }
       }
       modifier = {
         factor = 0.5
-        check_variable = { which = "eldritch_proof" value <= 8 }
+        check_variable = { which = "eldritch_proof_var" value <= 8 }
       }
     }
 
@@ -581,7 +583,7 @@ character_event  = {
   }
 
   after = {
-    add_tiny_eldritch_proof = yes
+    add_tiny_eldritch_proof_var = yes
   }
 }
 
@@ -616,8 +618,8 @@ narrative_event  = {
     name = coteo_investigation.1211.a
 
     piety = -25
-    subtract_variable = { which = "eldritch_sanity" value = 5 }
-    add_small_eldritch_insight = yes
+    subtract_variable = { which = "eldritch_sanity_var" value = 5 }
+    add_small_eldritch_insight_var = yes
     narrative_event = { id = coteo_investigation.1212 days = 2 }
     set_character_flag = investigation_fishing_village_idol_taken
 
@@ -707,7 +709,7 @@ narrative_event  = {
   after = {
     clr_character_flag = investigation_fishing_village_got_altar_directions
     set_character_flag = investigation_fishing_village_altar
-    add_small_eldritch_proof = yes
+    add_small_eldritch_proof_var = yes
   }
 }
 ## coteo_investigation.1212   # altar - take idol
@@ -724,7 +726,7 @@ narrative_event  = {
   option = {
     name = coteo_investigation.1211.a
 
-    subtract_variable = { which = "eldritch_sanity" value = 9 }
+    subtract_variable = { which = "eldritch_sanity_var" value = 9 }
     ## get the strange idol; artifact? modifier? dream?
 
     ## leaving
@@ -751,7 +753,7 @@ character_event  = {
   option = {
     name = coteo_investigation.1213.a
 
-    change_variable = { which = "eldritch_sanity" value = 14 }
+    change_variable = { which = "eldritch_sanity_var" value = 14 }
 
     ## leaving
     hidden_tooltip = {
@@ -779,8 +781,8 @@ narrative_event  = {
     name = coteo_investigation.1221.a
 
     piety = -25
-    add_small_eldritch_insight = yes
-    subtract_variable = { which = "eldritch_sanity" value = 11 }
+    add_small_eldritch_insight_var = yes
+    subtract_variable = { which = "eldritch_sanity_var" value = 11 }
     add_character_modifier = { name = coteo_mod_weird_book_found years = 10 }
     set_character_flag = investigation_fishing_village_book_taken
 
@@ -889,7 +891,7 @@ narrative_event  = {
   after = {
     clr_character_flag = investigation_fishing_village_got_altar_directions
     set_character_flag = investigation_fishing_village_altar
-    add_small_eldritch_proof = yes
+    add_small_eldritch_proof_var = yes
   }
 }
 
@@ -927,7 +929,7 @@ character_event  = {
       }
     }
 
-    add_tiny_eldritch_proof = yes
+    add_tiny_eldritch_proof_var = yes
 
     log = "Eldritch Investigation: ----> [investigating_starter.GetBestName] -> [Root.GetBestName] -> Altar in distance"
   }
@@ -943,7 +945,7 @@ character_event  = {
       }
     }
 
-    add_tiny_eldritch_proof = yes
+    add_tiny_eldritch_proof_var = yes
 
     log = "Eldritch Investigation: ----> [investigating_starter.GetBestName] -> [Root.GetBestName] -> Altar in distance"
   }
@@ -969,7 +971,7 @@ narrative_event  = {
     name = coteo_investigation.1510.a
 
     trigger = {
-      check_variable = { which = "eldritch_sanity" value >= -50 }
+      check_variable = { which = "eldritch_sanity_var" value >= -50 }
     }
 
     custom_tooltip = { text = coteo_investigation.1510.a.tt }
@@ -1166,10 +1168,10 @@ narrative_event  = {
     trigger = {
       OR = {
         trait = lunatic
-        check_variable = { which = "eldritch_insight" value >= 7 }
+        check_variable = { which = "eldritch_insight_var" value >= 7 }
         AND = {
           ai = yes
-          check_variable = { which = "eldritch_insight" value >= 2 }
+          check_variable = { which = "eldritch_insight_var" value >= 2 }
         }
       }
     }
@@ -1182,8 +1184,8 @@ narrative_event  = {
         chance = 30
         add_trait = lunatic
       }
-      add_large_eldritch_proof = yes
-      add_medium_eldritch_insight = yes
+      add_large_eldritch_proof_var = yes
+      add_medium_eldritch_insight_var = yes
       set_secret_religion = eldritch_gods
       character_event = { id = coteo_investigation.1850 days = 20 random = 10 }
       log = "Eldritch: ----> [Root.GetBestName] >>> Converted Secret Religion >>> Eldritch Gods"
@@ -1202,7 +1204,7 @@ narrative_event  = {
       }
       modifier = {
         factor = 4
-        check_variable = { which = "eldritch_sanity" value <= -50 }
+        check_variable = { which = "eldritch_sanity_var" value <= -50 }
       }
       modifier = {
         factor = 1.5
@@ -1225,9 +1227,9 @@ narrative_event  = {
 
   after = {
     hidden_tooltip = {
-      subtract_variable = { which = "eldritch_sanity" value = 5 }
+      subtract_variable = { which = "eldritch_sanity_var" value = 5 }
     }
-    add_medium_eldritch_proof = yes
+    add_medium_eldritch_proof_var = yes
   }
 }
 
@@ -1467,8 +1469,8 @@ narrative_event  = {
   }
 
   after = {
-    add_medium_eldritch_proof = yes
-    subtract_variable = { which = "eldritch_sanity" value = 9 }
+    add_medium_eldritch_proof_var = yes
+    subtract_variable = { which = "eldritch_sanity_var" value = 9 }
   }
 }
 
@@ -1556,7 +1558,7 @@ character_event  = {
         }
       }
     }
-    log = "Eldritch Investigation: ----> [investigating_starter.GetBestName] -> [Root.GetBestName] -> Returned -> Nothing Seen/Lying (Insight Gained: [Root.eldritch_insight_gained.GetValue])"
+    log = "Eldritch Investigation: ----> [investigating_starter.GetBestName] -> [Root.GetBestName] -> Returned -> Nothing Seen/Lying (Insight Gained: [Root.eldritch_insight_var_gained.GetValue])"
   }
 
   ## report about findings
@@ -1590,7 +1592,7 @@ character_event  = {
         true_religion_group = eldritch_group
       }
     }
-    log = "Eldritch Investigation: ----> [investigating_starter.GetBestName] -> [Root.GetBestName] -> Returned -> Report (Insight Gained: [Root.eldritch_insight_gained.GetValue])"
+    log = "Eldritch Investigation: ----> [investigating_starter.GetBestName] -> [Root.GetBestName] -> Returned -> Report (Insight Gained: [Root.eldritch_insight_var_gained.GetValue])"
   }
   ## insane
   option = {
@@ -1631,7 +1633,7 @@ character_event  = {
       factor = 100
     }
     log = "Eldritch Investigation: ----> [investigating_starter.GetBestName] -> [Root.GetBestName] -> Returned -> Self"
-    clear_eldritch_proof_insight_gains = yes
+    clear_eldritch_proof_var_insight_gains = yes
   }
 
   after = {
@@ -1670,7 +1672,7 @@ character_event  = {
       }
       clr_province_flag = investigation_fishing_village_reported_to_@event_target:investigating_starter
     }
-    FROM = { clear_eldritch_proof_insight_gains = yes }
+    FROM = { clear_eldritch_proof_var_insight_gains = yes }
     log = "Eldritch Investigation: ----> [Root.GetBestName]"
     log = "Eldritch Investigation: ---->  /\/\/\/\/\/\/\/\ Cult Of The Eldritch | Fishing Village END /\/\/\/\/\/\/\/\ "
   }
@@ -1718,8 +1720,8 @@ character_event  = {
 
   immediate = {
     hidden_tooltip = {
-      change_variable = { which = "eldritch_proof_gained" which = event_target:investigator }
-      change_variable = { which = "eldritch_insight_gained" which = event_target:investigator }
+      change_variable = { which = "eldritch_proof_var_gained" which = event_target:investigator }
+      change_variable = { which = "eldritch_insight_var_gained" which = event_target:investigator }
     }
   }
 
@@ -1727,7 +1729,7 @@ character_event  = {
   option = {
     name = coteo_investigation.1852.a
 
-    change_variable = { which = "eldritch_insight" which = "eldritch_insight_gained" }
+    change_variable = { which = "eldritch_insight_var" which = "eldritch_insight_var_gained" }
 
     if = {
       limit = {
@@ -1760,12 +1762,12 @@ character_event  = {
         trait = zealous
       }
     }
-    set_variable = { which = "eldritch_insight_gained" value = 0 }
+    set_variable = { which = "eldritch_insight_var_gained" value = 0 }
     log = "Eldritch Investigation: ----> [Root.GetBestName] -> [investigator.GetBestName] Returned -> Burn Thing"
   }
 
   after = {
-    change_variable = { which = "eldritch_proof" which = "eldritch_proof_gained" }
+    change_variable = { which = "eldritch_proof_var" which = "eldritch_proof_var_gained" }
 
     random_province = {
       limit = {
@@ -1774,13 +1776,13 @@ character_event  = {
       clr_province_flag = investigation_fishing_village_reported_to_@event_target:investigating_starter
     }
 
-    log = "Eldritch Investigation: ----> [Root.GetBestName] gained [Root.eldritch_proof_gained.GetValue] [Root.eldritch_proof.GetName] and [Root.eldritch_insight_gained.GetValue] [Root.eldritch_insight.GetName]"
+    log = "Eldritch Investigation: ----> [Root.GetBestName] gained [Root.eldritch_proof_var_gained.GetValue] [Root.eldritch_proof_var.GetName] and [Root.eldritch_insight_var_gained.GetValue] [Root.eldritch_insight_var.GetName]"
     log = "Eldritch Investigation: ---->  /\/\/\/\/\/\/\/\ Cult Of The Eldritch | Fishing Village END /\/\/\/\/\/\/\/\ "
 
-    clear_eldritch_proof_insight_gains = yes
+    clear_eldritch_proof_var_insight_gains = yes
     event_target:investigator = {
       clear_flags_with_prefix = investigation_
-      clear_eldritch_proof_insight_gains = yes
+      clear_eldritch_proof_var_insight_gains = yes
     }
   }
 }
@@ -1807,7 +1809,7 @@ character_event  = {
         }
       }
     }
-    add_tiny_eldritch_proof = yes
+    add_tiny_eldritch_proof_var = yes
 
     random_list = {
       20 = {  ## lunatic dies
@@ -1892,10 +1894,10 @@ character_event  = {
       clr_province_flag = investigation_fishing_village_reported_to_@event_target:investigating_starter
     }
 
-    log = "Eldritch Investigation: ----> [Root.GetBestName] gained [Root.eldritch_proof_gained.GetValue] [Root.eldritch_proof.GetName] and [Root.eldritch_insight_gained.GetValue] [Root.eldritch_insight.GetName]"
+    log = "Eldritch Investigation: ----> [Root.GetBestName] gained [Root.eldritch_proof_var_gained.GetValue] [Root.eldritch_proof_var.GetName] and [Root.eldritch_insight_var_gained.GetValue] [Root.eldritch_insight_var.GetName]"
     log = "Eldritch Investigation: ---->  /\/\/\/\/\/\/\/\ Cult Of The Eldritch | Fishing Village END /\/\/\/\/\/\/\/\ "
 
-    clear_eldritch_proof_insight_gains = yes
+    clear_eldritch_proof_var_insight_gains = yes
 
     ai_chance = {
       factor = 50
@@ -1929,10 +1931,10 @@ character_event  = {
       clr_province_flag = investigation_fishing_village_reported_to_@event_target:investigating_starter
     }
 
-    log = "Eldritch Investigation: ----> [Root.GetBestName] gained [Root.eldritch_proof_gained.GetValue] [Root.eldritch_proof.GetName] and [Root.eldritch_insight_gained.GetValue] [Root.eldritch_insight.GetName]"
+    log = "Eldritch Investigation: ----> [Root.GetBestName] gained [Root.eldritch_proof_var_gained.GetValue] [Root.eldritch_proof_var.GetName] and [Root.eldritch_insight_var_gained.GetValue] [Root.eldritch_insight_var.GetName]"
     log = "Eldritch Investigation: ---->  /\/\/\/\/\/\/\/\ Cult Of The Eldritch | Fishing Village END /\/\/\/\/\/\/\/\ "
 
-    clear_eldritch_proof_insight_gains = yes
+    clear_eldritch_proof_var_insight_gains = yes
 
     ai_chance = {
       factor = 20
@@ -1959,7 +1961,7 @@ character_event  = {
 
   immediate = {
     hidden_tooltip = {
-      change_variable = { which = "eldritch_proof_gained" which = FROM }
+      change_variable = { which = "eldritch_proof_var_gained" which = FROM }
     }
   }
 
@@ -2000,16 +2002,16 @@ character_event  = {
     }
     else = {
 
-      change_variable = { which = "eldritch_proof" which = "eldritch_proof_gained" }
+      change_variable = { which = "eldritch_proof_var" which = "eldritch_proof_var_gained" }
 
-      log = "Eldritch Investigation: ----> [Root.GetBestName] gained [Root.eldritch_proof_gained.GetValue] [Root.eldritch_proof.GetName]"
+      log = "Eldritch Investigation: ----> [Root.GetBestName] gained [Root.eldritch_proof_var_gained.GetValue] [Root.eldritch_proof_var.GetName]"
       log = "Eldritch Investigation: ---->  /\/\/\/\/\/\/\/\ Cult Of The Eldritch | Fishing Village END /\/\/\/\/\/\/\/\ "
 
       clear_flags_with_prefix = investigation_
-      clear_eldritch_proof_insight_gains = yes
+      clear_eldritch_proof_var_insight_gains = yes
       FROM = {
         clear_flags_with_prefix = investigation_
-        clear_eldritch_proof_insight_gains = yes
+        clear_eldritch_proof_var_insight_gains = yes
       }
 
     }
@@ -2040,7 +2042,7 @@ character_event  = {
     trigger = {
       OR ={
         trait = interest_in_weird
-        check_variable = { which = "eldritch_sanity" value <= -25 }
+        check_variable = { which = "eldritch_sanity_var" value <= -25 }
         OR = {
           check_variable = { which = "strange_sightings_started" value >= 4 }
           AND = {
@@ -2192,11 +2194,11 @@ character_event  = {
       }
       modifier = {
         factor = 0.7
-        check_variable = { which = "eldritch_proof" value <= 4 }
+        check_variable = { which = "eldritch_proof_var" value <= 4 }
       }
       modifier = {
         factor = 0.7
-        check_variable = { which = "eldritch_proof" value <= 8 }
+        check_variable = { which = "eldritch_proof_var" value <= 8 }
       }
     }
 
@@ -2246,11 +2248,11 @@ character_event = {
       }
     }
     not_yet_woke = yes
-    cult_allowed_cultures = yes
+    cult_allowed_region = yes
     NOT = { has_character_flag = investigation_fishing_village_eldritch_fishmen_sighted_started }
     liege = {
       not_yet_woke = yes
-      cult_allowed_cultures = yes
+      cult_allowed_region = yes
       NOT = { has_character_flag = investigation_fishing_village_eldritch_fishmen_sighted_started }
     }
   }
@@ -2267,7 +2269,7 @@ character_event = {
     }
     modifier = {
       factor = 0.8
-      check_variable = { which = "eldritch_proof" value >= 10 }
+      check_variable = { which = "eldritch_proof_var" value >= 10 }
     }
   }
 

@@ -1,3 +1,5 @@
+#### v0.2.1
+
 namespace = coteo_janitor
 
 # coteo_janitor.10 # general set-up
@@ -177,19 +179,19 @@ character_event  = {
   immediate = {
 
     if = {
-      limit = { check_variable = { which = "eldritch_sanity" value <= 25 } }
+      limit = { check_variable = { which = "eldritch_sanity_var" value <= 25 } }
       random_list = {
-        1 = { change_variable = { which = "eldritch_sanity" value = 0 } }
-        2 = { change_variable = { which = "eldritch_sanity" value = 1 } }
-        1 = { change_variable = { which = "eldritch_sanity" value = 2 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = 0 } }
+        2 = { change_variable = { which = "eldritch_sanity_var" value = 1 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = 2 } }
       }
     }
     if = {
-      limit = { check_variable = { which = "eldritch_sanity" value <= -25 } }
+      limit = { check_variable = { which = "eldritch_sanity_var" value <= -25 } }
       random_list = {
-        10 = { change_variable = { which = "eldritch_sanity" value =  0 } }
-        5  = { change_variable = { which = "eldritch_sanity" value =  1 } }
-        4  = { change_variable = { which = "eldritch_sanity" value = -2 } }
+        10 = { change_variable = { which = "eldritch_sanity_var" value =  0 } }
+        5  = { change_variable = { which = "eldritch_sanity_var" value =  1 } }
+        4  = { change_variable = { which = "eldritch_sanity_var" value = -2 } }
       }
     }
     if = {
@@ -201,17 +203,17 @@ character_event  = {
         }
       }
       random_list = {
-        1 = { change_variable = { which = "eldritch_sanity" value = 2 } }
-        1 = { change_variable = { which = "eldritch_sanity" value = 4 } }
-        1 = { change_variable = { which = "eldritch_sanity" value = 7 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = 2 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = 4 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = 7 } }
       }
     }
     if = {
       limit = { trait = depressed }
       random_list = {
-        1 = { change_variable = { which = "eldritch_sanity" value = -2 } }
-        1 = { change_variable = { which = "eldritch_sanity" value = -4 } }
-        1 = { change_variable = { which = "eldritch_sanity" value = -7 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = -2 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = -4 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = -7 } }
       }
     }
     if = {
@@ -223,9 +225,9 @@ character_event  = {
         }
       }
       random_list = {
-        1 = { change_variable = { which = "eldritch_sanity" value = -4 } }
-        1 = { change_variable = { which = "eldritch_sanity" value = -8 } }
-        1 = { change_variable = { which = "eldritch_sanity" value = -12 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = -4 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = -8 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = -12 } }
       }
     }
     # other maintenance
@@ -269,9 +271,9 @@ character_event = {
   }
   option = {
     name = coteo_debug.10.b
-    add_medium_eldritch_insight = yes
-    add_large_eldritch_proof = yes
-    change_variable = { which = "eldritch_sanity" value = -40 }
+    add_medium_eldritch_insight_var = yes
+    add_large_eldritch_proof_var = yes
+    change_variable = { which = "eldritch_sanity_var" value = -40 }
     prestige = 250
   }
   option = {
