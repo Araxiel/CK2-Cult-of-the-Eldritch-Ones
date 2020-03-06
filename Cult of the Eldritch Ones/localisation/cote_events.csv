@@ -33,9 +33,9 @@ is_sticking_his_nose_where_it_doesnt_belong;[Root.GetFirstName] is sticking his 
 coteo_mod_weird_book_found;Weird Tome.;;;;;;
 
 coteo_investigation.1001.title;Strange Sightings;;;;;;
-coteo_investigation.1001.desc;A representative of a small fishing village outside of ï¿½Y[From.GetName]ï¿½G comes to you with tales by the local fishermen of strange sea creatures. They talk of aberrant human-like abominations walking along the shores in the twilight hours. The representative tells us the locals are too frightened to leave their homes and urges us to do something about this situation.;;;;;;
+coteo_investigation.1001.desc;A representative of a small fishing village outside of §Y[From.GetName]§G comes to you with tales by the local fishermen of strange sea creatures. They talk of aberrant human-like abominations walking along the shores in the twilight hours. The representative tells us the locals are too frightened to leave their homes and urges us to do something about this situation.;;;;;;
 coteo_investigation.1001.a;I will investigate this myself.;;;;;;
-coteo_investigation.1001.a.tt;ï¿½Y[Root.GetBestName]ï¿½! will investigate the ï¿½Ystrange sightings personallyï¿½!.;;;;;;
+coteo_investigation.1001.a.tt;§Y[Root.GetBestName]§! will investigate the §Ystrange sightings personally§!.;;;;;;
 #moved-to-main
 coteo_investigation.1001.d;Pah, I won't waste my time with some old fishermen's superstitions.;;;;;;
 coteo_investigation.1001.d.tt;It's probably nothing.;;;;;;
@@ -47,9 +47,9 @@ cult_frightened_fishermen_vengeance;Forsaken Fishing Village Burned;;;;;;
 cult_frightened_fishermen_vengeance_desc;The entire village accused of dark arts has been burned.;;;;;;
 
 coteo_investigation.1001.b;I will send [investigating_treasurer.GetMyTreasurerName] [investigating_treasurer.GetFirstName] to investigate.;;;;;;
-coteo_investigation.1001.b.tt;ï¿½Y[investigating_treasurer.GetFirstName]ï¿½! will be send to investigate the ï¿½Ystrange sightingsï¿½!.;;;;;;
+coteo_investigation.1001.b.tt;§Y[investigating_treasurer.GetFirstName]§! will be send to investigate the §Ystrange sightings§!.;;;;;;
 coteo_investigation.1001.c;I will send [investigating_chaplain.GetLordSpiritualName] [investigating_chaplain.GetFirstName] to investigate.;;;;;;
-coteo_investigation.1001.c.tt;ï¿½Y[investigating_chaplain.GetFirstName]ï¿½! will be send to investigate the ï¿½Ystrange sightingsï¿½!.;;;;;;
+coteo_investigation.1001.c.tt;§Y[investigating_chaplain.GetFirstName]§! will be send to investigate the §Ystrange sightings§!.;;;;;;
 
 GetRandomSombreWeather_rain;the skies are pouting down heavy rain;;;;;;
 GetRandomSombreWeather_mist;a eerie mist is shrouding the environment;;;;;;
@@ -101,7 +101,7 @@ coteo_investigation.1510.desc;You are jumped by a dozen cultists TODO. \nLorem i
 coteo_investigation.1510.a;I will outrun them!;;;;;;
 coteo_investigation.1510.a.tt;Try to outrun them.;;;;;;
 coteo_investigation.1510.b;Those wicked worms shall taste my blade!;;;;;;
-coteo_investigation.1510.b.tt;Try to ï¿½Yfightï¿½! them using your ï¿½YPersonal Combat Skillï¿½!.;;;;;;
+coteo_investigation.1510.b.tt;Try to §Yfight§! them using your §YPersonal Combat Skill§!.;;;;;;
 coteo_investigation.1510.c;I haven't come to fight, I've come to talk.;;;;;;
 coteo_investigation.1510.c.tt;Join the cultists.;;;;;;
 
@@ -121,13 +121,13 @@ coteo_investigation.1850.desc;You returned from your investigation. It was a ver
 coteo_investigation.1850.a.a;What a strange event.;;;;;;
 coteo_investigation.1850.a.b;I will lie to [Liege.GetName] about my findings.;;;;;;
 coteo_investigation.1850.b;I shall tell [Liege.GetName] about my findings..;;;;;;
-coteo_investigation.1850.c;ï¿½GThe Eldritch Ones shall awaken!ï¿½!;;;;;;
+coteo_investigation.1850.c;§GThe Eldritch Ones shall awaken!§!;;;;;;
 
 coteo_investigation.1851.title;Investigator Returns;;;;;;
 coteo_investigation.1851.desc;[From.GetBestName] returned from [From.GetHersHis] recent investigation into the strange fishing village. While eerie and unwelcoming, [From.GetSubjectPronoun] claims that [From.GetSubjectPronoun] didn't really find anything worth of note to report on. [From.GetSubjectPronounCap] postulates that the strange tales are just that: Old wive's tales.;;;;;;
 
 coteo_investigation.1855.title;Investigator Returns;;;;;;
-coteo_investigation.1855.desc;As you approach [From.GetBestName] to hear what [From.GetHersHis] investigation has revealed, [From.GetBestName] suddenly pulls out a dagger and starts lashing at you, screaming ï¿½Y"The Eldritch Ones shall awaken!"ï¿½!.;;;;;;
+coteo_investigation.1855.desc;As you approach [From.GetBestName] to hear what [From.GetHersHis] investigation has revealed, [From.GetBestName] suddenly pulls out a dagger and starts lashing at you, screaming §Y"The Eldritch Ones shall awaken!"§!.;;;;;;
 coteo_investigation.1855.a;Guards!;;;;;;
 
 coteo_investigation.1852.title;Weird Insights;;;;;;
@@ -150,7 +150,7 @@ coteo_investigation.1861.b;Let that cursed place burn.;;;;;;
 coteo_investigation.1870.title;Disappearance;;;;;;
 coteo_investigation.1870.desc;It has now been a while, and [From.GetBestName] never returned from [From.GetHersHis] investigation. Something very bad must have happened to [From.GetHerHim] in that strange fishing village.\n\nWhile on one hand some things were never meant to be revealed, I can't just let this stand.;;;;;;
 coteo_investigation.1870.b;I will send [investigating_marshall.GetMarshalName] [investigating_chaplain.GetFirstName] to investigate.;;;;;;
-coteo_investigation.1870.b.tt;ï¿½Y[investigating_chaplain.GetFirstName]ï¿½! will be send to investigate the ï¿½Ystrange sightingsï¿½!.;;;;;;
+coteo_investigation.1870.b.tt;§Y[investigating_chaplain.GetFirstName]§! will be send to investigate the §Ystrange sightings§!.;;;;;;
 coteo_investigation.1870.c;Let sleeping dogs lie.;;;;;;
 
 default_desc;Default Desc - Debug;;;;;;

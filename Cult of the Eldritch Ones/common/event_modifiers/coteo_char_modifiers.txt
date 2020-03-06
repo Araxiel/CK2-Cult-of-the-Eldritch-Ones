@@ -1,0 +1,57 @@
+## v0.2.2
+eldritch_insight = {
+	eldritch_group_opinion = 0.5
+	naahab_god_opinion = 0.5
+	is_visible = {
+		OR = {
+			character = FROM
+			has_instances_of_character_modifier = { modifier = eldritch_insanity amount = 10 }
+			has_instances_of_character_modifier = { modifier = eldritch_insight amount = 10 }
+			true_religion_group = eldritch_group
+			trait = interest_in_weird
+			trait = possessed
+			trait = lunatic
+			coteo_debugging_on = yes
+		}
+	}
+	icon = 81
+}
+
+eldritch_insanity = {
+	eldritch_group_opinion = 1
+	is_visible = {
+		OR = {
+			character = FROM
+			has_instances_of_character_modifier = { modifier = eldritch_insanity amount = 10 }
+			has_bad_priest_trait_trigger = yes
+			trait = intricate_webweaver
+			trait = elusive_shadow
+			trait = baptized_by_satan
+			trait = possessed
+			trait = lunatic
+			coteo_debugging_on = yes
+		}
+	}
+	icon = 80
+}
+
+## v0.2.1
+coteo_mod_weird_book_found = {
+  is_visible = {
+    OR = {
+      coteo_debugging_on = yes
+      character = FROM
+    }
+  }
+  icon = 20
+  learning = 2
+  diplomacy_penalty = 1
+  #ai_rationality = -10
+}
+
+was_recently_contacted_by_cultists = {
+  is_visible = {
+    coteo_debugging_on = yes
+  }
+  icon = 81
+}

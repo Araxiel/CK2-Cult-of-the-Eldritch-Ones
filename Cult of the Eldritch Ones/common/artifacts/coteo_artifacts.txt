@@ -13,7 +13,7 @@ liber_investigationis = {
 
   active = {
     OR = {
-      check_variable = { which = "eldritch_sanity" value < -85 }
+      check_variable = { which = "eldritch_sanity_var" value < -85 }
       custom_tooltip = {
   			text = is_sticking_his_nose_where_it_doesnt_belong
         OR = {
@@ -42,7 +42,7 @@ ars_magna_et_ultima = {
 
   active = {
     OR = {
-      check_variable = { which = "eldritch_sanity" value < -85 }
+      check_variable = { which = "eldritch_sanity_var" value < -85 }
       custom_tooltip = {
         text = is_sticking_his_nose_where_it_doesnt_belong
         OR = {
@@ -71,7 +71,7 @@ of_unspeakable_cults = {
 
   active = {
     OR = {
-      check_variable = { which = "eldritch_sanity" value < -85 }
+      check_variable = { which = "eldritch_sanity_var" value < -85 }
       custom_tooltip = {
   			text = is_sticking_his_nose_where_it_doesnt_belong
         OR = {

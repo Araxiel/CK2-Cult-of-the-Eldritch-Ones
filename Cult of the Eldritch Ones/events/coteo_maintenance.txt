@@ -1,3 +1,5 @@
+#### v0.2.1
+
 namespace = coteo_janitor
 
 # coteo_janitor.10 # general set-up
@@ -19,23 +21,18 @@ character_event = {
 
     ## TODO ; adjust dynamically - throws up error, but known
     c_vestisland = {
-      # Audax Validator "." Ignore_ALL
       set_holy_site_with_heresies = eldritch_group
     }
     c_lancaster = {
-      # Audax Validator "." Ignore_ALL
       set_holy_site_with_heresies = eldritch_group
     }
     c_fyn = {
-      # Audax Validator "." Ignore_ALL
       set_holy_site_with_heresies = eldritch_group
     }
     c_rogaland = {
-      # Audax Validator "." Ignore_ALL
       set_holy_site_with_heresies = eldritch_group
     }
     c_orkney = {
-      # Audax Validator "." Ignore_ALL
       set_holy_site_with_heresies = eldritch_group
     }
 
@@ -182,19 +179,19 @@ character_event  = {
   immediate = {
 
     if = {
-      limit = { check_variable = { which = "eldritch_sanity" value <= 25 } }
+      limit = { check_variable = { which = "eldritch_sanity_var" value <= 25 } }
       random_list = {
-        1 = { change_variable = { which = "eldritch_sanity" value = 0 } }
-        2 = { change_variable = { which = "eldritch_sanity" value = 1 } }
-        1 = { change_variable = { which = "eldritch_sanity" value = 2 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = 0 } }
+        2 = { change_variable = { which = "eldritch_sanity_var" value = 1 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = 2 } }
       }
     }
     if = {
-      limit = { check_variable = { which = "eldritch_sanity" value <= -25 } }
+      limit = { check_variable = { which = "eldritch_sanity_var" value <= -25 } }
       random_list = {
-        10 = { change_variable = { which = "eldritch_sanity" value =  0 } }
-        5  = { change_variable = { which = "eldritch_sanity" value =  1 } }
-        4  = { change_variable = { which = "eldritch_sanity" value = -2 } }
+        10 = { change_variable = { which = "eldritch_sanity_var" value =  0 } }
+        5  = { change_variable = { which = "eldritch_sanity_var" value =  1 } }
+        4  = { change_variable = { which = "eldritch_sanity_var" value = -2 } }
       }
     }
     if = {
@@ -206,17 +203,17 @@ character_event  = {
         }
       }
       random_list = {
-        1 = { change_variable = { which = "eldritch_sanity" value = 2 } }
-        1 = { change_variable = { which = "eldritch_sanity" value = 4 } }
-        1 = { change_variable = { which = "eldritch_sanity" value = 7 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = 2 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = 4 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = 7 } }
       }
     }
     if = {
       limit = { trait = depressed }
       random_list = {
-        1 = { change_variable = { which = "eldritch_sanity" value = -2 } }
-        1 = { change_variable = { which = "eldritch_sanity" value = -4 } }
-        1 = { change_variable = { which = "eldritch_sanity" value = -7 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = -2 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = -4 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = -7 } }
       }
     }
     if = {
@@ -228,25 +225,26 @@ character_event  = {
         }
       }
       random_list = {
-        1 = { change_variable = { which = "eldritch_sanity" value = -4 } }
-        1 = { change_variable = { which = "eldritch_sanity" value = -8 } }
-        1 = { change_variable = { which = "eldritch_sanity" value = -12 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = -4 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = -8 } }
+        1 = { change_variable = { which = "eldritch_sanity_var" value = -12 } }
       }
     }
     # other maintenance
-    if = {
-      limit = {
-        trait = interest_in_weird
-        not_yet_woke = no
-      }
-      clr_character_flag = eldritch_cult_curious
-    }
-    if = {
-      limit = {
-        NOT = { has_character_modifier = coteo_mod_weird_book_found }
-      }
-      clr_character_flag = has_read_eldritch_book
-    }
+    ## TODO
+    ## if = {
+    ##   limit = {
+    ##     trait = interest_in_weird
+    ##     not_yet_woke = no
+    ##   }
+    ##   ## temp clr_character_flag = eldritch_cult_curious
+    ## }
+    ## if = {
+    ##   limit = {
+    ##     NOT = { has_character_modifier = coteo_mod_weird_book_found }
+    ##   }
+    ##   ## temp clr_character_flag = has_read_eldritch_book
+    ## }
 
   }
 }
@@ -273,9 +271,9 @@ character_event = {
   }
   option = {
     name = coteo_debug.10.b
-    add_medium_eldritch_insight = yes
-    add_large_eldritch_proof = yes
-    change_variable = { which = "eldritch_sanity" value = -40 }
+    add_medium_eldritch_insight_var = yes
+    add_large_eldritch_proof_var = yes
+    change_variable = { which = "eldritch_sanity_var" value = -40 }
     prestige = 250
   }
   option = {
@@ -321,7 +319,7 @@ character_event = {
       }
       remove_province_modifier = cult_frightened_fishermen
       remove_province_modifier = cult_frightened_fishermen_not_investigated
-      clr_province_flag = cult_frightened_fishermen_investigating_province
+      ## temp clr_province_flag = cult_frightened_fishermen_investigating_province
       add_province_modifier = {
         name = province_debug_modifier
         days = 10
@@ -539,7 +537,7 @@ character_event = {
       d_eldritch_high_temple = {
         gain_title = PREV
         set_defacto_liege = k_eldritch_kingdom
-        set_title_landless = { title = THIS status = yes }
+        ## temp set_title_landless = { title = THIS status = yes }
       }
     }
 
@@ -553,7 +551,7 @@ character_event = {
       d_aisura_high_temple = {
         gain_title = PREV
         set_defacto_liege = k_eldritch_kingdom
-        set_title_landless = { title = THIS status = yes }
+        ## temp set_title_landless = { title = THIS status = yes }
         succession = open_elective
         gender_succ = true_cognatic
       }
