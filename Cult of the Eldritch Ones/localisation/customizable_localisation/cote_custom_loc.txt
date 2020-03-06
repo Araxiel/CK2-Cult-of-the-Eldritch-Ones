@@ -1,0 +1,14 @@
+# GetRngHaircolour       - a random haircolour for description
+defined_text = {
+  name = GetRandomSombreWeather
+  text = {
+		localisation_key = GetRandomSombreWeather_rain
+	}
+  text = {
+		localisation_key = GetRandomSombreWeather_mist
+	}
+  text = {
+		localisation_key = GetRandomSombreWeather_fog
+	}
+}
+##

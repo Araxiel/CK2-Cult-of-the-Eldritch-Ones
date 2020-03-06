@@ -1,0 +1,614 @@
+namespace = coteo_janitor
+
+# coteo_janitor.10 # general
+character_event = {
+  id = coteo_janitor.10
+
+  hide_window = yes
+  is_triggered_only = yes
+
+  immediate = {
+    activate_title = { title = e_eldritch_empire status = no }
+    activate_title = { title = k_eldritch_kingdom status = no }
+    activate_title = { title = d_eldritch_high_temple status = no }
+    activate_title = { title = d_aisura_high_temple status = no }
+    activate_title = { title = k_naahab_high_temple status = no }
+    activate_title = { title = d_eldritch_order status = no }
+    activate_title = { title = d_templars_of_naahab status = no }
+    activate_title = { title = d_warriors_of_qushakon status = no }
+
+  }
+}
+
+## coteo_janitor.2000 # bi-yearly secret pollination
+character_event  = {
+  id = coteo_janitor.2000
+
+  hide_window = yes
+  is_triggered_only = yes
+  ai = no
+
+  immediate = {
+
+    ###   WIP WHILE
+    while = {
+      count = 5
+      random_independent_ruler = {
+        limit = {
+          NOT = { true_religion_group = eldritch_group }
+        }
+        create_character = {
+          random_traits = yes
+          dynasty = none
+          culture = THIS
+          religion = THIS
+          trait = cynical
+        }
+        new_character = {
+          set_secret_religion = eldritch_gods
+          log = "Created lowborn secret eldritch believer person named [This.GetBestName] in [Prev.PrimaryTitle.GetBestName]"
+          random = {
+            chance = 10
+            add_trait = lunatic
+          }
+        }
+      }
+    }
+    random_player = {
+      random_neighbor_independent_ruler = {
+        limit = {
+          NOT = { true_religion_group = eldritch_group }
+        }
+        create_character = {
+          random_traits = yes
+          dynasty = none
+          culture = THIS
+          religion = THIS
+          trait = cynical
+        }
+        new_character = {
+          set_secret_religion = eldritch_gods
+          log = "Created lowborn secret eldritch believer person named [This.GetBestName] in [Prev.PrimaryTitle.GetBestName]"
+          random = {
+            chance = 10
+            add_trait = lunatic
+          }
+        }
+      }
+    }
+    random_player = {
+      random_neighbor_independent_ruler = {
+        limit = {
+          NOT = { true_religion_group = eldritch_group }
+        }
+        create_character = {
+          random_traits = yes
+          dynasty = none
+          culture = THIS
+          religion = THIS
+          trait = cynical
+        }
+        new_character = {
+          set_secret_religion = eldritch_gods
+          log = "Created lowborn secret eldritch believer person named [This.GetBestName] in [Prev.PrimaryTitle.GetBestName]"
+          random = {
+            chance = 10
+            add_trait = lunatic
+          }
+        }
+      }
+    }
+    while = {
+    	count = 2
+      random_player = {
+        random_realm_character = {
+          limit = {
+            NOT = { true_religion_group = eldritch_group }
+          }
+          create_character = {
+            random_traits = yes
+            dynasty = none
+            culture = THIS
+            religion = THIS
+            trait = cynical
+          }
+          new_character = {
+            set_secret_religion = eldritch_gods
+            log = "Created lowborn secret eldritch believer person named [This.GetBestName] in [Prev.PrimaryTitle.GetBestName]"
+            random = {
+              chance = 10
+              add_trait = lunatic
+            }
+          }
+        }
+      }
+    }
+    random = {
+      chance = 10
+      random_player = {
+        limit = {
+          NOT = { true_religion_group = eldritch_group }
+        }
+        create_character = {
+          random_traits = yes
+          dynasty = none
+          culture = THIS
+          religion = THIS
+          trait = cynical
+        }
+        new_character = {
+          set_secret_religion = eldritch_gods
+          log = "Created lowborn secret eldritch believer person named [This.GetBestName] in [Prev.PrimaryTitle.GetBestName]"
+          random = {
+            chance = 10
+            add_trait = lunatic
+          }
+        }
+      }
+    }
+
+  }
+}
+
+## coteo_janitor.4000 # yearly insanity regulation
+character_event  = {
+  id = coteo_janitor.4000
+
+  hide_window = yes
+  is_triggered_only = yes
+
+  immediate = {
+
+    if = {
+      limit = { check_variable = { which = "eldritch_sanity" value <= 25 } }
+      random_list = {
+        1 = { change_variable = { which = "eldritch_sanity" value = 0 } }
+        2 = { change_variable = { which = "eldritch_sanity" value = 1 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = 2 } }
+      }
+    }
+    if = {
+      limit = { check_variable = { which = "eldritch_sanity" value <= -25 } }
+      random_list = {
+        10 = { change_variable = { which = "eldritch_sanity" value =  0 } }
+        5  = { change_variable = { which = "eldritch_sanity" value =  1 } }
+        4  = { change_variable = { which = "eldritch_sanity" value = -2 } }
+      }
+    }
+    if = {
+      limit = {
+        OR = {
+          has_focus = focus_hunting
+          has_focus = focus_carousing
+          has_focus = focus_family
+        }
+      }
+      random_list = {
+        1 = { change_variable = { which = "eldritch_sanity" value = 2 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = 4 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = 7 } }
+      }
+    }
+    if = {
+      limit = { trait = depressed }
+      random_list = {
+        1 = { change_variable = { which = "eldritch_sanity" value = -2 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = -4 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = -7 } }
+      }
+    }
+    if = {
+      limit = {
+        OR = {
+          trait = possessed
+          trait = lunatic
+          trait = mystic
+        }
+      }
+      random_list = {
+        1 = { change_variable = { which = "eldritch_sanity" value = -4 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = -8 } }
+        1 = { change_variable = { which = "eldritch_sanity" value = -12 } }
+      }
+    }
+    if = {
+      limit = {
+        trait = interest_in_weird
+        not_yet_woke = no
+      }
+      clr_character_flag = eldritch_cult_curious
+    }
+    if = {
+      limit = {
+        NOT = { has_character_modifier = coteo_mod_weird_book_found }
+      }
+      clr_character_flag = has_read_eldritch_book
+    }
+
+  }
+}
+
+namespace = coteo_debug
+
+# coteo_debug.10 # general
+character_event = {
+  id = coteo_debug.10
+
+  title = coteo_debug.10.title
+  desc = coteo_debug.10.desc
+  picture = GFX_evt_idol_altar
+
+  trigger = { always = no }
+
+  mean_time_to_happen = {
+    years = 100
+  }
+
+  option = {
+    name = coteo_debug.10.a
+	  set_secret_religion = eldritch_gods
+  }
+  option = {
+    name = coteo_debug.10.b
+    add_medium_eldritch_insight = yes
+    add_large_eldritch_proof = yes
+    change_variable = { which = "eldritch_sanity" value = -40 }
+    prestige = 250
+  }
+  option = {
+    name = coteo_debug.10.c
+
+    capital_scope = {
+      add_holding_slot = 1
+      build_holding  ={
+        type = temple
+      }
+    }
+  }
+  option = {
+    name = "OK"
+
+  }
+}
+
+# coteo_debug.20 #fishing town investigation
+character_event = {
+  id = coteo_debug.20
+
+  title = coteo_debug.10.title
+  desc = coteo_debug.10.desc
+  picture = GFX_evt_harbour_town
+
+  trigger = { always = no }
+
+  mean_time_to_happen = {
+    years = 100
+  }
+
+  option = {
+    name = "OK"
+
+    clear_flags_with_prefix  = investigation_fishing_village_
+	  random_demesne_province = {
+      limit = {
+        OR = {
+          port = yes
+          borders_major_river = yes
+        }
+      }
+      remove_province_modifier = cult_frightened_fishermen
+      remove_province_modifier = cult_frightened_fishermen_not_investigated
+      clr_province_flag = cult_frightened_fishermen_investigating_province
+      add_province_modifier = {
+        name = province_debug_modifier
+        days = 10
+      }
+      province_event = { id = coteo_investigation.1000 }
+    }
+  }
+}
+
+# coteo_debug.510 # death
+character_event = {
+  id = coteo_debug.510
+
+  title = coteo_debug.10.title
+  desc = coteo_debug.10.desc
+  picture = GFX_evt_idol_altar
+
+  trigger = { always = no }
+
+  mean_time_to_happen = {
+    years = 100
+  }
+
+  option = {
+    name = "OK"
+    random_courtier = {
+      death = { death_reason = death_murder_unknown killer = ROOT }
+    }
+  }
+  option = {
+    name = "OK"
+    random_courtier = {
+      death = { death_reason = death_missing }
+    }
+  }
+  option = {
+    name = "OK"
+    random_courtier = {
+      death = { death_reason = death_accident_drowning }
+    }
+  }
+  option = {
+    name = "OK"
+    random_courtier = {
+      death = { death_reason = death_murder_unknown_drowning killer = ROOT }
+    }
+  }
+}
+
+# coteo_debug.2001 # conversion
+narrative_event = {
+  id = coteo_debug.2001
+
+  title = coteo_debug.10.title
+  desc = coteo_debug.10.desc
+  picture = GFX_evt_flagelants
+
+  trigger = { always = no }
+
+  mean_time_to_happen = {
+    years = 100
+  }
+
+  option = {
+    name = coteo_debug.2001.a
+    any_character = {
+      limit = {
+        independent = no
+        liege = { character = PREVPREV }
+      }
+      religion = eldritch_gods
+    }
+    any_realm_province = {
+      religion = eldritch_gods
+    }
+    religion = eldritch_gods
+  }
+
+  option = {
+    name = coteo_debug.2001.b
+    any_character = {
+      limit = {
+        independent = no
+        liege = { character = PREVPREV }
+      }
+      religion = aisura_god
+    }
+    any_realm_province = {
+      religion = aisura_god
+    }
+    religion = aisura_god
+  }
+
+  option = {
+    name = coteo_debug.2001.c
+    any_character = {
+      limit = {
+        independent = no
+        liege = { character = PREVPREV }
+      }
+      religion = naahab_god
+    }
+    any_realm_province = {
+      religion = naahab_god
+    }
+    religion = naahab_god
+  }
+
+  option = {
+    name = coteo_debug.2001.d
+    any_character = {
+      limit = {
+        independent = no
+        liege = { character = PREVPREV }
+      }
+      religion = qushakon_god
+    }
+    any_realm_province = {
+      religion = qushakon_god
+    }
+    religion = qushakon_god
+  }
+}
+
+# coteo_debug.2002 # create kingdom
+character_event = {
+  id = coteo_debug.2002
+
+  title = coteo_debug.10.title
+  desc = coteo_debug.10.desc
+  picture = GFX_evt_idol_altar
+
+  trigger = { always = no }
+
+  mean_time_to_happen = {
+    years = 100
+  }
+
+  immediate = {
+    if = {
+      limit = {
+        OR = {
+          is_priest = yes
+          AND = {
+            is_landed = no
+            learning = 15
+          }
+        }
+        is_female = yes
+      }
+      any_realm_character = {
+        limit = {
+          OR = {
+            is_priest = yes
+            AND = {
+              is_landed = no
+              learning = 15
+            }
+          }
+          is_female = yes
+        }
+        save_event_target_as = aisura_priestess
+      }
+    }
+    else = {
+      create_character = {
+        random_traits = yes
+        female = yes
+        dynasty = none
+        religion = aisura_god
+        culture = ROOT
+      }
+      new_character = {
+        save_event_target_as = aisura_priestess
+      }
+    }
+  }
+
+  option = {
+    name = "OK"
+
+    activate_title = { title = k_eldritch_kingdom status = yes }
+
+		primary_title = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_eldritch_kingdom
+			}
+		}
+    k_eldritch_kingdom = {
+      grant_title = PREV
+      make_primary_title = yes
+      succession_w_cooldown = feudal_elective
+      gender_succ = cognatic
+      PREV = {
+        primary_title = {
+          PREVPREV = {
+            copy_title_laws = PREV
+            copy_title_history = PREV
+          }
+        }
+      }
+    }
+    recalc_succession = yes
+
+  }
+
+  option = {
+    name = "OK"
+
+    activate_title = { title = d_eldritch_high_temple status = yes }
+    random_realm_character = {
+      limit = {
+        is_priest = yes
+      }
+      d_eldritch_high_temple = {
+        gain_title = PREV
+        set_defacto_liege = k_eldritch_kingdom
+        set_title_landless = { title = THIS status = yes }
+      }
+    }
+
+  }
+  option = {
+    name = "OK"
+
+    activate_title = { title = d_aisura_high_temple status = yes }
+    event_target:aisura_priestess = {
+      religion = aisura_god
+      d_aisura_high_temple = {
+        gain_title = PREV
+        set_defacto_liege = k_eldritch_kingdom
+        set_title_landless = { title = THIS status = yes }
+        succession = open_elective
+        gender_succ = true_cognatic
+      }
+    }
+    recalc_succession = yes
+  }
+
+  option = {
+    name = "OK"
+
+    activate_title = { title = d_eldritch_order status = yes }
+    d_eldritch_order = {
+      ROOT = {
+        capital_holding = {
+          county = {
+            d_eldritch_order = {
+              set_preferred_capital = PREV
+            }
+          }
+        }
+      }
+    }
+    activate_title = { title = d_warriors_of_qushakon status = yes }
+  }
+}
+
+# coteo_debug.3001 # cult stuff 1
+narrative_event = {
+  id = coteo_debug.3001
+
+  title = coteo_debug.10.title
+  desc = coteo_debug.10.desc
+  picture = GFX_evt_flagelants
+
+  trigger = { always = no }
+
+  mean_time_to_happen = {
+    years = 100
+  }
+
+  option = {
+    name = "OK"
+    create_character = {
+      random_traits = yes
+      dynasty = none
+      religion = ROOT
+      culture = ROOT
+    }
+    new_character = {
+      set_secret_religion = eldritch_gods
+      join_society = cult_of_eldritch
+      add_society_currency_minor_effect = yes
+    }
+    create_character = {
+      random_traits = yes
+      dynasty = none
+      religion = ROOT
+      culture = ROOT
+    }
+    new_character = {
+      set_secret_religion = eldritch_gods
+      join_society = cult_of_eldritch
+      add_society_currency_medium_effect = yes
+      society_rank_up = 1
+    }
+    create_character = {
+      random_traits = yes
+      dynasty = none
+      religion = ROOT
+      culture = ROOT
+      female = yes
+    }
+    new_character = {
+      set_secret_religion = eldritch_gods
+      join_society = cult_of_eldritch
+      add_society_currency_medium_effect = yes
+      society_rank_up = 2
+    }
+  }
+
+}

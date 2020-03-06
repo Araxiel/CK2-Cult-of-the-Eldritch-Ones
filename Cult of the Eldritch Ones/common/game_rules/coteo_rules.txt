@@ -26,6 +26,11 @@ coteo_startup_cult = {
 		desc = "coteo_startup_cult_off_desc"
 	}
 	option = {
+		name = dynamic
+		text = "RULE_EPIDEMICS_DYNAMIC"
+		desc = "coteo_startup_cult_dynamic_desc"
+	}
+	option = {
 		name = on
 		text = "RULE_OPTION_ON"
 		desc = "coteo_startup_cult_on_desc"
@@ -33,16 +38,16 @@ coteo_startup_cult = {
 }
 
 coteo_debugging = {
-	name = "§BCotEO§!: Debugging"
+	name = "coteo_debugging"
 	group = "RULE_GROUP_COTEO"
 	option = {
-		name = none
-		text = "RULE_OPTION_NONE"
-		desc = "No Debugging"
+		name = off
+		text = "RULE_OPTION_OFF"
+		desc = "RULE_OPTION_OFF"
 	}
 	option = {
-		name = active
-		text = "RULE_OPTION_DEFAULT"
-		desc = "Turn on debugging for CotEO"
+		name = on
+		text = "RULE_OPTION_ON"
+		desc = "RULE_OPTION_ON"
 	}
 }

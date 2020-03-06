@@ -1,0 +1,668 @@
+namespace = coteo_investigation_simple
+
+## coteo_investigation_simple.10   # Dream: A Land of Night
+narrative_event  = {
+  id = coteo_investigation_simple.10
+
+  title = coteo_investigation_simple.10.title
+  desc = coteo_investigation_simple.10.desc
+  picture = GFX_evt_nightland_watcher
+  window = "CoteoBiggerEventWindow"
+  #window = "BiggerEventWindow"
+  #Background = GFX_event_custom_bg_purple
+
+  only_rulers = yes
+
+  trigger = {
+    not_yet_woke = yes
+    NOT = { has_character_flag = eldritch_land_of_night }
+    #cult_allowed_cultures = yes
+  }
+
+  mean_time_to_happen = {
+    years = 80
+    modifier = {
+      factor = 0.5
+      trait = interest_in_weird
+    }
+    modifier = {
+      factor = 0.5
+      check_variable = { which = "eldritch_sanity" value <= -10 }
+    }
+    modifier = {
+      factor = 0.4
+      OR = {
+        has_focus = focus_scholarship
+        has_focus = focus_theology
+      }
+    }
+    modifier = {
+      factor = 0.8
+      demesne_eldritch_holy_site = yes
+    }
+  }
+
+  immediate = {
+    change_variable = { which = "eldritch_sanity" value = -2 }
+    set_character_flag = eldritch_land_of_night
+  }
+
+  # surely, this was just a dream...right?
+  option = {
+    name = coteo_investigation_simple.10.a
+
+    custom_tooltip = { text = coteo_investigation_simple.10.a.tt }
+    subtract_variable = { which = "eldritch_sanity" value = 3 }
+    random = {
+      chance = 15
+      add_trait = stressed
+    }
+    if = {
+      limit = { NOT = { trait = interest_in_weird } }
+      random = {
+        chance = 20
+        add_trait = interest_in_weird
+      }
+    }
+
+    log = "Eldritch Investigation: ----> [Root.GetBestName] -> Dream: A Land of Night -> Unsettled"
+
+    ai_chance = {
+    	factor = 75
+    }
+  }
+
+  # this wasn't just a dream, it was a vision, it was a call!
+  option = {
+    name = coteo_investigation_simple.10.b
+
+    subtract_variable = { which = "eldritch_sanity" value = 7 }
+    custom_tooltip = { text = coteo_investigation_simple.10.b.tt }
+    random = {
+      chance = 45
+      add_trait = cynical
+    }
+    random = {
+      chance = 5
+      add_trait = lunatic
+    }
+    if = {
+      limit = { NOT = { trait = interest_in_weird } }
+      add_trait = interest_in_weird
+    }
+    add_tiny_eldritch_insight = yes
+
+    log = "Eldritch Investigation: ----> [Root.GetBestName] -> Dream: A Land of Night -> Embrace"
+
+    ai_chance = {
+    	factor = 30
+    	modifier = {
+    		factor = 2
+    		trait = cynical
+    	}
+      modifier = {
+    		factor = 2
+    		check_variable = { which = "eldritch_sanity" value <= -15 }
+    	}
+      modifier = {
+    		factor = 10
+    		trait = interest_in_weird
+    	}
+    }
+  }
+
+  # this is the devil's work, I shall repent!
+  option = {
+    name = coteo_investigation_simple.10.c
+
+    subtract_variable = { which = "eldritch_sanity" value = 2 }
+    custom_tooltip = { text = coteo_investigation_simple.10.c.tt }
+    random = {
+      chance = 25
+      add_trait = zealous
+    }
+    set_character_flag = eldritch_cult_rejected
+
+    log = "Eldritch Investigation: ----> [Root.GetBestName] -> Dream: A Land of Night -> Repent"
+
+    ai_chance = {
+    	factor = 5
+    	modifier = {
+    		factor = 10
+    		trait = zealous
+    	}
+    }
+  }
+}
+
+## coteo_investigation_simple.20   # Find some old book
+character_event  = {
+  id = coteo_investigation_simple.20
+
+  title = coteo_investigation_simple.40.title
+  desc = coteo_investigation_simple.20.desc
+  picture = GFX_evt_ritual_scroll
+
+  only_rulers = yes
+
+  trigger = {
+    not_yet_woke = yes
+    NOT = { has_character_flag = has_eldritch_book }
+    NOT = { has_character_modifier = coteo_mod_weird_book_found }
+    cult_allowed_cultures = yes
+  }
+
+  mean_time_to_happen = {
+    years = 105
+    modifier = {
+      factor = 0.2
+      trait = interest_in_weird
+    }
+    modifier = {
+      factor = 0.7
+      check_variable = { which = "eldritch_sanity" value <= -10 }
+    }
+    modifier = {
+      factor = 0.6
+      check_variable = { which = "eldritch_sanity" value <= -20 }
+    }
+    modifier = {
+      factor = 0.5
+      learning = 15
+    }
+    modifier = {
+      factor = 20
+      learning <= 7
+    }
+    modifier = {
+      factor = 40
+      trait = blinded
+    }
+    modifier = {
+      factor = 0.4
+      OR = {
+        has_focus = focus_scholarship
+        has_focus = focus_theology
+      }
+    }
+    modifier = {
+      factor = 0.7
+      has_focus = focus_business
+    }
+    modifier = {
+      factor = 0.8
+      demesne_eldritch_holy_site = yes
+    }
+  }
+
+  immediate = {
+    random_list = {
+      1 = { set_variable = { which = rng_picture value = 1 } }
+      1 = { set_variable = { which = rng_picture value = 2 } }
+      1 = { set_variable = { which = rng_picture value = 3 } }
+    }
+    change_variable = { which = "eldritch_sanity" value = -3 }
+
+  }
+
+  # take the book with you
+  option = {
+    name = coteo_investigation_simple.40.a
+
+    subtract_variable = { which = "eldritch_sanity" value = 4 }
+    add_character_modifier = { name = coteo_mod_weird_book_found years = 10 }
+    add_trait = interest_in_weird
+
+    ai_chance = {
+    	factor = 35
+      modifier = {
+        factor = 100
+        trait = lunatic
+      }
+      modifier = {
+    		factor = 2
+    		is_in_society = hermetics
+    	}
+    	modifier = {
+    		factor = 2
+    		learning = 15
+    	}
+    	modifier = {
+    		factor = 2
+    		check_variable = { which = "eldritch_sanity" value <= -15 }
+    	}
+    	modifier = {
+    		factor = 5
+    		check_variable = { which = "eldritch_sanity" value <= -30 }
+    	}
+    	modifier = {
+    		factor = 10
+    		trait = interest_in_weird
+    	}
+      modifier = {
+        factor = 0.8
+        demesne_eldritch_holy_site = yes
+      }
+    }
+    log = "Eldritch Investigation: ----> [Root.GetBestName] -> Forbidden Book -> Took Book"
+  }
+
+  # leave the book alone
+  option = {
+    name = coteo_investigation_simple.40.b
+
+    subtract_variable = { which = "eldritch_sanity" value = 2 }
+    random = {
+      chance = 15
+      add_trait = stressed
+    }
+
+    ai_chance = {
+    	factor = 25
+    }
+    log = "Eldritch Investigation: ----> [Root.GetBestName] -> Forbidden Book -> Leave"
+  }
+
+  # burn the book
+  option = {
+    name = coteo_investigation_simple.40.c
+
+    #subtract_variable = { which = "eldritch_sanity" value = 1 }
+    custom_tooltip = { text = coteo_investigation_simple.40.c.tt }
+    random = {
+      chance = 25
+      add_trait = zealous
+    }
+    random = {
+      chance = 60
+      add_trait = paranoid
+    }
+    eld_did_zealous_act_against = yes
+
+    ai_chance = {
+    	factor = 10
+    	modifier = {
+    		factor = 60
+    		trait = zealous
+    	}
+    	modifier = {
+    		factor = 0.6
+    		trait = cynical
+    	}
+    }
+    log = "Eldritch Investigation: ----> [Root.GetBestName] -> Forbidden Book -> Burned"
+  }
+
+  after = {
+    set_character_flag = eldritch_found_book
+  }
+}
+
+## coteo_investigation_simple.100   # Read the found book
+character_event  = {
+  id = coteo_investigation_simple.100
+
+  title = coteo_investigation_simple.40.title
+  desc = coteo_investigation_simple.100.desc
+  picture = GFX_evt_ritual_scroll
+
+  only_rulers = yes
+
+  trigger = {
+    not_yet_woke = yes
+    has_character_modifier = coteo_mod_weird_book_found
+    cult_allowed_cultures = yes
+    NOT = { has_character_flag = has_read_eldritch_book }
+  }
+
+  mean_time_to_happen = {
+    years = 30
+    modifier = {
+      factor = 0.7
+      check_variable = { which = "eldritch_sanity" value <= -10 }
+    }
+    modifier = {
+      factor = 0.6
+      check_variable = { which = "eldritch_sanity" value <= -20 }
+    }
+    modifier = {
+      factor = 0.5
+      learning = 15
+    }
+    modifier = {
+      factor = 20
+      learning <= 7
+    }
+    modifier = {
+      factor = 40
+      trait = blinded
+    }
+    modifier = {
+      factor = 0.4
+      OR = {
+        has_focus = focus_scholarship
+        has_focus = focus_theology
+      }
+    }
+    modifier = {
+      factor = 0.7
+      has_focus = focus_business
+    }
+  }
+
+  immediate = {
+    change_variable = { which = "eldritch_sanity" value = -2 }
+  }
+
+  # unsettling
+  option = {
+    log = "Eldritch Investigation: ----> [Root.GetBestName] -> Reading Forbidden Book -> Unsettling"
+    name = coteo_investigation_simple.100.a
+
+    subtract_variable = { which = "eldritch_sanity" value = 6 }
+    add_tiny_eldritch_insight = yes
+
+    #add_trait = interest_in_weird  # potentially switch to sympathy_for_eldritch if they exist
+
+
+    random = {
+      chance = 5
+      add_trait = lunatic
+    }
+
+    ai_chance = {
+    	factor = 30
+    }
+  }
+
+  # the truth revealed
+  option = {
+    log = "Eldritch Investigation: ----> [Root.GetBestName] -> Reading Forbidden Book -> Axiom"
+    name = coteo_investigation_simple.100.b
+
+    trigger = {
+      OR = {
+        check_variable = { which = "eldritch_sanity" value <= -100 }
+        check_variable = { which = "eldritch_insight" value >= 6 }
+        AND = {
+          ai = yes
+          check_variable = { which = "eldritch_insight" value >= 2 }
+        }
+      }
+    }
+
+    subtract_variable = { which = "eldritch_sanity" value = 11 }
+    subtract_variable = { which = "eldritch_insight" value = 6 }
+
+    set_secret_religion = eldritch_gods
+    if = {
+      limit = { trait = interest_in_weird }
+      remove_trait = interest_in_weird
+    }
+    log = "Eldritch: ----> [Root.GetBestName] >>> Converted Secret Religion >>> Eldritch Gods"
+
+    random = {
+      chance = 8
+      add_trait = lunatic
+    }
+
+    ai_chance = {
+    	factor = 30
+      modifier = {
+        factor = 100
+        trait = lunatic
+      }
+    	modifier = {
+    		factor = 2
+    		learning = 15
+    	}
+    }
+  }
+
+  after = {
+    set_character_flag = has_read_eldritch_book
+  }
+}
+
+## coteo_investigation_simple.40   # Find important old book
+narrative_event  = {
+  id = coteo_investigation_simple.40
+
+  title = coteo_investigation_simple.40.title
+  desc = coteo_investigation_simple.40.desc
+  window = "CoteoBiggerEventWindow"
+  picture = GFX_evt_parchment_01
+  desc = {
+    trigger = { check_variable = { which = rng_picture value = 1 } }
+    text = coteo_investigation_simple.40.desc
+    picture = GFX_evt_parchment_01
+  }
+  desc = {
+    trigger = { check_variable = { which = rng_picture value = 2 } }
+    text = coteo_investigation_simple.40.desc
+    picture = GFX_evt_parchment_02
+  }
+  desc = {
+    trigger = { check_variable = { which = rng_picture value = 3 } }
+    text = coteo_investigation_simple.40.desc
+    picture = GFX_evt_parchment_03
+  }
+
+  only_rulers = yes
+
+  trigger = {
+    not_yet_woke = yes
+    #NOT = { has_character_flag = eldritch_found_book }
+    NOT = { has_artifact = necronomicon }
+    OR = {
+      NOT = { has_artifact = liber_investigationis } # Liber Investigationis
+      NOT = { has_artifact = ars_magna_et_ultima } # Ars Magna et Ultima
+      NOT = { has_artifact = of_unspeakable_cults } # Von Unaussprechlichen Kulten
+    }
+    NOT = { has_character_modifier = coteo_mod_weird_book_found }
+    cult_allowed_cultures = yes
+    ai = no
+  }
+
+  mean_time_to_happen = {
+    years = 170
+    modifier = {
+      factor = 0.2
+      trait = interest_in_weird
+    }
+    modifier = {
+      factor = 0.7
+      check_variable = { which = "eldritch_sanity" value <= -10 }
+    }
+    modifier = {
+      factor = 0.6
+      check_variable = { which = "eldritch_sanity" value <= -20 }
+    }
+    modifier = {
+      factor = 0.5
+      learning = 15
+    }
+    modifier = {
+      factor = 20
+      learning <= 7
+    }
+    modifier = {
+      factor = 40
+      trait = blinded
+    }
+    modifier = {
+      factor = 0.4
+      OR = {
+        has_focus = focus_scholarship
+        has_focus = focus_theology
+      }
+    }
+    modifier = {
+      factor = 0.7
+      has_focus = focus_business
+    }
+    modifier = {
+      factor = 0.8
+      demesne_eldritch_holy_site = yes
+    }
+  }
+
+  immediate = {
+    random_list = {
+      1 = { set_variable = { which = rng_picture value = 1 } }
+      1 = { set_variable = { which = rng_picture value = 2 } }
+      1 = { set_variable = { which = rng_picture value = 3 } }
+    }
+    random_list = {
+      1 = { set_variable = { which = rng_value value = 1 } }
+      1 = { set_variable = { which = rng_value value = 2 } }
+      1 = { set_variable = { which = rng_value value = 3 } }
+    }
+    change_variable = { which = "eldritch_sanity" value = -3 }
+
+    log = "Eldritch Investigation: ----> [Root.GetBestName] -> Found Important Book"
+  }
+
+  # take the book with you
+  option = {
+    name = coteo_investigation_simple.40.a
+
+    subtract_variable = { which = "eldritch_sanity" value = 20 }
+
+    if = {
+      limit = {
+        NOT = { has_character_flag = eldritch_found_book }
+        ai = no
+        OR = {
+          AND = {
+            check_variable = { which = rng_value value == 1 }
+            has_artifact = of_unspeakable_cults
+          }
+          AND = {
+            check_variable = { which = rng_value value == 3 }
+            NOT = { has_artifact = liber_investigationis }
+          }
+        }
+      }
+      add_artifact = liber_investigationis
+    }
+    else_if = {
+      limit = {
+        NOT = { has_character_flag = eldritch_found_book }
+        ai = no
+        OR = {
+          AND = {
+            check_variable = { which = rng_value value == 3 }
+            has_artifact = liber_investigationis
+          }
+          AND = {
+            check_variable = { which = rng_value value == 2 }
+            NOT = { has_artifact = ars_magna_et_ultima }
+          }
+        }
+      }
+      add_artifact = ars_magna_et_ultima
+    }
+    else_if = {
+      limit = {
+        NOT = { has_character_flag = eldritch_found_book }
+        ai = no
+        OR = {
+          AND = {
+            check_variable = { which = rng_value value == 2 }
+            has_artifact = ars_magna_et_ultima
+          }
+          AND = {
+            check_variable = { which = rng_value value == 1 }
+            NOT = { has_artifact = of_unspeakable_cults }
+          }
+        }
+      }
+      add_artifact = of_unspeakable_cults
+    }
+    else = {
+      add_character_modifier = { name = coteo_mod_weird_book_found years = 5 }
+    }
+
+    random = {
+      chance = 5
+      add_trait = lunatic
+    }
+    if = {
+      limit = { NOT = { trait = interest_in_weird } }
+      add_trait = interest_in_weird
+    }
+
+    ai_chance = {
+    	factor = 20
+      modifier = {
+        factor = 100
+        trait = lunatic
+      }
+      modifier = {
+    		factor = 2
+    		is_in_society = hermetics
+    	}
+    	modifier = {
+    		factor = 2
+    		learning = 15
+    	}
+    	modifier = {
+    		factor = 2
+    		check_variable = { which = "eldritch_sanity" value <= -15 }
+    	}
+    	modifier = {
+    		factor = 5
+    		check_variable = { which = "eldritch_sanity" value <= -30 }
+    	}
+    	modifier = {
+    		factor = 20
+    		trait = interest_in_weird
+    	}
+    }
+  }
+
+  # leave the book alone
+  option = {
+    name = coteo_investigation_simple.40.b
+
+    subtract_variable = { which = "eldritch_sanity" value = 9 }
+    random = {
+      chance = 15
+      add_trait = stressed
+    }
+
+    ai_chance = {
+    	factor = 25
+    }
+  }
+
+  # burn the book
+  option = {
+    name = coteo_investigation_simple.40.c
+
+    subtract_variable = { which = "eldritch_sanity" value = 4 }
+    custom_tooltip = { text = coteo_investigation_simple.40.c.tt }
+    random = {
+      chance = 25
+      add_trait = zealous
+    }
+    random = {
+      chance = 60
+      add_trait = paranoid
+    }
+    set_character_flag = eldritch_cult_rejected
+
+    ai_chance = {
+    	factor = 10
+    	modifier = {
+    		factor = 20
+    		trait = zealous
+    	}
+    }
+  }
+
+  after = {
+    set_character_flag = eldritch_found_book
+  }
+}

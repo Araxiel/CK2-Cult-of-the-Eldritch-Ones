@@ -21,6 +21,72 @@ has_discovered_eldritch_cult = {
   }
 }
 
+not_yet_woke = {
+  OR = {
+    #NOT = { has_character_flag = discovered_eldritch_cult }
+    NOT = { true_religion_group = eldritch_group }
+    NOT = { is_in_society = cult_of_eldritch }
+    #NOT = { has_global_flag = eldritch_kingdom_founded }
+  }
+}
+
+has_any_investigation_fishing_village_occurance = {
+  OR = {
+    has_character_flag = investigation_fishing_village_idol_taken
+    has_character_flag = investigation_fishing_village_idol_broken
+    has_character_flag = investigation_fishing_village_book_taken
+    has_character_flag = investigation_fishing_village_book_burned
+    has_character_flag = investigation_fishing_village_altar
+  }
+}
+
+demesne_eldritch_holy_site = {
+  OR = {
+    AND = {
+      lower_tier_than = king
+      any_realm_title = {
+        is_holy_site = eldritch_gods
+      }
+    }
+    AND = {
+      higher_tier_than = duke
+      ## directly held demesne counties
+      any_demesne_title = {
+        is_holy_site = eldritch_gods
+      }
+    }
+  }
+}
+
+eldritch_ai_initiative_restricted = {
+  has_game_rule = {
+    name = coteo_ai_initiative
+    value = restricted
+  }
+}
+
+eldritch_ai_initiative_increased = {
+  has_game_rule = {
+    name = coteo_ai_initiative
+    value = more
+  }
+}
+
+cult_ai_more_frequent = {
+  ai = yes
+  has_game_rule = {
+    name = coteo_ai_initiative
+    value = more
+  }
+}
+
+## for now, only Europeans will be part of this
+cult_allowed_cultures = {
+  capital_holding = {
+    region = world_europe
+  }
+}
+
 ## other
 
 is_any_bad_priest = {
@@ -37,6 +103,6 @@ is_any_bad_priest = {
 coteo_debugging_on = {
   has_game_rule = {
     name = coteo_debugging
-    value = active
+    value = on
   }
 }

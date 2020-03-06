@@ -1,38 +1,133 @@
+#CODE;ENGLISH;FRENCH;GERMAN;SPANISH
 
-#CODE;ENGLISH LANG;FRENCH;GERMAN;SPANISH
-;;;;
-## Rules;;;;
-;;;;
-RULE_GROUP_COTEO;Â§BCult of the Eldritch OnesÂ§!;;;
-coteo_ai_initiative_name;Â§BCult of the Eldritch Ones:Â§! AI Initiative;;;
-coteo_ai_initiative_full_desc;The AI cultist behave normal and have the same chances of success as the players.;;;
-coteo_ai_initiative_restricted_desc;The AI cultists will always fail to trigger important and world-changing events, player intervention is needed.;;;
-coteo_ai_initiative_more_desc;The AI cultist have increased chances of success compared to the player.;;;
-coteo_startup_cult_name;Â§BCult of the Eldritch Ones:Â§! Populated Cult;;;
-coteo_startup_cult_on_desc;The cult will already exist in the world and be populated by the AI.;;;
-coteo_startup_cult_off_desc;The player will be the first member of the cult.;;;
-;;;;
-## Religion;;;;
-;;;;
-d_eldritch_high_temple;Eldritch High Temple;;;
-eldritch_gods_group;Eldritch Group;;;
-eldritch_gods;Eldritch Gods;;;
-eldritch_gods_DESC;A follower of the Eldritch Gods, serving their alien masters in the task to awaken them into this world and usher in a age of grand darkness.;;;
-;;;;
-## Cult;;;;
-;;;;
-cult_of_eldritch;Cult of the Eldritch;;;
-cult_of_eldritch_desc;The Cult of the Eldritch is the body of cultists and agents in this dimension, that work towards the awakening of their Eldritch Ones. Working in the shadows, the cults goal is twofold: Awaken the Old Ones and gain enough secular power to overthrow the believers of the false gods and create a great earthly realm from which the Old One's power can emanate from.;;;
-must_be_in_good_standing_with_cult_tooltip;Must be in good standing with the cult.;;;
-currency_name_cult;Forbidden Knowledge;;;
-cult_of_eldritch_rank_1_male;Initiate;;;
-cult_of_eldritch_rank_1_female;Initiate;;;
-cult_of_eldritch_rank_2_male;Acolyte;;;
-cult_of_eldritch_rank_2_female;Acolyte;;;
-cult_of_eldritch_rank_3_male;Disciple;;;
-cult_of_eldritch_rank_3_female;Disciple;;;
-cult_of_eldritch_rank_3_male;Master;;;
-cult_of_eldritch_rank_3_female;Master;;;
-;;;;
-## Realm
-k_land_of_the_eldritch;Land of the Edlritch;;;
+## Rules;;;;;;;
+
+RULE_GROUP_COTEO;§GCult of the Eldritch Ones§!;;;;;;
+coteo_ai_initiative_name;§ZCult of the Eldritch Ones:§! AI Initiative;;;;;;
+coteo_ai_initiative_full_desc;The AI cultist behave normal and have the same chances of success as the players.;;;;;;
+coteo_ai_initiative_restricted_desc;The AI cultists will always fail to trigger important and world-changing events, player intervention is needed.;;;;;;
+coteo_ai_initiative_more_desc;The AI cultist have increased chances of success compared to the player.;;;;;;
+coteo_startup_cult_name;§ZCult of the Eldritch Ones:§! Startup Cult Population;;;;;;
+coteo_startup_cult_on_desc;The cult will already exist in the world and be populated by the AI.;;;;;;
+coteo_startup_cult_off_desc;The player will have to found the cult.;;;;;;
+coteo_startup_cult_dynamic_desc;The cult will not exist at game start, but the AI might found and start populating the cult. (Influenced by AI Initiative);;;;;;
+
+## Religion;;;;;;;
+
+d_eldritch_high_temple;Eldritch High Temple;;;;;;
+d_eldritch_high_temple_adj;Eldritch High Temple;;;;;;
+eldritch_high_temple;Eldritch High Priest;;;;;;
+eldritch_group;Eldritch Gods;;;;;;
+eldritch_gods;Eldritch;;;;;;
+eldritch_gods_DESC;The Eldritch Gods are beings from a different world, seeking to enter and conquer this one. There are dozen if not hundreds of Eldritch Things, and while individual followers might have favorites, believers of the Eldritch Gods follow, pray and beckon to all of them as a collective pantheon.;;;;;;
+THE_NECRONOMICON;The Necronomicon;Le Necronomicon; Das Necronomicon;;;;
+ACOLYTE;Acolyte;;;;;;
+KEEPER;Keeper;;;;;;
+VASSAL_ACOLYTE;Vassal Acolyte;;;;;;
+VASSAL_KEEPER;Vassal Keeper;;;;;;
+KNOWLEDGE;Knowledge;;;;;;
+STAT_PIETY_FAVOR;Favor;;;;;;
+GOD_OLD_ONES;The Old Ones;;;;;;
+GOD_GREAT_OLD_ONES;Great Old Ones;;;;;;
+GOD_ELDER_THINGS;Elder Things;;;;;;
+GOD_ELDRITCH_GODS;Eldritch Gods;;;;;;
+GOD_FALSE_GODS;false gods;;;;;;
+cult_of_eldritch_dnaymic_template;Cult of the Eldritch;;;;;;
+aisura_god;Aisura;;;;;;
+aisura_god_DESC;Aisura is the Queen of the Dead and seeks to devour those who are lost and unworthy. She appears a winged androgynous humanoid with four arms and sometimes two faces. Her followers pray to her to not be devoured and in most cases to devour those they deem unworthy or false believers, while few truly fanatical wish to be devoured by her.;;;;;;
+GOD_AISURA;Aisura;;;;;;
+naahab_god;Naahab;;;;;;
+naahab_god_DESC;Naahab is the Eldritch Thing of knowledge and the master of all Ylsiths. He, or rather it, appears as a gigantic brain with a single eye, enveloped by a great mass of tentacles with a purple gleam. Its followers are seekers of knowledge first and foremost, even if that search will kill them. The ultimate goal for every follower is to be fed to and fuse with Naahab and let him absorb all the accumulated knowledge.;;;;;;
+GOD_NAAHAB;Naahab;;;;;;
+qushakon_god;Qushakon;;;;;;
+qushakon_god_DESC;Qushakon is the Eldritch Thing and undisputed ruler of the deep. He appears as a swirling, black vortex in the shape of a great serpent, slithering through the unknown darkness. While his domain is the deep dark sea, he can travel through any unknown darkness, no matter the element. For him and his followers, all that are unworthy are prey to be tormented and devoured.;;;;;;
+GOD_QUASHAKON;Qushakon;;;;;;
+GOD_ORMTAN;Ormtan;;;;;;
+ormtan_god;Ormtan;;;;;;
+ormtan_god_DESC;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar volutpat scelerisque. Curabitur maximus lacus ac est molestie lacinia. Aenean accumsan laoreet consequat. Ut nulla urna, condimentum eu dictum ut, facilisis sit amet dui. Suspendisse molestie mi erat. WIP.;;;;;;
+d_aisura_high_temple;Aisura's Priest of Priests;;;;;;
+d_aisura_high_temple_adj;Aisura's Domain;;;;;;
+aisura_high_temple;Aisura's Priest of Priests;;;;;;
+k_naahab_high_temple;Naahab's Grand Keeper;;;;;;
+k_naahab_high_temple_adj;Naahab's Domain;;;;;;
+naahab_high_temple;Grand Keeper of Knowledge;;;;;;
+
+temple_empire_eldritch_group;Imperial Ierósylocracy;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x ## ierósylos = unholy
+temple_empire_of_eldritch_group;Imperial Ierósylocracy;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x ## ierósylos = unholy
+temple_kingdom_eldritch_group;Great Ierósylocracy;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x
+temple_kingdom_of_eldritch_group;Great Ierósylocracy;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x
+temple_duchy_eldritch_group;Ierósylocracy;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x
+temple_duchy_of_eldritch_group;Ierósylocracy;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x
+temple_county_eldritch_group;Great Temple;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x
+temple_county_of_eldritch_group;Great Temple of;Ierósylocracy;Ierósylokratie;;Ierósylocracia;;;;;;;;;x
+temple_barony_eldritch_group;Temple;Temple;Tempel;;Templo;;;;;;;;;x
+temple_barony_of_eldritch_group;Temple;Temple;Tempel;;Templo;;;;;;;;;x
+
+emperor_king_eldritch_group;Unholy Emperor;;Priesterkaiser;;Emperador-obispo;;;;;;;;;x
+temple_emperor_female_eldritch_group;Unholy Empress;;Kaiserin;;Emperatriz;;;;;;;;;x
+temple_king_eldritch_group;Grand Acolyte;;;;Rey-obispo;;;;;;;;;x
+temple_king_female_eldritch_group;Grand Acolyte;;;;Reina Sacerdotisa;;;;;;;;;x
+temple_duke_eldritch_group;High Archacolyte;;Erzbischof;;;;;;;;;;;x
+temple_duke_female_eldritch_group;High Archacolyte;;Erzpriesterin;;Reina sacerdotisa;;;;;;;;;x
+temple_count_eldritch_group;High Acolyte;;Bischof;;;;;;;;;;;x
+temple_count_female_eldritch_group;High Acolyte;;Bischof;;;;;;;;;;;x
+temple_baron_eldritch_group;Acolyte;;Abt;;Obispo;;;;;;;;;x
+temple_baron_female_eldritch_group;Acolyte;;Abt;;Obispo;;;;;;;;;x
+temple_king_naahab_god;Grand Keeper;;;;Rey-obispo;;;;;;;;;x
+temple_king_female_naahab_god;Grand Keeper;;;;Reina Sacerdotisa;;;;;;;;;x
+temple_duke_naahab_god;High Archkeeper;;Erzbischof;;;;;;;;;;;x
+temple_duke_female_naahab_god;High Archkeeper;;Erzpriesterin;;Reina sacerdotisa;;;;;;;;;x
+temple_count_naahab_god;High Keeper;;Bischof;;;;;;;;;;;x
+temple_count_female_naahab_god;High Keeper;-;Bischof;;;;;;;;;;;x
+temple_baron_naahab_god;Keeper;;Abt;;Obispo;;;;;;;;;x
+temple_baron_female_naahab_god;Keeper;;Abt;;Obispo;;;;;;;;;x
+
+## Cult;;;;;;;
+
+cult_of_eldritch;Cult of the Eldritch;;;;;;
+cult_of_eldritch_desc;The Cult of the Eldritch is the body of cultists and agents in this dimension, that work towards the awakening of their Eldritch Ones. Working in the shadows, the cults goal is twofold: Awaken the Old Ones and gain enough secular power to overthrow the believers of the false gods and create a great earthly realm from which the Old One's power can emanate from.;;;;;;
+must_be_in_good_standing_with_cult_tooltip;Must be in good standing with the cult.;;;;;;
+currency_name_cult_of_eldritch;Forbidden Insight;;;;;;
+cult_of_eldritch_leader_desc;The Master of the Cult of the Eldritch is not only guiding the efforts of the cult to awaken the Old Ones, he's also demanding complete obedience from the other members.;;;;;;
+cult_of_eldritch_rank_1_male;Initiate;;;;;;
+cult_of_eldritch_rank_1_female;Initiate;;;;;;
+cult_of_eldritch_rank_2_male;Acolyte;;;;;;
+cult_of_eldritch_rank_2_female;Acolyte;;;;;;
+cult_of_eldritch_rank_3_male;Disciple;;;;;;
+cult_of_eldritch_rank_3_female;Disciple;;;;;;
+cult_of_eldritch_rank_4_male;Master;;;;;;
+cult_of_eldritch_rank_4_female;Mistress;;;;;;
+
+## Realm;;;;;;;
+
+k_eldritch_kingdom;Eldritch;;;;;;
+k_eldritch_kingdom_adj;Eldritch;;;;;;
+e_eldritch_empire;Eldritch Empire;;;;;;
+e_eldritch_empire_adj;Eldritch;;;;;;
+d_templars_of_naahab;Dark Combine;;;;;;
+d_templars_of_naahab_adj;Dark Combine;;;;;;
+d_warriors_of_qushakon;Warriors of Qushakon;;;;;;
+d_warriors_of_qushakon_adj;Qushakon Lodge;;;;;;
+d_eldritch_order;Eldritch Order;;;;;;
+d_eldritch_order_adj;Eldritch Order;;;;;;
+
+job_spiritual_eldritch_gods;Court Acolyte;;;;;;
+
+## Traits and Misc;;;;;;;
+
+on_investigation;On Investigation;;;;;;
+on_investigation_desc;This character is currently away, investigating strange rumors.;;;;;;
+send_me_on_scary_investigation;Send Me on Scary Investigation;;;;;;
+eldritch_insight;§GEldritch Insight§!;;;;;;
+eldritch_proof;§ZEldritch Proof§!;;;;;;
+eldritch_sanity;Sanity;;;;;;
+interest_in_weird;Interest in the Weird;;;;;;
+interest_in_weird_desc;A great interest (and some might call it dangerous obsession) in the Occult and the Weird.;;;;;;
+
+## Decisions;;;;;;;
+
+create_eldritch_cult;Found Eldritch Cult;;;;;;
+create_eldritch_cult_desc;Set out by yourself to spread the truth about these awesome Eldritch beings.;;;;;;
+adopt_eldritch;Adopt Eldritch;;;;;;
+adopt_eldritch_desc;You have collected enough proof and insight to be sure of one thing, the Eldritch Gods are real, and they are out there and their power is immense. [Root.TrueReligion.GetName] and [Root.TrueReligion.GetHighGodName] are a lie. The only hope and salvation lies in serving the Eldritch Gods.;;;;;;
+eldritch_group_opinion;Eldritch Gods Opinion;;;;;;

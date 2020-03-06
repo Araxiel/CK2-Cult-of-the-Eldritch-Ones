@@ -1,20 +1,302 @@
 spriteTypes = {
 
+	## Event images
+
 	spriteType = {
-		name = "GFX_evt_blue_eyed_bitch"
-		texturefile = "gfx/event_pictures/event_blue_eyed_bitch.dds"
+		name = "GFX_evt_harbour_town"
+		texturefile = "gfx\event_pictures\evt_harbour_town.dds"
 		allwaystransparent = yes
 	}
 	spriteType = {
-		name = "GFX_evt_blue_eyed_bitch_large"
-		texturefile = "gfx\event_pictures\event_blue_eyed_bitch_large.dds"
+		name = "GFX_evt_creepy_village"
+		texturefile = "gfx\event_pictures\evt_creepy_village.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_deep_ones_cultists"
+		texturefile = "gfx\event_pictures\evt_deep_ones_cultists.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_deep_ones_medieval"
+		texturefile = "gfx\event_pictures\evt_deep_ones_medieval.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_deep_ones_shore_01"
+		texturefile = "gfx\event_pictures\evt_deep_ones_shore_01.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_deep_ones_shore_02"
+		texturefile = "gfx\event_pictures\evt_deep_ones_shore_02.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_deep_ones_shore_03"
+		texturefile = "gfx\event_pictures\evt_deep_ones_shore_03.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_forest_ruin"
+		texturefile = "gfx\event_pictures\evt_forest_ruin.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_nightland_watcher"
+		texturefile = "gfx\event_pictures\large\evt_nightland_watcher.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_parchment_01"
+		texturefile = "gfx\event_pictures\large\evt_parchment_01.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_parchment_02"
+		texturefile = "gfx\event_pictures\large\evt_parchment_02.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_parchment_03"
+		texturefile = "gfx\event_pictures\large\evt_parchment_03.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_spooky_village_01"
+		texturefile = "gfx\event_pictures\large\evt_spooky_village_01.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_spooky_village_02"
+		texturefile = "gfx\event_pictures\large\evt_spooky_village_02.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_deep_ones_cultist_large"
+		texturefile = "gfx\event_pictures\large\evt_deep_ones_cultist_large.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_deep_ones_shore_03_large"
+		texturefile = "gfx\event_pictures\large\evt_deep_ones_shore_03_large.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_ghosts_graveyard"
+		texturefile = "gfx\event_pictures\large\evt_ghosts_graveyard.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_deep_one_01_large"
+		texturefile = "gfx\event_pictures\large\evt_deep_one_01_large.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_deep_one_02_large"
+		texturefile = "gfx\event_pictures\large\evt_deep_one_02_large.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_deep_one_03_large"
+		texturefile = "gfx\event_pictures\large\evt_deep_one_03_large.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_deep_ones_shore_01_large"
+		texturefile = "gfx\event_pictures\large\evt_deep_ones_shore_01_large.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_deep_ones_medieval_large"
+		texturefile = "gfx\event_pictures\large\evt_deep_ones_medieval_large.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_deep_ones_cultist_02_large"
+		texturefile = "gfx\event_pictures\large\evt_deep_ones_cultist_02_large.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_voidyani_large"
+		texturefile = "gfx\event_pictures\large\evt_voidyani_large.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_dark_altar"
+		texturefile = "gfx\event_pictures\evt_altar_dark.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_dark_altar_large"
+		texturefile = "gfx\event_pictures\large\evt_altar_dark_large.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_skull_altar_large"
+		texturefile = "gfx\event_pictures\large\evt_altar_skulls_large.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_spooky_town"
+		texturefile = "gfx\event_pictures\evt_spooky_town.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_flagelants"
+		texturefile = "gfx\event_pictures\evt_flagelants.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_idol_altar"
+		texturefile = "gfx\event_pictures\evt_altar_idol.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_spooky_village"
+		texturefile = "gfx\event_pictures\evt_spooky_village.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_altar_skulls"
+		texturefile = "gfx\event_pictures\evt_altar_skulls.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_skull_aisura"
+		texturefile = "gfx\event_pictures\evt_skull_aisura.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_angel_of_death_2"
+		texturefile = "gfx\event_pictures\evt_angel_of_death_2.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_angel_of_death_1"
+		texturefile = "gfx\event_pictures\evt_angel_of_death_1.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_grassy_gnoll_village"
+		texturefile = "gfx\event_pictures\evt_grassy_gnoll_village.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scripture_03"
+		texturefile = "gfx\event_pictures\evt_scripture_03.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scripture_02"
+		texturefile = "gfx\event_pictures\evt_scripture_02.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_elder_nebula_red"
+		texturefile = "gfx\event_pictures\evt_elder_nebula_red.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scripture_01"
+		texturefile = "gfx\event_pictures\evt_scripture_01.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_elder_nebula"
+		texturefile = "gfx\event_pictures\evt_elder_nebula.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_cosmic_tentacle"
+		texturefile = "gfx\event_pictures\evt_cosmic_tentacle.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_cultists_02"
+		texturefile = "gfx\event_pictures\evt_cultists_02.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_cultists_01"
+		texturefile = "gfx\event_pictures\evt_cultists_01.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_deep_one_priest"
+		texturefile = "gfx\event_pictures\evt_deep_one_priest.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_cthulhu_1"
+		texturefile = "gfx\event_pictures\evt_cthulhu_1.dds"
+		allwaystransparent = yes
+	}
+}
+
+spriteTypes = {
+
+	##### Traits #####
+
+	spriteType = {
+		name = "GFX_trait_on_investigation"
+		texturefile = "gfx/traits/on_investigation.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_interest_in_weird"
+		texturefile = "gfx/traits/sympathy_eldritch.dds"
 		noOfFrames = 1
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
 
+	##### Decisions #####
 
-	##### Cult #####
+	spriteType = {
+		name = "GFX_create_eldritch_cult"
+		texturefile = "gfx\\decision_icon_eldritch.dds"
+	}
+
+	##### Society View #####
 
 	spriteType = {
 		name = "GFX_society_main_background_cult_of_eldritch"
@@ -53,9 +335,190 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_event_custom_bg_purple"
-		texturefile = "gfx\\interface\\event_bigger_bg_purple.dds"
+		name = "GFX_event_custom_bg_eldritch"
+		texturefile = "gfx\\interface\\event_bigger_bg_eldritch.dds"
 		allwaystransparent = yes
+	}
+
+	# cultists and priests
+
+	# Male
+
+	spriteType = {
+		name = "GFX_society_eldritch_male_clothing_behind"
+		textureFile = "gfx/characters/societies/eldritch_male_clothing_behind.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_society_eldritch_male_clothing_front"
+		textureFile = "gfx/characters/societies/eldritch_male_clothing_front.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_society_eldritch_male_headgear_mid"
+		textureFile = "gfx/characters/societies/eldritch_male_headgear_mid.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_society_eldritch_male_headgear_front"
+		textureFile = "gfx/characters/societies/eldritch_male_headgear_front.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_society_eldritch_male_headgear_behind"
+		textureFile = "gfx/characters/societies/eldritch_male_headgear_behind.dds"
+		noOfFrames = 4
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_society_eldritch_clothing_male"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = no
+				portrait_clothing = yes
+				portrait_society = cult_of_eldritch
+			}
+		}
+
+		layer = {
+			"GFX_society_eldritch_male_clothing_behind:c0"
+			"GFX_society_eldritch_male_clothing_front:c2"
+			"GFX_society_eldritch_male_headgear_mid:c3"
+			"GFX_society_eldritch_male_headgear_front:c5"
+			"GFX_society_eldritch_male_headgear_behind:c1"
+			"GFX_empty:c6"
+			"GFX_empty:c7"
+			"GFX_empty:c4"
+		}
+
+		# Correct rank
+		allow_property_values = {
+			3 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				1 = {
+					portrait_society_rank = 2
+				}
+				2 = {
+					portrait_society_rank = 3
+				}
+				3 = {
+					portrait_society_rank = 4
+				}
+			}
+			5 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				1 = {
+					portrait_society_rank = 2
+				}
+				2 = {
+					portrait_society_rank = 3
+				}
+				3 = {
+					portrait_society_rank = 4
+				}
+			}
+		}
+	}
+
+	# Female
+
+	spriteType = {
+		name = "GFX_society_eldritch_female_clothing_behind"
+		textureFile = "gfx/characters/societies/eldritch_female_clothing_behind.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_society_eldritch_female_clothing_front"
+		textureFile = "gfx/characters/societies/eldritch_female_clothing_front.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_society_eldritch_female_headgear_front"
+		textureFile = "gfx/characters/societies/eldritch_female_headgear_front.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_society_eldritch_female_headgear_behind"
+		textureFile = "gfx/characters/societies/eldritch_female_headgear_behind.dds"
+		noOfFrames = 4
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_society_eldritch_clothing_female"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = yes
+				portrait_clothing = yes
+				portrait_society = cult_of_eldritch
+			}
+		}
+
+		layer = {
+			"GFX_society_eldritch_female_clothing_behind:c0"
+			"GFX_society_eldritch_female_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_society_eldritch_female_headgear_front:c5"
+			"GFX_society_eldritch_female_headgear_behind:c1"
+			"GFX_empty:c6"
+			"GFX_empty:c7"
+			"GFX_empty:c4"
+		}
+
+		# No hair, correct rank
+		allow_property_values = {
+			1 = {
+				0 = {
+					always = yes
+				}
+			}
+			3 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				1 = {
+					portrait_society_rank = 2
+				}
+				2 = {
+					portrait_society_rank = 3
+				}
+				3 = {
+					portrait_society_rank = 4
+				}
+			}
+			5 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				1 = {
+					portrait_society_rank = 2
+				}
+				2 = {
+					portrait_society_rank = 3
+				}
+				3 = {
+					portrait_society_rank = 4
+				}
+			}
+		}
 	}
 
 }
@@ -69,7 +532,21 @@ spriteTypes =
 	}
 	spriteType = {
 		name = "GFX_event_custom_bg_default"
-		texturefile = "gfx\\interface\\event_bigger_bg.tga"
+		texturefile = "gfx\\interface\\event_bigger_bg_default.dds"
 		allwaystransparent = yes
+	}
+}
+
+## Frontend
+spriteTypes =
+{
+	spriteType = {
+		name = "GFX_frontend_title_eldritch"
+		texturefile = "gfx\\flags\\e_eldritch_empire.tga"
+		loadType = "FRONTEND"
+	}
+	spriteType = {
+		name = "GFX_isenreik_dev_logo"
+		texturefile = "gfx\\interface\\Isenreik_logo_128.dds"
 	}
 }

@@ -1,107 +1,14 @@
 namespace = coteo_society
 
-#give all starting cultists secret religion
+# Feedback event for found_religious_cult decision
 character_event = {
-  id = coteo_society.100
-	hide_window = yes
+	id = coteo_society.100
+	desc = EVTDESC_MNM_3950
+	picture = GFX_evt_secret_ceremony
 
-  ai = yes
-  only_playable = yes
+	is_triggered_only = yes
 
-  trigger = {
-		is_save_game = no
-    society_member_of = cult_of_eldritch
-    total_years_played < 3
+	option = {
+		name = EVTOPTA_MNM_3950
 	}
-
-  mean_time_to_happen = {
-  	months = 1
-  }
-
-  immediate = {
-  	set_secret_religion = eldritch_gods
-  }
-}
-
-#From on_character_ask_to_join_society
-character_event = {
-  id = coteo_society.10
-	hide_window = yes
-  is_triggered_only = yes
-  trigger = {
-  	FROM = { leader = { society_member_of = cult_of_eldritch } }
-  }
-  immediate = {
-  	if = { #Find a non-prisoner member
-  		limit = { FROM = { leader = { prisoner = yes } } }
-  		FROM = {
-  			random_society_member = {
-  				limit = {
-  					society_member_of = cult_of_eldritch
-  					society_rank == 4
-  					prisoner = no
-  				}
-  				character_event = { id = coteo_society.11 }
-  				break = yes
-  			}
-  			random_society_member = {
-  				limit = {
-  					society_member_of = cult_of_eldritch
-  					society_rank == 3
-  					prisoner = no
-  				}
-  				character_event = { id = coteo_society.11 }
-  				break = yes
-  			}
-  			random_society_member = {
-  				limit = {
-  					society_member_of = cult_of_eldritch
-  					society_rank == 2
-  					prisoner = no
-  				}
-  				character_event = { id = coteo_society.11 }
-  				break = yes
-  			}
-  			random_society_member = {
-  				limit = {
-  					society_member_of = cult_of_eldritch
-  					society_rank == 1
-  					prisoner = no
-  				}
-  				character_event = { id = coteo_society.11 }
-  				break = yes
-  			}
-  		}
-		#Everyone is somehow in prison so just use teh leader anyway
-  	}
-  	FROM = { leader = { character_event = { id = coteo_society.11 } } }
-  }
-}
-
-#Ping event
-character_event = {
-  id = coteo_society.11
-	hide_window = yes
-  is_triggered_only = yes
-  immediate = {
-  	FROM = { letter_event = { id = coteo_society.12 } }
-  }
-}
-
-#Welcome letter
-letter_event = {
-  id = coteo_society.11
-  desc = coteo_society.11.desc
-  border = GFX_event_letter_frame_religion
-
-  is_triggered_only = yes
-
-	immediate = { set_character_flag = society_join_block }
-
-  option = {
-    name = coteo_society.11.a
-
-	  join_society = cult_of_eldritch
-	  clr_character_flag = society_join_block
-  }
 }

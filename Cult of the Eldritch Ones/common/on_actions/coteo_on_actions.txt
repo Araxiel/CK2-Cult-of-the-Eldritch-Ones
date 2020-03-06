@@ -1,5 +1,23 @@
+on_chronicle_start = {
+	events = {
+		coteo_janitor.10 # initalization
+	}
+}
+
 on_character_ask_to_join_society = {
 	events = {
-		coteo_society.10 #Join cult
+		#coteo_society.10 #Join cult
+	}
+}
+
+on_yearly_pulse = {
+	events = {
+		coteo_janitor.4000 # sanity regulations
+	}
+}
+
+on_bi_yearly_pulse = {
+	events = {
+		coteo_janitor.2000 # pollinate lowborn cultists
 	}
 }

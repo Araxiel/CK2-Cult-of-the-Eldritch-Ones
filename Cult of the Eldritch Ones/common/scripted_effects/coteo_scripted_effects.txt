@@ -1,0 +1,117 @@
+create_lowborn_cultist = {
+  create_character = {
+    random_traits = yes
+    dynasty = none
+    religion = ROOT
+    culture = ROOT
+    trait = cynical
+  }
+  new_character = {
+    set_secret_religion = eldritch_gods
+    save_event_target_as = created_lowborn_cultist
+    log = "Eldritch Investigation: ----> Ambusher created named [created_lowborn_cultist.GetBestName]"
+    random = {
+      chance = 50
+      liege = {
+        any_realm_character = {
+          limit = { is_landed = yes }
+          move_character = PREVPREV
+        }
+      }
+    }
+  }
+}
+
+eld_did_zealous_act_against = {
+  set_character_flag = eldritch_cult_rejected
+  if = {
+    limit = { trait = interest_in_weird }
+    remove_trait = interest_in_weird
+  }
+}
+
+## Eldritch Proofs
+add_tiny_eldritch_proof = {
+  change_variable = { which = "eldritch_proof" value = 1 }
+  hidden_tooltip = {
+    change_variable = { which = "eldritch_proof_gained" value = 1 }
+  }
+} # 1
+
+add_small_eldritch_proof = {
+  change_variable = { which = "eldritch_proof" value = 4 }
+  hidden_tooltip = {
+    change_variable = { which = "eldritch_proof_gained" value = 4 }
+  }
+} # 4
+
+add_medium_eldritch_proof = {
+  change_variable = { which = "eldritch_proof" value = 10 }
+  hidden_tooltip = {
+    change_variable = { which = "eldritch_proof_gained" value = 8 }
+  }
+} # 8
+
+add_decent_eldritch_proof = {
+  change_variable = { which = "eldritch_proof" value = 15 }
+  hidden_tooltip = {
+    change_variable = { which = "eldritch_proof_gained" value = 12 }
+  }
+} # 12
+
+add_large_eldritch_proof = {
+  change_variable = { which = "eldritch_proof" value = 18 }
+  hidden_tooltip = {
+    change_variable = { which = "eldritch_proof_gained" value = 16 }
+  }
+} # 16
+
+add_massive_eldritch_proof = {
+  change_variable = { which = "eldritch_proof" value = 100 }
+  hidden_tooltip = {
+    change_variable = { which = "eldritch_proof_gained" value = 100 }
+  }
+} # 100
+
+### Eldritch Insights
+add_tiny_eldritch_insight = {
+  change_variable = { which = "eldritch_insight" value = 1 }
+  hidden_tooltip = {
+    change_variable = { which = "eldritch_insight_gained" value = 1 }
+  }
+} # 1
+
+add_small_eldritch_insight = {
+  change_variable = { which = "eldritch_insight" value = 2 }
+  hidden_tooltip = {
+    change_variable = { which = "eldritch_insight_gained" value = 2 }
+  }
+} # 2
+
+add_medium_eldritch_insight = {
+  change_variable = { which = "eldritch_insight" value = 5 }
+  hidden_tooltip = {
+    change_variable = { which = "eldritch_insight_gained" value = 5 }
+  }
+} # 5
+
+add_large_eldritch_insight = {
+  change_variable = { which = "eldritch_insight" value = 10 }
+  hidden_tooltip = {
+    change_variable = { which = "eldritch_insight_gained" value = 1 }
+  }
+} # 10
+
+add_massive_eldritch_insight = {
+  change_variable = { which = "eldritch_insight" value = 20 }
+  hidden_tooltip = {
+    change_variable = { which = "eldritch_insight_gained" value = 20 }
+  }
+} # 20
+
+clear_eldritch_proof_insight_gains = {
+  hidden_tooltip = {
+    set_variable = { which = "eldritch_insight_gained" value = 0 }
+    set_variable = { which = "eldritch_proof_gained" value = 0 }
+  }
+}

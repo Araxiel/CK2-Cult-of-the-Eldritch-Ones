@@ -1,57 +1,174 @@
-eldritch_gods_group = {
-  has_coa_on_barony_only = yes
+eldritch_group = {
 	graphical_culture = westerngfx
-	crusade_cb = crusade
 	playable = yes
-	hostile_within_group = no
+
+  #has_coa_on_barony_only = no # Generate random CoA for all tiers, and ignore completely gfx/flags/.
+  crusade_cb = crusade
+	#hostile_within_group = yes
 
 	ai_convert_same_group = 2
 	ai_convert_other_group = 2
 
-	color = { 0.1 0.7 0.1 }
+  #color = { 0.1 0.7 0.1 } snot green
+  color = { 0.50 0.15 0.80 } # Ilythid Purple # rgb(128, 38, 204)
 
 	eldritch_gods = {
 		graphical_culture = westerngfx
 
-		icon = 5
-		heresy_icon = 14
+		icon = 57
+		heresy_icon = 58
 
-		color = { 0.75 1.0 0.2 }
+		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
+		color = { 0.50 0.15 0.80 }  # Ilythid Purple # rgb(128, 38, 204)
 
     crusade_name = GREAT_HOLY_WAR #wip
 		scripture_name = THE_NECRONOMICON
 		priest_title = ACOLYTE
-    piety_name = FAVOR
+    piety_name = KNOWLEDGE
 
-		high_god_name = GOD_OLD_ONES
+		high_god_name = GOD_ELDRITCH_GODS
 
 		god_names = {
-			GOD_GREAT_OLD_ONES GOD_ELDRITCH_GODS GOD_ELDER_THINGS
+			GOD_GREAT_OLD_ONES GOD_OLD_ONES GOD_AISURA GOD_NAAHAB GOD_QUASHAKON GOD_ELDER_THINGS
 		}
 		evil_god_names = {
 			GOD_FALSE_GODS
 		}
 
-    can_excommunicate = no
+    can_excommunicate = yes
     can_grant_invasion_cb = invasion
     can_call_crusade = yes
- 	  can_hold_temples = yes
  	  priests_can_marry = yes
-    priests_can_inherit = yes
-    feminist = yes
-		female_temple_holders = yes
-    autocephaly = yes
-    has_heir_designation = yes
-    defensive_attrition = yes
-    allow_in_ruler_designer = no
+    # priests_can_inherit = yes
+    #has_heir_designation = yes
 
-    dynamic_cult_template = cult_of_eldritch
+    #autocephaly = yes  # can't get rid of the orthodox ones
+
+    allow_in_ruler_designer = no
 
     attacking_same_religion_piety_loss = yes
 
     religious_clothing_head = 3
 		religious_clothing_priest = 3
+	}
 
+  # Aisura, queen of the dead, appears a winged androgynous humanoid with four arms
+	aisura_god = {
+		graphical_culture = westerngfx
+
+		icon = 57
+		heresy_icon = 58
+
+		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
+		#color = { 0.48 0.38 0.56 } #  (122, 97, 143)
+		color = { 0.59 0.04 0.78 } #  rgb(150, 10, 200)
+		
+    parent = eldritch_gods
+
+    crusade_name = GREAT_HOLY_WAR #wip
+		high_god_name = GOD_AISURA
+		priest_title = ACOLYTE
+    piety_name = KNOWLEDGE
+
+		god_names = {
+			GOD_GREAT_OLD_ONES GOD_ELDRITCH_GODS GOD_OLD_ONES GOD_ELDER_THINGS
+		}
+		evil_god_names = {
+			GOD_FALSE_GODS
+		}
+
+    can_grant_invasion_cb = invasion
+
+    ## WIP create a on_action that fires right before death, and thus makes female succesion through event?
+    feminist = yes
+		female_temple_holders = yes
+    max_consorts = 3
+    defensive_attrition = yes
+    ignores_defensive_attrition = yes
+
+    religious_clothing_head = 3
+		religious_clothing_priest = 3
+
+    allow_in_ruler_designer = no
+	}
+
+  # Naahab, keeper of knowledge, master of Ylsiths; Appears as a gigantic brain with a great mass of tentacles with a purple gleam and a single eye at the center.
+	naahab_god = {
+		graphical_culture = westerngfx
+
+		icon = 57
+		heresy_icon = 58
+
+		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
+		color = { 0.31 0.15 0.80 }  # rgb(79, 37, 203)
+
+    parent = eldritch_gods
+
+    crusade_name = GREAT_HOLY_WAR #wip
+		high_god_name = GOD_NAAHAB
+		priest_title = KEEPER
+		piety_name = KNOWLEDGE
+
+		god_names = {
+			GOD_GREAT_OLD_ONES GOD_ELDER_THINGS GOD_ELDRITCH_GODS GOD_OLD_ONES
+		}
+		evil_god_names = {
+			GOD_FALSE_GODS
+		}
+
+    can_grant_invasion_cb = invasion
+
+    short_reign_opinion_year_mult = 4
+    can_retire_to_monastery = yes
+    can_hold_temples = yes
+		priests_can_inherit = no
+		priests_can_marry = no
+    #"papacy" WIP
+
+    religious_clothing_head = 3
+		religious_clothing_priest = 3
+
+    allow_in_ruler_designer = no
+	}
+
+  # Qushakon, ruler of the deep; Appears as a swirling, black vortex in the shape of a great serpent
+	qushakon_god = {
+		graphical_culture = westerngfx
+
+		icon = 57
+		heresy_icon = 58
+
+		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
+		color = { 0.60 0.20 0.40 }  # rgb(153, 51, 102)
+
+    parent = eldritch_gods
+
+    crusade_name = GREAT_HOLY_WAR #wip
+  	high_god_name = GOD_QUASHAKON
+  	priest_title = ACOLYTE
+    piety_name = KNOWLEDGE
+
+		god_names = {
+			GOD_GREAT_OLD_ONES GOD_ELDRITCH_GODS GOD_ELDER_THINGS GOD_OLD_ONES
+		}
+		evil_god_names = {
+			GOD_FALSE_GODS
+		}
+
+    allow_viking_invasion = yes
+    allow_looting = yes
+    seafarer = yes
+    allow_rivermovement = yes
+    raised_vassal_opinion_loss = no
+ 	  can_hold_temples = yes
+		priests_can_inherit = yes
+
+    religious_clothing_head = 3
+		religious_clothing_priest = 3
+
+    allow_in_ruler_designer = no
 	}
 
 }
+
+## 56 original religions
