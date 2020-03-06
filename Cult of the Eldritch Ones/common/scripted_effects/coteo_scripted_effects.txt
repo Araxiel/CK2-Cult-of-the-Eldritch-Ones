@@ -32,6 +32,48 @@ eld_did_zealous_act_against = {
   }
 }
 
+add_wicked_priest = {
+  if = {
+    limit = { religion_group = christian }
+    add_trait = bad_priest_christian
+  }
+  if = {
+    limit = { religion_group = muslim }
+    add_trait = bad_priest_muslim
+  }
+  if = {
+    limit = { 
+      OR = {
+        religion = norse_pagan
+        religion = norse_pagan_reformed
+      }
+    }
+    add_trait = bad_priest_norse
+  }
+  if = {
+    limit = { 
+      OR = {
+        religion = tengri_pagan
+        religion = tengri_pagan_reformed
+      }
+    }
+    add_trait = bad_priest_tengri
+  }
+  if = {
+    limit = { 
+      OR = {
+        religion = aztec
+        religion = aztec_reformed
+      }
+    }
+    add_trait = bad_priest_aztec
+  }
+  if = {
+    limit = { religion_group = zoroastrian_group }
+    add_trait = bad_priest_zoroastrian
+  }
+}
+
 ## Eldritch Proofs
 add_tiny_eldritch_proof_var = {
   change_variable = { which = "eldritch_proof_var" value = 1 }

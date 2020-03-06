@@ -1,3 +1,20 @@
+-------------------------------------------------------------------------------------------------------------------------------------
+Scales & References:
+  Insanity
+    4 - Concerned
+    8 - Paranoid
+    12 - Lunatic
+    16 - Mad (Suicidal)
+    18 - Inhumane
+    22 - Divine (Beyond Suicidal)
+
+  Insight (Uninitiated  / Initiated)
+    2 - Concerned       / Basic knowledge
+    4 - Paranoid       / Knowledgable
+    8 - Convinced      / Understanding
+    12 - Believer       / Preacher
+    16 - Understanding  / Emissary
+    22 - Divine         / Apostle
 
 -------------------------------------------------------------------------------------------------------------------------------------
 debugging:

@@ -2,16 +2,13 @@ eldritch_group = {
 	graphical_culture = westerngfx
 	playable = yes
 
-  #has_coa_on_barony_only = no # Generate random CoA for all tiers, and ignore completely gfx/flags/.
-  crusade_cb = crusade
-	#hostile_within_group = yes
+  	#has_coa_on_barony_only = no # Generate random CoA for all tiers, and ignore completely gfx/flags/.
+  	crusade_cb = crusade
 
-	ai_convert_same_group = 2
-	ai_convert_other_group = 2
+ 	#color = { 0.1 0.7 0.1 } snot green
+ 	color = { 0.50 0.15 0.80 } # Mind Flayer Purple # rgb(128, 38, 204)
 
-  #color = { 0.1 0.7 0.1 } snot green
-  color = { 0.50 0.15 0.80 } # Ilythid Purple # rgb(128, 38, 204)
-
+  # Eldritch Gods, ruled and represented by Nhromurwyr; general believe in all the Eldritch Things
 	eldritch_gods = {
 		graphical_culture = westerngfx
 
@@ -19,37 +16,41 @@ eldritch_group = {
 		heresy_icon = 61
 
 		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
-		color = { 0.50 0.15 0.80 }  # Ilythid Purple # rgb(128, 38, 204)
+		color = { 0.50 0.15 0.80 }  # Mind Flayer Purple # rgb(128, 38, 204)
 
-    crusade_name = GREAT_HOLY_WAR #TODO
+    	crusade_name = GREAT_HOLY_WAR #TODO
 		scripture_name = THE_NECRONOMICON
 		priest_title = ACOLYTE
-    piety_name = FAVOR
+    	piety_name = FAVOR
 
 		high_god_name = GOD_ELDRITCH_GODS
 
 		god_names = {
-			GOD_GREAT_OLD_ONES GOD_OLD_ONES GOD_AISURA GOD_NAAHAB GOD_QUASHAKON GOD_ELDER_THINGS
+			GOD_NHROMURWYR GOD_GREAT_OLD_ONES GOD_OLD_ONES GOD_AISURA GOD_NAAHAB GOD_QUASHAKON GOD_ELDER_THINGS
 		}
 		evil_god_names = {
 			GOD_FALSE_GODS
 		}
 
-    can_excommunicate = yes
-    can_grant_invasion_cb = invasion
-    can_call_crusade = yes
- 	  priests_can_marry = yes
-    # priests_can_inherit = yes
-    #has_heir_designation = yes
+		ai_convert_same_group = 1
+		ai_convert_other_group = 2
 
-    #autocephaly = yes  # can't get rid of the orthodox ones
+		rel_head_defense = yes
+		intermarry = aisura_god 
+    	can_grant_invasion_cb = invasion
+    	can_call_crusade = yes
+ 		priests_can_marry = yes
+    	# priests_can_inherit = yes
+    	# has_heir_designation = yes
 
-    allow_in_ruler_designer = no
+    	autocephaly = yes
 
-    attacking_same_religion_piety_loss = yes
+    	allow_in_ruler_designer = no
 
-    religious_clothing_head = 3
-		religious_clothing_priest = 3
+    	attacking_same_religion_piety_loss = yes
+
+    	religious_clothing_head = 4
+		religious_clothing_priest = 4
 	}
 
   # Aisura, queen of the dead, appears a winged androgynous humanoid with four arms
@@ -62,12 +63,12 @@ eldritch_group = {
 		#color = { 0.48 0.38 0.56 } #  (122, 97, 143)
 		color = { 0.59 0.04 0.78 } #  rgb(150, 10, 200)
 
-    parent = eldritch_gods
+    	parent = eldritch_gods
 
-    crusade_name = GREAT_HOLY_WAR #TODO
+    	crusade_name = GREAT_HOLY_WAR #TODO
 		high_god_name = GOD_AISURA
 		priest_title = ACOLYTE
-    piety_name = FAVOR
+    	piety_name = FAVOR
 
 		god_names = {
 			GOD_GREAT_OLD_ONES GOD_ELDRITCH_GODS GOD_OLD_ONES GOD_ELDER_THINGS
@@ -76,19 +77,26 @@ eldritch_group = {
 			GOD_FALSE_GODS
 		}
 
-    can_grant_invasion_cb = invasion
+    	can_grant_invasion_cb = invasion
 
-    ## TODO create a on_action that fires right before death, and thus makes female succesion through event?
-    feminist = yes
+		ai_convert_same_group = 1
+		ai_convert_other_group = 1
+
+		rel_head_defense = yes
+		can_grant_divorce = yes
+    	feminist = yes
 		female_temple_holders = yes
-    max_consorts = 3
-    defensive_attrition = yes
-    ignores_defensive_attrition = yes
+		male_temple_holders = no
+		max_consorts = 3
+		men_can_take_consorts = no
+		women_can_take_consorts = yes
+    	defensive_attrition = yes
+    	ignores_defensive_attrition = yes
 
-    religious_clothing_head = 3
+    	religious_clothing_head = 3
 		religious_clothing_priest = 3
 
-    allow_in_ruler_designer = no
+    	allow_in_ruler_designer = no
 	}
 
   # Naahab, keeper of knowledge, master of Ylsiths; Appears as a gigantic brain with a great mass of tentacles with a purple gleam and a single eye at the center.
@@ -100,9 +108,9 @@ eldritch_group = {
 		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
 		color = { 0.31 0.15 0.80 }  # rgb(79, 37, 203)
 
-    parent = eldritch_gods
+    	parent = eldritch_gods
 
-    crusade_name = GREAT_HOLY_WAR #TODO
+    	crusade_name = GREAT_HOLY_WAR #TODO
 		high_god_name = GOD_NAAHAB
 		priest_title = KEEPER
 		piety_name = FAVOR
@@ -114,18 +122,24 @@ eldritch_group = {
 			GOD_FALSE_GODS
 		}
 
-    can_grant_invasion_cb = invasion
+		ai_convert_same_group = 0
+		ai_convert_other_group = 0
 
-    short_reign_opinion_year_mult = 4
-    can_retire_to_monastery = yes
+    	can_grant_invasion_cb = invasion
+
+		rel_head_defense = yes
+		can_excommunicate = yes
+    	short_reign_opinion_year_mult = 3.5
+    	can_retire_to_monastery = yes
 		priests_can_inherit = no
 		priests_can_marry = no
-    #"papacy" TODO
+		#"papacy" TODO
+		# can_have_antipopes = yes 
 
-    religious_clothing_head = 3
+    	religious_clothing_head = 3
 		religious_clothing_priest = 3
 
-    allow_in_ruler_designer = no
+    	allow_in_ruler_designer = no
 	}
 
   # Qushakon, ruler of the deep; Appears as a swirling, black vortex in the shape of a great serpent
@@ -137,12 +151,12 @@ eldritch_group = {
 		# color = { 0.75 1.0 0.2 }  # Ork-snot-green
 		color = { 0.60 0.20 0.40 }  # rgb(153, 51, 102)
 
-    parent = eldritch_gods
+    	parent = eldritch_gods
 
-    crusade_name = GREAT_HOLY_WAR #TODO
-  	high_god_name = GOD_QUASHAKON
-  	priest_title = ACOLYTE
-    piety_name = FAVOR
+    	crusade_name = GREAT_HOLY_WAR #TODO
+  		high_god_name = GOD_QUASHAKON
+  		priest_title = ACOLYTE
+    	piety_name = FAVOR
 
 		god_names = {
 			GOD_GREAT_OLD_ONES GOD_ELDRITCH_GODS GOD_ELDER_THINGS GOD_OLD_ONES
@@ -151,17 +165,23 @@ eldritch_group = {
 			GOD_FALSE_GODS
 		}
 
-    allow_viking_invasion = yes
-    allow_looting = yes
-    seafarer = yes
-    allow_rivermovement = yes
-    raised_vassal_opinion_loss = no
-		priests_can_inherit = yes
+		ai_convert_same_group = 1
+		ai_convert_other_group = 0
 
-    religious_clothing_head = 3
+		aggression = 1.8
+		rel_head_defense = no
+    	allow_viking_invasion = yes
+    	allow_looting = yes
+    	seafarer = yes
+    	allow_rivermovement = yes
+    	raised_vassal_opinion_loss = no
+		priests_can_inherit = yes
+		peace_prestige_loss = yes
+
+    	religious_clothing_head = 3
 		religious_clothing_priest = 3
 
-    allow_in_ruler_designer = no
+    	allow_in_ruler_designer = no
 	}
 
 }
